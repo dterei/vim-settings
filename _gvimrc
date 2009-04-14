@@ -1,0 +1,26 @@
+"source ~/.vimrc
+
+" Make external commands work through a pipe instead of a pseudo-tty
+"set noguipty
+
+" set the GUI font to use
+" set guifont=Consolas:h12:b:cANSI
+set guifont=Monaco:h13
+
+" Start GUI Maximised
+"au GUIEnter * simalt ~x
+
+" Hide the mouse when typing text
+set mousehide 
+
+" remove tool bar
+set guioptions-=T
+set guioptions-=m
+
+" Set colour map
+"colorscheme blue
+"colorscheme pyte
+"colorscheme oceandeep
+colorscheme twilight2
+"colorscheme ir_black
+

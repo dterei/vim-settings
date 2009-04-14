@@ -1,0 +1,27 @@
+1. Why does escaping from insert mode move the cursor back 1 character?
+   e.g If you keep pressing 'i<Esc>' a lot, you move back along the line
+
+2. Why does, dw include the character currenlty under the cursor, but db
+   doesn't? so using dw deletes a whole word forwards if on the first char
+	but db doesn't delete the whole word backwards unless on the space after the
+	word! what is the equivalent of dw but backwards?
+
+3. Can I map just <Shift> ?
+   Can I map <CTRL-Shift-?> ?
+	Can I map the windows key ?
+
+4. If you have a help window open and use a command such as CTRL-W ] to open a second help window, when you close the second help window, the sizing of the first help window is incorrect
+
+5. Documentation of tag jumping commands isn't very good, keyboard shortucts aren't nicley listed in one section and while they mention the preview window for tag jumping they dont mention the CTRL-W } keyboard command. Where is the CTRL-W ] command mentioned as well?
+
+6. on MacVim (confirm if on other platforms), twighlight2 colorscheme makes the text very heavy
+
+7. \%V doesn't seem to work when the replace char is a new line
+
+8. Tip 97 specifies this mapping for inserting a timestamp in normal mode:
+   :nnoremap <F5> "=strftime("%c")<CR>P
+	This mapping works fine, however entering the above commands as usual (not through a mapping)
+	fails. Why? arent mappings just the same as doing it manually.
+
+9. If you have a help window open and use a command such as CTRL-W ] to open a second help window, when you close the second help window, the sizing of the first help window is incorrect
+

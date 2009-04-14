@@ -1,0 +1,2 @@
+1. Change mappings to work in both console and gui.
+
