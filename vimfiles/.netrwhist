@@ -1,2 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='C:/dev/vim'
+let g:netrw_dirhist_2='C:/dev'
+let g:netrw_dirhist_3='C:/dev/vim3'
+let g:netrw_dirhist_4='C:/dev/vim'
+let g:netrw_dirhist_5='C:/dev'
+let g:netrw_dirhist_6='C:/dev/vim3'
+let g:netrw_dirhist_7='C:/dev'
+let g:netrw_dirhist_8='C:/dev/vim3'

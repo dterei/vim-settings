@@ -27,6 +27,9 @@
 "     * snippy_plugin.vba, snippy_bundles.vba
 "     * snippets_emu.txt
 "
+"     - vim-latex -
+"     A plugin which improves Vim's Latex support.
+"
 "     - YankRing.vim - 
 "     Maintains a history of previous yanks and deletes.
 "     * yankring.vim
@@ -117,6 +120,9 @@ set scrolloff=3 " lines to always seeable when scrolling
 " set wm=80
 " gq " autoformatter command
 
+" My spell file, used to store new words
+"set spellfile=$VIM/spellfile
+
 
 "###############################################################################
 "# Highlight & Fold Settings                                                   #
@@ -146,6 +152,7 @@ set foldlevelstart=99 " open all folds by default
 
 set tabstop=3 " tab space
 set shiftwidth=3 " indent space
+set noexpandtab " use tabs not spaces
 
 set autoindent
 set smartindent " go with smartindent if there is no plugin indent file
@@ -326,7 +333,12 @@ nnoremap <silent> <Leader>y :YRShow<CR>
 
 " This plugin is included in vim runtime but not all loaded by default
 runtime ftplugin/man.vim
-
+"
+"-------------
+"# Vim-Latex #
+"-------------
+set grepprg="grep -nH $*"
+let g:tex_flavor='latex'
 
 "###############################################################################
 "# File End                                                                    #
