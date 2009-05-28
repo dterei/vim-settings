@@ -19,8 +19,14 @@ set guioptions-=m
 
 " Set colour map
 "colorscheme blue
-"colorscheme pyte
-"colorscheme oceandeep
-colorscheme twilight2
+"colorscheme darkZ
+"colorscheme darkslategray
+"colorscheme fruity
 "colorscheme ir_black
+"colorscheme kib_darktango
+"colorscheme oceandeep
+"colorscheme ps_color
+"colorscheme pyte
+colorscheme twilight2
+"colorscheme zenburn
 

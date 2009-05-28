@@ -41,6 +41,7 @@
 "     * xml-plugin.txt
 "
 " Colour Schemes:
+"     - darkZ.vim
 "     - darkslategray.vim
 "     - fruity.vim
 "     - ir_black.vim
@@ -62,12 +63,12 @@ set nocompatible
 
 " OS neutral variable for referring to user files
 " assume unix, change if not
-let $MYVIMFILES=$HOME."/.vim"
+let $MYVIM=$HOME."/.vim"
 
 " if on WIN32
 if has("win32")
 	source $VIMRUNTIME/mswin.vim
-	let $MYVIMFILES=$VIM
+	let $MYVIM=$VIM
 endif
 
 " Enable file type detection.
@@ -152,7 +153,7 @@ set foldlevelstart=99 " open all folds by default
 
 set tabstop=3 " tab space
 set shiftwidth=3 " indent space
-set noexpandtab " use tabs not spaces
+set noexpandtab " use tabs, not spaces
 
 set autoindent
 set smartindent " go with smartindent if there is no plugin indent file
@@ -192,7 +193,7 @@ imap <silent> <F2> <C-o>:w<CR>
 "# Eclipse Text Movement Keys #
 "------------------------------
 
-" enable eclipse style moving of lines
+" enable eclipse style moving of lines (needs GVim)
 nmap <silent> <A-S-j> mz:m+<CR>`z==
 nmap <silent> <A-S-k> mz:m-2<CR>`z==
 imap <silent> <A-S-j> <Esc>:m+<CR>==gi
@@ -201,8 +202,8 @@ vmap <silent> <A-S-j> :m'>+<CR>gv=`<my`>mzgv`yo`z
 vmap <silent> <A-S-k> :m'<-2<CR>gv=`>my`<mzgv`yo`z
 
 " enable nice new line inserting in insert mode
-imap <S-CR> <End><CR>
-imap <S-A-CR> <End><Up><CR>
+imap <S-CR> <Esc>o
+imap <S-A-CR> <Esc>O
 
 " general windows delete commands
 imap <C-BS> <Esc>vbc<Del>
@@ -268,7 +269,7 @@ map <Leader>Q :qall!<CR>
 "###############################################################################
 
 " Online Design XML/XSL mode - leave file type
-command! ModeXML source $MYVIMFILES/modes/onlinedesign_xml.vim
+command! ModeXML source $MYVIM/modes/onlinedesign_xml.vim
 map <Leader>x :ModeXML<CR>
 
 
@@ -312,6 +313,18 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 "# New Functions                                                               #
 "###############################################################################
 
+"----------------------------
+"# Experimental bookmarking #
+"----------------------------
+
+"sign define fixme text=!! linehl=Todo texthl=Error
+"
+"function! SignFixme()
+"  execute(":sign place ".line(".")." line=".line(".")." name=fixme file=".expand("%:p"))
+"endfunction
+"
+"map <F5> :call SignFixme()<CR>
+
 
 "###############################################################################
 "# Plugins                                                                     #
@@ -324,7 +337,7 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 let g:yankring_replace_n_pkey = '<A-p>'
 let g:yankring_replace_n_nkey = '<A-n>'
 let g:yankring_max_display = 70
-let g:yankring_history_dir = '$MYVIMFILES'
+let g:yankring_history_dir = '$MYVIM'
 nnoremap <silent> <Leader>y :YRShow<CR>
 
 "---------------
@@ -333,15 +346,24 @@ nnoremap <silent> <Leader>y :YRShow<CR>
 
 " This plugin is included in vim runtime but not all loaded by default
 runtime ftplugin/man.vim
-"
+
 "-------------
 "# Vim-Latex #
 "-------------
 set grepprg="grep -nH $*"
 let g:tex_flavor='latex'
 
+
+"###############################################################################
+"# SIRCA Data Consult Settings                                                 #
+"###############################################################################
+"
+
+set tags=~/dev/projects/taqtic_1.3/src/tags,~/dev/builds/20080805/src/tags,~/dev/projects/taqtic_dev_1/tags
+set path=~/dev/builds/20080805/**,~/dev/projects/taqtic_1.3/src/**
+
+
 "###############################################################################
 "# File End                                                                    #
 "###############################################################################
-
 
