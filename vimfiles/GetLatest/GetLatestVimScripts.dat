@@ -1,16 +1,17 @@
 ScriptID SourceID Filename
 --------------------------
 31         7218    :AutoInstall:    a.vim
-1234       9504    :AutoInstall:    YankRing.vim
+1234       9731    :AutoInstall:    YankRing.vim
 42         9524    :AutoInstall:    bufexplorer.zip
 13         4318    :AutoInstall:    closetag.vim
 39         8196    :AutoInstall:    matchit.zip
+2540       10608   :AutoInstall:    snipMate.zip
 
 # Don't autoinstall as it goes into plugin when should be put in ftplugin.
-301        9358    :AutoInstall:    xml.vim
+301        10362   :AutoInstall:    xml.vim
 
 # Doesn't work at all, manual download and install required.
-#1318      8450 :AutoInstall:    snippy_plugin.vba
+#1318      8450    :AutoInstall:    snippy_plugin.vba
 
 # These come with vim but lets get latest version.
 
@@ -18,4 +19,4 @@ ScriptID SourceID Filename
 1502       8743    :AutoInstall:    vimball.vim
 
 # errors on auto install.
-1075       9389                     netrw.vim
+1075      9816                      netrw.vim

@@ -1,4 +1,4 @@
-*xml-plugin.txt*  Help edit XML and SGML documents.                   v78
+*xml-plugin.txt*  Help edit XML and SGML documents.                   v1.84
 
                                    XML Edit      ~
 
@@ -50,7 +50,7 @@ Mappings      ~
 plugins to use. By default this is the backslash key `\'. See |mapleader|
 for details.
 
-<LocalLeader>Space
+<LocalLeader><Space>
         Normal or Insert - Continue editing after the ending tag. This
         option requires xml_jump_string to be set to function. When a tag
         is completed it will append the xml_jump_string. Once this mapping
@@ -58,7 +58,7 @@ for details.
         of the curser and delete it leaving you in insert mode to continue
         editing.
 
-<LocalLeader><LocalLeader>
+<LocalLeader>w
         Normal - Will clear the entire file of left over xml_jump_string garbage.
         * This will also happen automatically when you save the file. *
 
@@ -114,14 +114,14 @@ xml_use_xhtml
             let xml_use_xhtml = 1
 <
 xml_no_html
-        This turns of the support for HTML specific tags. Place this in your
+        This turns off the support for HTML specific tags. Place this in your
         .vimrc: >
             let xml_no_html = 1
 <
 xml_jump_string
-        This turns of the support for continuing edits after an ending tag.
+        This turns off the support for continuing edits after an ending tag.
         xml_jump_string can be any string how ever a simple character will
-        serfice. Pick a character or small string that is unique and will
+        suffice. Pick a character or small string that is unique and will
         not interfer with your normal editing. See the <LocalLeader>Space
         mapping for more.
         .vimrc: >

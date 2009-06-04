@@ -353,11 +353,15 @@ runtime ftplugin/man.vim
 set grepprg="grep -nH $*"
 let g:tex_flavor='latex'
 
+"------------
+"# snipMate #
+"------------
+let g:snips_author = 'David Terei'
+
 
 "###############################################################################
 "# SIRCA Data Consult Settings                                                 #
 "###############################################################################
-"
 
 set tags=~/dev/projects/taqtic_1.3/src/tags,~/dev/builds/20080805/src/tags,~/dev/projects/taqtic_dev_1/tags
 set path=~/dev/builds/20080805/**,~/dev/projects/taqtic_1.3/src/**
