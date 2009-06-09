@@ -178,8 +178,8 @@ set winaltkeys=no
 "---------------
 
 " enable/disable spell check
-map <silent> <F7> <ESC>:setlocal spell! spelllang=en_au<CR>
-imap <silent> <F7> <C-o>:setlocal spell! spelllang=en_au<CR>
+map <silent> <F6> <ESC>:setlocal spell! spelllang=en_au<CR>
+imap <silent> <F6> <C-o>:setlocal spell! spelllang=en_au<CR>
 
 " clear search highlight
 map <silent> <F3> <ESC>:noh<CR>
