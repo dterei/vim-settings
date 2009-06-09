@@ -6,7 +6,7 @@ ScriptID SourceID Filename
 13         4318    :AutoInstall:    closetag.vim
 39         8196    :AutoInstall:    matchit.zip
 2540       10608   :AutoInstall:    snipMate.zip
-1849       1       :AutoInstall:    autoclose.vim
+1849       7700    :AutoInstall:    autoclose.vim
 
 # Don't autoinstall as it goes into plugin when should be put in ftplugin.
 301        10362                    xml.vim
@@ -17,4 +17,4 @@ ScriptID SourceID Filename
 1502       8743    :AutoInstall:    vimball.vim
 
 # errors on auto install.
-1075      9816                      netrw.vim
+1075       9816                      netrw.vim
