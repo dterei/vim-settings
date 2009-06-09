@@ -1,9 +1,9 @@
 " Vim script file                                           vim600:fdm=marker:
 " FileType:     XML
-" Author:       Devin Weaver <vim (at) tritarget.com> 
-" Maintainer:   Devin Weaver <vim (at) tritarget.com>
-" Last Change:  $Date: 2008-10-16 10:01:12 -0400 (Thu, 16 Oct 2008) $
-" Version:      $Revision: 78 $
+" Author:       Devin Weaver <suki (at) tritarget.com> 
+" Maintainer:   Devin Weaver <suki (at) tritarget.com>
+" Last Change:  Tue Apr 07 11:12:08 EDT 2009
+" Version:      1.84
 " Location:     http://www.vim.org/scripts/script.php?script_id=301
 " Licence:      This program is free software; you can redistribute it
 "               and/or modify it under the terms of the GNU General Public
@@ -108,7 +108,7 @@ endif
 if !exists("*s:NewFileXML")
 function s:NewFileXML( )
     " Where is g:did_xhtmlcf_inits defined?
-    if &filetype == 'xml' || (!exists ("g:did_xhtmlcf_inits") && exists ("g:xml_use_xhtml") && (&filetype == 'html' || &filetype == 'xhtml'))
+    if &filetype == 'docbk' || &filetype == 'xml' || (!exists ("g:did_xhtmlcf_inits") && exists ("g:xml_use_xhtml") && (&filetype == 'html' || &filetype == 'xhtml'))
         if append (0, '<?xml version="1.0"?>')
             normal! G
         endif
@@ -483,7 +483,7 @@ function s:InsertGt( )
   if (getline('.')[col('.') - 1] == '>')
     let char_syn=synIDattr(synID(line("."), col(".") - 1, 1), "name")
   endif
-  if -1 == match(char_syn, "xmlProcessing") && (0 == match(char_syn, 'html') || 0 == match(char_syn, 'xml'))
+  if -1 == match(char_syn, "xmlProcessing") && (0 == match(char_syn, 'html') || 0 == match(char_syn, 'xml') || 0 == match(char_syn, 'docbk'))
     call <SID>ParseTag()
   else
     if col(".") == col("$") - 1
@@ -501,10 +501,17 @@ if !exists("*s:InitEditFromJump")
 function s:InitEditFromJump( )
     " Add a syntax highlight for the xml_jump_string.
     execute "syntax match Error /\\V" . g:xml_jump_string . "/"
-    " Remove left over garbage from xml_jump_string on file save.
-    augroup xml
-        execute "au BufWritePre <buffer> %s/" . g:xml_jump_string . "//ge"
-    augroup END
+endfunction
+endif
+
+" ClearJumpMarks -> Clean out extranious left over xml_jump_string garbage. {{{1
+if !exists("*s:ClearJumpMarks")
+function s:ClearJumpMarks( )
+    if exists("g:xml_jump_string")
+       if g:xml_jump_string != ""
+           execute ":%s/" . g:xml_jump_string . "//ge"
+       endif
+    endif
 endfunction
 endif
 
@@ -513,12 +520,14 @@ endif
 if !exists("*s:EditFromJump")
 function s:EditFromJump( )
     if exists("g:xml_jump_string")
-        let foo = search(g:xml_jump_string, 'csW') " Moves cursor by default
-        execute "normal! " . strlen(g:xml_jump_string) . "x"
-        if col(".") == col("$") - 1
-            startinsert!
-        else
-            startinsert
+        if g:xml_jump_string != ""
+            let foo = search(g:xml_jump_string, 'csW') " Moves cursor by default
+            execute "normal! " . strlen(g:xml_jump_string) . "x"
+            if col(".") == col("$") - 1
+                startinsert!
+            else
+                startinsert
+            endif
         endif
     else
         echohl WarningMsg
@@ -651,8 +660,10 @@ function! s:XmlInstallDocumentation(full_name, revision)
 endfunction
 " }}}2
 
+let s:script_lines = readfile(expand("<sfile>"), "", 6)
 let s:revision=
-      \ substitute("$Revision: 78 $",'\$\S*: \([.0-9]\+\) \$','\1','')
+      \ substitute(s:script_lines[5], '^" Version:\s*\|\s*$', '', '')
+"      \ substitute("$Revision: 83 $",'\$\S*: \([.0-9]\+\) \$','\1','')
 silent! let s:install_status =
     \ s:XmlInstallDocumentation(expand('<sfile>:p'), s:revision)
 if (s:install_status == 1)
@@ -691,18 +702,18 @@ else
     execute "inoremap <buffer> " . g:xml_tag_completion_map . " <Esc>:call <SID>InsertGt()<Cr>"
 endif
 
-if exists("g:xml_jump_string")
-    nnoremap <buffer> <LocalLeader><Space> :call <SID>EditFromJump()<Cr>
-    inoremap <buffer> <LocalLeader><Space> <Esc>:call <SID>EditFromJump()<Cr>
-    " Clear out all left over xml_jump_string garbage
-    execute "nnoremap <buffer> <LocalLeader><LocalLeader> :%s/" . g:xml_jump_string . "//ge<Cr>"
-    " The syntax files clear out any predefined syntax definitions. Recreate
-    " this when ever a xml_jump_string is created. (in ParseTag)
-endif
+nnoremap <buffer> <LocalLeader><Space> :call <SID>EditFromJump()<Cr>
+inoremap <buffer> <LocalLeader><Space> <Esc>:call <SID>EditFromJump()<Cr>
+" Clear out all left over xml_jump_string garbage
+nnoremap <buffer> <LocalLeader>w :call <SID>ClearJumpMarks()<Cr>
+" The syntax files clear out any predefined syntax definitions. Recreate
+" this when ever a xml_jump_string is created. (in ParseTag)
 
 augroup xml
     au!
     au BufNewFile * call <SID>NewFileXML()
+    " Remove left over garbage from xml_jump_string on file save.
+    au BufWritePre <buffer> call <SID>ClearJumpMarks()
 augroup END
 "}}}1
 finish
@@ -763,7 +774,7 @@ Mappings {{{2 ~
 plugins to use. By default this is the backslash key `\'. See |mapleader|
 for details.
 
-<LocalLeader>Space
+<LocalLeader><Space>
         Normal or Insert - Continue editing after the ending tag. This
         option requires xml_jump_string to be set to function. When a tag
         is completed it will append the xml_jump_string. Once this mapping
@@ -771,7 +782,7 @@ for details.
         of the curser and delete it leaving you in insert mode to continue
         editing.
 
-<LocalLeader><LocalLeader>
+<LocalLeader>w
         Normal - Will clear the entire file of left over xml_jump_string garbage.
         * This will also happen automatically when you save the file. *
 
@@ -827,14 +838,14 @@ xml_use_xhtml
             let xml_use_xhtml = 1
 <
 xml_no_html
-        This turns of the support for HTML specific tags. Place this in your
+        This turns off the support for HTML specific tags. Place this in your
         .vimrc: >
             let xml_no_html = 1
 <
 xml_jump_string
-        This turns of the support for continuing edits after an ending tag.
+        This turns off the support for continuing edits after an ending tag.
         xml_jump_string can be any string how ever a simple character will
-        serfice. Pick a character or small string that is unique and will
+        suffice. Pick a character or small string that is unique and will
         not interfer with your normal editing. See the <LocalLeader>Space
         mapping for more.
         .vimrc: >

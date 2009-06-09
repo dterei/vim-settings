@@ -6,12 +6,10 @@ ScriptID SourceID Filename
 13         4318    :AutoInstall:    closetag.vim
 39         8196    :AutoInstall:    matchit.zip
 2540       10608   :AutoInstall:    snipMate.zip
+1849       1       :AutoInstall:    autoclose.vim
 
 # Don't autoinstall as it goes into plugin when should be put in ftplugin.
-301        10362   :AutoInstall:    xml.vim
-
-# Doesn't work at all, manual download and install required.
-#1318      8450    :AutoInstall:    snippy_plugin.vba
+301        10362                    xml.vim
 
 # These come with vim but lets get latest version.
 
