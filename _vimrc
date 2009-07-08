@@ -109,7 +109,10 @@ set incsearch  " do incremental searching
 set ignorecase " make this default, turn on case in search with /<search>\C
 
 set wildignore+=*.o,+=*.obj,+=*.bak,+=*.exe " ignore these files for auto...
-set autochdir " always lcd to the current buffers directory
+
+if has("workshop")
+	set autochdir " always lcd to the current buffers directory
+endif
 
 set ch=1 " Make command line one lines high
 set laststatus=2 " enable status line always
