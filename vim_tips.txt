@@ -16,3 +16,6 @@ Vim New Tips
 7. Stop omnicompletion/tag complete also using CTRL-N
 
 8. list
+
+9. textobjects
+

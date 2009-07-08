@@ -1,2 +1,4 @@
 1. Change mappings to work in both console and gui.
 
+2. Unified way of doing jumping in abrieviations (snippets uses one way, latex-suite another), and improve the autoclose plugin so it can jump out of the pair.
+
