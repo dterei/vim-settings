@@ -360,7 +360,10 @@ let g:tex_flavor='latex'
 "# snipMate #
 "------------
 let g:snips_author = 'David Terei'
-
+ino <silent> " "<c-r>=TriggerSnippetWord('"')<cr>
+ino <silent> ( (<c-r>=TriggerSnippetWord('(')<cr>
+ino <silent> { {<c-r>=TriggerSnippetWord('{')<cr>
+ino <silent> [ [<c-r>=TriggerSnippetWord('[')<cr>
 
 "###############################################################################
 "# SIRCA Data Consult Settings                                                 #
