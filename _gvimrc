@@ -4,8 +4,7 @@
 "set noguipty
 
 " set the GUI font to use
-" set guifont=Consolas:h12:b:cANSI
-set guifont=Monaco:h13
+set guifont="Monaco:h13,Monaco\ 13,Consolas:h11:b:cANSI,Consolas\ 11"
 
 " Start GUI Maximised
 "au GUIEnter * simalt ~x
