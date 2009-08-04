@@ -55,7 +55,10 @@ syn match hsInfix	"\<\(infix\|infixl\|infixr\)\>"
 syn match hsStructure	"\<\(class\|data\|deriving\|instance\|default\|where\)\>"
 syn match hsTypedef	"\<\(type\|newtype\)\>"
 syn match hsStatement	"\<\(do\|return\|case\|of\|let\|in\)\>"
-syn match hsConditional	"\<\(if\|then\|else\)\>"
+syn match hsConditional	"\<\(if\|then\|else\|when\)\>"
+
+" Function type defenitions
+syn match hsFunDef /^\s*\zs\l\w*\ze\s*::/
 
 
 " Types from the standard prelude.
@@ -140,6 +143,7 @@ if version >= 508 || !exists("did_hs_syntax_inits")
     command -nargs=+ HiLink hi def link <args>
   endif
 
+  hi link hsFunDef              Special
   hi link hsModule              hsStructure
   hi link hsImport              Include
   hi link hsImportMod           hsImport
