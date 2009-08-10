@@ -67,7 +67,7 @@ let $MYVIM=$HOME."/.vim"
 
 " if on WIN32
 if has("win32")
-	source $VIMRUNTIME/mswin.vim
+	"source $VIMRUNTIME/mswin.vim
 	let $MYVIM=$VIM
 endif
 
@@ -106,7 +106,7 @@ set history=30 " keep 30 lines of command line history
 set viminfo='500,f1,<500,s50,:0,@30,/30,! " what to store for each file
 
 set incsearch  " do incremental searching
-set ignorecase " make this default, turn on case in search with /<search>\C
+set ignorecase " make this default, turn on case in search with /<search>\C/
 
 set wildignore+=*.o,+=*.obj,+=*.bak,+=*.exe " ignore these files for auto...
 
@@ -120,12 +120,11 @@ set ruler " show the cursor position all the time
 
 set scrolloff=3 " lines to always seeable when scrolling
 
-" set tw=80 " default text width, used with autoformatter and pasting
-" set wm=80
+"set tw=80 " default text width, used with autoformatter and pasting
+"set wm=80
 " gq " autoformatter command
 
-" My spell file, used to store new words
-"set spellfile=$VIM/spellfile
+set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 
 
 "###############################################################################
@@ -149,15 +148,20 @@ set foldenable
 set foldmethod=syntax
 set foldlevelstart=99 " open all folds by default
 
+" My spell file, used to store new words
+"set spellfile='$MYVIM/spellfile'
+
 
 "###############################################################################
 "# Indent Settings                                                             #
 "###############################################################################
 
 set tabstop=3 " tab space
+set softtabstop=3 " fake tab spaces
 set shiftwidth=3 " indent space
 set noexpandtab " use tabs, not spaces
 
+set indentexpr=syntax
 set autoindent
 set smartindent " go with smartindent if there is no plugin indent file
 
@@ -209,8 +213,8 @@ imap <S-CR> <Esc>o
 imap <S-A-CR> <Esc>O
 
 " general windows delete commands
-imap <C-BS> <Esc>vbc<Del>
-imap <C-Del> <Esc>lcw
+imap <C-BS> <Esc>vbc
+imap <C-Del> <Esc>lvec
 
 " map - to end of line, _ to start
 noremap - $

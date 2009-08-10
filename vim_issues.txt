@@ -24,3 +24,5 @@
 (accepted vim behaviour)
 8. If you have a help window open and use a command such as CTRL-W ] to open a second help window, when you close the second help window, the sizing of the first help window is incorrect
 
+9. In GVim, when the tab line appears (second tab opened.. ect) then it increases the GUI window size. If the window is maximised, this causes the command line to be lost.
+

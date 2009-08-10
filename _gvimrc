@@ -4,7 +4,7 @@
 "set noguipty
 
 " set the GUI font to use
-set guifont=Monaco:h13,Monaco\ 13,Consolas:h11:b:cANSI,Consolas\ 11
+set guifont=Consolas\ 11,"Consolas:h11:b:cANSI","Monaco:h13",Monaco\ 13
 
 " Start GUI Maximised
 "au GUIEnter * simalt ~x
@@ -18,6 +18,7 @@ set guioptions-=m
 
 " Set colour map
 "colorscheme blue
+"colorscheme cobalt
 "colorscheme darkZ
 "colorscheme darkslategray
 "colorscheme fruity
@@ -29,3 +30,4 @@ set guioptions-=m
 colorscheme twilight2
 "colorscheme zenburn
 
+noremap <C-k> 2<C-Y>

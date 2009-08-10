@@ -58,7 +58,7 @@ syn match hsStatement	"\<\(do\|return\|case\|of\|let\|in\)\>"
 syn match hsConditional	"\<\(if\|then\|else\|when\)\>"
 
 " Function type defenitions
-syn match hsFunDef /^\s*\zs\l\w*\ze\s*::/
+syn match hsFunDef /^\s*\zs\l\w*'\=\ze\_s*::/
 
 
 " Types from the standard prelude.

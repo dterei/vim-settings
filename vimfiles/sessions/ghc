@@ -1,0 +1,235 @@
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd ~/
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +0 Development/ghc/head/compiler/main/DriverPhases.hs
+badd +0 Development/ghc/head/compiler/main/DriverPipeline.hs
+badd +0 Development/ghc/head/compiler/main/CodeOutput.lhs
+badd +0 Development/ghc/head/compiler/main/HscMain.lhs
+badd +1 Development/ghc/head/ghc/ghc.wrapper
+badd +11 Development/ghc/head/ghc/Main.hs
+badd +76 Development/Thesis/Part\ A/Report/report.tex
+badd +128 .vimrc
+badd +82 Development/ghc/head/docs/man/gen_flags.xsl.pl
+badd +1 Development/ghc/head/docs/man/Makefile
+badd +50 Development/ghc/head/docs/comm/the-beast/driver.html
+badd +1 Development/ghc/head/docs/comm/the-beast/main.html
+badd +99 Development/ghc/head/docs/comm/the-beast/ghci.html
+badd +18 Development/ghc/head/docs/comm/the-beast/alien.html
+badd +25 Development/ghc/head/docs/comm/the-beast/basicTypes.html
+badd +108 Development/ghc/head/docs/comm/the-beast/coding-style.html
+badd +0 Development/ghc/head/docs/comm/the-beast/data-types.html
+badd +10 Development/ghc/head/docs/comm/the-beast/desugar.html
+badd +0 Development/ghc/head/docs/comm/the-beast/fexport.html
+badd +30 Development/ghc/head/docs/comm/the-beast/mangler.html
+badd +56 Development/ghc/head/docs/comm/the-beast/modules.html
+badd +56 Development/ghc/head/docs/comm/the-beast/names.html
+badd +749 Development/ghc/head/docs/comm/the-beast/ncg.html
+badd +383 Development/ghc/head/ghc/GhciMonad.hs
+badd +33 Development/ghc/head/sync-all
+badd +0 Development/ghc/head/compiler/main/GHC.hs
+badd +146 .vim/syntax/haskell.vim
+badd +0 Development/ghc/head/compiler/main/ErrUtils.lhs
+silent! argdel *
+set lines=55 columns=182
+edit Development/ghc/head/ghc/Main.hs
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 180 - ((11 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+180
+normal! 0
+lcd ~/
+tabedit ~/Development/ghc/head/compiler/main/GHC.hs
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 417 - ((26 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+417
+normal! 0
+lcd ~/
+tabedit ~/Development/ghc/head/compiler/main/HscMain.lhs
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 8 - ((7 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+8
+normal! 0
+lcd ~/
+tabedit ~/Development/ghc/head/compiler/main/CodeOutput.lhs
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 81 - ((49 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+81
+normal! 013l
+lcd ~/
+tabedit ~/Development/ghc/head/compiler/main/DriverPipeline.hs
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 91 + 91) / 182)
+exe 'vert 2resize ' . ((&columns * 90 + 91) / 182)
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 1751 - ((26 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1751
+normal! 0
+lcd ~/
+wincmd w
+argglobal
+edit ~/Development/ghc/head/compiler/main/DriverPipeline.hs
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 697 - ((49 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+697
+normal! 0
+lcd ~/
+wincmd w
+exe 'vert 1resize ' . ((&columns * 91 + 91) / 182)
+exe 'vert 2resize ' . ((&columns * 90 + 91) / 182)
+tabedit ~/Development/ghc/head/compiler/main/ErrUtils.lhs
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 321 - ((44 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+321
+normal! 09l
+lcd ~/
+tabedit ~/Development/ghc/head/compiler/main/DriverPhases.hs
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 78 - ((36 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+78
+normal! 026l
+lcd ~/
+tabnext 1
+if exists('s:wipebuf')
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToO
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :
