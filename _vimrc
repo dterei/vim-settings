@@ -111,11 +111,12 @@ set smartcase " type small case will search case independent, type mixed case wi
 set wildignore+=*.o,+=*.obj,+=*.bak,+=*.exe,+=*~,+=*.hi " ignore these files for auto...
 
 " always lcd to the current buffers directory
-if exists('+autochdir')
-  set autochdir
-else
-  autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
-endif
+"if exists('+autochdir')
+"  set autochdir
+"else
+"  autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+"endif
+set noacd
 
 set ch=1 " Make command line one lines high
 set laststatus=2 " enable status line always
@@ -244,6 +245,7 @@ noremap <silent> <A-l> <C-]>
 
 " Better way to enter command line (get rid of pointless shift)
 nnoremap ; :
+cnoremap <C-[> <Esc>
 
 "---------------------
 "# New Movement Keys #
@@ -256,6 +258,7 @@ noremap <S-Space> <PageUp>
 " scroll window but not line (normally same as i and x)
 noremap <Ins> 2<C-Y>
 noremap <Del> 2<C-E>
+
 " normally nothing
 noremap <C-k> 2<C-Y>
 noremap <C-j> 2<C-E>
@@ -266,15 +269,16 @@ noremap <C-j> 2<C-E>
 
 " quick file browse mapping
 map <Leader>e :e .<CR>
+map <Leader>E :lcd %:p:h<CR>
 
 " Give tab cycling nicer keys (normally these just do same as j & k)
 noremap <C-n> :tabnext<CR>
 noremap <C-p> :tabNext<CR>
 
 " new tab
-nmap <Leader>t :tabe .<CR>
-nmap <Leader>T :tabnew<CR>
-"map <C-t> <Esc>:tabnew<CR>
+nmap <Leader>t :tabe %:p:h<CR>
+nmap <Leader>T :tabe .<CR>
+nmap <Leader>n :tabnew<CR>
 
 " tab close
 map <Leader>w :tabclose<CR>
@@ -377,17 +381,17 @@ let g:tex_flavor='latex'
 "# snipMate #
 "------------
 let g:snips_author = 'David Terei'
-ino <silent> " "<c-r>=TriggerSnippetWord('"')<cr>
-ino <silent> ( (<c-r>=TriggerSnippetWord('(')<cr>
-ino <silent> { {<c-r>=TriggerSnippetWord('{')<cr>
-ino <silent> [ [<c-r>=TriggerSnippetWord('[')<cr>
+"ino <silent> " "<c-r>=TriggerSnippetWord('"')<cr>
+"ino <silent> ( (<c-r>=TriggerSnippetWord('(')<cr>
+"ino <silent> { {<c-r>=TriggerSnippetWord('{')<cr>
+"ino <silent> [ [<c-r>=TriggerSnippetWord('[')<cr>
 
 "###############################################################################
 "# SIRCA Data Consult Settings                                                 #
 "###############################################################################
 
-set tags=~/dev/projects/taqtic_1.3/src/tags,~/dev/builds/20080805/src/tags,~/dev/projects/taqtic_dev_1/tags
-set path=~/dev/builds/20080805/**,~/dev/projects/taqtic_1.3/src/**
+set tags+=~/dev/projects/taqtic_1.3/src/tags,~/dev/builds/20080805/src/tags,~/dev/projects/taqtic_dev_1/tags
+set path+=~/dev/builds/20080805/**,~/dev/projects/taqtic_1.3/src/**
 
 
 "###############################################################################

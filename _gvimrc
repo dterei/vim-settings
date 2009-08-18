@@ -30,4 +30,3 @@ set guioptions-=m
 colorscheme twilight2
 "colorscheme zenburn
 
-noremap <C-k> 2<C-Y>
