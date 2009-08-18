@@ -36,19 +36,19 @@ badd +33 sync-all
 badd +1 compiler/main/GHC.hs
 badd +172 ~/.vim/syntax/haskell.vim
 badd +332 compiler/main/ErrUtils.lhs
-badd +0 compiler/main/HscTypes.lhs
+badd +1 compiler/main/HscTypes.lhs
 badd +28 ~/Development/Vim/vim_issues.txt
-badd +0 ~/Development/Vim/vim_tips.txt
+badd +1 ~/Development/Vim/vim_tips.txt
 badd +14 ~/Development/Vim/vim_todo.txt
 badd +30 compiler/prelude/primops.txt.pp
 badd +1 compiler/utils/GraphColor.hs
-badd +0 compiler/main/DynFlags.hs
+badd +1 compiler/main/DynFlags.hs
 badd +542 docs/coding-style.html
 badd +60 libraries/base/Debug/Trace.hs
-badd +0 compiler/main/SysTools.lhs
+badd +1 compiler/main/SysTools.lhs
 badd +83 compiler/codeGen/Bitmap.hs
 badd +93 compiler/nativeGen/AsmCodeGen.lhs
-badd +0 compiler/cmm/Cmm.hs
+badd +1 compiler/cmm/Cmm.hs
 badd +358 compiler/cmm/CLabel.hs
 badd +82 README
 badd +32 HACKING
@@ -57,13 +57,18 @@ badd +17 SUBMAKEHELP
 badd +12 Makefile
 badd +11 compiler/utils/BufWrite.hs
 badd +353 compiler/utils/Outputable.lhs
-badd +0 compiler/cmm/PprCmm.hs
+badd +1 compiler/cmm/PprCmm.hs
 badd +451 compiler/utils/Pretty.lhs
-badd +0 rts/StgCRun.c
-badd +0 rts/StgRun.h
+badd +1 rts/StgCRun.c
+badd +1 rts/StgRun.h
 badd +239 rts/sm/GCThread.h
-badd +0 includes/Regs.h
-badd +0 ghc.mk
+badd +1 includes/Regs.h
+badd +945 ghc.mk
+badd +55 compiler/simplStg/SRT.lhs
+badd +6 compiler/simplStg/SimplStg.lhs
+badd +1 compiler/simplStg/StgStats.lhs
+badd +0 compiler/nativeGen/X86/Regs.hs
+badd +0 ~/Development/ghc/head/compiler/nativeGen/Reg.hs
 args [BufExplorer]
 set lines=55 columns=182
 edit ghc/Main.hs
@@ -368,6 +373,7 @@ exe s:l
 normal! zt
 1
 normal! 022l
+lcd ~/Development/ghc/head
 tabedit ~/Development/ghc/head/compiler/main/HscTypes.lhs
 set splitbelow splitright
 set nosplitbelow
@@ -389,6 +395,7 @@ exe s:l
 normal! zt
 1893
 normal! 0
+lcd ~/Development/ghc/head
 tabedit ~/Development/ghc/head/compiler/nativeGen/AsmCodeGen.lhs
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -410,11 +417,11 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 287 - ((23 * winheight(0) + 26) / 53)
+let s:l = 288 - ((24 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-287
+288
 normal! 01l
 lcd ~/Development/ghc/head
 wincmd w
@@ -430,41 +437,20 @@ setlocal fdn=20
 setlocal fen
 281
 normal zo
-281
-normal zo
 283
-normal zo
-283
-normal zo
-283
-normal zo
-283
-normal zo
-283
-normal zo
-288
-normal zo
-288
-normal zo
-288
-normal zo
-288
 normal zo
 288
 normal zo
 281
 normal zo
-281
-normal zo
-let s:l = 714 - ((29 * winheight(0) + 26) / 53)
+let s:l = 723 - ((12 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-714
-normal! 0
+723
+normal! 02l
 lcd ~/Development/ghc/head
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 91 + 91) / 182)
 exe 'vert 2resize ' . ((&columns * 90 + 91) / 182)
 tabedit ~/Development/ghc/head/compiler/utils/Pretty.lhs
@@ -489,7 +475,6 @@ normal! zt
 1066
 normal! 02l
 lcd ~/Development/ghc/head
-2wincmd w
 tabedit ~/Development/ghc/head/compiler/utils/Outputable.lhs
 set splitbelow splitright
 set nosplitbelow
@@ -512,7 +497,6 @@ normal! zt
 440
 normal! 0
 lcd ~/Development/ghc/head
-2wincmd w
 tabedit ~/Development/ghc/head/compiler/main/ErrUtils.lhs
 set splitbelow splitright
 set nosplitbelow
@@ -535,7 +519,6 @@ normal! zt
 191
 normal! 0
 lcd ~/Development/ghc/head
-2wincmd w
 tabedit ~/Development/ghc/head/compiler/cmm/Cmm.hs
 set splitbelow splitright
 set nosplitbelow
@@ -551,14 +534,13 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 78 - ((46 * winheight(0) + 26) / 53)
+let s:l = 68 - ((25 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-78
-normal! 0
+68
+normal! 01l
 lcd ~/Development/ghc/head
-2wincmd w
 tabedit ~/Development/ghc/head/compiler/cmm/PprCmm.hs
 set splitbelow splitright
 set nosplitbelow
@@ -581,7 +563,6 @@ normal! zt
 51
 normal! 0
 lcd ~/Development/ghc/head
-2wincmd w
 tabedit ~/Development/ghc/head/includes/Regs.h
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -603,8 +584,6 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-275
-normal zo
 let s:l = 182 - ((12 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
@@ -633,15 +612,14 @@ normal zo
 normal zo
 300
 normal zo
-let s:l = 298 - ((6 * winheight(0) + 26) / 53)
+let s:l = 308 - ((33 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-298
-normal! 05l
+308
+normal! 0
 lcd ~/Development/ghc/head
 wincmd w
-2wincmd w
 exe 'vert 1resize ' . ((&columns * 91 + 91) / 182)
 exe 'vert 2resize ' . ((&columns * 90 + 91) / 182)
 tabedit ~/Development/ghc/head/rts/StgCRun.c
@@ -659,19 +637,34 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-134
+90
+normal zo
+91
+normal zo
+90
 normal zo
 134
 normal zo
-let s:l = 115 - ((49 * winheight(0) + 26) / 53)
+149
+normal zo
+153
+normal zo
+134
+normal zo
+295
+normal zo
+329
+normal zo
+329
+normal zo
+let s:l = 329 - ((26 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-115
+329
 normal! 0
 lcd ~/Development/ghc/head
-2wincmd w
-tabedit ~/Development/ghc/head/ghc.mk
+tabedit ~/Development/ghc/head/compiler/nativeGen/X86/Regs.hs
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -686,15 +679,36 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 945 - ((25 * winheight(0) + 26) / 53)
+let s:l = 380 - ((26 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-945
+380
 normal! 08l
 lcd ~/Development/ghc/head
-2wincmd w
-tabnext 11
+tabedit ~/Development/ghc/head/compiler/nativeGen/Reg.hs
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 119 - ((7 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+119
+normal! 01l
+lcd ~/Development/ghc/head
+tabnext 20
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif

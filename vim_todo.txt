@@ -2,13 +2,11 @@
 
 2. Unified way of doing jumping in abrieviations (snippets uses one way, latex-suite another), and improve the autoclose plugin so it can jump out of the pair.
 
-3. Fix not being able to use <C-j> at autoclose or some plugin uses it.
+3. Replace or fix autoclose.
 
-4. Replace or fix autoclose.
+4. Stop use of autochdir, use a shortcut mapping to quickly lcd to current file instead and the <Mapleader>t shortcut to use lcd instead.
 
-5. Stop use of autochdir, use a shortcut mapping to quickly lcd to current file instead and the <Mapleader>t shortcut to use lcd instead.
+5. Have netrw remember position in a directory listing so if you come back to it the cursor is in the old place.
 
-6. Have netrw remember position in a directory listing so if you come back to it the cursor is in the old place.
-
-7. Stop the pretty haskell plugin screwing around with undo, redo history
+6. Stop the pretty haskell plugin screwing around with undo, redo history
 

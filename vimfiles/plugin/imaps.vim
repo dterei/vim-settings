@@ -68,7 +68,7 @@
 " text is decided by the position of the first "place-holder". Place holders
 " are special characters which decide cursor placement and movement. In the
 " example above, the place holder characters are <+ and +>. After you have typed
-" in the item, press <C-j> and you will be taken to the next set of <++>'s.
+" in the item, press <C-h> and you will be taken to the next set of <++>'s.
 " Therefore by placing the <++> characters appropriately, you can minimize the
 " use of movement keys.
 "
@@ -484,18 +484,18 @@ vmap <silent> <Plug>IMAP_JumpBack          <C-\><C-N>`<i<c-r>=IMAP_Jumpfunc('b',
 "       provided. It is assumed that if the user will create such mappings
 "       hself if e so desires.
 if !hasmapto('<Plug>IMAP_JumpForward', 'i')
-    imap <C-J> <Plug>IMAP_JumpForward
+    imap <C-H> <Plug>IMAP_JumpForward
 endif
 if !hasmapto('<Plug>IMAP_JumpForward', 'n')
-    nmap <C-J> <Plug>IMAP_JumpForward
+    nmap <C-H> <Plug>IMAP_JumpForward
 endif
 if exists('g:Imap_StickyPlaceHolders') && g:Imap_StickyPlaceHolders
 	if !hasmapto('<Plug>IMAP_JumpForward', 'v')
-		vmap <C-J> <Plug>IMAP_JumpForward
+		vmap <C-H> <Plug>IMAP_JumpForward
 	endif
 else
 	if !hasmapto('<Plug>IMAP_DeleteAndJumpForward', 'v')
-		vmap <C-J> <Plug>IMAP_DeleteAndJumpForward
+		vmap <C-H> <Plug>IMAP_DeleteAndJumpForward
 	endif
 endif
 " }}}

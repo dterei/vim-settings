@@ -22,13 +22,8 @@
 "     * matchit.vim
 "     * matchit.txt
 "
-"     - snippetsEmu -
+"     - snipMate -
 "     An attempt to emulate TextMate's snippet expansion.
-"     * snippy_plugin.vba, snippy_bundles.vba
-"     * snippets_emu.txt
-"
-"     - vim-latex -
-"     A plugin which improves Vim's Latex support.
 "
 "     - YankRing.vim - 
 "     Maintains a history of previous yanks and deletes.
@@ -41,8 +36,10 @@
 "     * xml-plugin.txt
 "
 " Colour Schemes:
+"     - cobalt.vim
 "     - darkZ.vim
 "     - darkslategray.vim
+"     - darkspectrum.vim
 "     - fruity.vim
 "     - ir_black.vim
 "     - kib_darktango.vim
@@ -52,7 +49,6 @@
 "     - twilight2.vim
 "     - zenburn.vim
 "  
-"  https://dterei.mooo.com
 " ==============================================================================
 
 
@@ -70,6 +66,8 @@ if has("win32")
 	"source $VIMRUNTIME/mswin.vim
 	let $MYVIM=$VIM
 endif
+
+let $SS=$MYVIM."/sessions"
 
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
@@ -104,14 +102,19 @@ set wildmenu " way cooler command line mode completion
 
 set history=30 " keep 30 lines of command line history
 set viminfo='500,f1,<500,s50,:0,@30,/30,! " what to store for each file
+set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 
 set incsearch  " do incremental searching
 set ignorecase " make this default, turn on case in search with /<search>\C/
+set smartcase " type small case will search case independent, type mixed case will search exact case
 
-set wildignore+=*.o,+=*.obj,+=*.bak,+=*.exe " ignore these files for auto...
+set wildignore+=*.o,+=*.obj,+=*.bak,+=*.exe,+=*~,+=*.hi " ignore these files for auto...
 
-if has("workshop")
-	set autochdir " always lcd to the current buffers directory
+" always lcd to the current buffers directory
+if exists('+autochdir')
+  set autochdir
+else
+  autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 endif
 
 set ch=1 " Make command line one lines high
@@ -124,7 +127,8 @@ set scrolloff=3 " lines to always seeable when scrolling
 "set wm=80
 " gq " autoformatter command
 
-set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
+" My spell file, used to store new words
+"set spellfile='$MYVIM/spellfile'
 
 
 "###############################################################################
@@ -138,6 +142,8 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+syntax sync fromstart
+
 set nonu " line numbers
 set cursorline
 let c_comment_strings=1 " highlighting strings inside C comments
@@ -147,9 +153,6 @@ let g:xml_syntax_folding=1 " enable xml folding
 set foldenable
 set foldmethod=syntax
 set foldlevelstart=99 " open all folds by default
-
-" My spell file, used to store new words
-"set spellfile='$MYVIM/spellfile'
 
 
 "###############################################################################
@@ -196,9 +199,9 @@ imap <silent> <F3> <C-o>:noh<CR>
 nmap <silent> <F2> <ESC>:w<CR>
 imap <silent> <F2> <C-o>:w<CR>
 
-"------------------------------
-"# Eclipse Text Movement Keys #
-"------------------------------
+"----------------------------
+"# Other Text Movement Keys #
+"----------------------------
 
 " enable eclipse style moving of lines (needs GVim)
 nmap <silent> <A-S-j> mz:m+<CR>`z==
@@ -209,16 +212,26 @@ vmap <silent> <A-S-j> :m'>+<CR>gv=`<my`>mzgv`yo`z
 vmap <silent> <A-S-k> :m'<-2<CR>gv=`>my`<mzgv`yo`z
 
 " enable nice new line inserting in insert mode
-imap <S-CR> <Esc>o
-imap <S-A-CR> <Esc>O
+imap <silent> <C-CR> <Esc>o
+imap <silent> <C-S-CR> <Esc>O
 
 " general windows delete commands
-imap <C-BS> <Esc>vbc
-imap <C-Del> <Esc>lvec
+imap <silent> <C-BS> <Esc>vbc
+imap <silent> <C-Del> <Esc>lvec
 
 " map - to end of line, _ to start
 noremap - $
 noremap _ ^
+
+" Enable some emacs style keys
+imap <silent> <C-e> <End>
+imap <silent> <C-a> <Home>
+nmap <silent> <C-e> $
+nmap <silent> <C-a> ^
+imap <silent> <C-f> <Right>
+imap <silent> <C-b> <Left>
+imap <silent> <C-h> <Backspace>
+imap <silent> <C-d> <Delete>
 
 "-----------------------
 "# Nicer Remapped Keys #
@@ -227,7 +240,7 @@ noremap _ ^
 " Nicer tag jumping keys
 map <silent> <A-j> <Esc>:tag<CR>
 map <silent> <A-k> <Esc>:pop<CR>
-noremap <silent> <A-]> <C-]>
+noremap <silent> <A-l> <C-]>
 
 " Better way to enter command line (get rid of pointless shift)
 nnoremap ; :
