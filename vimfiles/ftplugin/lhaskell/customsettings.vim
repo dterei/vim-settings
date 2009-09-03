@@ -4,5 +4,3 @@ set tabstop=8
 set softtabstop=8
 set expandtab
 
-"syn sync fromstart
-

@@ -1,0 +1,205 @@
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd /home
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +1 ~/Development/builds/EHC-releases-1.0.1/src/lvm/Lvm/Lvm.hs
+badd +3 ~/Development/builds/EHC-releases-1.0.1/src/lvm/Lvm/LvmPretty.hs
+badd +1 ~/Development/builds/EHC-releases-1.0.1/src/lvm/Lvm/ModulePretty.hs
+badd +0 LLVM.cag
+badd +2 LLVM/AbsSyn.cag
+badd +0 LLVM/Pretty.cag
+badd +1 EHC/Common.chs
+badd +0 EHC/CompilePhase/CompileLLVM.chs
+badd +8 EHC/CompilePhase/CompileC.chs
+badd +1 EHC/CompilePhase/TransformGrin.chs
+badd +1 EHC/CompilePhase/Output.chs
+badd +0 Silly/ToLLVM.cag
+silent! argdel *
+set lines=55 columns=182
+edit LLVM/AbsSyn.cag
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 218 - ((30 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+218
+normal! 0
+lcd ~/Development/builds/EHC-releases-1.0.1/src/ehc
+tabedit ~/Development/builds/EHC-releases-1.0.1/src/ehc/LLVM/Pretty.cag
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 1 - ((0 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/Development/builds/EHC-releases-1.0.1/src/ehc
+tabedit ~/Development/builds/EHC-releases-1.0.1/src/ehc/LLVM.cag
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 92 + 91) / 182)
+exe 'vert 2resize ' . ((&columns * 89 + 91) / 182)
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 25 - ((12 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+25
+normal! 023l
+lcd ~/Development/builds/EHC-releases-1.0.1
+wincmd w
+argglobal
+edit ~/Development/builds/EHC-releases-1.0.1/src/ehc/LLVM.cag
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 194 - ((25 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+194
+normal! 0
+lcd ~/Development/builds/EHC-releases-1.0.1
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 92 + 91) / 182)
+exe 'vert 2resize ' . ((&columns * 89 + 91) / 182)
+tabedit ~/Development/builds/EHC-releases-1.0.1/src/ehc/EHC/CompilePhase/CompileLLVM.chs
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 32 - ((31 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+32
+normal! 017l
+lcd ~/Development/builds/EHC-releases-1.0.1/src/ehc
+2wincmd w
+tabedit ~/Development/builds/EHC-releases-1.0.1/src/ehc/Silly/ToLLVM.cag
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 91 + 91) / 182)
+exe 'vert 2resize ' . ((&columns * 90 + 91) / 182)
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 51 - ((24 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+51
+normal! 020l
+lcd ~/Development/builds/EHC-releases-1.0.1/src
+wincmd w
+argglobal
+edit ~/Development/builds/EHC-releases-1.0.1/src/ehc/Silly/ToLLVM.cag
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 669 - ((43 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+669
+normal! 01l
+lcd ~/Development/builds/EHC-releases-1.0.1/src
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 91 + 91) / 182)
+exe 'vert 2resize ' . ((&columns * 90 + 91) / 182)
+tabnext 3
+if exists('s:wipebuf')
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToO
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

@@ -144,6 +144,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 syntax sync fromstart
+let hs_minlines = 500
 
 set nonu " line numbers
 set cursorline
