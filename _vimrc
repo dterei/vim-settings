@@ -269,7 +269,7 @@ noremap <C-j> 2<C-E>
 "-------------------------------------
 
 " quick file browse mapping
-map <Leader>e :e .<CR>
+map <Leader>e :e %:p:h<CR>
 map <Leader>E :lcd %:p:h<CR>
 
 " Give tab cycling nicer keys (normally these just do same as j & k)
