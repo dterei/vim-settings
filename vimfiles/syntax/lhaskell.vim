@@ -103,7 +103,8 @@ else
     syntax include @haskellTop syntax/haskell.vim
 endif
 
-syntax cluster lhsTeXContainer contains=tex.*Zone,texAbstract
+" TODO Causes error.
+" syntax cluster lhsTeXContainer contains=tex.*Zone,texAbstract
 syntax region lhsHaskellBirdTrack start="^>" end="\%(^[^>]\)\@=" contains=@haskellTop,lhsBirdTrack containedin=@lhsTeXContainer
 syntax region lhsHaskellBeginEndBlock start="^\\begin{code}\s*$" matchgroup=NONE end="\%(^\\end{code}.*$\)\@=" contains=@haskellTop,@beginCode containedin=@lhsTeXContainer
 

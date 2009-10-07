@@ -156,6 +156,9 @@ set foldenable
 set foldmethod=syntax
 set foldlevelstart=99 " open all folds by default
 
+" Highlight trailing whitespace
+highlight WhitespaceEOL ctermbg=DarkYellow guibg=DarkYellow
+match WhitespaceEOL /\s\+$/
 
 "###############################################################################
 "# Indent Settings                                                             #
@@ -350,10 +353,23 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 "
 "map <F5> :call SignFixme()<CR>
 
+" Delete trailing whitespace and tabs at the end of each line
+command! DeleteTrailingWs :%s/\s\+$//
 
 "###############################################################################
 "# Plugins                                                                     #
 "###############################################################################
+
+"---------------
+"# LLVM Syntax #
+"---------------
+augroup filetype
+	au! BufRead,BufNewFile *.ll     set filetype=llvm
+augroup END
+
+augroup filetype
+	au! BufRead,BufNewFile *.td     set filetype=tablegen
+augroup END
 
 "------------
 "# YankRing #

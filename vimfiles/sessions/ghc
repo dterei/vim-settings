@@ -3,42 +3,85 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/
+cd ~/Development/ghc/head
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 Development/ghc/head/compiler/main/DriverPhases.hs
-badd +0 Development/ghc/head/compiler/main/DriverPipeline.hs
-badd +0 Development/ghc/head/compiler/main/CodeOutput.lhs
-badd +0 Development/ghc/head/compiler/main/HscMain.lhs
-badd +1 Development/ghc/head/ghc/ghc.wrapper
-badd +11 Development/ghc/head/ghc/Main.hs
-badd +76 Development/Thesis/Part\ A/Report/report.tex
-badd +128 .vimrc
-badd +82 Development/ghc/head/docs/man/gen_flags.xsl.pl
-badd +1 Development/ghc/head/docs/man/Makefile
-badd +50 Development/ghc/head/docs/comm/the-beast/driver.html
-badd +1 Development/ghc/head/docs/comm/the-beast/main.html
-badd +99 Development/ghc/head/docs/comm/the-beast/ghci.html
-badd +18 Development/ghc/head/docs/comm/the-beast/alien.html
-badd +25 Development/ghc/head/docs/comm/the-beast/basicTypes.html
-badd +108 Development/ghc/head/docs/comm/the-beast/coding-style.html
-badd +0 Development/ghc/head/docs/comm/the-beast/data-types.html
-badd +10 Development/ghc/head/docs/comm/the-beast/desugar.html
-badd +0 Development/ghc/head/docs/comm/the-beast/fexport.html
-badd +30 Development/ghc/head/docs/comm/the-beast/mangler.html
-badd +56 Development/ghc/head/docs/comm/the-beast/modules.html
-badd +56 Development/ghc/head/docs/comm/the-beast/names.html
-badd +749 Development/ghc/head/docs/comm/the-beast/ncg.html
-badd +383 Development/ghc/head/ghc/GhciMonad.hs
-badd +33 Development/ghc/head/sync-all
-badd +0 Development/ghc/head/compiler/main/GHC.hs
-badd +146 .vim/syntax/haskell.vim
-badd +0 Development/ghc/head/compiler/main/ErrUtils.lhs
+badd +14 ~/Development/LLVMTest/strucPtr.c
+badd +17 ~/Development/LLVMTest/strucStr.ll
+badd +1 ~/Development/LLVMTest/strucStr.bc
+badd +105 ~/Development/ghc/res/fixed.cmm
+badd +14 compiler/llvmGen/LlvmCodeGen.lhs
+badd +218 compiler/nativeGen/SPARC/CodeGen.hs
+badd +234 compiler/cmm/Cmm.hs
+badd +701 compiler/cmm/PprC.hs
+badd +481 compiler/nativeGen/SPARC/Ppr.hs
+badd +345 compiler/cmm/CLabel.hs
+badd +136 compiler/llvmGen/Llvm/Types.hs
+badd +19 compiler/llvmGen/LlvmCodeGen/Data.hs
+badd +108 compiler/nativeGen/AsmCodeGen.lhs
+badd +14 compiler/utils/UniqSet.lhs
+badd +43 compiler/llvmGen/LlvmCodeGen/Base.hs
+badd +21 /tmp/ghc29953_0/ghc29953_0.bc
+badd +1 ~/Development/ghc/res/current.ll
+badd +24 ~/Development/ghc/res/current-1.ll
+badd +33 compiler/llvmGen/LlvmCodeGen/Ppr.hs
+badd +1 /tmp/ghc21908_0/ghc21908_0.bc
+badd +32 /tmp/ghc4426_0/ghc4426_0.bc
+badd +74 compiler/llvmGen/Llvm/AbsSyn.hs
+badd +155 ~/Development/ghc/res/unreg-noE.c
+badd +1940 ~/Development/ghc/res/unreg.c
+badd +4 ~/Development/ghc/res/unreg.s
+badd +2087 ~/Development/ghc/res/reg.c
+badd +210 ~/Development/ghc/res/reg-marked.s
+badd +241 compiler/llvmGen/Llvm/PpLlvm.hs
+badd +32 /tmp/ghc19266_0/ghc19266_0.bc
+badd +30 compiler/llvmGen/Llvm.hs
+badd +37 /tmp/ghc24532_0/ghc24532_0.bc
+badd +17 /tmp/ghc30369_0/ghc30369_0.bc
+badd +54 /tmp/ghc30369_0/ghc30369_0.bc.s
+badd +33 /tmp/ghc2559_0/ghc2559_0.bc
+badd +17 /tmp/ghc10724_0/ghc10724_0.bc
+badd +41 ~/Development/ghc/res/object-comp.txt
+badd +109 /tmp/ghc10724_0/ghc10724_0.bc.s
+badd +1 /tmp/ghc10724_0/ghc10724_0.bc.bc
+badd +10 /tmp/ghc28204_0/ghc28204_0.bc
+badd +38 /tmp/ghc28204_0/ghc28204_0.bc.s
+badd +43 /tmp/ghc16336_0/ghc16336_0.bc
+badd +1 compiler/llvmGen/NOTES.t
+badd +1 compiler/NOTES
+badd +21 compiler/llvmGen/NOTES
+badd +1 compiler/nativeGen/SPARC/Base.hs
+badd +163 compiler/nativeGen/SPARC/Instr.hs
+badd +41 compiler/nativeGen/SPARC/CodeGen/Sanity.hs
+badd +71 compiler/llvmGen/LlvmCodeGen/CodeGen.hs
+badd +545 compiler/ghc.cabal.in
+badd +92 compiler/nativeGen/NCGMonad.hs
+badd +3 compiler/nativeGen/SPARC/CodeGen/Gen64.hs
+badd +55 compiler/nativeGen/SPARC/CodeGen/Gen32.hs
+badd +160 compiler/nativeGen/SPARC/CodeGen/Expand.hs
+badd +81 compiler/nativeGen/SPARC/CodeGen/CondCode.hs
+badd +86 compiler/nativeGen/SPARC/CodeGen/CCall.hs
+badd +698 compiler/cmm/CmmExpr.hs
+badd +266 compiler/nativeGen/X86/CodeGen.hs
+badd +48 compiler/nativeGen/Instruction.hs
+badd +33 compiler/utils/OrdList.lhs
+badd +1 compiler/nativeGen/SPARC/AddrMode.hs
+badd +1 compiler/nativeGen/SPARC/Cond.hs
+badd +58 compiler/nativeGen/SPARC/Imm.hs
+badd +1 compiler/nativeGen/SPARC/Regs.hs
+badd +29 compiler/nativeGen/SPARC/CodeGen/Amode.hs
+badd +105 compiler/nativeGen/SPARC/CodeGen/Base.hs
+badd +1 compiler/nativeGen/SPARC/RegPlate.hs
+badd +153 compiler/nativeGen/Reg.hs
+badd +0 compiler/main/DriverPipeline.hs
+badd +0 compiler/main/DriverPhases.hs
+badd +22 compiler/main/SysTools.lhs
+badd +438 compiler/main/DynFlags.hs
 silent! argdel *
 set lines=55 columns=182
-edit Development/ghc/head/ghc/Main.hs
+edit compiler/llvmGen/LlvmCodeGen.lhs
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -53,14 +96,14 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 180 - ((11 * winheight(0) + 26) / 53)
+let s:l = 3 - ((2 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-180
+3
 normal! 0
-lcd ~/
-tabedit ~/Development/ghc/head/compiler/main/GHC.hs
+lcd ~/Development/ghc/head
+tabedit ~/Development/ghc/head/compiler/llvmGen/NOTES
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -75,14 +118,14 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 417 - ((26 * winheight(0) + 26) / 53)
+let s:l = 50 - ((40 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-417
+50
 normal! 0
-lcd ~/
-tabedit ~/Development/ghc/head/compiler/main/HscMain.lhs
+lcd ~/Development/ghc/head
+tabedit ~/Development/ghc/head/compiler/llvmGen/LlvmCodeGen/CodeGen.hs
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -97,14 +140,85 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 8 - ((7 * winheight(0) + 26) / 53)
+let s:l = 598 - ((28 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
+598
+normal! 035l
+lcd ~/Development/ghc/head
+tabedit ~/Development/ghc/head/compiler/llvmGen/Llvm/Types.hs
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 40 - ((13 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+40
 normal! 0
-lcd ~/
-tabedit ~/Development/ghc/head/compiler/main/CodeOutput.lhs
+lcd ~/Development/ghc/head
+tabedit ~/Development/ghc/head/compiler/nativeGen/SPARC/CodeGen.hs
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 92 + 91) / 182)
+exe 'vert 2resize ' . ((&columns * 89 + 91) / 182)
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 273 - ((34 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+273
+normal! 02l
+lcd ~/Development/ghc/head
+wincmd w
+argglobal
+edit ~/Development/ghc/head/compiler/nativeGen/SPARC/CodeGen.hs
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 218 - ((31 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+218
+normal! 018l
+lcd ~/Development/ghc/head
+wincmd w
+exe 'vert 1resize ' . ((&columns * 92 + 91) / 182)
+exe 'vert 2resize ' . ((&columns * 89 + 91) / 182)
+tabedit ~/Development/ghc/head/compiler/nativeGen/SPARC/CodeGen/Gen32.hs
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -119,14 +233,14 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 81 - ((49 * winheight(0) + 26) / 53)
+let s:l = 55 - ((15 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-81
-normal! 013l
-lcd ~/
-tabedit ~/Development/ghc/head/compiler/main/DriverPipeline.hs
+55
+normal! 0
+lcd ~/Development/ghc/head
+tabedit ~/Development/ghc/head/compiler/cmm/PprC.hs
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -147,16 +261,16 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1751 - ((26 * winheight(0) + 26) / 53)
+let s:l = 203 - ((20 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1751
-normal! 0
-lcd ~/
+203
+normal! 026l
+lcd ~/Development/ghc/head
 wincmd w
 argglobal
-edit ~/Development/ghc/head/compiler/main/DriverPipeline.hs
+edit ~/Development/ghc/head/compiler/cmm/PprC.hs
 setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -165,17 +279,17 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 697 - ((49 * winheight(0) + 26) / 53)
+let s:l = 701 - ((26 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-697
-normal! 0
-lcd ~/
+701
+normal! 027l
+lcd ~/Development/ghc/head
 wincmd w
 exe 'vert 1resize ' . ((&columns * 91 + 91) / 182)
 exe 'vert 2resize ' . ((&columns * 90 + 91) / 182)
-tabedit ~/Development/ghc/head/compiler/main/ErrUtils.lhs
+tabedit ~/Development/ghc/head/compiler/cmm/Cmm.hs
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -190,13 +304,106 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 321 - ((44 * winheight(0) + 26) / 53)
+let s:l = 234 - ((30 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-321
-normal! 09l
-lcd ~/
+234
+normal! 0
+lcd ~/Development/ghc/head
+tabedit ~/Development/ghc/head/compiler/cmm/CmmExpr.hs
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 91 + 91) / 182)
+exe 'vert 2resize ' . ((&columns * 90 + 91) / 182)
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 69 - ((27 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+69
+normal! 017l
+lcd ~/Development/ghc/head
+wincmd w
+argglobal
+edit ~/Development/ghc/head/compiler/cmm/CmmExpr.hs
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 698 - ((46 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+698
+normal! 02l
+lcd ~/Development/ghc/head
+wincmd w
+exe 'vert 1resize ' . ((&columns * 91 + 91) / 182)
+exe 'vert 2resize ' . ((&columns * 90 + 91) / 182)
+tabedit ~/Development/ghc/head/compiler/main/DriverPipeline.hs
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 1256 - ((36 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1256
+normal! 0584l
+lcd ~/Development/ghc/head
+tabedit ~/Development/ghc/head/compiler/main/DynFlags.hs
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 1599 - ((49 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1599
+normal! 019l
+lcd ~/Development/ghc/head
 tabedit ~/Development/ghc/head/compiler/main/DriverPhases.hs
 set splitbelow splitright
 set nosplitbelow
@@ -212,14 +419,14 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 78 - ((36 * winheight(0) + 26) / 53)
+let s:l = 186 - ((42 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-78
-normal! 026l
-lcd ~/
-tabnext 1
+186
+normal! 012l
+lcd ~/Development/ghc/head
+tabnext 2
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif
