@@ -25,14 +25,14 @@
 "     - snipMate -
 "     An attempt to emulate TextMate's snippet expansion.
 "
-"     - YankRing.vim - 
+"     - YankRing.vim -
 "     Maintains a history of previous yanks and deletes.
 "     * yankring.vim
 "     * yankring.txt
 "
 "     - xmledit -
 "     A filetype plugin to help edit XML, HTML and SGML documents.
-"     * xml.vim 
+"     * xml.vim
 "     * xml-plugin.txt
 "
 " Colour Schemes:
@@ -48,7 +48,7 @@
 "     - pyte.vim
 "     - twilight2.vim
 "     - zenburn.vim
-"  
+"
 " ==============================================================================
 
 
@@ -157,8 +157,8 @@ set foldmethod=syntax
 set foldlevelstart=99 " open all folds by default
 
 " Highlight trailing whitespace
-highlight WhitespaceEOL ctermbg=DarkYellow guibg=DarkYellow
-match WhitespaceEOL /\s\+$/
+"highlight WhitespaceEOL ctermbg=DarkYellow guibg=DarkYellow
+"match WhitespaceEOL /\s\+$/
 
 "###############################################################################
 "# Indent Settings                                                             #
