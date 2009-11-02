@@ -1,5 +1,12 @@
-" Maintainer: Yoshimasa NIWA<niw@disense.com>
-" Last Change: 14 Jun 2006
+" Vim Color Scheme
+"
+" Name: Cobalt
+" Maintainer: David Terei<dave.terei@gmail.com>
+" Version: 1.0
+" Last Change: 28 October 2009
+"
+" Note: Based on the Cobalt color scheme for TextMate
+"
 
 set background=dark
 hi clear
@@ -32,15 +39,15 @@ hi Visual         guifg=#0E2231           guibg=#AFC4DB
 hi WarningMsg     guifg=#CF6A4C           guibg=#420E09
 hi WildMenu       guifg=#AFC4DB           guibg=#0E2231
 
-"Syntax hilight groups
+"Syntax highlight groups
 
-hi Comment        guifg=#8F9D6A
+hi Comment        guifg=#999999
 hi Constant       guifg=#E77E6E
 hi String         guifg=#3AD900
 hi Character      guifg=#E9C062
 hi Number         guifg=#FF627E
 hi Boolean        guifg=#CF6A4C
-hi Float          guifg=#562D56
+hi Float          guifg=#F05A73
 hi Identifier     guifg=#7587a6
 hi Function       guifg=#FFAD51
 hi Statement      guifg=#FF9D00
@@ -66,7 +73,7 @@ hi Delimiter      guifg=DarkGoldenrod
 hi SpecialComment guifg=cornsilk
 hi Debug          guifg=brown
 hi Underlined     guifg=#Cf6A4C
-hi Ignore         guifg=#494949
+hi Ignore         guifg=#666666
 hi Error          guifg=#CF6A4C    guibg=#420E09
 hi Todo           guifg=#7587A6    guibg=#0E2231
 hi Pmenu          guifg=#141414    guibg=#CDA869
