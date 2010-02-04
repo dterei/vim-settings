@@ -57,7 +57,7 @@ syn match hsStructure	"\<\(class\|data\|deriving\|instance\|default\|where\)\>"
 syn match hsTypedef	"\<\(type\|newtype\)\>"
 syn match hsStatement	"\<\(do\|return\|case\|of\|let\|in\)\>"
 " endif included to match CPP.
-syn match hsConditional	"\<\(if\|then\|else\|endif\|when\)\>"
+syn match hsConditional	"\<\(if\|then\|else\|endif\|when\|ifndef\|ifdef\|elif\|elifdef\|elifndef\)\>"
 
 " Function type defenitions
 syn match hsFunDef /^\s*\zs\l\w*'\=\%(\_s*,\_s*\l\w*'\=\)*\ze\_s*::/
