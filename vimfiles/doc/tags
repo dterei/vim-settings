@@ -12,6 +12,7 @@
 :Pexplore	pi_netrw.txt	/*:Pexplore*
 :Rexplore	pi_netrw.txt	/*:Rexplore*
 :RmVimball	pi_vimball.txt	/*:RmVimball*
+:Sexplore	pi_netrw.txt	/*:Sexplore*
 :Texplore	pi_netrw.txt	/*:Texplore*
 :UseVimball	pi_vimball.txt	/*:UseVimball*
 :Vexplore	pi_netrw.txt	/*:Vexplore*
@@ -32,10 +33,13 @@ IHS	alternate.txt	/*IHS*
 IHT	alternate.txt	/*IHT*
 IHV	alternate.txt	/*IHV*
 MatchError	matchit.txt	/*MatchError*
+NextBookmark	bookmarking.txt	/*NextBookmark*
 Nread	pi_netrw.txt	/*Nread*
 Nsource	pi_netrw.txt	/*Nsource*
 Nwrite	pi_netrw.txt	/*Nwrite*
+PreviousBookmark	bookmarking.txt	/*PreviousBookmark*
 ResetSnippets()	snipMate.txt	/*ResetSnippets()*
+ToggleBookmark	bookmarking.txt	/*ToggleBookmark*
 Vimball-copyright	pi_vimball.txt	/*Vimball-copyright*
 YRClear	yankring.txt	/*YRClear*
 YRClear-example	yankring.txt	/*YRClear-example*
@@ -85,6 +89,14 @@ b:match_wholeBR	matchit.txt	/*b:match_wholeBR*
 b:match_word	matchit.txt	/*b:match_word*
 b:match_words	matchit.txt	/*b:match_words*
 b:netrw_lastfile	pi_netrw.txt	/*b:netrw_lastfile*
+bookmarking	bookmarking.txt	/*bookmarking*
+bookmarking-commands	bookmarking.txt	/*bookmarking-commands*
+bookmarking-contents	bookmarking.txt	/*bookmarking-contents*
+bookmarking-description	bookmarking.txt	/*bookmarking-description*
+bookmarking-history	bookmarking.txt	/*bookmarking-history*
+bookmarking-settings	bookmarking.txt	/*bookmarking-settings*
+bookmarking-using	bookmarking.txt	/*bookmarking-using*
+bookmarking.txt	bookmarking.txt	/*bookmarking.txt*
 bufexplorer	bufexplorer.txt	/*bufexplorer*
 bufexplorer-changelog	bufexplorer.txt	/*bufexplorer-changelog*
 bufexplorer-credits	bufexplorer.txt	/*bufexplorer-credits*
@@ -92,6 +104,7 @@ bufexplorer-customization	bufexplorer.txt	/*bufexplorer-customization*
 bufexplorer-installation	bufexplorer.txt	/*bufexplorer-installation*
 bufexplorer-todo	bufexplorer.txt	/*bufexplorer-todo*
 bufexplorer-usage	bufexplorer.txt	/*bufexplorer-usage*
+bufexplorer-windowlayout	bufexplorer.txt	/*bufexplorer-windowlayout*
 bufexplorer.txt	bufexplorer.txt	/*bufexplorer.txt*
 buffer-explorer	bufexplorer.txt	/*buffer-explorer*
 dav	pi_netrw.txt	/*dav*
@@ -107,6 +120,7 @@ g:bufExplorerFindActive	bufexplorer.txt	/*g:bufExplorerFindActive*
 g:bufExplorerReverseSort	bufexplorer.txt	/*g:bufExplorerReverseSort*
 g:bufExplorerShowDirectories	bufexplorer.txt	/*g:bufExplorerShowDirectories*
 g:bufExplorerShowRelativePath	bufexplorer.txt	/*g:bufExplorerShowRelativePath*
+g:bufExplorerShowTabBuffer	bufexplorer.txt	/*g:bufExplorerShowTabBuffer*
 g:bufExplorerShowUnlisted	bufexplorer.txt	/*g:bufExplorerShowUnlisted*
 g:bufExplorerSortBy	bufexplorer.txt	/*g:bufExplorerSortBy*
 g:bufExplorerSplitBelow	bufexplorer.txt	/*g:bufExplorerSplitBelow*
@@ -114,8 +128,10 @@ g:bufExplorerSplitOutPathName	bufexplorer.txt	/*g:bufExplorerSplitOutPathName*
 g:bufExplorerSplitRight	bufexplorer.txt	/*g:bufExplorerSplitRight*
 g:netrw_alto	pi_netrw.txt	/*g:netrw_alto*
 g:netrw_altv	pi_netrw.txt	/*g:netrw_altv*
+g:netrw_banner	pi_netrw.txt	/*g:netrw_banner*
 g:netrw_browse_split	pi_netrw.txt	/*g:netrw_browse_split*
 g:netrw_browsex_viewer	pi_netrw.txt	/*g:netrw_browsex_viewer*
+g:netrw_chgperm	pi_netrw.txt	/*g:netrw_chgperm*
 g:netrw_chgwin	pi_netrw.txt	/*g:netrw_chgwin*
 g:netrw_compress	pi_netrw.txt	/*g:netrw_compress*
 g:netrw_ctags	pi_netrw.txt	/*g:netrw_ctags*
@@ -123,7 +139,6 @@ g:netrw_cursorline	pi_netrw.txt	/*g:netrw_cursorline*
 g:netrw_cygwin	pi_netrw.txt	/*g:netrw_cygwin*
 g:netrw_dav_cmd	pi_netrw.txt	/*g:netrw_dav_cmd*
 g:netrw_decompress	pi_netrw.txt	/*g:netrw_decompress*
-g:netrw_extracmd	pi_netrw.txt	/*g:netrw_extracmd*
 g:netrw_fastbrowse	pi_netrw.txt	/*g:netrw_fastbrowse*
 g:netrw_fetch_cmd	pi_netrw.txt	/*g:netrw_fetch_cmd*
 g:netrw_fname_escape	pi_netrw.txt	/*g:netrw_fname_escape*
@@ -133,6 +148,7 @@ g:netrw_ftp_cmd	pi_netrw.txt	/*g:netrw_ftp_cmd*
 g:netrw_ftp_list_cmd	pi_netrw.txt	/*g:netrw_ftp_list_cmd*
 g:netrw_ftp_sizelist_cmd	pi_netrw.txt	/*g:netrw_ftp_sizelist_cmd*
 g:netrw_ftp_timelist_cmd	pi_netrw.txt	/*g:netrw_ftp_timelist_cmd*
+g:netrw_ftpextracmd	pi_netrw.txt	/*g:netrw_ftpextracmd*
 g:netrw_ftpmode	pi_netrw.txt	/*g:netrw_ftpmode*
 g:netrw_glob_escape	pi_netrw.txt	/*g:netrw_glob_escape*
 g:netrw_hide	pi_netrw.txt	/*g:netrw_hide*
@@ -151,6 +167,7 @@ g:netrw_localmovecmd	pi_netrw.txt	/*g:netrw_localmovecmd*
 g:netrw_maxfilenamelen	pi_netrw.txt	/*g:netrw_maxfilenamelen*
 g:netrw_menu	pi_netrw.txt	/*g:netrw_menu*
 g:netrw_mkdir_cmd	pi_netrw.txt	/*g:netrw_mkdir_cmd*
+g:netrw_mousemaps	pi_netrw.txt	/*g:netrw_mousemaps*
 g:netrw_nogx	pi_netrw.txt	/*g:netrw_nogx*
 g:netrw_preview	pi_netrw.txt	/*g:netrw_preview*
 g:netrw_rcp_cmd	pi_netrw.txt	/*g:netrw_rcp_cmd*
@@ -185,7 +202,6 @@ g:snippets_dir	snipMate.txt	/*g:snippets_dir*
 g:snips_author	snipMate.txt	/*g:snips_author*
 g:vimball_home	pi_vimball.txt	/*g:vimball_home*
 g:vimball_mkdir	pi_vimball.txt	/*g:vimball_mkdir*
-g:vimball_path_escape	pi_vimball.txt	/*g:vimball_path_escape*
 getlatestvimscripts-install	pi_getscript.txt	/*getlatestvimscripts-install*
 getscript	pi_getscript.txt	/*getscript*
 getscript-autoinstall	pi_getscript.txt	/*getscript-autoinstall*
@@ -254,6 +270,7 @@ netrw-O	pi_netrw.txt	/*netrw-O*
 netrw-P	pi_netrw.txt	/*netrw-P*
 netrw-R	pi_netrw.txt	/*netrw-R*
 netrw-S	pi_netrw.txt	/*netrw-S*
+netrw-T	pi_netrw.txt	/*netrw-T*
 netrw-U	pi_netrw.txt	/*netrw-U*
 netrw-a	pi_netrw.txt	/*netrw-a*
 netrw-activate	pi_netrw.txt	/*netrw-activate*
@@ -271,6 +288,7 @@ netrw-cadaver	pi_netrw.txt	/*netrw-cadaver*
 netrw-chgup	pi_netrw.txt	/*netrw-chgup*
 netrw-clean	pi_netrw.txt	/*netrw-clean*
 netrw-contents	pi_netrw.txt	/*netrw-contents*
+netrw-copyright	pi_netrw.txt	/*netrw-copyright*
 netrw-cr	pi_netrw.txt	/*netrw-cr*
 netrw-credits	pi_netrw.txt	/*netrw-credits*
 netrw-ctrl-h	pi_netrw.txt	/*netrw-ctrl-h*
@@ -297,6 +315,7 @@ netrw-ftype	pi_netrw.txt	/*netrw-ftype*
 netrw-gb	pi_netrw.txt	/*netrw-gb*
 netrw-getftype	pi_netrw.txt	/*netrw-getftype*
 netrw-gh	pi_netrw.txt	/*netrw-gh*
+netrw-gp	pi_netrw.txt	/*netrw-gp*
 netrw-gx	pi_netrw.txt	/*netrw-gx*
 netrw-handler	pi_netrw.txt	/*netrw-handler*
 netrw-help	pi_netrw.txt	/*netrw-help*
@@ -308,6 +327,7 @@ netrw-horiz	pi_netrw.txt	/*netrw-horiz*
 netrw-i	pi_netrw.txt	/*netrw-i*
 netrw-incompatible	pi_netrw.txt	/*netrw-incompatible*
 netrw-intro-browse	pi_netrw.txt	/*netrw-intro-browse*
+netrw-leftmouse	pi_netrw.txt	/*netrw-leftmouse*
 netrw-list	pi_netrw.txt	/*netrw-list*
 netrw-listbookmark	pi_netrw.txt	/*netrw-listbookmark*
 netrw-listhack	pi_netrw.txt	/*netrw-listhack*
@@ -321,8 +341,10 @@ netrw-me	pi_netrw.txt	/*netrw-me*
 netrw-mf	pi_netrw.txt	/*netrw-mf*
 netrw-mg	pi_netrw.txt	/*netrw-mg*
 netrw-mh	pi_netrw.txt	/*netrw-mh*
+netrw-middlemouse	pi_netrw.txt	/*netrw-middlemouse*
 netrw-ml_get	pi_netrw.txt	/*netrw-ml_get*
 netrw-mm	pi_netrw.txt	/*netrw-mm*
+netrw-mouse	pi_netrw.txt	/*netrw-mouse*
 netrw-move	pi_netrw.txt	/*netrw-move*
 netrw-mp	pi_netrw.txt	/*netrw-mp*
 netrw-mr	pi_netrw.txt	/*netrw-mr*
@@ -374,6 +396,7 @@ netrw-ref	pi_netrw.txt	/*netrw-ref*
 netrw-rename	pi_netrw.txt	/*netrw-rename*
 netrw-reverse	pi_netrw.txt	/*netrw-reverse*
 netrw-rexplore	pi_netrw.txt	/*netrw-rexplore*
+netrw-rightmouse	pi_netrw.txt	/*netrw-rightmouse*
 netrw-s	pi_netrw.txt	/*netrw-s*
 netrw-settings	pi_netrw.txt	/*netrw-settings*
 netrw-sexplore	pi_netrw.txt	/*netrw-sexplore*
@@ -388,6 +411,7 @@ netrw-starstarpat	pi_netrw.txt	/*netrw-starstarpat*
 netrw-start	pi_netrw.txt	/*netrw-start*
 netrw-t	pi_netrw.txt	/*netrw-t*
 netrw-texplore	pi_netrw.txt	/*netrw-texplore*
+netrw-todo	pi_netrw.txt	/*netrw-todo*
 netrw-transparent	pi_netrw.txt	/*netrw-transparent*
 netrw-u	pi_netrw.txt	/*netrw-u*
 netrw-uidpass	pi_netrw.txt	/*netrw-uidpass*

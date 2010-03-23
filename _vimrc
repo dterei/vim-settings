@@ -8,6 +8,10 @@
 "     * a.vim
 "     * alternate.txt
 "
+"     - bookmark.vim -
+"     Provide a bookmarking facility for Vim. Mark lines of interest.
+"     * bookmark.vim
+"
 "     - bufexplorer.zip -
 "     With bufexplorer, you can quickly and easily switch between buffers.
 "     * bufexplorer.vim
@@ -46,7 +50,7 @@
 "     - oceandeep.vim
 "     - ps_color.vim
 "     - pyte.vim
-"     - twilight2.vim
+"     - twilight.vim
 "     - zenburn.vim
 "
 " ==============================================================================
@@ -93,7 +97,7 @@ set nobackup
 set noswapfile
 
 set encoding=utf-8
-set termencoding=latin1
+"set termencoding=latin1
 
 set mouse=a  " enable mouse in terminal
 
@@ -106,9 +110,11 @@ set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 
 set incsearch  " do incremental searching
 set ignorecase " make this default, turn on case in search with /<search>\C/
-set smartcase " type small case will search case independent, type mixed case will search exact case
+" type small case will search case independent, type mixed case will use exact
+set smartcase
 
-set wildignore+=*.o,+=*.obj,+=*.bak,+=*.exe,+=*~,+=*.hi " ignore these files for auto...
+" ignore these files for auto...
+set wildignore+=*.o,+=*.obj,+=*.bak,+=*.exe,+=*~,+=*.hi
 
 " always lcd to the current buffers directory
 "if exists('+autochdir')
@@ -157,8 +163,13 @@ set foldmethod=syntax
 set foldlevelstart=99 " open all folds by default
 
 " Highlight trailing whitespace
-"highlight WhitespaceEOL ctermbg=DarkYellow guibg=DarkYellow
-"match WhitespaceEOL /\s\+$/
+highlight WhitespaceEOL ctermbg=DarkYellow ctermfg=white guibg=DarkYellow
+match WhitespaceEOL /\s\+$/
+
+" Highlight lines over 80 width
+highlight OverLength ctermbg=Red ctermfg=White guibg=#592929
+match OverLength /\%>80v.\+/
+
 
 "###############################################################################
 "# Indent Settings                                                             #
@@ -197,8 +208,8 @@ map <silent> <F6> <ESC>:setlocal spell! spelllang=en_au<CR>
 imap <silent> <F6> <C-o>:setlocal spell! spelllang=en_au<CR>
 
 " clear search highlight
-map <silent> <F3> <ESC>:noh<CR>
-imap <silent> <F3> <C-o>:noh<CR>
+map <silent> <F1> <ESC>:noh<CR>
+imap <silent> <F1> <C-o>:noh<CR>
 
 " make F2 save
 nmap <silent> <F2> <ESC>:w<CR>
@@ -341,17 +352,6 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 "# New Functions                                                               #
 "###############################################################################
 
-"----------------------------
-"# Experimental bookmarking #
-"----------------------------
-
-"sign define fixme text=!! linehl=Todo texthl=Error
-"
-"function! SignFixme()
-"  execute(":sign place ".line(".")." line=".line(".")." name=fixme file=".expand("%:p"))
-"endfunction
-"
-"map <F5> :call SignFixme()<CR>
 
 " Delete trailing whitespace and tabs at the end of each line
 command! DeleteTrailingWs :%s/\s\+$//
@@ -402,6 +402,7 @@ let g:snips_author = 'David Terei'
 "ino <silent> ( (<c-r>=TriggerSnippetWord('(')<cr>
 "ino <silent> { {<c-r>=TriggerSnippetWord('{')<cr>
 "ino <silent> [ [<c-r>=TriggerSnippetWord('[')<cr>
+
 
 "###############################################################################
 "# SIRCA Data Consult Settings                                                 #

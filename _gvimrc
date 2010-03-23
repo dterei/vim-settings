@@ -29,6 +29,6 @@ set guioptions-=m
 "colorscheme oceandeep
 "colorscheme ps_color
 "colorscheme pyte
-colorscheme twilight2
+colorscheme twilight
 "colorscheme zenburn
 

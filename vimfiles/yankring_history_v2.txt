@@ -1,0 +1,100 @@
+3022 12662 :AutoInstall: bookmarking.vim,V
+3022       12662   :AutoInstall:    bookmarking.vba,V
+ ,v
+,V
+x,v
+3022,v
+Add a book marking feature to Vim that allows lines of interest to be marked.While similar to marks, you don't need to assign a bookmark to a mark key,instead an infinite number of bookmarks can be created and then jumpedthrough in sequential order (by line number) with no strain on your memory.This is great to use when you are browsing through some source code for thefirst time and need to mark out places of interest to learn how it works.,v
+225,V
+r,v
+o,v
+f,v
+plugin/bookmarking.vimdoc/bookmarking.txt,V
+/,v
+.,v
+bookmarking.vim,v
+bookmarking.vim,V
+m,v
+i,v
+v,v
+~,v
+d,v
+",v
+netrw.vim,v
+5,v
+7,v
+0,v
+1,v
+" GetLatestVimScripts: 1075 1 :AutoInstall: netrw.vim,V
+Enable,v
+",V
+" ============================================================================" Netrw Directory Listing                                        (netrw v135)"   /Users/davidt/.vim/doc"   Sorted by      name"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:exec" ============================================================================../alternate.txtbookmark.txtbufexplorer.txtimaps.txtmatchit.txtpi_getscript.txtpi_netrw.txtpi_vimball.txtps_color.txtsnipMate.txttagsxml-plugin.txtyankring.txt,V
+...........................,3
+*,v
+         ,1
+1. CONTENTS                                               *bookmark-contents*,V
+==============================================================================,V
+9,v
+a,v
+M,v
+F,v
+T,v
+S,v
+E,v
+6,v
+3,v
+:,v
+A bookmaking facility to Vim for marking points of interest,v
+5.1 Examples ,V
+2,v
+       4.1 ToggleBookmark...........................: |ToggleBookmark|,v
+   ,v
+==============================================================================,v
+/Users/davidt/.ssh,v
+t,v
+',v
+n,v
+c,v
+e,v
+h,v
+s,v
+U,v
+ * Use the command 'ToggleBookmark' to set or remove a bookmark. (<F3>),V
+in brackets):,V
+ available (with keyboard shortcuts in brackets):,v
+" " " " "" " " " "" " " " "" " " " "" " "" " " "" "" " " ,2
+" Uses:" The bookmark facility provides a number of new commands as well as a default" mapping of these commands to keys. This mapping can be customised as can the" bookmarks appearance."" Commands available (with keyboard shortcuts in brackets):"  * Use the command 'ToggleBookmark' to set or remove a bookmark. (<F3>)"  * Use the command 'NextBookmark' to jump to the next bookmark. (<F4>)"  * Use the command 'PreviousBookmark' to jump to the previous bookmark. (<F5>)"" Settings:" The keyboard mapping of the commands can be easily changed by adding new" mappings to them in your .vimrc. If a mapping is defined in your .vimrc" then the default mappings won't be added."" You can also alter the appearance of the bookmark itself. The bookmark is" shown on the screen using Vim's sign feature. To define the sign used for a" bookmark yourself, include a sign definition in your .vimrc for a sign" called 'bookmark'."" Examples:" In your .vimrc:""     map <silent> bb :ToggleBookmark<CR>"     map <silent> bn :NextBookmark<CR>"     map <silent> bp :PreviousBookmark<CR>""     define bookmark text=>>"" History:"   Fri Mar 19, 2010 - 0.1:"     * Initial release.,V
+" " " " " ,2
+" Add a book marking feature to Vim that allows lines of interest to be marked." While similar to marks, you don't need to assign a bookmark to a mark key," instead an infinite number of bookmarks can be created and then jumped" through in sequential order (by line number) with no strain on your memory." This is great to use when you are browsing through some source code for the" first time and need to mark out places of interest to learn how it works.,V
+A bookmaking facility to Vim for marking points of interest.,v
+Next,v
+noremenu <script> Plugin.Bookmark\ Next   s:nextBookmark,V
+leBookmark,v
+g,v
+Toggle,v
+noremenu <script> Plugin.Bookmark\ Toggle s:toggleBookmark,V
+>,v
+D,v
+I,v
+<,v
+Correction,v
+A,v
+	,v
+ 26	noremenu <script> Plugin.Add\ Correction      <SID>Add,V
+l,v
+"     map <silent> bb :ToggleBookmark<CR>,V
+"     let g:bookmark_previous_key = '<F4>',V
+"     let g:bookmark_next_key     = '<F5>',V
+:bookmark_toggle_key   = '<F3>',v
+" ,V
+" Place this in your .vimrc and change the keys to alter the mapping.,V
+" following variables:"  * g:bookmark_toggle_key"  * g:bookmark_next_key"  * g:bookmark_previous_key,V
+else,V
+	exe 'map <silent> ' g:bookmark_previous_key ':PreviousBookmark<CR>',V
+"g:bookmark_previous_key")),v
+(,v
+	exe 'nmap <silent> '.g:bookmark_next_key ':NextBookmark<CR>',V
+	map <silent> <F5> :NextBookmark<CR>,V
+(exists("g:bookmark_next_key")),v
+map <silent> <F3> :ToggleBookmark<CR>,V
+u,v
