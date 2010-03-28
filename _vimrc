@@ -208,8 +208,8 @@ map <silent> <F6> <ESC>:setlocal spell! spelllang=en_au<CR>
 imap <silent> <F6> <C-o>:setlocal spell! spelllang=en_au<CR>
 
 " clear search highlight
-map <silent> <F1> <ESC>:noh<CR>
-imap <silent> <F1> <C-o>:noh<CR>
+map <silent> Q <ESC>:noh<CR>
+imap <silent> Q <C-o>:noh<CR>
 
 " make F2 save
 nmap <silent> <F2> <ESC>:w<CR>
@@ -352,9 +352,9 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 "# New Functions                                                               #
 "###############################################################################
 
-
 " Delete trailing whitespace and tabs at the end of each line
 command! DeleteTrailingWs :%s/\s\+$//
+
 
 "###############################################################################
 "# Plugins                                                                     #

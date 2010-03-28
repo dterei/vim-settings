@@ -3,8 +3,12 @@
 " Make external commands work through a pipe instead of a pseudo-tty
 "set noguipty
 
-" set the GUI font to use
-set guifont=Monaco:h13,Monaco\ 13,Consolas:h11:b:cANSI,Consolas\ 11
+" set the GUI font to use, cant use list of fonts as appears broken
+if has("mac")
+	set guifont=Monaco\ 13
+else
+	set guifont=Consolas\ 12
+endif
 
 " Start GUI Maximised
 "au GUIEnter * simalt ~x
