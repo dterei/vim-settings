@@ -12,7 +12,7 @@ set guifont=Monaco:h13,Monaco\ 13,Consolas:h11:b:cANSI,Consolas\ 11
 " Hide the mouse when typing text
 set mousehide 
 set noguipty
-set visualbell
+set novisualbell
 
 " remove tool bar
 set guioptions-=T
