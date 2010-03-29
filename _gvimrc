@@ -5,7 +5,7 @@
 
 " set the GUI font to use, cant use list of fonts as appears broken
 if has("mac")
-	set guifont=Monaco\ 13
+	set guifont=Monaco:h13
 else
 	set guifont=Consolas\ 12
 endif
