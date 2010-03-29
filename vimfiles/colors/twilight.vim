@@ -72,3 +72,8 @@ hi Pmenu          guifg=#141414    guibg=#CDA869
 hi PmenuSel       guifg=#F8F8F8    guibg=#9B703F
 hi PmenuSbar      guibg=#DAEFA3
 hi PmenuThumb     guifg=#8F9D6A
+
+" Haskell specific
+hi hsFunDef       guifg=Yellow
+hi hsFunDefSub    guifg=DarkYellow
+

@@ -60,7 +60,8 @@ syn match hsStatement	"\<\(do\|return\|case\|of\|let\|in\)\>"
 syn match hsConditional	"\<\(if\|then\|else\|endif\|when\|ifndef\|ifdef\|elif\|defined\)\>"
 
 " Function type defenitions
-syn match hsFunDef /^\%(\s*let\)\=\s*\zs\l\w*'\=\%(\_s*,\_s*\l\w*'\=\)*\ze\_s*::/
+syn match hsFunDef "^\zs\l\w*'\=\%(\_s*,\_s*\l\w*'\=\)*\ze\_s*::"
+syn match hsFunDefSub "\s\+\zs\l\w*'\=\%(\_s*,\_s*\l\w*'\=\)*\ze\_s*::"
 
 
 " Types from the standard prelude.
