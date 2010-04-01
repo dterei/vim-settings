@@ -15,8 +15,8 @@ endif
 
 " Hide the mouse when typing text
 set mousehide 
-set noguipty
-set novisualbell
+" Disable the bell and flash for things
+set vb t_vb=
 
 " remove tool bar
 set guioptions-=T
