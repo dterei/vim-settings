@@ -82,10 +82,12 @@ filetype plugin indent on
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
-autocmd BufReadPost *
- \ if line("'\"") > 0 && line("'\"") <= line("$") |
- \   exe "normal! g`\"" |
- \ endif
+if !exists("autocommands_loaded")
+	autocmd BufReadPost *
+	 \ if line("'\"") > 0 && line("'\"") <= line("$") |
+	 \   exe "normal! g`\"" |
+	 \ endif
+endif
 
 
 "###############################################################################
@@ -116,12 +118,9 @@ set smartcase
 " ignore these files for auto...
 set wildignore+=*.o,+=*.obj,+=*.bak,+=*.exe,+=*~,+=*.hi
 
-" always lcd to the current buffers directory
-"if exists('+autochdir')
-"  set autochdir
-"else
-"  autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
-"endif
+" don't lcd to the current buffers directory, this is a nice feature but
+" causes a lot of problems, so instead I use some keyboard shortcuts to
+" open tabs at the current files dir... ect.
 set noacd
 
 set ch=1 " Make command line one lines high
@@ -141,6 +140,22 @@ set scrolloff=3 " lines to always seeable when scrolling
 "###############################################################################
 "# Highlight & Fold Settings                                                   #
 "###############################################################################
+
+" Set colour map
+if has("gui_running")
+	"colorscheme blue
+	"colorscheme cobalt
+	"colorscheme darkZ
+	"colorscheme darkslategray
+	"colorscheme fruity
+	"colorscheme ir_black
+	"colorscheme kib_darktango
+	"colorscheme oceandeep
+	"colorscheme ps_color
+	"colorscheme pyte
+	colorscheme twilight
+	"colorscheme zenburn
+endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -164,12 +179,15 @@ set foldlevelstart=99 " open all folds by default
 
 " Highlight trailing whitespace
 highlight WhitespaceEOL ctermbg=DarkYellow ctermfg=white guibg=DarkYellow
-match WhitespaceEOL /\s\+$/
 
 " Highlight lines over 80 width
 highlight OverLength ctermbg=Red ctermfg=White guibg=#592929
-match OverLength /\%>80v.\+/
 
+augroup mymatches
+	au!
+	au BufReadPost,BufNewFile * call matchadd("WhitespaceEOL",'\s\+$')
+	au BufReadPost,BufNewFile * call matchadd("OverLength",'\%>80v.\+')
+augroup END
 
 "###############################################################################
 "# Indent Settings                                                             #
@@ -209,7 +227,6 @@ imap <silent> <F6> <C-o>:setlocal spell! spelllang=en_au<CR>
 
 " clear search highlight
 map <silent> Q <ESC>:noh<CR>
-imap <silent> Q <C-o>:noh<CR>
 
 " make F2 save
 nmap <silent> <F2> <ESC>:w<CR>
@@ -411,6 +428,13 @@ let g:snips_author = 'David Terei'
 set tags+=~/dev/projects/taqtic_1.3/src/tags,~/dev/builds/20080805/src/tags,~/dev/projects/taqtic_dev_1/tags
 set path+=~/dev/builds/20080805/**,~/dev/projects/taqtic_1.3/src/**
 
+
+"###############################################################################
+"# Autocommands                                                                #
+"###############################################################################
+
+" Don't want loading twice, check not defined when defining autocommands
+let autocommands_loaded = 1
 
 "###############################################################################
 "# File End                                                                    #
