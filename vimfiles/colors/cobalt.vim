@@ -1,11 +1,22 @@
-" Vim Color Scheme
+" ==============================================================================
+"        File: cobalt.vim
+"      Author: David Terei <davidterei@gmail.com>
+"		    URL: http://www.vim.org/scripts/script.php?script_id=2828
+" Last Change: Wed Mar 24 09:44:07 EST 2010
+"     Version: 1.1
+"     License: Distributed under the Vim charityware license.
+"     Summary: A colour scheme for Vim inspired by TextMates cobalt scheme.
 "
-" Name: Cobalt
-" Maintainer: David Terei<dave.terei@gmail.com>
-" Version: 1.0
-" Last Change: 28 October 2009
+" GetLatestVimScripts: 2828 1 :AutoInstall: cobalt.vim
 "
-" Note: Based on the Cobalt color scheme for TextMate
+" Description:
+" A colour scheme for Vim that attempts to replicate TextMates cobalt colour
+" scheme. This scheme only supports GVim, it should work fine in Vim but no
+" promises are made about this or how it looks.
+"
+" History:
+"   Wed Oct 28, 2009 - 1.0:
+"     * Initial release.
 "
 
 set background=dark
@@ -18,13 +29,15 @@ endif
 let g:colors_name="cobalt"
 
 hi Normal         guifg=#FFFFFF           guibg=#002240
-hi NonText        guifg=#FFFFFF           guibg=#002240
-hi Cursor         guifg=#F8F8F8           guibg=#A7A7A7
-hi CursorIM       guifg=#F8F8F8           guibg=#5F5A60
-hi Directory      guifg=#8F9D6A           guibg=#141414
+hi NonText        guifg=#E9E9E9           guibg=#002240
+hi Cursor         guifg=#101010           guibg=#F0F0F0
+hi CursorLine                             guibg=#061029
+hi CursorIM       guifg=#FFFFFF           guibg=#000000
+hi Directory      guifg=#A9C4D5
 hi ErrorMsg       guifg=#CF6A4C           guibg=#420E09
-hi VertSplit      guifg=#AC885B           guibg=#FFFFFF
-hi Folded         guifg=#F9EE98           guibg=#494949
+hi VertSplit      guifg=#A9C4D5           guibg=#101010
+hi Folded         guifg=#F9EE98           guibg=#203560
+
 hi IncSearch      guifg=#000000           guibg=#CF6A4C
 hi LineNr         guifg=#7587A6           guibg=#000000
 hi ModeMsg        guifg=#CF7D34           guibg=#E9C062
@@ -60,11 +73,11 @@ hi Exception      guifg=khaki
 hi PreProc        guifg=khaki4
 hi Include        guifg=#A9C4D5 "Import
 hi Define         guifg=khaki1
-hi Macro          guifg=#9B703F
-hi PreCondit      guifg=khaki3
+hi Macro          guifg=#FF9D00
+hi PreCondit      guifg=#A9C4D5
 hi Type           guifg=#80FFBB "Filepath, IO, Maybe
 hi StorageClass   guifg=tan
-hi Structure      guifg=#FF9D00 "module
+hi Structure      guifg=#FFEA72 "module
 hi Typedef        guifg=khaki3
 hi Special        guifg=#F2DD00
 hi SpecialChar    guifg=DarkGoldenrod
