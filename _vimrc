@@ -267,7 +267,7 @@ nmap <silent> <C-e> $
 nmap <silent> <C-a> ^
 imap <silent> <C-f> <Right>
 imap <silent> <C-b> <Left>
-imap <silent> <C-h> <BS>
+imap <silent> <C-h> <Backspace>
 imap <silent> <C-d> <Delete>
 
 "-----------------------
@@ -322,15 +322,6 @@ map <Leader>w :tabclose<CR>
 map <Leader>q :q<CR>
 " quit vim
 map <Leader>Q :qall!<CR>
-
-
-"###############################################################################
-"# Mode Settings                                                               #
-"###############################################################################
-
-" Online Design XML/XSL mode - leave file type
-command! ModeXML source $MYVIM/modes/onlinedesign_xml.vim
-map <Leader>x :ModeXML<CR>
 
 
 "###############################################################################

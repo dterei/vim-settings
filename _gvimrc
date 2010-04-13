@@ -1,6 +1,3 @@
-" Make external commands work through a pipe instead of a pseudo-tty
-"set noguipty
-
 " set the GUI font to use, cant use list of fonts as appears broken
 if has("gui_macvim")
 	set guifont=Monaco:h13
