@@ -3,41 +3,30 @@
 "
 " Vim Version: 7.2.0
 " Plugins Used:
-"     - a.vim -
-"     Quickly switch between source files and header files.
-"     * a.vim
-"     * alternate.txt
-"
-"     - bookmark.vim -
-"     Provide a bookmarking facility for Vim. Mark lines of interest.
-"     * bookmark.vim
-"
-"     - bufexplorer.zip -
+"  - a:
+"      Quickly switch between source files and header files.
+"  - autoclose:
+"      Close braces, brackets and quotations.
+"  - bookmarking:
+"      Provide a bookmarking facility for Vim. Mark lines of interest.
+"  - bufexplorer:
 "     With bufexplorer, you can quickly and easily switch between buffers.
-"     * bufexplorer.vim
-"     * bufexplorer.txt
-"
-"     - closetag.vim -
+"  - closetag:
 "     Functions and mappings to close open HTML/XML tags.
-"     * closetag.vim
-"
-"     - matchit.zip
+"  - fugutive:
+"     Git plugin.
+"  - HaskellMode.vba:
+"		Haskell mode plugin.
+"  - Lusty-Explorer
+"     A fuzzy search file and buffer browser.
+"  - Matchit:
 "     Extended % matching for HTML, LaTeX, and many other languages.
-"     * matchit.vim
-"     * matchit.txt
-"
-"     - snipMate -
+"  - snipMate:
 "     An attempt to emulate TextMate's snippet expansion.
-"
-"     - YankRing.vim -
+"  - YankRing:
 "     Maintains a history of previous yanks and deletes.
-"     * yankring.vim
-"     * yankring.txt
-"
-"     - xmledit -
+"  - xmledit:
 "     A filetype plugin to help edit XML, HTML and SGML documents.
-"     * xml.vim
-"     * xml-plugin.txt
 "
 " Colour Schemes:
 "     - cobalt.vim
@@ -365,7 +354,7 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 "###############################################################################
 
 " Delete trailing whitespace and tabs at the end of each line
-command! DeleteTrailingWs :%s/\s\+$//
+command! DeleteTrailingWs :%s/\s\+$//e
 
 
 "###############################################################################
@@ -400,12 +389,6 @@ nnoremap <silent> <Leader>y :YRShow<CR>
 " This plugin is included in vim runtime but not all loaded by default
 runtime ftplugin/man.vim
 
-"-------------
-"# Vim-Latex #
-"-------------
-set grepprg="grep -nH $*"
-let g:tex_flavor='latex'
-
 "------------
 "# snipMate #
 "------------
@@ -435,14 +418,6 @@ elseif has("win32") || has ("win64")
 else
     let g:haddock_browser = "opera"
 endif
-
-
-"###############################################################################
-"# SIRCA Data Consult Settings                                                 #
-"###############################################################################
-
-set tags+=~/dev/projects/taqtic_1.3/src/tags,~/dev/builds/20080805/src/tags,~/dev/projects/taqtic_dev_1/tags
-set path+=~/dev/builds/20080805/**,~/dev/projects/taqtic_1.3/src/**
 
 
 "###############################################################################

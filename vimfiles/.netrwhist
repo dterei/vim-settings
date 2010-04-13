@@ -1,10 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/davidt/.vim'
-let g:netrw_dirhist_2='/Users/davidt'
-let g:netrw_dirhist_3='/Users/davidt/Projects/Vim/vimfiles'
-let g:netrw_dirhist_4='/Users/davidt/Projects/Vim/vimfiles/ftplugin'
-let g:netrw_dirhist_5='/Users/davidt'
-let g:netrw_dirhist_6='/Applications/MacVim/MacVim.app/Contents/Resources/vim/runtime'
-let g:netrw_dirhist_7='/Applications/MacVim/MacVim.app/Contents/Resources/vim/runtime/ftplugin'
-let g:netrw_dirhist_8='/Users/davidt'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/davidt/Projects/Vim/vimfiles/plugin'
+let g:netrw_dirhist_2='/Users/davidt/Projects/Vim/vimfiles'
+let g:netrw_dirhist_3='/Users/davidt/Projects/Vim/vimfiles/doc'
