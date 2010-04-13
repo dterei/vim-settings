@@ -122,43 +122,6 @@ fun s:DefineSnips(dir, aliasft, realft)
 	endfor
 endf
 
-fun! TriggerSnippetWord(word)
-	if exists('g:SuperTabMappingForward')
-		if g:SuperTabMappingForward == "<tab>"
-			let SuperTabKey = "\<c-n>"
-		elseif g:SuperTabMappingBackward == "<tab>"
-			let SuperTabKey = "\<c-p>"
-		endif
-	endif
-
-	if pumvisible() " Update snippet if completion is used, or deal with supertab
-		if exists('SuperTabKey')
-			call feedkeys(SuperTabKey) | return ''
-		endif
-		call feedkeys("\<esc>a", 'n') " Close completion menu
-		call feedkeys("\<tab>") | return ''
-	endif
-
-	if exists('g:snipPos') | return snipMate#jumpTabStop(0) | endif
-
-	for scope in [bufnr('%')] + split(&ft, '\.') + ['_']
-		let [trigger, snippet] = s:GetSnippet(a:word, scope)
-		" If word is a trigger for a snippet, delete the trigger & expand
-		" the snippet.
-		if snippet != ''
-			let col = col('.') - len(trigger)
-			sil exe 's/\V'.escape(trigger, '/.').'\%#//'
-			return snipMate#expandSnip(snippet, col)
-		endif
-	endfor
-
-	if exists('SuperTabKey')
-		call feedkeys(SuperTabKey)
-		return ''
-	endif
-	return "\<tab>"
-endf
-
 fun! TriggerSnippet()
 	if exists('g:SuperTabMappingForward')
 		if g:SuperTabMappingForward == "<tab>"

@@ -82,12 +82,13 @@ filetype plugin indent on
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
-if !exists("autocommands_loaded")
-	autocmd BufReadPost *
+augroup myjump
+	au!
+	au BufReadPost *
 	 \ if line("'\"") > 0 && line("'\"") <= line("$") |
 	 \   exe "normal! g`\"" |
 	 \ endif
-endif
+augroup END
 
 
 "###############################################################################
@@ -217,6 +218,9 @@ set backspace=indent,eol,start
 " disable alt modifier for menu shortcuts
 set winaltkeys=no
 
+" nicer escape
+imap jj <Esc>
+
 "---------------
 "# F[0-9] Keys #
 "---------------
@@ -263,7 +267,7 @@ nmap <silent> <C-e> $
 nmap <silent> <C-a> ^
 imap <silent> <C-f> <Right>
 imap <silent> <C-b> <Left>
-imap <silent> <C-h> <Backspace>
+imap <silent> <C-h> <BS>
 imap <silent> <C-d> <Delete>
 
 "-----------------------
@@ -420,6 +424,27 @@ let g:snips_author = 'David Terei'
 "ino <silent> { {<c-r>=TriggerSnippetWord('{')<cr>
 "ino <silent> [ [<c-r>=TriggerSnippetWord('[')<cr>
 
+"-----------------
+"# Lust Explorer #
+"-----------------
+set hidden
+
+"----------------
+"# Haskell Mode #
+"----------------
+" use ghc functionality for haskell files
+au Bufenter *.hs compiler ghc
+
+" configure browser for haskell_doc.vim
+if has("mac")
+    let g:haddock_browser = "open"
+    let g:haddock_browser_callformat = "%s %s"
+elseif has("win32") || has ("win64")
+    let g:haddock_browser = "C:/Program Files/Opera/Opera.exe"
+else
+    let g:haddock_browser = "opera"
+endif
+
 
 "###############################################################################
 "# SIRCA Data Consult Settings                                                 #
@@ -428,13 +453,6 @@ let g:snips_author = 'David Terei'
 set tags+=~/dev/projects/taqtic_1.3/src/tags,~/dev/builds/20080805/src/tags,~/dev/projects/taqtic_dev_1/tags
 set path+=~/dev/builds/20080805/**,~/dev/projects/taqtic_1.3/src/**
 
-
-"###############################################################################
-"# Autocommands                                                                #
-"###############################################################################
-
-" Don't want loading twice, check not defined when defining autocommands
-let autocommands_loaded = 1
 
 "###############################################################################
 "# File End                                                                    #
