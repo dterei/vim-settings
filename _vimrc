@@ -84,6 +84,10 @@ augroup END
 "# General Settings                                                            #
 "###############################################################################
 
+" setup mapleader
+let mapleader=","
+let maplocalleader="\\"
+
 " nice features but vim is very stable and I save a lot
 set nobackup
 set noswapfile
@@ -173,11 +177,28 @@ highlight WhitespaceEOL ctermbg=DarkYellow ctermfg=white guibg=DarkYellow
 " Highlight lines over 80 width
 highlight OverLength ctermbg=Red ctermfg=White guibg=#592929
 
-augroup mymatches
-	au!
-	au BufReadPost,BufNewFile * call matchadd("WhitespaceEOL",'\s\+$')
-	au BufReadPost,BufNewFile * call matchadd("OverLength",'\%>80v.\+')
-augroup END
+"augroup mymatches
+"	au!
+"	au BufReadPost,BufNewFile * call matchadd("WhitespaceEOL",'\s\+$', -1)
+"	au BufReadPost,BufNewFile * call matchadd("OverLength",'\%>80v.\+', -1)
+"augroup END
+
+function! ToggleLongLines()
+	if exists("w:long_line_match")
+		call matchdelete(w:long_line_match)
+		unlet w:long_line_match
+	else
+		let w:long_line_match = matchadd("WhitespaceEOL", '\s\+$', -1)
+	endif
+	if exists("w:trailing_spaces")
+		call matchdelete(w:trailing_spaces)
+		unlet w:trailing_spaces
+	else
+		let w:trailing_spaces = matchadd("OverLength", '\%>80v.\+', -1)
+	endif
+endfunction
+
+nmap <silent> <Leader>h :call ToggleLongLines()<CR>
 
 "###############################################################################
 "# Indent Settings                                                             #
@@ -197,10 +218,6 @@ set smartindent " go with smartindent if there is no plugin indent file
 "# KeyMap Settings                                                             #
 "###############################################################################
 
-" setup mapleader
-let mapleader=","
-let maplocalleader="\\"
-
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -215,15 +232,16 @@ imap jj <Esc>
 "---------------
 
 " enable/disable spell check
-map <silent> <F6> <ESC>:setlocal spell! spelllang=en_au<CR>
+map <silent> <F6> <Esc>:setlocal spell! spelllang=en_au<CR>
 imap <silent> <F6> <C-o>:setlocal spell! spelllang=en_au<CR>
 
 " clear search highlight
-map <silent> Q <ESC>:noh<CR>
+map <silent> Q <Esc>:noh<CR>
 
-" make F2 save
-nmap <silent> <F2> <ESC>:w<CR>
+" make F2 save and ,s
+nmap <silent> <F2> <Esc>:w<CR>
 imap <silent> <F2> <C-o>:w<CR>
+nmap <silent> <Leader>s <Esc>:w<CR>
 
 "----------------------------
 "# Other Text Movement Keys #
@@ -417,6 +435,7 @@ elseif has("win32") || has ("win64")
     let g:haddock_browser = "C:/Program Files/Opera/Opera.exe"
 else
     let g:haddock_browser = "opera"
+    let g:haddock_docdir = "/usr/share/doc/ghc6-doc/html"
 endif
 
 
