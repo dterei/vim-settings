@@ -9,9 +9,6 @@ endif
 " Antialias font
 set anti
 
-" Start GUI Maximised
-"au GUIEnter * simalt ~x
-
 " Hide the mouse when typing text
 set mousehide
 " Disable the bell and flash for things
@@ -20,10 +17,6 @@ set vb t_vb=
 " remove tool bar
 set guioptions-=T
 set guioptions-=m
-
-" Default size of window
-"set columns=179
-"set lines=50
 
 " Tab headings
 function GuiTabLabel()
