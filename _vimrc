@@ -420,6 +420,7 @@ let g:snips_author = 'David Terei'
 "# Lust Explorer #
 "-----------------
 set hidden
+let g:LustyJugglerSuppressRubyWarning = 1
 
 "----------------
 "# Haskell Mode #
