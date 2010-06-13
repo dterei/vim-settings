@@ -326,7 +326,7 @@ nmap <Leader>n :tabnew<CR>
 " tab close
 map <Leader>w :tabclose<CR>
 " close window
-map <Leader>q :q<CR>
+map <Leader>q :bw<CR>
 " quit vim
 map <Leader>Q :qall!<CR>
 
