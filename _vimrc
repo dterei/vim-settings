@@ -326,7 +326,7 @@ nmap <Leader>n :tabnew<CR>
 " tab close
 map <Leader>w :tabclose<CR>
 " close window
-map <Leader>q :q<CR>
+map <Leader>q :bw<CR>
 " quit vim
 map <Leader>Q :qall!<CR>
 
@@ -394,9 +394,10 @@ augroup END
 "# YankRing #
 "------------
 
+let g:yankring_clipboard_monitor = 0
 let g:yankring_replace_n_pkey = '<A-p>'
 let g:yankring_replace_n_nkey = '<A-n>'
-let g:yankring_max_display = 70
+let g:yankring_max_display = 50
 let g:yankring_history_dir = '$MYVIM'
 nnoremap <silent> <Leader>y :YRShow<CR>
 
