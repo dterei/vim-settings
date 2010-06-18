@@ -440,6 +440,13 @@ else
     let g:haddock_docdir = "/usr/share/doc/ghc6-doc/html"
 endif
 
+" Enable increased Haskell highlighting
+let hs_highlight_boolean = 1
+let hs_highlight_types = 1
+let hs_highlight_more_types = 1
+let hs_highlight_debug = 1
+let hs_highlight_classes = 1
+let hs_highlight_functions = 1
 
 "###############################################################################
 "# File End                                                                    #
