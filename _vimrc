@@ -326,7 +326,7 @@ nmap <Leader>n :tabnew<CR>
 " tab close
 map <Leader>w :tabclose<CR>
 " close window
-map <Leader>q :bw<CR>
+map <Leader>q :q<CR>
 " quit vim
 map <Leader>Q :qall!<CR>
 
@@ -420,7 +420,6 @@ let g:snips_author = 'David Terei'
 "-----------------
 "# Lust Explorer #
 "-----------------
-set hidden
 let g:LustyJugglerSuppressRubyWarning = 1
 
 "----------------
