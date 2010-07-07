@@ -2,12 +2,11 @@ ScriptID SourceID Filename
 --------------------------
 31         7218    :AutoInstall:    a.vim
 1234       12258   :AutoInstall:    YankRing.vim
-42         12363   :AutoInstall:    bufexplorer.zip
+42         12904   :AutoInstall:    bufexplorer.zip
 13         4318    :AutoInstall:    closetag.vim
 39         8196    :AutoInstall:    matchit.zip
 2540       11006   :AutoInstall:    snipMate.zip
-1849       10873   :AutoInstall:    autoclose.vim
-3022       12662   :AutoInstall:    bookmarking.vim
+3022 13301 :AutoInstall:    bookmarking.vim
 
 # Don't autoinstall as it goes into plugin when should be put in ftplugin.
 301        10362                    xml.vim
