@@ -130,6 +130,8 @@ set scrolloff=3 " lines to always seeable when scrolling
 " My spell file, used to store new words
 "set spellfile='$MYVIM/spellfile'
 
+" Path setting for finding files
+set path+=**,
 
 "###############################################################################
 "# Highlight & Fold Settings                                                   #
