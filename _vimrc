@@ -266,8 +266,9 @@ imap <silent> <C-BS> <Esc>vbc
 imap <silent> <C-Del> <Esc>lvec
 
 " map - to end of line, _ to start
-noremap - $
-noremap _ ^
+noremap - ^
+noremap _ $
+nnoremap = $
 
 " Enable some emacs style keys
 imap <silent> <C-e> <End>
@@ -290,7 +291,9 @@ noremap <silent> <A-l> <C-]>
 
 " Better way to enter command line (get rid of pointless shift)
 nnoremap ; :
+cnoremap ; <C-C>
 cnoremap <C-[> <Esc>
+cnoremap <Esc> <C-C>
 
 "---------------------
 "# New Movement Keys #
