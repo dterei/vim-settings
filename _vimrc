@@ -16,7 +16,7 @@
 "  - fugutive:
 "     Git plugin.
 "  - HaskellMode.vba:
-"		Haskell mode plugin.
+"     Haskell mode plugin.
 "  - Lusty-Explorer
 "     A fuzzy search file and buffer browser.
 "  - Matchit:
@@ -431,6 +431,7 @@ let g:LustyJugglerSuppressRubyWarning = 1
 "----------------
 " use ghc functionality for haskell files
 au Bufenter *.hs compiler ghc
+au Bufenter *.lhs compiler ghc
 
 " configure browser for haskell_doc.vim
 if has("mac")
@@ -441,6 +442,7 @@ elseif has("win32") || has ("win64")
 else
     let g:haddock_browser = "opera"
     let g:haddock_docdir = "/usr/share/doc/ghc6-doc/html"
+    let g:haddock_indexfiledir=$MYVIM."/"
 endif
 
 " Enable increased Haskell highlighting
