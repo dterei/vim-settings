@@ -151,6 +151,8 @@ if has("gui_running")
 	"colorscheme pyte
 	colorscheme twilight
 	"colorscheme zenburn
+else
+	set background=dark
 endif
 
 " Switch syntax highlighting on, when the terminal has colors
