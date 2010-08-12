@@ -379,7 +379,7 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 " Delete trailing whitespace and tabs at the end of each line
 command! DeleteTrailingWs :%s/\s\+$//e
 
-command! Wgrep :execute 'noautocmd vimgrep /'.expand('<cword>').'/gj **/*.'.expand('%:e').' | cl'
+command! Wgrep :execute 'noautocmd vimgrep /'.expand('<cword>').'/gj **/*'.expand('%:e').' | cl'
 
 command! Rlp :source $MYVIMRC
 
