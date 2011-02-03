@@ -172,9 +172,11 @@ fugitive.txt	fugitive.txt	/*fugitive.txt*
 g%	matchit.txt	/*g%*
 g:NetrwTopLvlMenu	pi_netrw.txt	/*g:NetrwTopLvlMenu*
 g:Netrw_funcref	pi_netrw.txt	/*g:Netrw_funcref*
+g:bufExplorerChgWin	bufexplorer.txt	/*g:bufExplorerChgWin*
 g:bufExplorerDefaultHelp	bufexplorer.txt	/*g:bufExplorerDefaultHelp*
 g:bufExplorerDetailedHelp	bufexplorer.txt	/*g:bufExplorerDetailedHelp*
 g:bufExplorerFindActive	bufexplorer.txt	/*g:bufExplorerFindActive*
+g:bufExplorerFuncRef	bufexplorer.txt	/*g:bufExplorerFuncRef*
 g:bufExplorerReverseSort	bufexplorer.txt	/*g:bufExplorerReverseSort*
 g:bufExplorerShowDirectories	bufexplorer.txt	/*g:bufExplorerShowDirectories*
 g:bufExplorerShowRelativePath	bufexplorer.txt	/*g:bufExplorerShowRelativePath*
@@ -572,6 +574,7 @@ yankring-commands	yankring.txt	/*yankring-commands*
 yankring-configure	yankring.txt	/*yankring-configure*
 yankring-contents	yankring.txt	/*yankring-contents*
 yankring-custom-maps	yankring.txt	/*yankring-custom-maps*
+yankring-custom-menus	yankring.txt	/*yankring-custom-menus*
 yankring-description	yankring.txt	/*yankring-description*
 yankring-globals	yankring.txt	/*yankring-globals*
 yankring-history	yankring.txt	/*yankring-history*
