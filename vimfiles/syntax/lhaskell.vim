@@ -112,7 +112,7 @@ syntax match lhsBirdTrack "^>" contained
 
 syntax match beginCodeBegin "^\\begin" nextgroup=beginCodeCode contained
 syntax region beginCodeCode  matchgroup=texDelimiter start="{" end="}"
-syntax cluster beginCode    contains=beginCodeBegin,beginCodeCode
+syntax cluster beginCode    contains=beginCodeBegin
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
