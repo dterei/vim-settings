@@ -1,9 +1,10 @@
 " ==============================================================================
 "        File: cobalt.vim
 "      Author: David Terei <davidterei@gmail.com>
+"              Константин Городинский <gor.konstantin@gmail.com>
 "		    URL: http://www.vim.org/scripts/script.php?script_id=2828
-" Last Change: Thu Feb 03 13:44:07 PST 2011
-"     Version: 1.2
+" Last Change: Mon Feb 21 12:09:07 PST 2011
+"     Version: 1.4
 "     License: Distributed under the Vim charityware license.
 "     Summary: A colour scheme for Vim attempting to replicate TextMates
 "              cobalt scheme.
@@ -21,6 +22,8 @@
 "   Thu Feb 03, 2011 - 1.2:
 "     * Tweaks by David Terei
 "     * Tweaks by Константин Городинский <gor.konstantin@gmail.com>
+"   Mon Feb 21, 2011 - 1.4:
+"     * Improvements to the window dividers
 "
 
 set background=dark
@@ -40,10 +43,13 @@ hi CursorIM       guifg=#F8F8F8           guibg=#002947"#5F5A60
 hi Directory      guifg=#2A6A8A           guibg=bg
 hi ErrorMsg       guifg=#CF6A4C           guibg=#420E09
 "hi VertSplit      guifg=#8693A5           guibg=#8693A5
-hi VertSplit      guifg=bg           guibg=#8693A5
+"hi VertSplit      guifg=bg           guibg=#8693A5
 "hi VertSplit      guifg=#0E2231           guibg=#8693A5
-"hi VertSplit      guifg=#0E2231           guibg=#0E2231
+hi VertSplit      guifg=#0E2231           guibg=#0E2231
 "hi VertSplit      guifg=bg           guibg=#0E2231
+"hi VertSplit      guifg=#7857A6           guibg=#7857A6
+hi StatusLineNC   guifg=#0E2231           guibg=#8693A5
+hi StatusLine     guifg=#7587A6           guibg=#F8F8F8
 hi Folded         guifg=#F9EE98           guibg=#494949
 
 hi IncSearch      guifg=#000000           guibg=#CF6A4C
@@ -55,8 +61,8 @@ hi MoreMsg        guifg=#CF7D34           guibg=#E9C062
 hi Question       guifg=#7587A6           guibg=#0E2231
 hi Search         guifg=#420E09           guibg=#CF6A4C
 hi SpecialKey     guifg=#CF7D34           guibg=#141414
-hi StatusLine     guifg=#0E2231           guibg=#8693A5
-hi StatusLineNC   guifg=#7587A6           guibg=#F8F8F8
+"hi StatusLine     guifg=#0E2231           guibg=#8693A5
+"hi StatusLineNC   guifg=#7587A6           guibg=#F8F8F8
 hi Title          guifg=#8B98AB           guibg=#0E2231
 hi Visual         guifg=#FFFFFF           guibg=#B36539
 hi WarningMsg     guifg=#CF6A4C           guibg=#420E09
