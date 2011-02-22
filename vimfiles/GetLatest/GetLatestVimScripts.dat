@@ -19,6 +19,6 @@ ScriptID SourceID Filename
 1075      11979                     netrw.vim
 
 # cobalt colour schemes
-2828      14949 :AutoInstall:    cobalt.vim
-3439      14948 :AutoInstall:    cobaltish.vim
+2828      15086 :AutoInstall:    cobalt.vim
+3439      15087 :AutoInstall:    cobaltish.vim
 
