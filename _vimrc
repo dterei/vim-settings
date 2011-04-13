@@ -419,6 +419,10 @@ let g:LustyJugglerSuppressRubyWarning = 1
 "----------------
 "# Haskell Mode #
 "----------------
+" use ghc functionality for haskell files
+au Bufenter *.hs  compiler ghc
+au Bufenter *.lhs compiler ghc
+
 " configure browser for haskell_doc.vim
 if has("mac")
     let g:haddock_browser = "open"
@@ -429,6 +433,7 @@ else
     let g:haddock_browser = "opera"
     let g:haddock_docdir = "/usr/share/doc/ghc6-doc/html"
     let g:haddock_indexfiledir=$MYVIM."/"
+	 let g:ghc = "/usr/bin/ghc"
 endif
 
 " Enable increased Haskell highlighting

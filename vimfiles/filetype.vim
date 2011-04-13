@@ -1,11 +1,7 @@
-"----------------
-"# Haskell Mode #
-"----------------
+"------------------
+"# Haskell Syntax #
+"------------------
 augroup filetype
-	" use ghc functionality for haskell files
-	au Bufenter *.hs  compiler ghc
-	au Bufenter *.lhs compiler ghc
-
 	au BufRead,BufNewFile *.hsc set filetype=haskell
 	au BufRead,BufNewFile *.x   set filetype=haskell
 	au BufRead,BufNewFile *.y   set filetype=haskell
