@@ -181,12 +181,6 @@ highlight WhitespaceEOL ctermbg=DarkYellow ctermfg=white guibg=DarkYellow
 " Highlight lines over 80 width
 highlight OverLength ctermbg=Red ctermfg=White guibg=#592929
 
-"augroup mymatches
-"	au!
-"	au BufReadPost,BufNewFile * call matchadd("WhitespaceEOL",'\s\+$', -1)
-"	au BufReadPost,BufNewFile * call matchadd("OverLength",'\%>80v.\+', -1)
-"augroup END
-
 function! ToggleLongLines()
 	if exists("w:long_line_match")
 		call matchdelete(w:long_line_match)
@@ -390,17 +384,6 @@ command! Rlp :source $MYVIMRC
 "# Plugins                                                                     #
 "###############################################################################
 
-"---------------
-"# LLVM Syntax #
-"---------------
-augroup filetype
-	au! BufRead,BufNewFile *.ll     set filetype=llvm
-augroup END
-
-augroup filetype
-	au! BufRead,BufNewFile *.td     set filetype=tablegen
-augroup END
-
 "------------
 "# YankRing #
 "------------
@@ -436,10 +419,6 @@ let g:LustyJugglerSuppressRubyWarning = 1
 "----------------
 "# Haskell Mode #
 "----------------
-" use ghc functionality for haskell files
-au Bufenter *.hs compiler ghc
-au Bufenter *.lhs compiler ghc
-
 " configure browser for haskell_doc.vim
 if has("mac")
     let g:haddock_browser = "open"

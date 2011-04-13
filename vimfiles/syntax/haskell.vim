@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:		Haskell
 " Maintainer:		Haskell Cafe mailinglist <haskell-cafe@haskell.org>
-" Last Change:		2004 Feb 23
+" Last Change:		2010 Jun 18
 " Original Author:	John Williams <jrw@pobox.com>
 "
 " Thanks to Ryan Crumley for suggestions and John Meacham for
@@ -15,15 +15,17 @@
 " hs_highlight_delimiters - Highlight delimiter characters--users
 "			    with a light-colored background will
 "			    probably want to turn this on.
-" hs_highlight_boolean - Treat True and False as keywords.
-" hs_highlight_types - Treat names of primitive types as keywords.
+" hs_highlight_boolean    - Treat True and False as keywords.
+" hs_highlight_types      - Treat names of primitive types as keywords.
 " hs_highlight_more_types - Treat names of other common types as keywords.
-" hs_highlight_debug - Highlight names of debugging functions.
-" hs_allow_hash_operator - Don't highlight seemingly incorrect C
-"			   preprocessor directives but assume them to be
-"			   operators
-" hs_highlight_classes - Highlight some prelude type classes
-" hs_highlight_functions - Highlight fuction type declarations
+" hs_highlight_debug      - Highlight names of debugging functions.
+" hs_allow_hash_operator  - Don't highlight seemingly incorrect C
+"			    preprocessor directives but assume them to be
+"			    operators
+" hs_highlight_classes    - Highlight some prelude type classes
+" hs_highlight_functions  - Highlight fuction type declarations
+" hs_minlines             - Syntax sync minlines settings
+" hs_maxlines             - Syntax sync maxlines settings
 "
 " 2004 Feb 19: Added C preprocessor directive handling, corrected eol comments
 "	       cleaned away literate haskell support (should be entirely in
@@ -32,6 +34,7 @@
 "	       in eol comment character class
 " 2004 Feb 23: Made the leading comments somewhat clearer where it comes
 "	       to attribution of work.
+" 2008 Dec 15: Added comments as contained element in import statements
 " 2010 Jun 18: Added in highlighting of function type declarations and
 "              extended some of the existing highlight classes to increase
 "              coverage.
@@ -72,7 +75,7 @@ syn match   hsFloat		"\<[0-9]\+\.[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
 " because otherwise they would match as keywords at the start of a
 " "literate" comment (see lhs.vim).
 syn match hsModule		"\<module\>"
-syn match hsImport		"\<import\>.*"he=s+6 contains=hsImportMod
+syn match hsImport		"\<import\>.*"he=s+6 contains=hsImportMod,hsLineComment,hsBlockComment
 syn match hsImportMod		contained "\<\(as\|qualified\|hiding\)\>"
 syn match hsInfix		"\<\(infix\|infixl\|infixr\)\>"
 syn match hsStructure		"\<\(class\|data\|deriving\|instance\|default\|where\)\>"
@@ -147,10 +150,17 @@ syntax match	cCommentError	display "\*/" contained
 syntax match	cCommentStartError display "/\*"me=e-1 contained
 syn region	cCppString	start=+L\="+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end='$' contains=cSpecial contained
 
+" Set syntax sync mode
 if !exists("hs_minlines")
   let hs_minlines = 50
 endif
-exec "syn sync lines=" . hs_minlines
+if !exists("hs_maxlines")
+  let hs_maxlines = 500
+  if hs_maxlines < hs_minlines
+    let hs_maxlines = hs_maxlines + hs_minlines
+  endif
+endif
+exec "syn sync minlines=" . hs_minlines . " maxlines=" . hs_maxlines . " linebreaks=15"
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
@@ -163,58 +173,58 @@ if version >= 508 || !exists("did_hs_syntax_inits")
     command -nargs=+ HiLink hi def link <args>
   endif
 
-  HiLink hsModule			  hsStructure
-  HiLink hsImport			  Include
-  HiLink hsImportMod			  hsImport
-  HiLink hsInfix			  PreProc
-  HiLink hsStructure			  Structure
-  HiLink hsStatement			  Statement
-  HiLink hsConditional			  Conditional
-  HiLink hsSpecialChar			  SpecialChar
-  HiLink hsTypedef			  Typedef
-  HiLink hsVarSym			  hsOperator
-  HiLink hsConSym			  hsOperator
-  HiLink hsOperator			  Operator
+  HiLink hsModule              hsStructure
+  HiLink hsImport              Include
+  HiLink hsImportMod           hsImport
+  HiLink hsInfix               PreProc
+  HiLink hsStructure           Structure
+  HiLink hsStatement           Statement
+  HiLink hsConditional         Conditional
+  HiLink hsSpecialChar         SpecialChar
+  HiLink hsTypedef             Typedef
+  HiLink hsVarSym              hsOperator
+  HiLink hsConSym              hsOperator
+  HiLink hsOperator            Operator
   if exists("hs_highlight_delimiters")
     " Some people find this highlighting distracting.
-    HiLink hsDelimiter			  Delimiter
+    HiLink hsDelimiter         Delimiter
   endif
-  HiLink hsSpecialCharError		  Error
-  HiLink hsString			  String
-  HiLink hsCharacter			  Character
-  HiLink hsNumber			  Number
-  HiLink hsFloat			  Float
-  HiLink hsConditional			  Conditional
-  HiLink hsLiterateComment		  hsComment
-  HiLink hsBlockComment			  hsComment
-  HiLink hsLineComment			  hsComment
-  HiLink hsComment			  Comment
-  HiLink hsPragma			  SpecialComment
-  HiLink hsBoolean			  Boolean
-  HiLink hsType				  Type
-  HiLink hsClasses			  hsType
-  HiLink hsMaybe			  hsEnumConst
-  HiLink hsOrdering			  hsEnumConst
-  HiLink hsEnumConst			  Constant
-  HiLink hsDebug			  Debug
+  HiLink hsSpecialCharError    Error
+  HiLink hsString              String
+  HiLink hsCharacter           Character
+  HiLink hsNumber              Number
+  HiLink hsFloat               Float
+  HiLink hsConditional         Conditional
+  HiLink hsLiterateComment     hsComment
+  HiLink hsBlockComment        hsComment
+  HiLink hsLineComment         hsComment
+  HiLink hsComment             Comment
+  HiLink hsPragma              SpecialComment
+  HiLink hsBoolean             Boolean
+  HiLink hsType                Type
+  HiLink hsMaybe               hsEnumConst
+  HiLink hsOrdering            hsEnumConst
+  HiLink hsEnumConst           Constant
+  HiLink hsDebug               Debug
 
-  HiLink hsFunDef			  Special
+  HiLink hsClasses             hsType
+  HiLink hsFunDef              Special
   HiLink hsFunction            Function
 
-  HiLink cCppString		hsString
-  HiLink cCommentStart		hsComment
-  HiLink cCommentError		hsError
-  HiLink cCommentStartError	hsError
-  HiLink cInclude		Include
-  HiLink cPreProc		PreProc
-  HiLink cDefine		Macro
-  HiLink cIncluded		hsString
-  HiLink cError			Error
-  HiLink cPreCondit		PreCondit
-  HiLink cComment		Comment
-  HiLink cCppSkip		cCppOut
-  HiLink cCppOut2		cCppOut
-  HiLink cCppOut		Comment
+  HiLink cCppString            hsString
+  HiLink cCommentStart         hsComment
+  HiLink cCommentError         hsError
+  HiLink cCommentStartError    hsError
+  HiLink cInclude              Include
+  HiLink cPreProc              PreProc
+  HiLink cDefine               Macro
+  HiLink cIncluded             hsString
+  HiLink cError                Error
+  HiLink cPreCondit            PreCondit
+  HiLink cComment              Comment
+  HiLink cCppSkip              cCppOut
+  HiLink cCppOut2              cCppOut
+  HiLink cCppOut               Comment
 
   delcommand HiLink
 endif

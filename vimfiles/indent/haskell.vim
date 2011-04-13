@@ -1,3 +1,14 @@
+" Vim indent file
+" Language:     Haskell
+" Author:       motemen <motemen@gmail.com>
+" Version:      0.1
+" Last Change:  2007-07-25
+"
+" Modify g:haskell_indent_if and g:haskell_indent_case to
+" change indentation for `if'(default 3) and `case'(default 5).
+" Example (in .vimrc):
+" > let g:haskell_indent_if = 2
+
 if exists('b:did_indent')
     finish
 endif

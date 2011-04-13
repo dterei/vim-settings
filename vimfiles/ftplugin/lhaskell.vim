@@ -1,6 +1,8 @@
-" Custom settings for hacking on GHC
-set shiftwidth=4
-set tabstop=8
-set softtabstop=4
-set expandtab
+" general Haskell source settings
+
+setlocal shiftwidth=4
+setlocal tabstop=8
+setlocal softtabstop=4
+setlocal expandtab
+setlocal textwidth=80
 
