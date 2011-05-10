@@ -141,6 +141,7 @@ set path+=**,
 if has("gui_running")
 	"colorscheme blue
 	"colorscheme cobalt
+	colorscheme cobaltish
 	"colorscheme darkZ
 	"colorscheme darkslategray
 	"colorscheme fruity
@@ -149,7 +150,7 @@ if has("gui_running")
 	"colorscheme oceandeep
 	"colorscheme ps_color
 	"colorscheme pyte
-	colorscheme twilight
+	"colorscheme twilight
 	"colorscheme zenburn
 else
 	set background=dark
@@ -169,6 +170,8 @@ set nonu " line numbers
 set cursorline
 let c_comment_strings=1 " highlighting strings inside C comments
 set gcr=a:blinkon0
+
+set colorcolumn=100
 
 let g:xml_syntax_folding=1 " enable xml folding
 set foldenable
