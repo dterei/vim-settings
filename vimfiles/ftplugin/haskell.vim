@@ -12,6 +12,7 @@ setlocal include=^import\\s*\\(qualified\\)\\?\\s*
 setlocal includeexpr=substitute(v:fname,'\\.','/','g').'.'
 setlocal suffixesadd=hs,lhs,hsc
 
+" My settings - No Tabs!
 setlocal shiftwidth=4
 setlocal tabstop=8
 setlocal softtabstop=4
