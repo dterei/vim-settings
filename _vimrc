@@ -133,6 +133,10 @@ set scrolloff=3 " lines to always seeable when scrolling
 " Path setting for finding files
 set path+=**,
 
+" permanent undo
+set undofile
+set undodir=$MYVIM/undo
+
 "###############################################################################
 "# Highlight & Fold Settings                                                   #
 "###############################################################################
@@ -328,7 +332,7 @@ nmap <Leader>T :tabe .<CR>
 nmap <Leader>n :tabnew<CR>
 
 " tab close
-map <Leader>w :tabclose<CR>
+map <Leader>w :tabclose\|tabprevious<CR>
 " close window
 map <Leader>q :q<CR>
 " quit vim
