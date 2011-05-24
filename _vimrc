@@ -1,12 +1,10 @@
 " ==============================================================================
 " David Terei's .vimrc file
 "
-" Vim Version: 7.2.0
+" Vim Version: 7.3.0
 " Plugins Used:
 "  - a:
 "      Quickly switch between source files and header files.
-"  - autoclose:
-"      Close braces, brackets and quotations.
 "  - bookmarking:
 "      Provide a bookmarking facility for Vim. Mark lines of interest.
 "  - bufexplorer:
@@ -30,6 +28,7 @@
 "
 " Colour Schemes:
 "     - cobalt.vim
+"     - cobaltish.vim
 "     - darkZ.vim
 "     - darkslategray.vim
 "     - darkspectrum.vim
@@ -40,6 +39,7 @@
 "     - ps_color.vim
 "     - pyte.vim
 "     - twilight.vim
+"     - wombat.vim
 "     - zenburn.vim
 "
 " ==============================================================================
@@ -103,6 +103,9 @@ set wildmenu " way cooler command line mode completion
 set history=30 " keep 30 lines of command line history
 set viminfo='500,f1,<500,s50,:0,@30,/30,! " what to store for each file
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
+" permanent undo
+set undofile
+set undodir=$MYVIM/undo
 
 set incsearch  " do incremental searching
 set ignorecase " make this default, turn on case in search with /<search>\C/
@@ -123,19 +126,15 @@ set ruler " show the cursor position all the time
 
 set scrolloff=3 " lines to always seeable when scrolling
 
-"set tw=80 " default text width, used with autoformatter and pasting
+" default text width, used with autoformatter and pasting
+"set tw=80
 "set wm=80
-" gq " autoformatter command
 
 " My spell file, used to store new words
 "set spellfile='$MYVIM/spellfile'
 
 " Path setting for finding files
 set path+=**,
-
-" permanent undo
-set undofile
-set undodir=$MYVIM/undo
 
 "###############################################################################
 "# Highlight & Fold Settings                                                   #
@@ -154,10 +153,22 @@ if has("gui_running")
 	"colorscheme oceandeep
 	"colorscheme ps_color
 	"colorscheme pyte
+	"colorscheme wombat
 	"colorscheme twilight
 	"colorscheme zenburn
 else
-	set background=dark
+	" These ones look good in the terminal
+	colorscheme ir_black
+	"colorscheme peaksea
+	"colorscheme default
+	"colorscheme elflord
+	"colorscheme oceandeep
+	"colorscheme morning
+	"colorscheme pablo
+	"colorscheme shine
+	"colorscheme slate
+	"colorscheme torte
+	"set background=dark
 endif
 
 " Switch syntax highlighting on, when the terminal has colors
@@ -175,7 +186,8 @@ set cursorline
 let c_comment_strings=1 " highlighting strings inside C comments
 set gcr=a:blinkon0
 
-set colorcolumn=100
+" Like to use this in general but implemented in an ugly way in Vim
+"set colorcolumn=100
 
 let g:xml_syntax_folding=1 " enable xml folding
 set foldenable
@@ -252,6 +264,8 @@ nmap <silent> <Leader>s <Esc>:w<CR>
 "# Other Text Movement Keys #
 "----------------------------
 
+" Sadly the below only really work in GVim.
+
 " enable eclipse style moving of lines (needs GVim)
 nmap <silent> <A-S-j> mz:m+<CR>`z==
 nmap <silent> <A-S-k> mz:m-2<CR>`z==
@@ -295,8 +309,6 @@ noremap <silent> <A-l> <C-]>
 " Better way to enter command line (get rid of pointless shift)
 nnoremap ; :
 cnoremap ; <C-C>
-cnoremap <C-[> <Esc>
-cnoremap <Esc> <C-C>
 
 "---------------------
 "# New Movement Keys #
@@ -331,7 +343,7 @@ nmap <Leader>t :tabe %:p:h<CR>
 nmap <Leader>T :tabe .<CR>
 nmap <Leader>n :tabnew<CR>
 
-" tab close
+" tab close (TODO: detect if on last tab and don't call previous)
 map <Leader>w :tabclose\|tabprevious<CR>
 " close window
 map <Leader>q :q<CR>
@@ -382,6 +394,7 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 " Delete trailing whitespace and tabs at the end of each line
 command! DeleteTrailingWs :%s/\s\+$//e
 
+" Search all subdirectories for word under cursor
 command! Wgrep :execute 'noautocmd vimgrep /'.expand('<cword>').'/gj **/*'.expand('%:e').' | cl'
 
 command! Rlp :source $MYVIMRC

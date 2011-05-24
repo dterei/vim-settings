@@ -6,3 +6,5 @@
 
 4. Have netrw remember position in a directory listing so if you come back to it the cursor is in the old place.
 
+5. CTRl-T Textmate style jump to file.
+
