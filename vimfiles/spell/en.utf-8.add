@@ -72,3 +72,9 @@ tuples
 tuple
 ABI
 runtimes
+trustable
+plugin
+untrusted
+Testsuite
+testsuite
+typechecker
