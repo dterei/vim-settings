@@ -78,3 +78,7 @@ untrusted
 Testsuite
 testsuite
 typechecker
+arity
+associativity
+datatype
+datatypes
