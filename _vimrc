@@ -104,8 +104,10 @@ set history=30 " keep 30 lines of command line history
 set viminfo='500,f1,<500,s50,:0,@30,/30,! " what to store for each file
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 " permanent undo
-set undofile
-set undodir=$MYVIM/undo
+if version >= 703
+	set undofile
+	set undodir=$MYVIM/undo
+endif
 
 set incsearch  " do incremental searching
 set ignorecase " make this default, turn on case in search with /<search>\C/
