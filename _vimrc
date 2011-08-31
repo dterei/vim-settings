@@ -25,6 +25,8 @@
 "     Maintains a history of previous yanks and deletes.
 "  - xmledit:
 "     A filetype plugin to help edit XML, HTML and SGML documents.
+"  - togglemouse:
+"     Make <F12> switch mouse between Vim and Terminal
 "
 " Colour Schemes:
 "     - cobalt.vim
@@ -35,6 +37,7 @@
 "     - fruity.vim
 "     - ir_black.vim
 "     - kib_darktango.vim
+"     - mustang.vim
 "     - oceandeep.vim
 "     - ps_color.vim
 "     - pyte.vim
@@ -100,7 +103,7 @@ set mouse=a  " enable mouse in terminal
 set showcmd  " display incomplete commands
 set wildmenu " way cooler command line mode completion
 
-set history=30 " keep 30 lines of command line history
+set history=100 " keep 100 lines of command line history
 set viminfo='500,f1,<500,s50,:0,@30,/30,! " what to store for each file
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 " permanent undo
@@ -115,7 +118,7 @@ set ignorecase " make this default, turn on case in search with /<search>\C/
 set smartcase
 
 " ignore these files for auto...
-set wildignore+=*.o,+=*.obj,+=*.bak,+=*.exe,+=*~,+=*.hi
+set wildignore+=*.o,*.obj,*.bak,*.exe,*~,*.hi,*.pyc,*.class,*.bak,*.swp
 
 " don't lcd to the current buffers directory, this is a nice feature but
 " causes a lot of problems, so instead I use some keyboard shortcuts to
@@ -132,11 +135,14 @@ set scrolloff=3 " lines to always seeable when scrolling
 "set tw=80
 "set wm=80
 
-" My spell file, used to store new words
-"set spellfile='$MYVIM/spellfile'
+" just hide, dont close buffers (a lot of people love this, not me though)
+set hidden
 
 " Path setting for finding files
 set path+=**,
+
+" Function for saving when root priv required
+cmap w!! w !sudo tee % >/dev/null
 
 "###############################################################################
 "# Highlight & Fold Settings                                                   #
@@ -187,6 +193,7 @@ set nonu " line numbers
 set cursorline
 let c_comment_strings=1 " highlighting strings inside C comments
 set gcr=a:blinkon0
+set showmatch " show matching brace when inserting one
 
 " Like to use this in general but implemented in an ugly way in Vim
 "set colorcolumn=100
@@ -227,7 +234,7 @@ set tabstop=3 " tab space
 set softtabstop=3 " fake tab spaces
 set shiftwidth=3 " indent space
 set noexpandtab " use tabs, not spaces
-
+set smarttab " tab amount done according to previous lines
 set indentexpr=syntax
 set autoindent
 set smartindent " go with smartindent if there is no plugin indent file
@@ -261,6 +268,9 @@ map <silent> Q <Esc>:noh<CR>
 nmap <silent> <F2> <Esc>:w<CR>
 imap <silent> <F2> <C-o>:w<CR>
 nmap <silent> <Leader>s <Esc>:w<CR>
+
+" Switch to paste mode
+set pastetoggle=<F7>
 
 "----------------------------
 "# Other Text Movement Keys #
@@ -399,7 +409,8 @@ command! DeleteTrailingWs :%s/\s\+$//e
 " Search all subdirectories for word under cursor
 command! Wgrep :execute 'noautocmd vimgrep /'.expand('<cword>').'/gj **/*'.expand('%:e').' | cl'
 
-command! Rlp :source $MYVIMRC
+command! Rp :source $MYVIMRC
+command! Ep :e $MYVIMRC
 
 
 "###############################################################################
