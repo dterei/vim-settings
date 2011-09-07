@@ -159,10 +159,11 @@ cmap w!! w !sudo tee % >/dev/null
 "colorscheme elflord
 
 " Change terminal background, use dark background
+colorscheme mustang
 "colorscheme torte
 
 " Change terminal background, use light background
-colorscheme morning
+"colorscheme morning
 "colorscheme peaksea
 "colorscheme shine
 
