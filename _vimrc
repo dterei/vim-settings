@@ -70,6 +70,30 @@ endif
 
 let $SS=$MYVIM."/sessions"
 
+
+"###############################################################################
+"# Vundle Plugin Manager                                                       #
+"###############################################################################
+
+" Plugin Manager for Vim
+" http://github.com/gmarik/vundle
+
+" setup Vundle
+filetype off
+set rtp+=$MYVIM/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+" Plugins!
+Bundle 'godlygeek/tabular'
+Bundle 'sjl/gundo.vim'
+"Bundle 'Raimondi/delimitMate'
+
+
+"###############################################################################
+"# General Settings                                                            #
+"###############################################################################
+
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
 " 'cindent' is on in C files, etc.
@@ -86,11 +110,6 @@ augroup myjump
 	 \   exe "normal! g`\"" |
 	 \ endif
 augroup END
-
-
-"###############################################################################
-"# General Settings                                                            #
-"###############################################################################
 
 " setup mapleader
 let mapleader=","
