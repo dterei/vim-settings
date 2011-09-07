@@ -11,6 +11,10 @@
 "     With bufexplorer, you can quickly and easily switch between buffers.
 "  - closetag:
 "     Functions and mappings to close open HTML/XML tags.
+"  - command-t:
+"     File finding command.
+"  - ConqueTerm:
+"     Run a terminal in vim.
 "  - fugutive:
 "     Git plugin.
 "  - HaskellMode.vba:
@@ -51,13 +55,13 @@
 "###############################################################################
 "# Essential Settings                                                          #
 "###############################################################################
+
 set nocompatible
 
 " OS neutral variable for referring to user files
 " assume unix, change if not
 let $MYVIM=$HOME."/.vim"
 
-" if on WIN32
 if has("win32")
 	"source $VIMRUNTIME/mswin.vim
 	let $MYVIM=$VIM
@@ -148,36 +152,22 @@ cmap w!! w !sudo tee % >/dev/null
 "# Highlight & Fold Settings                                                   #
 "###############################################################################
 
-" Set colour map
-if has("gui_running")
-	"colorscheme blue
-	"colorscheme cobalt
-	colorscheme cobaltish
-	"colorscheme darkZ
-	"colorscheme darkslategray
-	"colorscheme fruity
-	"colorscheme ir_black
-	"colorscheme kib_darktango
-	"colorscheme oceandeep
-	"colorscheme ps_color
-	"colorscheme pyte
-	"colorscheme wombat
-	"colorscheme twilight
-	"colorscheme zenburn
-else
-	" These ones look good in the terminal
-	colorscheme ir_black
-	"colorscheme peaksea
-	"colorscheme default
-	"colorscheme elflord
-	"colorscheme oceandeep
-	"colorscheme morning
-	"colorscheme pablo
-	"colorscheme shine
-	"colorscheme slate
-	"colorscheme torte
-	"set background=dark
-endif
+" Use terminal background, need dark background
+"colorscheme ir_black
+"colorscheme pablo
+"colorscheme oceandeep
+"colorscheme elflord
+
+" Change terminal background, use dark background
+"colorscheme torte
+
+" Change terminal background, use light background
+colorscheme morning
+"colorscheme peaksea
+"colorscheme shine
+
+" Work with light or dark terminal background (call set background to change)
+"colorscheme default
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -368,30 +358,30 @@ map <Leader>Q :qall!<CR>
 "###############################################################################
 
 " Setup diffexpr for proper diff call
-set diffexpr=MyDiff()
-function! MyDiff()
-	let opt = '-a --binary '
-	if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-	if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-	let arg1 = v:fname_in
-	if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-	let arg2 = v:fname_new
-	if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-	let arg3 = v:fname_out
-	if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-	let eq = ''
-	if $VIMRUNTIME =~ ' '
-		if &sh =~ '\<cmd'
-			let cmd = '""' . $VIMRUNTIME . '\diff"'
-			let eq = '"'
-		else
-			let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-		endif
-	else
-		let cmd = $VIMRUNTIME . '\diff'
-	endif
-	silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-endfunction
+"set diffexpr=MyDiff()
+"function! MyDiff()
+"	let opt = '-a --binary '
+"	if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+"	if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+"	let arg1 = v:fname_in
+"	if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+"	let arg2 = v:fname_new
+"	if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+"	let arg3 = v:fname_out
+"	if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+"	let eq = ''
+"	if $VIMRUNTIME =~ ' '
+"		if &sh =~ '\<cmd'
+"			let cmd = '""' . $VIMRUNTIME . '\diff"'
+"			let eq = '"'
+"		else
+"			let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+"		endif
+"	else
+"		let cmd = $VIMRUNTIME . '\diff'
+"	endif
+"	silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+"endfunction
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.

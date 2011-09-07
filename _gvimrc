@@ -1,4 +1,33 @@
-" set the GUI font to use, cant use list of fonts as appears broken
+" ==============================================================================
+" David Terei's .gvimrc file
+"
+" Most the work is done in the .vimrc file, so this just contains a few
+" settings (mostly visual) to tweak GVim.
+"
+" GVim Version: 7.3.0
+"
+" ==============================================================================
+
+"###############################################################################
+"# Essential Settings                                                          #
+"###############################################################################
+
+" Disable the bell and flash for things
+set vb t_vb=
+
+" Hide the mouse when typing text
+set mousehide
+
+" remove tool bar
+set guioptions-=T
+set guioptions-=m
+
+
+"###############################################################################
+"# Font Settings                                                               #
+"###############################################################################
+
+" set the GUI font to use, can't use list of fonts as appears broken
 if has("gui_macvim")
 	set guifont=Monaco:h13
 	set fuoptions=maxvert,maxhorz
@@ -9,16 +38,14 @@ endif
 " Antialias font
 set anti
 
-" Hide the mouse when typing text
-set mousehide
-" Disable the bell and flash for things
-set vb t_vb=
 
-" remove tool bar
-set guioptions-=T
-set guioptions-=m
+"###############################################################################
+"# Tab Headings                                                                #
+"###############################################################################
 
-" Tab headings
+" I use a custom function for tab headings, I just want the name of the file
+" shown, not the full path. I still want an indication if the file is modified
+" and unsaved though!
 function GuiTabLabel()
 	let label = ''
 	let bufnrlist = tabpagebuflist(v:lnum)
@@ -45,4 +72,31 @@ function GuiTabLabel()
 endfunction
 
 set guitablabel=%!GuiTabLabel()
+
+"###############################################################################
+"# Colour Scheme Settings                                                      #
+"###############################################################################
+
+" These look good only with a dark background
+colorscheme mustang
+"colorscheme cobaltish
+"colorscheme wombat
+"colorscheme ir_black
+"colorscheme cobalt
+"colorscheme twilight
+
+"colorscheme kib_darktango
+"colorscheme oceandeep
+"colorscheme fruity
+"colorscheme zenburn
+
+" These look good with a dark or light background
+"colorscheme ps_color
+
+" These look good only with a light background
+"colorscheme pyte
+
+"###############################################################################
+"# File End                                                                    #
+"###############################################################################
 
