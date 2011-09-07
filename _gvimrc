@@ -79,6 +79,7 @@ set guitablabel=%!GuiTabLabel()
 
 " These look good only with a dark background
 colorscheme mustang
+"colorscheme solarized
 "colorscheme cobaltish
 "colorscheme wombat
 "colorscheme ir_black

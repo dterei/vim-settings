@@ -45,6 +45,7 @@
 "     - oceandeep.vim
 "     - ps_color.vim
 "     - pyte.vim
+"     - solarized.vim
 "     - twilight.vim
 "     - wombat.vim
 "     - zenburn.vim
