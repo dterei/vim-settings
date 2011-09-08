@@ -2,52 +2,6 @@
 " David Terei's .vimrc file
 "
 " Vim Version: 7.3.0
-" Plugins Used:
-"  - a:
-"      Quickly switch between source files and header files.
-"  - bookmarking:
-"      Provide a bookmarking facility for Vim. Mark lines of interest.
-"  - bufexplorer:
-"     With bufexplorer, you can quickly and easily switch between buffers.
-"  - closetag:
-"     Functions and mappings to close open HTML/XML tags.
-"  - command-t:
-"     File finding command.
-"  - ConqueTerm:
-"     Run a terminal in vim.
-"  - fugutive:
-"     Git plugin.
-"  - HaskellMode.vba:
-"     Haskell mode plugin.
-"  - Lusty-Explorer
-"     A fuzzy search file and buffer browser.
-"  - Matchit:
-"     Extended % matching for HTML, LaTeX, and many other languages.
-"  - snipMate:
-"     An attempt to emulate TextMate's snippet expansion.
-"  - YankRing:
-"     Maintains a history of previous yanks and deletes.
-"  - xmledit:
-"     A filetype plugin to help edit XML, HTML and SGML documents.
-"  - togglemouse:
-"     Make <F12> switch mouse between Vim and Terminal
-"
-" Colour Schemes:
-"     - cobalt.vim
-"     - cobaltish.vim
-"     - darkslategray.vim
-"     - darkspectrum.vim
-"     - fruity.vim
-"     - ir_black.vim
-"     - kib_darktango.vim
-"     - mustang.vim
-"     - oceandeep.vim
-"     - ps_color.vim
-"     - pyte.vim
-"     - solarized.vim
-"     - twilight.vim
-"     - wombat.vim
-"     - zenburn.vim
 "
 " ==============================================================================
 
@@ -83,34 +37,62 @@ set rtp+=$MYVIM/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" Plugins!
-Bundle 'a.vim'
-Bundle 'bufexplorer.zip'
-Bundle 'closetag.vim'
-Bundle 'Command-T'
-Bundle 'Conque-Shell'
-Bundle 'LustyExplorer'
-Bundle 'matchit.zip'
-Bundle 'snipMate'
-Bundle 'YankRing.vim'
-Bundle 'xmledit'
-Bundle 'netrw.vim'
-Bundle 'indenthaskell.vim'
+" === Plugins! ===
 
-Bundle 'dterei/VimBookmarking'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-git'
-"Bundle 'tpope/surround'
+" Quickly switch between source files and header files.
+Bundle 'a.vim'
+" With bufexplorer, you can quickly and easily switch between buffers.
+Bundle 'bufexplorer.zip'
+" File finding command.
+Bundle 'Command-T'
+" A fuzzy search file and buffer browser.
+Bundle 'LustyExplorer'
+" Network browser (included with vim but want most up to date)
+Bundle 'netrw.vim'
+
+" Functions and mappings to close open HTML/XML tags.
+Bundle 'closetag.vim'
+" Extended % matching for HTML, LaTeX, and many other languages.
+Bundle 'matchit.zip'
+" An attempt to emulate TextMate's snippet expansion.
+Bundle 'snipMate'
+" Align text to columns
 Bundle 'godlygeek/tabular'
-Bundle 'sjl/gundo.vim'
-Bundle 'nvie/vim-togglemouse'
-Bundle 'lukerandall/haskellmode-vim'
+" Quickly surround some text (i.e bracket, html tags...)
+"Bundle 'tpope/surround'
+" Auto closing of quotes, parenthesis, brackets... ect
 "Bundle 'Raimondi/delimitMate'
 
+" Run a terminal in vim.
+Bundle 'Conque-Shell'
+" Git plugin.
+Bundle 'tpope/vim-fugitive'
+" Git highlighting files.
+Bundle 'tpope/vim-git'
+
+" Provide a bookmarking facility for Vim. Mark lines of interest.
+Bundle 'dterei/VimBookmarking'
+" Maintains a history of previous yanks and deletes.
+Bundle 'YankRing.vim'
+" Visualise the undo tree of vim.
+Bundle 'sjl/gundo.vim'
+" Make <F12> switch mouse between Vim and Terminal
+Bundle 'nvie/vim-togglemouse'
+
+" A filetype plugin to help edit XML, HTML and SGML documents.
+Bundle 'xmledit'
+" Haskell indent file
+Bundle 'indenthaskell.vim'
+" Haskell mode plugin.
+Bundle 'lukerandall/haskellmode-vim'
+" Haskell folding
+"Bundle 'Twinside/vim-haskellFold'
+
+
+" === Colour Schemes! ===
 Bundle 'dterei/VimCobaltColourScheme'
 Bundle 'cschlueter/vim-mustang'
 Bundle 'wgibbs/vim-irblack'
-
 Bundle 'darkslategray.vim'
 Bundle 'darkspectrum'
 Bundle 'fruity.vim'
