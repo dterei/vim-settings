@@ -35,7 +35,6 @@
 " Colour Schemes:
 "     - cobalt.vim
 "     - cobaltish.vim
-"     - darkZ.vim
 "     - darkslategray.vim
 "     - darkspectrum.vim
 "     - fruity.vim
@@ -85,9 +84,42 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Plugins!
+Bundle 'a.vim'
+Bundle 'bufexplorer.zip'
+Bundle 'closetag.vim'
+Bundle 'Command-T'
+Bundle 'Conque-Shell'
+Bundle 'LustyExplorer'
+Bundle 'matchit.zip'
+Bundle 'snipMate'
+Bundle 'YankRing.vim'
+Bundle 'xmledit'
+Bundle 'netrw.vim'
+
+Bundle 'dterei/VimBookmarking'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+"Bundle 'tpope/surround'
 Bundle 'godlygeek/tabular'
 Bundle 'sjl/gundo.vim'
+Bundle 'nvie/vim-togglemouse'
 "Bundle 'Raimondi/delimitMate'
+
+Bundle 'dterei/VimCobaltColourScheme'
+Bundle 'cschlueter/vim-mustang'
+Bundle 'wgibbs/vim-irblack'
+
+Bundle 'darkslategray.vim'
+Bundle 'darkspectrum'
+Bundle 'fruity.vim'
+Bundle 'tir_black'
+Bundle 'kib_darktango.vim'
+Bundle 'peaksea'
+Bundle 'pyte'
+Bundle 'Solarized'
+Bundle 'twilight'
+Bundle 'Wombat'
+Bundle 'Zenburn'
 
 
 "###############################################################################
