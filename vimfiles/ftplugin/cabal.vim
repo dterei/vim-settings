@@ -1,4 +1,3 @@
-" Cabal doesn't like tabs, so disable them
 setlocal shiftwidth=4
 setlocal tabstop=4
 setlocal softtabstop=4
