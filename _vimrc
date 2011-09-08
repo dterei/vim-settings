@@ -82,7 +82,7 @@ Bundle 'nvie/vim-togglemouse'
 " A filetype plugin to help edit XML, HTML and SGML documents.
 Bundle 'xmledit'
 " Haskell indent file
-Bundle 'indenthaskell.vim'
+"Bundle 'indenthaskell.vim'
 " Haskell mode plugin.
 Bundle 'lukerandall/haskellmode-vim'
 " Haskell folding
