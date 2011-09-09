@@ -91,6 +91,7 @@ Bundle 'lukerandall/haskellmode-vim'
 
 " === Colour Schemes! ===
 Bundle 'dterei/VimCobaltColourScheme'
+Bundle 'dterei/Twilight'
 Bundle 'cschlueter/vim-mustang'
 Bundle 'wgibbs/vim-irblack'
 Bundle 'darkslategray.vim'
@@ -101,7 +102,7 @@ Bundle 'kib_darktango.vim'
 Bundle 'peaksea'
 Bundle 'pyte'
 Bundle 'Solarized'
-Bundle 'twilight'
+Bundle 'vilight.vim'
 Bundle 'Wombat'
 Bundle 'Zenburn'
 

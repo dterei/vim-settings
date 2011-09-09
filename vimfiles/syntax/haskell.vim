@@ -223,7 +223,7 @@ if version >= 508 || !exists("did_hs_syntax_inits")
     command -nargs=+ HiLink hi def link <args>
   endif
 
-  hiLink hsModule              hsStructure
+  HiLink hsModule              hsStructure
   HiLink hsImport              Include
   HiLink hsImportMod           hsImport
   HiLink hsForeign             hsImport
@@ -260,7 +260,7 @@ if version >= 508 || !exists("did_hs_syntax_inits")
   HiLink hsDebug               Debug
 
   HiLink hsClasses             hsType
-  HiLink hsFunDef              Special
+  HiLink hsFunDef              Identifier
   HiLink hsFunction            Function
 
   HiLink cCppString            hsString
