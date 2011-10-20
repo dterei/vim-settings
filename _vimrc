@@ -185,6 +185,9 @@ set path+=**,
 " Function for saving when root priv required
 cmap w!! w !sudo tee % >/dev/null
 
+" allow more than 10 tabs with -p command
+set tabpagemax=40
+
 "###############################################################################
 "# Highlight & Fold Settings                                                   #
 "###############################################################################
@@ -202,7 +205,9 @@ colorscheme mustang
 " Change terminal background, use light background
 "colorscheme morning
 "colorscheme peaksea
-"colorscheme shine
+if has("mac")
+	colorscheme shine
+endif
 
 " Work with light or dark terminal background (call set background to change)
 "colorscheme default
