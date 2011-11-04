@@ -205,12 +205,14 @@ colorscheme mustang
 " Change terminal background, use light background
 "colorscheme morning
 "colorscheme peaksea
-if has("mac")
-	colorscheme shine
-endif
+"colorscheme shine
 
 " Work with light or dark terminal background (call set background to change)
 "colorscheme default
+
+if has("mac")
+	colorscheme default
+endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
