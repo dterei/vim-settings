@@ -440,7 +440,7 @@ nnoremap <silent> <Leader>y :YRShow<CR>
 "# ManPageView #
 "---------------
 " This plugin is included in vim runtime but not all loaded by default
-runtime ftplugin/man.vim
+"runtime ftplugin/man.vim
 
 "------------
 "# snipMate #
