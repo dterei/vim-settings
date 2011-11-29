@@ -59,7 +59,7 @@ Bundle 'snipMate'
 " Align text to columns
 Bundle 'godlygeek/tabular'
 " Quickly surround some text (i.e bracket, html tags...)
-Bundle 'tpope/surround'
+Bundle 'tpope/vim-surround'
 " Auto closing of quotes, parenthesis, brackets... ect
 Bundle 'Raimondi/delimitMate'
 
