@@ -62,6 +62,8 @@ Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-surround'
 " Auto closing of quotes, parenthesis, brackets... ect
 Bundle 'Raimondi/delimitMate'
+" Toggle commenting
+Bundle 'tomtom/tcomment_vim'
 
 " Run a terminal in vim.
 Bundle 'Conque-Shell'
@@ -87,6 +89,8 @@ Bundle 'xmledit'
 Bundle 'lukerandall/haskellmode-vim'
 " Haskell folding
 Bundle 'Twinside/vim-haskellFold'
+" Haskell markdown support
+Bundle 'tpope/vim-markdown'
 
 
 " === Colour Schemes! ===
