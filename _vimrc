@@ -86,7 +86,7 @@ Bundle 'xmledit'
 " Haskell mode plugin.
 Bundle 'lukerandall/haskellmode-vim'
 " Haskell folding
-"Bundle 'Twinside/vim-haskellFold'
+Bundle 'Twinside/vim-haskellFold'
 
 
 " === Colour Schemes! ===
