@@ -418,7 +418,7 @@ command! DeleteTrailingWs :%s/\s\+$//e
 " Search all subdirectories for word under cursor
 command! Wgrep :execute 'noautocmd vimgrep /'.expand('<cword>').'/gj **/*'.expand('%:e').' | cl'
 
-command! Rp :source $MYVIMRC
+command! Rlp :source $MYVIMRC
 command! Ep :e $MYVIMRC
 
 
