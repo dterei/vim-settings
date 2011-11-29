@@ -314,12 +314,12 @@ set pastetoggle=<F7>
 " Sadly the below only really work in GVim.
 
 " enable eclipse style moving of lines (needs GVim)
-nmap <silent> <A-S-j> mz:m+<CR>`z==
-nmap <silent> <A-S-k> mz:m-2<CR>`z==
-imap <silent> <A-S-j> <Esc>:m+<CR>==gi
-imap <silent> <A-S-k> <Esc>:m-2<CR>==gi
-vmap <silent> <A-S-j> :m'>+<CR>gv=`<my`>mzgv`yo`z
-vmap <silent> <A-S-k> :m'<-2<CR>gv=`>my`<mzgv`yo`z
+nmap <silent> <A-J> mz:m+<CR>`z==
+nmap <silent> <A-K> mz:m-2<CR>`z==
+imap <silent> <A-J> <Esc>:m+<CR>==gi
+imap <silent> <A-K> <Esc>:m-2<CR>==gi
+vmap <silent> <A-J> :m'>+<CR>gv=`<my`>mzgv`yo`z
+vmap <silent> <A-K> :m'<-2<CR>gv=`>my`<mzgv`yo`z
 
 " enable nice new line inserting in insert mode
 imap <silent> <C-CR> <Esc>o
