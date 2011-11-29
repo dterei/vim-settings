@@ -496,15 +496,15 @@ au Bufenter *.lhs compiler ghc
 
 " configure browser for haskell_doc.vim
 if has("mac")
-    let g:haddock_browser = "open"
-    let g:haddock_browser_callformat = "%s %s"
+	let g:haddock_browser = "open"
+	let g:haddock_browser_callformat = "%s %s"
 elseif has("win32") || has ("win64")
-    let g:haddock_browser = "C:/Program Files/Opera/Opera.exe"
+	let g:haddock_browser = "C:/Program Files/Opera/Opera.exe"
 else
-    let g:haddock_browser = "opera"
-    let g:haddock_docdir = "/usr/share/doc/ghc6-doc/html"
-    let g:haddock_indexfiledir=$MYVIM."/"
-    let g:ghc = "/usr/bin/ghc"
+	let g:haddock_browser = "opera"
+	let g:haddock_docdir = "/usr/share/doc/ghc6-doc/html"
+	let g:haddock_indexfiledir=$MYVIM."/"
+	let g:ghc = "/usr/bin/ghc"
 endif
 
 " Enable increased Haskell highlighting
