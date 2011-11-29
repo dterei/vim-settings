@@ -455,7 +455,6 @@ command! Ep :e $MYVIMRC
 "------------
 "# YankRing #
 "------------
-
 let g:yankring_clipboard_monitor = 0
 let g:yankring_replace_n_pkey = '<A-p>'
 let g:yankring_replace_n_nkey = '<A-n>'
@@ -466,7 +465,6 @@ nnoremap <silent> <Leader>y :YRShow<CR>
 "---------------
 "# ManPageView #
 "---------------
-
 " This plugin is included in vim runtime but not all loaded by default
 runtime ftplugin/man.vim
 
@@ -483,6 +481,11 @@ let g:snips_author = 'David Terei'
 "# Lust Explorer #
 "-----------------
 let g:LustyJugglerSuppressRubyWarning = 1
+
+"---------
+"# Gundo #
+"---------
+nnoremap U :GundoToggle<CR>
 
 "----------------
 "# Haskell Mode #
@@ -501,7 +504,7 @@ else
     let g:haddock_browser = "opera"
     let g:haddock_docdir = "/usr/share/doc/ghc6-doc/html"
     let g:haddock_indexfiledir=$MYVIM."/"
-	 let g:ghc = "/usr/bin/ghc"
+    let g:ghc = "/usr/bin/ghc"
 endif
 
 " Enable increased Haskell highlighting
