@@ -7,6 +7,7 @@ augroup filetype
 	au BufRead,BufNewFile *.y    set filetype=haskell
 	au BufRead,BufNewFile *.y.pp set filetype=haskell
 	au BufRead,BufNewFile *.hc   set filetype=c
+	au BufRead,BufNewFile *.cmm  set filetype=c
 augroup END
 
 "---------------
@@ -15,5 +16,12 @@ augroup END
 augroup filetype
 	au BufRead,BufNewFile *.ll set filetype=llvm
 	au BufRead,BufNewFile *.td set filetype=tablegen
+augroup END
+
+"-------------------
+"# Markdown Syntax #
+"-------------------
+augroup filetype
+	au BufRead,BufNewFile *.md  set filetype=markdown
 augroup END
 
