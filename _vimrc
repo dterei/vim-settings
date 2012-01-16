@@ -80,6 +80,8 @@ Bundle 'YankRing.vim'
 Bundle 'sjl/gundo.vim'
 " Make <F12> switch mouse between Vim and Terminal
 Bundle 'nvie/vim-togglemouse'
+" Easy moving / jumping
+Bundle 'EasyMotion'
 
 " A filetype plugin to help edit XML, HTML and SGML documents.
 Bundle 'xmledit'
