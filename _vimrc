@@ -50,8 +50,6 @@ Bundle 'LustyExplorer'
 " Network browser (included with vim but want most up to date)
 Bundle 'netrw.vim'
 
-" Functions and mappings to close open HTML/XML tags.
-Bundle 'closetag.vim'
 " Extended % matching for HTML, LaTeX, and many other languages.
 Bundle 'matchit.zip'
 " An attempt to emulate TextMate's snippet expansion.
@@ -459,6 +457,12 @@ let g:snips_author = 'David Terei'
 "# Lust Explorer #
 "-----------------
 let g:LustyJugglerSuppressRubyWarning = 1
+
+"---------------
+"# Delimitmate #
+"---------------
+let delimitMate_expand_cr = 1
+let delimitMate_expand_space = 1
 
 "---------
 "# Gundo #
