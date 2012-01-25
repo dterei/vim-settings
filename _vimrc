@@ -83,12 +83,18 @@ Bundle 'EasyMotion'
 
 " A filetype plugin to help edit XML, HTML and SGML documents.
 Bundle 'xmledit'
+" Auto complete system
+Bundle 'Shougo/neocomplcache'
+" Haskell autocomplete plugin
+Bundle 'ujihisa/neco-ghc'
 " Haskell mode plugin.
 Bundle 'lukerandall/haskellmode-vim'
 " Haskell folding
 Bundle 'Twinside/vim-haskellFold'
 " Haskell markdown support
 Bundle 'tpope/vim-markdown'
+" Indent highlighting
+Bundle 'nathanaelkane/vim-indent-guides'
 
 
 " === Colour Schemes! ===
@@ -107,6 +113,7 @@ Bundle 'Solarized'
 Bundle 'vilight.vim'
 Bundle 'Wombat'
 Bundle 'Zenburn'
+Bundle 'bclear'
 
 
 "###############################################################################
