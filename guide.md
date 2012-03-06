@@ -80,7 +80,7 @@ Install:
   ruby extconf.rb
   make
 
-$ <Leader>t OR :CommandT "Bring up Command-T window
+$ <Leader>f OR :CommandT "Bring up Command-T window
 
 On file can use:
   <CR>        open the selected file
@@ -171,6 +171,10 @@ $ gCc          "Comment the current line
 
 18. Gundo
 ---------
+
+Undo tree GUI.
+
+$ U "In normal mode, toggles Gundo GUI
 
 19. ToggleMouse
 ---------------

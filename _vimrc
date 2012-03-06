@@ -465,6 +465,11 @@ let g:snips_author = 'David Terei'
 "-----------------
 let g:LustyJugglerSuppressRubyWarning = 1
 
+"-------------
+"# Command-T #
+"-------------
+nnoremap <silent> <Leader>f :CommandT<CR>
+
 "---------------
 "# Delimitmate #
 "---------------
@@ -474,7 +479,7 @@ let delimitMate_expand_space = 1
 "---------
 "# Gundo #
 "---------
-nnoremap U :GundoToggle<CR>
+nnoremap <silent> U :GundoToggle<CR>
 
 "----------------
 "# Haskell Mode #
