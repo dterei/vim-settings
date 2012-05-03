@@ -70,6 +70,8 @@ Bundle 'tpope/vim-fugitive'
 " Git highlighting files.
 Bundle 'tpope/vim-git'
 
+" Provides selectable highlighting
+Bundle 'Mark'
 " Provide a bookmarking facility for Vim. Mark lines of interest.
 Bundle 'dterei/VimBookmarking'
 " Maintains a history of previous yanks and deletes.
