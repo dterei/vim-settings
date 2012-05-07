@@ -399,7 +399,7 @@ noremap <C-p> :tabNext<CR>
 " new tab
 nmap <Leader>t :tabe %:p:h<CR>
 nmap <Leader>T :tabe .<CR>
-nmap <Leader>n :tabnew<CR>
+"nmap <Leader>n :tabnew<CR>
 
 " tab close (TODO: detect if on last tab and don't call previous)
 map <Leader>w :tabclose\|tabprevious<CR>
