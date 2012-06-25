@@ -83,6 +83,8 @@ Bundle 'nvie/vim-togglemouse'
 " Easy moving / jumping
 Bundle 'EasyMotion'
 
+" Golang Support
+Bundle 'jnwhiteh/vim-golang'
 " A filetype plugin to help edit XML, HTML and SGML documents.
 Bundle 'xmledit'
 " Auto complete system
