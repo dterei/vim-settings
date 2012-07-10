@@ -82,6 +82,8 @@ Bundle 'sjl/gundo.vim'
 Bundle 'nvie/vim-togglemouse'
 " Easy moving / jumping
 Bundle 'EasyMotion'
+" Provides some nice shortcuts for things like :cn
+Bundle 'unimpaired'
 
 " Golang Support
 Bundle 'jnwhiteh/vim-golang'
@@ -100,6 +102,8 @@ Bundle 'tpope/vim-markdown'
 " Indent highlighting
 Bundle 'nathanaelkane/vim-indent-guides'
 
+" Simplenote support
+Bundle 'simplenote'
 
 " === Colour Schemes! ===
 Bundle 'dterei/VimCobaltColourScheme'
