@@ -83,7 +83,7 @@ Bundle 'nvie/vim-togglemouse'
 " Easy moving / jumping
 Bundle 'EasyMotion'
 " Provides some nice shortcuts for things like :cn
-Bundle 'unimpaired'
+Bundle 'tpope/unimpaired.vim'
 
 " Golang Support
 Bundle 'jnwhiteh/vim-golang'
@@ -101,9 +101,11 @@ Bundle 'Twinside/vim-haskellFold'
 Bundle 'tpope/vim-markdown'
 " Indent highlighting
 Bundle 'nathanaelkane/vim-indent-guides'
+" Tex Indenting
+Bundle 'tex.vim'
 
 " Simplenote support
-Bundle 'simplenote'
+Bundle 'mrtazz/simplenote.vim'
 
 " === Colour Schemes! ===
 Bundle 'dterei/VimCobaltColourScheme'
@@ -516,6 +518,11 @@ let hs_highlight_more_types = 1
 let hs_highlight_debug = 1
 let hs_highlight_classes = 1
 let hs_highlight_functions = 1
+
+"------------------
+"# simplenote.vim #
+"------------------
+source ~/.simplenoterc
 
 "###############################################################################
 "# File End                                                                    #
