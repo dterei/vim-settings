@@ -39,8 +39,6 @@ Bundle 'gmarik/vundle'
 
 " === Plugins! ===
 
-" Quickly switch between source files and header files.
-Bundle 'a.vim'
 " With bufexplorer, you can quickly and easily switch between buffers.
 Bundle 'bufexplorer.zip'
 " File finding command.
@@ -49,6 +47,12 @@ Bundle 'Command-T'
 Bundle 'LustyExplorer'
 " Network browser (included with vim but want most up to date)
 Bundle 'netrw.vim'
+" NERD Tree filesystem explorer
+Bundle 'scrooloose/nerdtree'
+" Syntatic - Checks for syntax errors
+Bundle 'scrooloose/syntastic'
+" Tag listing / Class explorer
+Bundle 'majutsushi/tagbar'
 
 " Extended % matching for HTML, LaTeX, and many other languages.
 Bundle 'matchit.zip'
@@ -84,28 +88,25 @@ Bundle 'nvie/vim-togglemouse'
 Bundle 'EasyMotion'
 " Provides some nice shortcuts for things like :cn
 Bundle 'tpope/unimpaired.vim'
+" Auto complete system
+Bundle 'Shougo/neocomplcache'
+" Haskell autocomplete plugin
+Bundle 'ujihisa/neco-ghc'
 
 " Golang Support
 Bundle 'jnwhiteh/vim-golang'
 " A filetype plugin to help edit XML, HTML and SGML documents.
 Bundle 'xmledit'
-" Auto complete system
-Bundle 'Shougo/neocomplcache'
-" Haskell autocomplete plugin
-Bundle 'ujihisa/neco-ghc'
 " Haskell mode plugin.
 Bundle 'lukerandall/haskellmode-vim'
 " Haskell folding
 Bundle 'Twinside/vim-haskellFold'
-" Haskell markdown support
+" Markdown support
 Bundle 'tpope/vim-markdown'
 " Indent highlighting
 Bundle 'nathanaelkane/vim-indent-guides'
 " Tex Indenting
 Bundle 'tex.vim'
-
-" Simplenote support
-Bundle 'mrtazz/simplenote.vim'
 
 " === Colour Schemes! ===
 Bundle 'dterei/VimCobaltColourScheme'
