@@ -105,8 +105,6 @@ Bundle 'Twinside/vim-haskellFold'
 Bundle 'tpope/vim-markdown'
 " Indent highlighting
 Bundle 'nathanaelkane/vim-indent-guides'
-" Tex Indenting
-Bundle 'tex.vim'
 
 " === Colour Schemes! ===
 Bundle 'dterei/VimCobaltColourScheme'
@@ -253,10 +251,13 @@ set showmatch " show matching brace when inserting one
 " Like to use this in general but implemented in an ugly way in Vim
 "set colorcolumn=100
 
-let g:xml_syntax_folding=1 " enable xml folding
 set foldenable
 set foldmethod=syntax
 set foldlevelstart=99 " open all folds by default
+let g:xml_syntax_folding=1 " enable xml folding
+
+" Use latex, not plaintex
+let g:tex_flavor = "latex"
 
 " Highlight trailing whitespace
 highlight WhitespaceEOL ctermbg=DarkYellow ctermfg=white guibg=DarkYellow
