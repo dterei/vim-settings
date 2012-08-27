@@ -73,6 +73,8 @@ Bundle 'Conque-Shell'
 Bundle 'tpope/vim-fugitive'
 " Git highlighting files.
 Bundle 'tpope/vim-git'
+" Unix helpers
+Bundle 'tpope/vim-eunuch'
 
 " Provides selectable highlighting
 Bundle 'Mark'
@@ -87,7 +89,7 @@ Bundle 'nvie/vim-togglemouse'
 " Easy moving / jumping
 Bundle 'EasyMotion'
 " Provides some nice shortcuts for things like :cn
-Bundle 'tpope/unimpaired.vim'
+Bundle 'tpope/vim-unimpaired'
 " Auto complete system
 Bundle 'Shougo/neocomplcache'
 " Haskell autocomplete plugin
