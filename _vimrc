@@ -67,6 +67,8 @@ Bundle 'Raimondi/delimitMate'
 " Toggle commenting
 Bundle 'tomtom/tcomment_vim'
 
+" Support for tmux
+Bundle 'xaviershay/tslime.vim'
 " Run a terminal in vim.
 Bundle 'Conque-Shell'
 " Git plugin.
@@ -120,7 +122,7 @@ Bundle 'tir_black'
 Bundle 'kib_darktango.vim'
 Bundle 'peaksea'
 Bundle 'pyte'
-Bundle 'Solarized'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'vilight.vim'
 Bundle 'Wombat'
 Bundle 'Zenburn'
@@ -230,9 +232,9 @@ colorscheme mustang
 " Work with light or dark terminal background (call set background to change)
 "colorscheme default
 
-if has("mac")
-	colorscheme default
-endif
+" if has("mac")
+	" colorscheme default
+" endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
