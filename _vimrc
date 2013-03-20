@@ -70,7 +70,7 @@ Bundle 'tomtom/tcomment_vim'
 " Support for tmux
 Bundle 'xaviershay/tslime.vim'
 " Run a terminal in vim.
-Bundle 'Conque-Shell'
+Bundle 'rosenfeld/conque-term'
 " Git plugin.
 Bundle 'tpope/vim-fugitive'
 " Git highlighting files.
@@ -96,6 +96,8 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'Shougo/neocomplcache'
 " Haskell autocomplete plugin
 Bundle 'ujihisa/neco-ghc'
+" Improved :man & :help (and other docs) viewer
+Bundle 'powerman/vim-plugin-viewdoc'
 
 " Golang Support
 Bundle 'jnwhiteh/vim-golang'
@@ -465,7 +467,7 @@ nnoremap <silent> <Leader>y :YRShow<CR>
 "# ManPageView #
 "---------------
 " This plugin is included in vim runtime but not all loaded by default
-"runtime ftplugin/man.vim
+runtime ftplugin/man.vim
 
 "------------
 "# snipMate #
@@ -496,6 +498,11 @@ let delimitMate_expand_space = 1
 "# Gundo #
 "---------
 nnoremap <silent> U :GundoToggle<CR>
+
+"-----------------
+"# Neocomplcache #
+"-----------------
+let g:neocomplcache_enabled_at_startup = 1
 
 "----------------
 "# Haskell Mode #
