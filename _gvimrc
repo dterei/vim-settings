@@ -78,7 +78,7 @@ set guitablabel=%!GuiTabLabel()
 "###############################################################################
 
 " These look good only with a dark background
-colorscheme mustang
+"colorscheme mustang
 "colorscheme solarized
 "colorscheme cobaltish
 "colorscheme wombat
@@ -96,6 +96,10 @@ colorscheme mustang
 
 " These look good only with a light background
 "colorscheme pyte
+
+" These look good with either
+colorscheme solarized
+set background=dark
 
 "###############################################################################
 "# File End                                                                    #

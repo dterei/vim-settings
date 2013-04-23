@@ -223,7 +223,7 @@ set tabpagemax=40
 "colorscheme elflord
 
 " Change terminal background, use dark background
-colorscheme mustang
+"colorscheme mustang
 "colorscheme torte
 
 " Change terminal background, use light background
@@ -233,6 +233,8 @@ colorscheme mustang
 
 " Work with light or dark terminal background (call set background to change)
 "colorscheme default
+colorscheme solarized
+set background=dark
 
 " if has("mac")
 	" colorscheme default
