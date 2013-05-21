@@ -216,6 +216,13 @@ set tabpagemax=40
 "# Highlight & Fold Settings                                                   #
 "###############################################################################
 
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
+
 " Use terminal background, need dark background
 "colorscheme ir_black
 "colorscheme pablo
@@ -234,18 +241,14 @@ set tabpagemax=40
 " Work with light or dark terminal background (call set background to change)
 "colorscheme default
 colorscheme solarized
+
+" below order and command is needed to fix gnome-terminal issue
+let g:solarized_termtrans=1
 set background=dark
 
 " if has("mac")
 	" colorscheme default
 " endif
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
 
 syntax sync fromstart
 let hs_minlines = 500
