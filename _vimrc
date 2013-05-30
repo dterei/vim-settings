@@ -99,7 +99,7 @@ Bundle 'ujihisa/neco-ghc'
 " Improved :man & :help (and other docs) viewer
 Bundle 'powerman/vim-plugin-viewdoc'
 
-" Golang Support
+" Golang support
 Bundle 'jnwhiteh/vim-golang'
 " A filetype plugin to help edit XML, HTML and SGML documents.
 Bundle 'xmledit'
@@ -111,6 +111,8 @@ Bundle 'Twinside/vim-haskellFold'
 Bundle 'tpope/vim-markdown'
 " Indent highlighting
 Bundle 'nathanaelkane/vim-indent-guides'
+" Scala support
+Bundle 'derekwyatt/vim-scala'
 
 " === Colour Schemes! ===
 Bundle 'dterei/VimCobaltColourScheme'
