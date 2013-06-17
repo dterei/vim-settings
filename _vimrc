@@ -214,6 +214,10 @@ cmap w!! w !sudo tee % >/dev/null
 " allow more than 10 tabs with -p command
 set tabpagemax=40
 
+" modelines
+set modeline
+set modelines=5
+
 "###############################################################################
 "# Highlight & Fold Settings                                                   #
 "###############################################################################
