@@ -454,7 +454,8 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 command! DeleteTrailingWs :%s/\s\+$//e
 
 " Search all subdirectories for word under cursor
-command! Wgrep :execute 'noautocmd vimgrep /'.expand('<cword>').'/gj **/*'.expand('%:e').' | cl'
+command! Wgrep :execute 'noautocmd vimgrep /'.expand('<cword>').'/gj **/*'
+									\ .expand('%:e').' **/*\.h **/*\.c | cl'
 
 command! Rlp :source $MYVIMRC
 command! Ep :e $MYVIMRC
