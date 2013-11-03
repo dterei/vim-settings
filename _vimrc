@@ -218,6 +218,13 @@ set tabpagemax=40
 set modeline
 set modelines=5
 
+" clipboard
+if has('unnamedplus')
+	set clipboard=unnamedplus
+elseif has('unamed')
+	set clipboard=unnamed
+endif
+
 "###############################################################################
 "# Highlight & Fold Settings                                                   #
 "###############################################################################
