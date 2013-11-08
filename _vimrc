@@ -310,10 +310,10 @@ nmap <silent> <Leader>h :call ToggleLongLines()<CR>
 "# Indent Settings                                                             #
 "###############################################################################
 
-set tabstop=3 " tab space
-set softtabstop=3 " fake tab spaces
-set shiftwidth=3 " indent space
-set noexpandtab " use tabs, not spaces
+set tabstop=2 " tab space
+set softtabstop=2 " fake tab spaces
+set shiftwidth=2 " indent space
+set expandtab " use spaces, not tabs
 set smarttab " tab amount done according to previous lines
 set indentexpr=syntax
 set autoindent
