@@ -551,6 +551,12 @@ let hs_highlight_debug = 1
 let hs_highlight_classes = 1
 let hs_highlight_functions = 1
 
+"-------------
+"# Syntastic #
+"-------------
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = '-std=c++11'
+
 "###############################################################################
 "# File End                                                                    #
 "###############################################################################

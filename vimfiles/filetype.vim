@@ -10,6 +10,13 @@ augroup filetype
 	au BufRead,BufNewFile *.cmm  set filetype=c
 augroup END
 
+"--------------
+"# Goc Syntax #
+"--------------
+augroup filetype
+	au BufRead,BufNewFile *.goc set filetype=c
+augroup END
+
 "---------------
 "# LLVM Syntax #
 "---------------
