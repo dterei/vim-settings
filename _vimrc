@@ -67,6 +67,9 @@ Bundle 'Raimondi/delimitMate'
 " Toggle commenting
 Bundle 'tomtom/tcomment_vim'
 
+" Support for local.vimrc
+Bundle 'vim-scripts/lh-vim-lib' 
+Bundle 'LucHermitte/local_vimrc'
 " Support for tmux
 Bundle 'xaviershay/tslime.vim'
 " Run a terminal in vim.
@@ -522,6 +525,11 @@ nnoremap <silent> U :GundoToggle<CR>
 "# Neocomplcache #
 "-----------------
 let g:neocomplcache_enabled_at_startup = 1
+
+"---------
+"# Gundo #
+"---------
+let g:local_vimrc = ["_vimrc_local.vim", ".vimrc_local.vim"]
 
 "----------------
 "# Haskell Mode #
