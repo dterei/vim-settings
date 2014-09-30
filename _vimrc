@@ -66,6 +66,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'Raimondi/delimitMate'
 " Toggle commenting
 Bundle 'tomtom/tcomment_vim'
+" QFEnter -- better quickfix window handling
+Bundle 'yssl/QFEnter'
 
 " Support for local.vimrc
 Bundle 'vim-scripts/lh-vim-lib' 
@@ -81,6 +83,8 @@ Bundle 'tpope/vim-git'
 " Unix helpers
 Bundle 'tpope/vim-eunuch'
 
+" More repeat (.) support (for plugins)
+Bundle 'tpope/vim-repeat'
 " Provides selectable highlighting
 Bundle 'Mark'
 " Provide a bookmarking facility for Vim. Mark lines of interest.
