@@ -1,7 +1,7 @@
 " ==============================================================================
 " David Terei's .vimrc file
 "
-" Vim Version: 7.3.0
+" Vim Version: 7.4.0
 "
 " ==============================================================================
 
@@ -337,9 +337,6 @@ set backspace=indent,eol,start
 " disable alt modifier for menu shortcuts
 set winaltkeys=no
 
-" nicer escape
-imap jj <Esc>
-
 "---------------
 "# F[0-9] Keys #
 "---------------
@@ -374,7 +371,7 @@ vmap <silent> <A-J> :m'>+<CR>gv=`<my`>mzgv`yo`z
 vmap <silent> <A-K> :m'<-2<CR>gv=`>my`<mzgv`yo`z
 
 " enable nice new line inserting in insert mode
-imap <silent> <C-CR> <Esc>o
+imap <silentr <C-CR> <Esc>o
 imap <silent> <C-S-CR> <Esc>O
 
 " general windows delete commands
@@ -384,7 +381,6 @@ imap <silent> <C-Del> <Esc>lvec
 " map - to end of line, _ to start
 noremap - ^
 noremap _ $
-nnoremap = $
 
 " Enable some emacs style keys
 imap <silent> <C-e> <End>
@@ -413,14 +409,6 @@ cnoremap ; <C-C>
 "# New Movement Keys #
 "---------------------
 
-" put pgdown pgup in nicer positions (normally same as l & h)
-noremap <Space> <PageDown>
-noremap <S-Space> <PageUp>
-
-" scroll window but not line (normally same as i and x)
-noremap <Ins> 2<C-Y>
-noremap <Del> 2<C-E>
-
 " normally nothing
 noremap <C-k> 2<C-Y>
 noremap <C-j> 2<C-E>
@@ -448,7 +436,6 @@ map <Leader>w :tabclose\|tabprevious<CR>
 map <Leader>q :q<CR>
 " quit vim
 map <Leader>Q :qall!<CR>
-
 
 "###############################################################################
 "# Diff Settings                                                               #
@@ -530,29 +517,24 @@ nnoremap <silent> U :GundoToggle<CR>
 "-----------------
 let g:neocomplcache_enabled_at_startup = 1
 
-"---------
-"# Gundo #
-"---------
-let g:local_vimrc = ["_vimrc_local.vim", ".vimrc_local.vim"]
+"---------------
+"# Local vimrc #
+"---------------
+let g:local_vimrc = ["_vimrc_local.vim", ".vimrc_local.vim", ".vimrc.vim"]
 
 "----------------
 "# Haskell Mode #
 "----------------
 " use ghc functionality for haskell files
-au Bufenter *.hs  compiler ghc
-au Bufenter *.lhs compiler ghc
+"au Bufenter *.hs  compiler ghc
+"au Bufenter *.lhs compiler ghc
 
 " configure browser for haskell_doc.vim
 if has("mac")
 	let g:haddock_browser = "open"
 	let g:haddock_browser_callformat = "%s %s"
-elseif has("win32") || has ("win64")
-	let g:haddock_browser = "C:/Program Files/Opera/Opera.exe"
 else
-	let g:haddock_browser = "opera"
-	let g:haddock_docdir = "/usr/share/doc/ghc6-doc/html"
-	let g:haddock_indexfiledir=$MYVIM."/"
-	let g:ghc = "/usr/bin/ghc"
+	let g:haddock_browser = "chromium"
 endif
 
 " Enable increased Haskell highlighting
