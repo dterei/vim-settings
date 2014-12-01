@@ -363,15 +363,25 @@ set pastetoggle=<F7>
 " Sadly the below only really work in GVim.
 
 " enable eclipse style moving of lines (needs GVim)
+if has("mac")
+nmap <silent> ∆ mz:m+<CR>`z==
+nmap <silent> ˚ mz:m-2<CR>`z==
+imap <silent> ∆ <Esc>:m+<CR>==gi
+imap <silent> ˚ <Esc>:m-2<CR>==gi
+vmap <silent> ∆ :m'>+<CR>gv=`<my`>mzgv`yo`z
+vmap <silent> ˚ :m'<-2<CR>gv=`>my`<mzgv`yo`z
+else
 nmap <silent> <A-J> mz:m+<CR>`z==
 nmap <silent> <A-K> mz:m-2<CR>`z==
 imap <silent> <A-J> <Esc>:m+<CR>==gi
 imap <silent> <A-K> <Esc>:m-2<CR>==gi
 vmap <silent> <A-J> :m'>+<CR>gv=`<my`>mzgv`yo`z
 vmap <silent> <A-K> :m'<-2<CR>gv=`>my`<mzgv`yo`z
+endif
+
 
 " enable nice new line inserting in insert mode
-imap <silentr <C-CR> <Esc>o
+imap <silent> <C-CR> <Esc>o
 imap <silent> <C-S-CR> <Esc>O
 
 " general windows delete commands
@@ -453,6 +463,7 @@ noremap <silent> <Leader>> :execute 'silent! tabmove ' . tabpagenr()<CR>
 " Toggle between all buffers and all tabs
 nnoremap <silent> <expr> <F8> ( tabpagenr('$') == 1 ? ':tab ball<Bar>tabn' : ':tabo' ) . '<CR>'
 
+
 "###############################################################################
 "# Diff Settings                                                               #
 "###############################################################################
@@ -474,6 +485,7 @@ command! DeleteTrailingWs :%s/\s\+$//e
 command! Wgrep :execute 'noautocmd vimgrep /'.expand('<cword>').'/gj **/*'
 									\ .expand('%:e').' **/*\.h **/*\.c | cl'
 
+" Easy .vimrc editing
 command! Rlp :source $MYVIMRC
 command! Ep :e $MYVIMRC
 
