@@ -437,6 +437,22 @@ map <Leader>q :q<CR>
 " quit vim
 map <Leader>Q :qall!<CR>
 
+"----------------------
+"# tab re-arrangement #
+"----------------------
+
+" Move current tab to first position
+"nnoremap <C-S-M> :tabmove 0<CR>
+" Move current tab to last position
+"nnoremap <C-/> :tabmove<CR>
+" Move current tab to the left
+noremap <silent> <Leader>< :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+" Move current tab to the right
+noremap <silent> <Leader>> :execute 'silent! tabmove ' . tabpagenr()<CR>
+
+" Toggle between all buffers and all tabs
+nnoremap <silent> <expr> <F8> ( tabpagenr('$') == 1 ? ':tab ball<Bar>tabn' : ':tabo' ) . '<CR>'
+
 "###############################################################################
 "# Diff Settings                                                               #
 "###############################################################################
