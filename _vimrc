@@ -56,8 +56,6 @@ Bundle 'majutsushi/tagbar'
 
 " Extended % matching for HTML, LaTeX, and many other languages.
 Bundle 'matchit.zip'
-" An attempt to emulate TextMate's snippet expansion.
-Bundle 'snipMate'
 " Align text to columns
 Bundle 'godlygeek/tabular'
 " Quickly surround some text (i.e bracket, html tags...)
@@ -72,10 +70,6 @@ Bundle 'yssl/QFEnter'
 " Support for local.vimrc
 Bundle 'vim-scripts/lh-vim-lib' 
 Bundle 'LucHermitte/local_vimrc'
-" Support for tmux
-Bundle 'xaviershay/tslime.vim'
-" Run a terminal in vim.
-Bundle 'rosenfeld/conque-term'
 " Git plugin.
 Bundle 'tpope/vim-fugitive'
 " Git highlighting files.
@@ -99,10 +93,6 @@ Bundle 'nvie/vim-togglemouse'
 Bundle 'EasyMotion'
 " Provides some nice shortcuts for things like :cn
 Bundle 'tpope/vim-unimpaired'
-" Auto complete system
-Bundle 'Shougo/neocomplcache'
-" Haskell autocomplete plugin
-Bundle 'ujihisa/neco-ghc'
 " Improved :man & :help (and other docs) viewer
 Bundle 'powerman/vim-plugin-viewdoc'
 
@@ -110,8 +100,6 @@ Bundle 'powerman/vim-plugin-viewdoc'
 Bundle 'jnwhiteh/vim-golang'
 " A filetype plugin to help edit XML, HTML and SGML documents.
 Bundle 'xmledit'
-" Haskell mode plugin.
-Bundle 'lukerandall/haskellmode-vim'
 " Haskell folding
 Bundle 'Twinside/vim-haskellFold'
 " Markdown support
@@ -510,15 +498,6 @@ nnoremap <silent> <Leader>y :YRShow<CR>
 " This plugin is included in vim runtime but not all loaded by default
 runtime ftplugin/man.vim
 
-"------------
-"# snipMate #
-"------------
-let g:snips_author = 'David Terei'
-"ino <silent> " "<c-r>=TriggerSnippetWord('"')<cr>
-"ino <silent> ( (<c-r>=TriggerSnippetWord('(')<cr>
-"ino <silent> { {<c-r>=TriggerSnippetWord('{')<cr>
-"ino <silent> [ [<c-r>=TriggerSnippetWord('[')<cr>
-
 "-----------------
 "# Lust Explorer #
 "-----------------
@@ -540,11 +519,6 @@ let delimitMate_expand_space = 1
 "---------
 nnoremap <silent> U :GundoToggle<CR>
 
-"-----------------
-"# Neocomplcache #
-"-----------------
-let g:neocomplcache_enabled_at_startup = 1
-
 "---------------
 "# Local vimrc #
 "---------------
@@ -553,18 +527,6 @@ let g:local_vimrc = ["_vimrc_local.vim", ".vimrc_local.vim", ".vimrc.vim"]
 "----------------
 "# Haskell Mode #
 "----------------
-" use ghc functionality for haskell files
-"au Bufenter *.hs  compiler ghc
-"au Bufenter *.lhs compiler ghc
-
-" configure browser for haskell_doc.vim
-if has("mac")
-	let g:haddock_browser = "open"
-	let g:haddock_browser_callformat = "%s %s"
-else
-	let g:haddock_browser = "chromium"
-endif
-
 " Enable increased Haskell highlighting
 let hs_highlight_boolean = 1
 let hs_highlight_types = 1
