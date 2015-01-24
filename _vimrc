@@ -97,6 +97,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'powerman/vim-plugin-viewdoc'
 
 " Golang support
+Bundle 'jnwhiteh/vim-golang'
 Bundle 'fatih/vim-go'
 " A filetype plugin to help edit XML, HTML and SGML documents.
 Bundle 'xmledit'
