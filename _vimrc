@@ -97,7 +97,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'powerman/vim-plugin-viewdoc'
 
 " Golang support
-Bundle 'jnwhiteh/vim-golang'
+Bundle 'fatih/vim-go'
 " A filetype plugin to help edit XML, HTML and SGML documents.
 Bundle 'xmledit'
 " Haskell folding
@@ -541,6 +541,22 @@ let hs_highlight_functions = 1
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = '-std=c++11'
 let g:syntastic_python_python_exec = 'python2'
+
+"----------
+"# Vim-go #
+"----------
+
+au Filetype go nmap <leader>dv <Plug>(go-def-vertical)
+au Filetype go nmap <leader>ds <Plug>(go-def-split)
+
+au Filetype go nmap <leader>gd <Plug>(go-doc-vertical)
+au Filetype go nmap <leader>gb <Plug>(go-doc-browser)
+
+au Filetype go nmap <leader>I :exe "GoImports"<CR>
+au Filetype go nmap <leader>i <Plug>(go-info)
+au Filetype go nmap <leader>B <Plug>(go-build)
+au Filetype go nmap <leader>R <Plug>(go-rename)
+
 
 "###############################################################################
 "# File End                                                                    #
