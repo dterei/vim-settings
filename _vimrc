@@ -381,7 +381,7 @@ imap <silent> <C-Del> <Esc>lvec
 noremap - ^
 noremap _ $
 
-" remap C-A to C-S as we want C-A for home
+" remap C-A to C-H as we want C-A for home
 noremap <silent> <C-h> <C-a>
 
 " Enable some emacs style keys
