@@ -565,6 +565,9 @@ let g:syntastic_aggregate_erros = 1
 "# Vim-go #
 "----------
 
+" Disable gofmt on save.
+let g:go_fmt_autosave = 0
+
 au Filetype go nmap <leader>dv <Plug>(go-def-vertical)
 au Filetype go nmap <leader>ds <Plug>(go-def-split)
 
