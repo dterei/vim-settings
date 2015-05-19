@@ -34,7 +34,7 @@ let $SS=$MYVIM."/sessions"
 " setup Vundle
 filetype off
 set rtp+=$MYVIM/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 Bundle 'gmarik/vundle'
 
 " === Plugins! ===
@@ -42,7 +42,7 @@ Bundle 'gmarik/vundle'
 " With bufexplorer, you can quickly and easily switch between buffers.
 Bundle 'bufexplorer.zip'
 " File finding command.
-Bundle 'Command-T'
+Bundle 'wincent/command-t'
 " A fuzzy search file and buffer browser.
 Bundle 'LustyExplorer'
 " Network browser (included with vim but want most up to date)
@@ -127,6 +127,8 @@ Bundle 'vilight.vim'
 Bundle 'Wombat'
 Bundle 'Zenburn'
 Bundle 'bclear'
+
+call vundle#end()
 
 
 "###############################################################################
