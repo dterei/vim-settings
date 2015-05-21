@@ -90,7 +90,7 @@ syn match hsTypedef     "\<\(type\|newtype\)\>"
 syn match hsStatement   "\<\(do\|return\|case\|of\|let\|in\)\>"
 
 " We also include CPP ones here
-syn match hsConditional "\<\(if\|then\|else\|endif\|when\|ifndef\|ifdef\|elif\|defined\)\>"
+syn match hsConditional "\<\(if\|then\|else\|endif\|when\|unless\|ifndef\|ifdef\|elif\|defined\)\>"
 
 " Haskell 2010 keywords
 syn match hsForeign     "\<foreign\>"
