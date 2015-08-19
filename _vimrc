@@ -550,7 +550,7 @@ let g:syntastic_python_python_exec = 'python2'
 
 let g:syntastic_c_include_dirs = [ '../include', 'include', '../lib', 'lib' ]
 let g:syntastic_c_check_header = 1
-let g:syntastic_cpp_include_dirs = [ '../include', 'include', '../lib', 'lib', '../sort', 'sort', 'stratergies', 'stratergies/meth1' ]
+let g:syntastic_cpp_include_dirs = [ '../include', 'include', '../lib', 'lib', '../sort', 'sort', 'stratergies', 'stratergies/meth1', '../contrib', 'contrib' ]
 let g:syntastic_cpp_check_header = 1
 
 let g:syntastic_html_checkers = ["validator", "jshint"]
