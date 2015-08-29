@@ -483,6 +483,9 @@ command! Wgrep :execute 'noautocmd vimgrep /'.expand('<cword>').'/gj **/*'
 command! Rlp :source $MYVIMRC
 command! Ep :e $MYVIMRC
 
+" Go to latest version of file
+command! Latest :later 10000d
+
 
 "###############################################################################
 "# Plugins                                                                     #
