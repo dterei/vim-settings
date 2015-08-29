@@ -53,6 +53,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 " Tag listing / Class explorer
 Bundle 'majutsushi/tagbar'
+" Powerline
+Bundle 'bling/vim-airline'
 
 " Extended % matching for HTML, LaTeX, and many other languages.
 Bundle 'matchit.zip'
