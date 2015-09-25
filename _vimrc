@@ -305,6 +305,7 @@ function! ToggleLongLines()
 endfunction
 
 nmap <silent> <Leader>h :call ToggleLongLines()<CR>
+command! HighlightLongLines :call ToggleLongLines()
 
 "###############################################################################
 "# Indent Settings                                                             #
