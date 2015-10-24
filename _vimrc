@@ -554,13 +554,9 @@ let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = '-std=c++11'
 let g:syntastic_python_python_exec = 'python2'
 
-let g:syntastic_c_include_dirs = [ '../include', 'include', '../lib', 'lib',
-  \ '../libsort', 'libsort', '../libutil', 'libutil', '../libmeth1', 'libmeth1',
-  \ '../contrib', 'contrib' ]
+let g:syntastic_c_include_dirs = [ '../include', 'include' ]
 let g:syntastic_c_check_header = 1
-let g:syntastic_cpp_include_dirs = [ '../include', 'include', '../lib', 'lib',
-  \ '../libsort', 'libsort', '../libutil', 'libutil', '../libmeth1', 'libmeth1',
-  \ '../contrib', 'contrib' ]
+let g:syntastic_cpp_include_dirs = [ '../include', 'include' ]
 let g:syntastic_cpp_check_header = 1
 
 let g:syntastic_html_checkers = ["validator", "jshint"]
