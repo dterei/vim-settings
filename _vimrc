@@ -589,6 +589,9 @@ au Filetype go nmap <leader>i <Plug>(go-info)
 au Filetype go nmap <leader>B <Plug>(go-build)
 au Filetype go nmap <leader>R <Plug>(go-rename)
 
+" Enable :Lint command
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+
 
 "###############################################################################
 "# File End                                                                    #
