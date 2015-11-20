@@ -6,6 +6,7 @@ ASX
 AWS
 App
 Bing
+BitBucket
 Boneh
 Brower's
 Burstiness
@@ -26,6 +27,7 @@ DSL's
 Dalli
 DataBricks
 DiskBench
+Dropbox
 E3
 E5
 EBS
@@ -35,6 +37,9 @@ Emacs
 Etcd
 Euros
 FFI
+Facebook
+Facebook's
+FarmVille
 Firefox
 FreeBSD
 G
@@ -47,12 +52,16 @@ GHC's
 GbE
 Gbits
 Gemfile
+GitHub
+GitStar
 Go's
 Google's
 GraySort
 HAProxy
 HDFS
 HTTPS
+Hackage
+Hackager
 Hadoop
 Haskell's
 Haskell98
@@ -75,6 +84,8 @@ Lattner
 Libcloud
 Llvm
 M
+MPVC
+MVC
 MapReduce
 MemCachier's
 Memcache
@@ -144,9 +155,12 @@ VMs
 Wahroonga
 Xeon
 ZooKeeper
+Zynga's
 a4paper
 allocator
 app
+app's
+apps
 arity
 associativity
 backend
@@ -170,6 +184,8 @@ defragmentation
 deserializing
 eBuisness
 enqueuing
+exfiltrated
+exfiltration
 filesystem
 frontend
 fungibility
@@ -233,5 +249,3 @@ vs
 webserver
 webservers
 x86
-Hackager
-Hackage
