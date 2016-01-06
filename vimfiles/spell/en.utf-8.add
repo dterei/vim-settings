@@ -52,6 +52,7 @@ GHC's
 GbE
 Gbits
 Gemfile
+Ghostbusters
 GitHub
 GitStar
 Go's
@@ -65,6 +66,7 @@ Hackager
 Hadoop
 Haskell's
 Haskell98
+Hornsby
 IND
 IO
 IOPS
@@ -102,6 +104,7 @@ NSW
 NetBench
 O
 OAEP
+OpenBSD
 OpenCL
 OpenGL
 OpenJDK
@@ -110,6 +113,7 @@ P
 PKCS
 POSIX
 PPC
+Parkinson
 Paxos
 Peyton
 PowerPC
@@ -137,6 +141,7 @@ STW
 Shahriyar
 Spatio-temporal
 Speedup
+Stackage
 Startup
 T
 TLS
@@ -195,6 +200,7 @@ hyperthreads
 impactful
 inline
 libcloud
+licorice
 lmargin
 mapper
 markup
@@ -229,6 +235,8 @@ secnumdepth
 setup
 sharding
 speedup
+stackage
+stackage's
 startup
 stateful
 testsuite
@@ -249,7 +257,3 @@ vs
 webserver
 webservers
 x86
-GHC
-stackage
-stackage's
-OpenBSD
