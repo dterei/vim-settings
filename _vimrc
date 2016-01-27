@@ -184,10 +184,10 @@ set ignorecase " make this default, turn on case in search with /<search>\C/
 " type small case will search case independent, type mixed case will use exact
 set smartcase
 
-" ignore these files for auto...
+" Ignore these files for auto...
 set wildignore+=*.o,*.obj,*.bak,*.exe,*~,*.hi,*.pyc,*.class,*.bak,*.swp
 
-" don't lcd to the current buffers directory, this is a nice feature but
+" Don't lcd to the current buffers directory, this is a nice feature but
 " causes a lot of problems, so instead I use some keyboard shortcuts to
 " open tabs at the current files dir... ect.
 set noacd
@@ -198,11 +198,11 @@ set ruler " show the cursor position all the time
 
 set scrolloff=3 " lines to always seeable when scrolling
 
-" default text width, used with autoformatter and pasting
+" Default text width, used with autoformatter and pasting
 "set tw=80
 "set wm=80
 
-" just hide, dont close buffers (a lot of people love this, not me though)
+" Just hide, dont close buffers (a lot of people love this, not me though)
 set hidden
 
 " Path setting for finding files
@@ -211,12 +211,19 @@ set path+=**,
 " Function for saving when root priv required
 cmap w!! w !sudo tee % >/dev/null
 
-" allow more than 10 tabs with -p command
+" Allow more than 10 tabs with -p command
 set tabpagemax=40
 
-" modelines
+" Modelines
 set modeline
 set modelines=5
+
+" Delete comment character when joining commented lines 
+set formatoptions+=j
+
+" Display as much of possible of lines that fill the whole screen instead of
+" the default '@' display mode
+set display+=lastline
 
 " clipboard -- copy to system by default
 " if has('unnamedplus')
