@@ -17,8 +17,8 @@ set nocompatible
 let $MYVIM=$HOME."/.vim"
 
 if has("win32")
-	"source $VIMRUNTIME/mswin.vim
-	let $MYVIM=$VIM
+  "source $VIMRUNTIME/mswin.vim
+  let $MYVIM=$VIM
 endif
 
 let $SS=$MYVIM."/sessions"
@@ -70,10 +70,12 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'yssl/QFEnter'
 
 " Support for local.vimrc
-Bundle 'vim-scripts/lh-vim-lib' 
+Bundle 'vim-scripts/lh-vim-lib'
 Bundle 'LucHermitte/local_vimrc'
 " Git plugin.
 Bundle 'tpope/vim-fugitive'
+" Display changes from git in side signs.
+Bundle 'airblade/vim-gitgutter'
 " Git highlighting files.
 Bundle 'tpope/vim-git'
 " Unix helpers
@@ -147,11 +149,11 @@ filetype plugin indent on
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
 augroup myjump
-	au!
-	au BufReadPost *
-	 \ if line("'\"") > 0 && line("'\"") <= line("$") |
-	 \   exe "normal! g`\"" |
-	 \ endif
+  au!
+  au BufReadPost *
+   \ if line("'\"") > 0 && line("'\"") <= line("$") |
+   \   exe "normal! g`\"" |
+   \ endif
 augroup END
 
 " setup mapleader
@@ -175,8 +177,8 @@ set viminfo='500,f1,<500,s50,:0,@30,/30,! " what to store for each file
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 " permanent undo
 if version >= 703
-	set undofile
-	set undodir=$MYVIM/undo
+  set undofile
+  set undodir=$MYVIM/undo
 endif
 
 set incsearch  " do incremental searching
@@ -218,7 +220,7 @@ set tabpagemax=40
 set modeline
 set modelines=5
 
-" Delete comment character when joining commented lines 
+" Delete comment character when joining commented lines
 set formatoptions+=j
 
 " Display as much of possible of lines that fill the whole screen instead of
@@ -227,9 +229,9 @@ set display+=lastline
 
 " clipboard -- copy to system by default
 " if has('unnamedplus')
-" 	set clipboard=unnamedplus
+"   set clipboard=unnamedplus
 " elseif has('unamed')
-" 	set clipboard=unnamed
+"   set clipboard=unnamed
 " endif
 
 "###############################################################################
@@ -267,7 +269,7 @@ let g:solarized_termtrans=1
 set background=dark
 
 " if has("mac")
-	" colorscheme default
+  " colorscheme default
 " endif
 
 syntax sync fromstart
@@ -297,18 +299,18 @@ highlight WhitespaceEOL ctermbg=DarkYellow ctermfg=white guibg=DarkYellow
 highlight OverLength ctermbg=Red ctermfg=White guibg=#592929
 
 function! ToggleLongLines()
-	if exists("w:long_line_match")
-		call matchdelete(w:long_line_match)
-		unlet w:long_line_match
-	else
-		let w:long_line_match = matchadd("WhitespaceEOL", '\s\+$', -1)
-	endif
-	if exists("w:trailing_spaces")
-		call matchdelete(w:trailing_spaces)
-		unlet w:trailing_spaces
-	else
-		let w:trailing_spaces = matchadd("OverLength", '\%>80v.\+', -1)
-	endif
+  if exists("w:long_line_match")
+    call matchdelete(w:long_line_match)
+    unlet w:long_line_match
+  else
+    let w:long_line_match = matchadd("WhitespaceEOL", '\s\+$', -1)
+  endif
+  if exists("w:trailing_spaces")
+    call matchdelete(w:trailing_spaces)
+    unlet w:trailing_spaces
+  else
+    let w:trailing_spaces = matchadd("OverLength", '\%>80v.\+', -1)
+  endif
 endfunction
 
 nmap <silent> <Leader>h :call ToggleLongLines()<CR>
@@ -342,10 +344,6 @@ set winaltkeys=no
 "# F[0-9] Keys #
 "---------------
 
-" enable/disable spell check
-map <silent> <F6> <Esc>:setlocal spell! spelllang=en_au<CR>
-imap <silent> <F6> <C-o>:setlocal spell! spelllang=en_au<CR>
-
 " clear search highlight
 map <silent> Q <Esc>:noh<CR>
 
@@ -354,8 +352,18 @@ nmap <silent> <F2> <Esc>:w<CR>
 imap <silent> <F2> <C-o>:w<CR>
 nmap <silent> <Leader>s <Esc>:w<CR>
 
+" toggle git-gutter
+map <silent> <F5> <Esc>:GitGutterToggle<CR>
+
+" enable/disable spell check
+map <silent> <F6> <Esc>:setlocal spell! spelllang=en_au<CR>
+imap <silent> <F6> <C-o>:setlocal spell! spelllang=en_au<CR>
+
 " Switch to paste mode
 set pastetoggle=<F7>
+
+" Toggle between all buffers and all tabs
+nnoremap <silent> <expr> <F8> ( tabpagenr('$') == 1 ? ':tab ball<Bar>tabn' : ':tabo' ) . '<CR>'
 
 "----------------------------
 "# Other Text Movement Keys #
@@ -464,9 +472,6 @@ noremap <silent> <Leader>< :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 " Move current tab to the right
 noremap <silent> <Leader>> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
-" Toggle between all buffers and all tabs
-nnoremap <silent> <expr> <F8> ( tabpagenr('$') == 1 ? ':tab ball<Bar>tabn' : ':tabo' ) . '<CR>'
-
 
 "###############################################################################
 "# Diff Settings                                                               #
@@ -475,7 +480,7 @@ nnoremap <silent> <expr> <F8> ( tabpagenr('$') == 1 ? ':tab ball<Bar>tabn' : ':t
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-	 	\ | wincmd p | diffthis
+    \ | wincmd p | diffthis
 
 
 "###############################################################################
@@ -487,7 +492,7 @@ command! DeleteTrailingWs :%s/\s\+$//e
 
 " Search all subdirectories for word under cursor
 command! Wgrep :execute 'noautocmd vimgrep /'.expand('<cword>').'/gj **/*'
-									\ .expand('%:e').' **/*\.h **/*\.c | cl'
+                  \ .expand('%:e').' **/*\.h **/*\.c | cl'
 
 " Easy .vimrc editing
 command! Rlp :source $MYVIMRC
@@ -553,6 +558,34 @@ let hs_highlight_more_types = 1
 let hs_highlight_debug = 1
 let hs_highlight_classes = 1
 let hs_highlight_functions = 1
+
+"-----------
+"# AirLine #
+"-----------
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" allow spaces only after all tabs
+let g:airline#extensions#whitespace#mixed_indent_algo = 2
+
+" enahanced tab line
+let g:airline#extensions#tabline#enabled = 0
 
 "-------------
 "# Syntastic #
