@@ -548,6 +548,12 @@ nnoremap <silent> U :GundoToggle<CR>
 "---------------
 let g:local_vimrc = ["_vimrc_local.vim", ".vimrc_local.vim", ".vimrc.vim"]
 
+"------------
+"# Fugutive #
+"------------
+
+command! Gflog :Glog | :Gedit | :copen | wincmd k
+
 "----------------
 "# Haskell Mode #
 "----------------
