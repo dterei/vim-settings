@@ -560,6 +560,7 @@ command! Gflog :Glog | :Gedit | :copen | wincmd k
 " Enable increased Haskell highlighting
 let hs_highlight_boolean = 1
 let hs_highlight_types = 1
+
 let hs_highlight_more_types = 1
 let hs_highlight_debug = 1
 let hs_highlight_classes = 1
@@ -585,6 +586,9 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 2
 
 " don't show hunks chancged
 let g:airline#extensions#hunks#enabled = 0
+
+" display spelling status
+let g:airline_section_a = airline#section#create(['mode', ' ', '%{&spell == 1 ? "[Spell]" : ""}'])
 
 "-------------
 "# Syntastic #
