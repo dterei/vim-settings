@@ -573,6 +573,11 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 
+" display paste status
+let g:airline_detect_modified=1
+let g:airline_detect_paste=1
+let g:airline_detect_crypt=1
+
 " unicode symbols
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
@@ -587,8 +592,8 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 2
 " don't show hunks chancged
 let g:airline#extensions#hunks#enabled = 0
 
-" display spelling status
-let g:airline_section_a = airline#section#create(['mode', ' ', '%{&spell == 1 ? "[Spell]" : ""}'])
+" display spelling status and paste
+let g:airline_section_a = airline#section#create(['mode', ' ', "%{&paste ? '> ρ ' : ''}", '%{&spell ? "> [Spell]" : ""}'])
 
 "-------------
 "# Syntastic #
