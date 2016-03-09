@@ -533,6 +533,13 @@ let g:LustyJugglerSuppressRubyWarning = 1
 "-------------
 nnoremap <silent> <Leader>f :CommandT<CR>
 
+"----------------
+"# Indent Guide #
+"----------------
+let g:indent_guides_space_guides = 1
+let g:indent_guides_default_mapping = 0
+nmap <silent> <Leader>G <Plug>IndentGuidesToggle
+
 "---------------
 "# Delimitmate #
 "---------------
