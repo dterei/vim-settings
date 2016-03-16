@@ -468,9 +468,9 @@ map <Leader>Q :qall!<CR>
 " Move current tab to last position
 "nnoremap <C-/> :tabmove<CR>
 " Move current tab to the left
-noremap <silent> <Leader>< :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+noremap <silent> <Leader>< :execute 'silent! tabmove -'<CR>
 " Move current tab to the right
-noremap <silent> <Leader>> :execute 'silent! tabmove ' . tabpagenr()<CR>
+noremap <silent> <Leader>> :execute 'silent! tabmove +'<CR>
 
 
 "###############################################################################
@@ -631,8 +631,9 @@ let g:syntastic_aggregate_erros = 1
 "# Vim-go #
 "----------
 
-" Disable gofmt on save.
+" Disable gofmt and asmfmt on save.
 let g:go_fmt_autosave = 0
+let g:go_asmfmt_autosave = 0
 
 au Filetype go nmap <leader>dv <Plug>(go-def-vertical)
 au Filetype go nmap <leader>ds <Plug>(go-def-split)
