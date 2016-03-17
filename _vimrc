@@ -587,8 +587,10 @@ let g:airline_detect_paste=1
 let g:airline_detect_crypt=1
 
 " unicode symbols
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
+if !has("gui_macvim")
+  let g:airline_left_sep = '▶'
+  let g:airline_right_sep = '◀'
+endif
 let g:airline_symbols.crypt = '🔒'
 let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.branch = '⎇'
