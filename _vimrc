@@ -345,18 +345,19 @@ set winaltkeys=no
 "---------------
 
 " clear search highlight
-map <silent> Q <Esc>:noh<CR>
+nmap <silent> Q :noh<CR>
 
 " make F2 save and ,s
-nmap <silent> <F2> <Esc>:w<CR>
+nmap <silent> <F2> :w<CR>
 imap <silent> <F2> <C-o>:w<CR>
-nmap <silent> <Leader>s <Esc>:w<CR>
+nmap <silent> <Leader>s :w<CR>
 
 " toggle git-gutter
-map <silent> <F9> <Esc>:GitGutterToggle<CR>
+nmap <silent> <F9> :GitGutterToggle<CR>
+imap <silent> <F9> <C-o>:GitGutterToggle<CR>
 
 " enable/disable spell check
-map <silent> <F6> <Esc>:setlocal spell! spelllang=en_au<CR>
+nmap <silent> <F6> :setlocal spell! spelllang=en_au<CR>
 imap <silent> <F6> <C-o>:setlocal spell! spelllang=en_au<CR>
 
 " Switch to paste mode
@@ -419,8 +420,8 @@ imap <silent> <C-d> <Delete>
 "-----------------------
 
 " Nicer tag jumping keys
-map <silent> <A-j> <Esc>:tag<CR>
-map <silent> <A-k> <Esc>:pop<CR>
+nmap <silent> <A-j> :tag<CR>
+nmap <silent> <A-k> :pop<CR>
 noremap <silent> <A-l> <C-]>
 
 " Better way to enter command line (get rid of pointless shift)
@@ -585,6 +586,7 @@ endif
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
 let g:airline_detect_crypt=1
+let g:airline_detect_spell=1
 
 " unicode symbols
 if !has("gui_macvim")
@@ -595,15 +597,13 @@ let g:airline_symbols.crypt = '🔒'
 let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.spell = 'Ꞩ'
 
 " allow spaces only after all tabs
 let g:airline#extensions#whitespace#mixed_indent_algo = 2
 
 " don't show hunks chancged
 let g:airline#extensions#hunks#enabled = 0
-
-" display spelling status and paste
-let g:airline_section_a = airline#section#create(['mode', ' ', "%{&paste ? '> ρ ' : ''}", '%{&spell ? "> [Spell]" : ""}'])
 
 "-------------
 "# Syntastic #
