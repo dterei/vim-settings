@@ -234,6 +234,8 @@ set display+=lastline
 "   set clipboard=unnamed
 " endif
 
+set cryptmethod=blowfish2
+
 "###############################################################################
 "# Highlight & Fold Settings                                                   #
 "###############################################################################
