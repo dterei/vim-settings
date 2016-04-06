@@ -234,7 +234,11 @@ set display+=lastline
 "   set clipboard=unnamed
 " endif
 
-set cryptmethod=blowfish2
+if v:version >= 704 && has('patch399')
+  set cryptmethod=blowfish2
+elseif v:version >= 703
+  set cryptmethod=blowfish2
+endif
 
 "###############################################################################
 "# Highlight & Fold Settings                                                   #
