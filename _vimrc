@@ -475,9 +475,9 @@ map <Leader>Q :qall!<CR>
 " Move current tab to last position
 "nnoremap <C-/> :tabmove<CR>
 " Move current tab to the left
-noremap <silent> <Leader>< :execute 'silent! tabmove -'<CR>
+noremap <silent> <Leader>< :execute 'silent! tabmove -1'<CR>
 " Move current tab to the right
-noremap <silent> <Leader>> :execute 'silent! tabmove +'<CR>
+noremap <silent> <Leader>> :execute 'silent! tabmove +1'<CR>
 
 
 "###############################################################################
