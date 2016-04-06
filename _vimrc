@@ -237,7 +237,7 @@ set display+=lastline
 if v:version >= 704 && has('patch399')
   set cryptmethod=blowfish2
 elseif v:version >= 703
-  set cryptmethod=blowfish2
+  set cryptmethod=blowfish
 endif
 
 "###############################################################################
