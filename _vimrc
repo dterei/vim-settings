@@ -43,7 +43,7 @@ Bundle 'gmarik/vundle'
 Bundle 'bufexplorer.zip'
 " File finding command.
 Bundle 'wincent/command-t'
-" A fuzzy search file and buffer browser.
+" A fuzzy search file and buffer browser (0.05s of load time)
 Bundle 'LustyExplorer'
 " Network browser (included with vim but want most up to date)
 Bundle 'netrw.vim'
@@ -53,7 +53,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 " Tag listing / Class explorer
 Bundle 'majutsushi/tagbar'
-" Powerline
+" Powerline (0.1s load time)
 Bundle 'bling/vim-airline'
 
 " Extended % matching for HTML, LaTeX, and many other languages.
@@ -113,8 +113,8 @@ Bundle 'tpope/vim-markdown'
 Bundle 'nathanaelkane/vim-indent-guides'
 " Scala support
 Bundle 'derekwyatt/vim-scala'
-
-" === Colour Schemes! ===
+"
+" " === Colour Schemes! ===
 Bundle 'dterei/VimCobaltColourScheme'
 Bundle 'dterei/Twilight'
 Bundle 'cschlueter/vim-mustang'
