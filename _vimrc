@@ -623,11 +623,7 @@ let g:syntastic_c_check_header = 1
 let g:syntastic_cpp_include_dirs = [ '../include', 'include' ]
 let g:syntastic_cpp_check_header = 1
 
-let g:syntastic_html_checkers = ["validator", "jshint"]
-
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+let g:syntastic_html_checkers = ["jshint"]
 
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
