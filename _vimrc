@@ -346,6 +346,9 @@ set backspace=indent,eol,start
 " disable alt modifier for menu shortcuts
 set winaltkeys=no
 
+" quick reload
+nmap <silent> <Leader>5 :edit<CR>
+
 "---------------
 "# F[0-9] Keys #
 "---------------
