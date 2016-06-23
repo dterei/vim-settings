@@ -167,7 +167,7 @@ set noswapfile
 set encoding=utf-8
 "set termencoding=latin1
 
-set mouse=a  " enable mouse in terminal
+set mouse=""  " disable mouse in terminal
 
 set showcmd  " display incomplete commands
 set wildmenu " way cooler command line mode completion
