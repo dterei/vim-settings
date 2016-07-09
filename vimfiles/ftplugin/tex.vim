@@ -4,7 +4,7 @@ setlocal shiftwidth=2
 setlocal tabstop=2
 setlocal softtabstop=2
 setlocal expandtab
-setlocal textwidth=70
+setlocal textwidth=80
 
 " Smartindent is stupid on Latex
 set nosmartindent
