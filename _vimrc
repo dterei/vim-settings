@@ -627,6 +627,7 @@ let g:syntastic_cpp_include_dirs = [ '../include', 'include' ]
 let g:syntastic_cpp_check_header = 1
 
 let g:syntastic_html_checkers = ["jshint"]
+let g:syntastic_tex_checkers = ["chktex"]
 
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
