@@ -221,7 +221,7 @@ set modeline
 set modelines=5
 
 " Delete comment character when joining commented lines
-if v:version >= 703
+if v:version >= 704
   set formatoptions+=j
 endif
 
