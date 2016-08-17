@@ -221,7 +221,9 @@ set modeline
 set modelines=5
 
 " Delete comment character when joining commented lines
-set formatoptions+=j
+if v:version >= 703
+  set formatoptions+=j
+endif
 
 " Display as much of possible of lines that fill the whole screen instead of
 " the default '@' display mode
