@@ -68,6 +68,8 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'tomtom/tcomment_vim'
 " QFEnter -- better quickfix window handling
 Bundle 'yssl/QFEnter'
+" Incremental search that highlights ALL matches as typing
+Bundle 'haya14busa/incsearch.vim'
 
 " Support for local.vimrc
 Bundle 'vim-scripts/lh-vim-lib'
@@ -566,7 +568,7 @@ nnoremap <silent> U :GundoToggle<CR>
 "---------------
 "# Local vimrc #
 "---------------
-let g:local_vimrc = ["_vimrc_local.vim", ".vimrc_local.vim", ".vimrc.vim"]
+let g:local_vimrc = ["_vimrc_local.vim", ".vimrc_local.vim", ".vimrc.vim", ".local.vimrc"]
 
 "------------
 "# Fugutive #
@@ -659,6 +661,13 @@ au Filetype go nmap <leader>R <Plug>(go-rename)
 " Enable :Lint command
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 
+"-------------
+"# incsearch # 
+"-------------
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 "###############################################################################
 "# File End                                                                    #
