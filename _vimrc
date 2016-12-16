@@ -45,8 +45,6 @@ Bundle 'bufexplorer.zip'
 Bundle 'wincent/command-t'
 " A fuzzy search file and buffer browser (0.05s of load time)
 Bundle 'LustyExplorer'
-" Network browser (included with vim but want most up to date)
-Bundle 'netrw.vim'
 " NERD Tree filesystem explorer
 Bundle 'scrooloose/nerdtree'
 " Syntatic - Checks for syntax errors
@@ -80,8 +78,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
 " Git highlighting files.
 Bundle 'tpope/vim-git'
-" Unix helpers
-Bundle 'tpope/vim-eunuch'
 
 " More repeat (.) support (for plugins)
 Bundle 'tpope/vim-repeat'
@@ -109,30 +105,30 @@ Bundle 'fatih/vim-go'
 Bundle 'xmledit'
 " Haskell folding
 Bundle 'Twinside/vim-haskellFold'
-" Markdown support
-Bundle 'tpope/vim-markdown'
+" Markdown support (alternative)
+Plugin 'plasticboy/vim-markdown'
 " Indent highlighting
 Bundle 'nathanaelkane/vim-indent-guides'
-" Scala support
-Bundle 'derekwyatt/vim-scala'
-"
+" Rust support
+Bundle 'rust-lang/rust.vim'
+
 " " === Colour Schemes! ===
-Bundle 'dterei/VimCobaltColourScheme'
-Bundle 'dterei/Twilight'
-Bundle 'cschlueter/vim-mustang'
-Bundle 'wgibbs/vim-irblack'
-Bundle 'darkslategray.vim'
-Bundle 'darkspectrum'
-Bundle 'fruity.vim'
-Bundle 'tir_black'
-Bundle 'kib_darktango.vim'
-Bundle 'peaksea'
-Bundle 'pyte'
+"Bundle 'dterei/VimCobaltColourScheme'
+"Bundle 'dterei/Twilight'
+"Bundle 'cschlueter/vim-mustang'
+"Bundle 'wgibbs/vim-irblack'
+"Bundle 'darkslategray.vim'
+"Bundle 'darkspectrum'
+"Bundle 'fruity.vim'
+"Bundle 'tir_black'
+"Bundle 'kib_darktango.vim'
+"Bundle 'peaksea'
+"Bundle 'pyte'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'vilight.vim'
-Bundle 'Wombat'
-Bundle 'Zenburn'
-Bundle 'bclear'
+"Bundle 'vilight.vim'
+"Bundle 'Wombat'
+"Bundle 'Zenburn'
+"Bundle 'bclear'
 
 call vundle#end()
 
