@@ -40,69 +40,56 @@ Bundle 'gmarik/vundle'
 " === Plugins! ===
 
 " With bufexplorer, you can quickly and easily switch between buffers.
-Bundle 'bufexplorer.zip'
-" File finding command.
-Bundle 'wincent/command-t'
-" A fuzzy search file and buffer browser (0.05s of load time)
-Bundle 'LustyExplorer'
+Bundle 'jlanzarotta/bufexplorer'
 " NERD Tree filesystem explorer
 Bundle 'scrooloose/nerdtree'
-" Syntatic - Checks for syntax errors
-Bundle 'scrooloose/syntastic'
-" Tag listing / Class explorer
-Bundle 'majutsushi/tagbar'
 " Powerline (0.1s load time)
 Bundle 'bling/vim-airline'
 
-" Extended % matching for HTML, LaTeX, and many other languages.
-Bundle 'matchit.zip'
+" File finding command.
+Bundle 'wincent/command-t'
+" Incremental search that highlights ALL matches as typing
+Bundle 'haya14busa/incsearch.vim'
+" Provides selectable highlighting
+Bundle 'Mark'
+" Provides a bookmarking facility for Vim. Mark lines of interest.
+Bundle 'dterei/VimBookmarking'
+" Tag listing / Class explorer
+Bundle 'majutsushi/tagbar'
+" Easy moving / jumping
+Bundle 'easymotion/vim-easymotion'
+
+" Syntatic - Checks for syntax errors
+Bundle 'scrooloose/syntastic'
+" Display changes from git in side signs.
+Bundle 'airblade/vim-gitgutter'
+" Visualise the undo tree of vim.
+Bundle 'sjl/gundo.vim'
+
+" Auto closing of quotes, parenthesis, brackets... ect
+Bundle 'Raimondi/delimitMate'
 " Align text to columns
 Bundle 'godlygeek/tabular'
 " Quickly surround some text (i.e bracket, html tags...)
 Bundle 'tpope/vim-surround'
-" Auto closing of quotes, parenthesis, brackets... ect
-Bundle 'Raimondi/delimitMate'
 " Toggle commenting
 Bundle 'tomtom/tcomment_vim'
-" QFEnter -- better quickfix window handling
-Bundle 'yssl/QFEnter'
-" Incremental search that highlights ALL matches as typing
-Bundle 'haya14busa/incsearch.vim'
 
 " Support for local.vimrc
-Bundle 'vim-scripts/lh-vim-lib'
+Bundle 'LucHermitte/lh-vim-lib'
 Bundle 'LucHermitte/local_vimrc'
-" Git plugin.
-Bundle 'tpope/vim-fugitive'
-" Display changes from git in side signs.
-Bundle 'airblade/vim-gitgutter'
-" Git highlighting files.
-Bundle 'tpope/vim-git'
-
 " More repeat (.) support (for plugins)
 Bundle 'tpope/vim-repeat'
-" Provides selectable highlighting
-Bundle 'Mark'
-" Provide a bookmarking facility for Vim. Mark lines of interest.
-Bundle 'dterei/VimBookmarking'
 " Maintains a history of previous yanks and deletes.
 Bundle 'YankRing.vim'
-" Visualise the undo tree of vim.
-Bundle 'sjl/gundo.vim'
-" Make <F12> switch mouse between Vim and Terminal
-Bundle 'nvie/vim-togglemouse'
-" Easy moving / jumping
-Bundle 'EasyMotion'
-" Provides some nice shortcuts for things like :cn
-Bundle 'tpope/vim-unimpaired'
 " Improved :man & :help (and other docs) viewer
 Bundle 'powerman/vim-plugin-viewdoc'
+" Git plugin.
+Bundle 'tpope/vim-fugitive'
 
 " Golang support
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'fatih/vim-go'
-" A filetype plugin to help edit XML, HTML and SGML documents.
-Bundle 'xmledit'
 " Haskell folding
 Bundle 'Twinside/vim-haskellFold'
 " Markdown support (alternative)
@@ -132,6 +119,13 @@ Bundle 'altercation/vim-colors-solarized'
 
 call vundle#end()
 
+
+"###############################################################################
+"# Vim 8 Plugins                                                              #
+"###############################################################################
+
+" Comes with Vim, just not enabled by default - extended '%' matching
+packadd! matchit
 
 "###############################################################################
 "# General Settings                                                            #
