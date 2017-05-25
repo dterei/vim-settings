@@ -125,7 +125,9 @@ call vundle#end()
 "###############################################################################
 
 " Comes with Vim, just not enabled by default - extended '%' matching
-packadd! matchit
+if v:version >= 800
+  packadd! matchit
+endif
 
 "###############################################################################
 "# General Settings                                                            #
