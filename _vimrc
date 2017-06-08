@@ -43,8 +43,9 @@ Bundle 'gmarik/vundle'
 Bundle 'jlanzarotta/bufexplorer'
 " NERD Tree filesystem explorer
 Bundle 'scrooloose/nerdtree'
-" Powerline (0.1s load time)
-Bundle 'bling/vim-airline'
+" Airline (0.1s load time)
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 
 " File finding command.
 Bundle 'wincent/command-t'
@@ -583,15 +584,13 @@ let hs_highlight_functions = 1
 "-----------
 "# AirLine #
 "-----------
+
+" let g:airline_powerline_fonts = 1
+let g:airline_symbols_ascii = 1
+
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-
-" display paste status
-let g:airline_detect_modified=1
-let g:airline_detect_paste=1
-let g:airline_detect_crypt=1
-let g:airline_detect_spell=1
 
 " unicode symbols
 if !has("gui_macvim")
@@ -603,12 +602,34 @@ let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" " powerline symbols
+" let g:airline_left_sep = ''
+" let g:airline_left_alt_sep = ''
+" let g:airline_right_sep = ''
+" let g:airline_right_alt_sep = ''
+" let g:airline_symbols.branch = ''
+" let g:airline_symbols.readonly = ''
+" let g:airline_symbols.linenr = ''
 
 " allow spaces only after all tabs
 let g:airline#extensions#whitespace#mixed_indent_algo = 2
 
+" display paste status
+let g:airline_detect_modified=1
+let g:airline_detect_paste=1
+let g:airline_detect_crypt=1
+let g:airline_detect_spell=1
+
 " don't show hunks chancged
 let g:airline#extensions#hunks#enabled = 0
+
+let g:airline_section_c = '%{getcwd()} | %t'
+
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
 
 "-------------
 "# Syntastic #
