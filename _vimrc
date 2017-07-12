@@ -99,6 +99,8 @@ Plugin 'plasticboy/vim-markdown'
 Bundle 'nathanaelkane/vim-indent-guides'
 " Rust support
 Bundle 'rust-lang/rust.vim'
+" TypeScript
+Bundle 'leafgarland/typescript-vim'
 
 " " === Colour Schemes! ===
 "Bundle 'dterei/VimCobaltColourScheme'
@@ -645,6 +647,7 @@ let g:syntastic_cpp_check_header = 1
 
 let g:syntastic_html_checkers = ["jshint"]
 let g:syntastic_tex_checkers = ["chktex"]
+let g:syntastic_typescript_checkers = ["tslint", "eslit"]
 
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
