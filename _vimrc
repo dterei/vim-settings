@@ -62,10 +62,14 @@ Bundle 'easymotion/vim-easymotion'
 
 " Syntatic - Checks for syntax errors
 Bundle 'scrooloose/syntastic'
-" Display changes from git in side signs.
-Bundle 'airblade/vim-gitgutter'
 " Visualise the undo tree of vim.
 Bundle 'sjl/gundo.vim'
+" Git plugin.
+Bundle 'tpope/vim-fugitive'
+" Display changes from git in side signs.
+Bundle 'airblade/vim-gitgutter'
+" Arcanist support
+Bundle 'solarnz/arcanist.vim'
 
 " Auto closing of quotes, parenthesis, brackets... ect
 Bundle 'Raimondi/delimitMate'
@@ -81,12 +85,10 @@ Bundle 'LucHermitte/lh-vim-lib'
 Bundle 'LucHermitte/local_vimrc'
 " More repeat (.) support (for plugins)
 Bundle 'tpope/vim-repeat'
-" Maintains a history of previous yanks and deletes.
-Bundle 'YankRing.vim'
 " Improved :man & :help (and other docs) viewer
 Bundle 'powerman/vim-plugin-viewdoc'
-" Git plugin.
-Bundle 'tpope/vim-fugitive'
+" Maintains a history of previous yanks and deletes.
+Bundle 'YankRing.vim'
 
 " Golang support
 Bundle 'jnwhiteh/vim-golang'
