@@ -597,26 +597,25 @@ if !exists('g:airline_symbols')
 endif
 
 " unicode symbols
-if !has("gui_macvim")
-  let g:airline_left_sep = '▶'
-  let g:airline_right_sep = '◀'
-endif
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = '∄'
-let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_left_alt_sep = '>'
+let g:airline_right_alt_sep = '<'
 
 " " powerline symbols
 " let g:airline_left_sep = ''
 " let g:airline_left_alt_sep = ''
 " let g:airline_right_sep = ''
 " let g:airline_right_alt_sep = ''
-" let g:airline_symbols.branch = ''
-" let g:airline_symbols.readonly = ''
-" let g:airline_symbols.linenr = ''
+
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇ '
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.whitespace = 'Ξ'
 
 " allow spaces only after all tabs
 let g:airline#extensions#whitespace#mixed_indent_algo = 2
@@ -629,8 +628,6 @@ let g:airline_detect_spell=1
 
 " don't show hunks chancged
 let g:airline#extensions#hunks#enabled = 0
-
-let g:airline_section_c = '%{getcwd()} | %t'
 
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
@@ -668,6 +665,7 @@ let g:go_asmfmt_autosave = 0
 au Filetype go nmap <leader>dv <Plug>(go-def-vertical)
 au Filetype go nmap <leader>ds <Plug>(go-def-split)
 
+au Filetype go nmap <leader>D <Plug>(go-doc)
 au Filetype go nmap <leader>gd <Plug>(go-doc-vertical)
 au Filetype go nmap <leader>gb <Plug>(go-doc-browser)
 
