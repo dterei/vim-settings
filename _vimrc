@@ -60,8 +60,8 @@ Bundle 'majutsushi/tagbar'
 " Easy moving / jumping
 Bundle 'easymotion/vim-easymotion'
 
-" Syntatic - Checks for syntax errors
-Bundle 'scrooloose/syntastic'
+" ale - Check for syntax / lint errors
+Plugin 'w0rp/ale'
 " Visualise the undo tree of vim.
 Bundle 'sjl/gundo.vim'
 " Git plugin.
@@ -631,28 +631,6 @@ let g:airline#extensions#hunks#enabled = 0
 
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
-
-"-------------
-"# Syntastic #
-"-------------
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = '-std=c++14'
-let g:syntastic_python_python_exec = 'python2'
-
-let g:syntastic_c_include_dirs = [ '../include', 'include' ]
-let g:syntastic_c_check_header = 1
-let g:syntastic_cpp_include_dirs = [ '../include', 'include' ]
-let g:syntastic_cpp_check_header = 1
-
-let g:syntastic_html_checkers = ["jshint"]
-let g:syntastic_tex_checkers = ["chktex"]
-let g:syntastic_typescript_checkers = ["tslint", "eslit"]
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_erros = 1
 
 "----------
 "# Vim-go #
