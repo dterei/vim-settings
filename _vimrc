@@ -68,9 +68,10 @@ Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
 " Display changes from git in side signs.
 Bundle 'airblade/vim-gitgutter'
-" Arcanist support
-Bundle 'solarnz/arcanist.vim'
 
+" Snippets
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 " Auto closing of quotes, parenthesis, brackets... ect
 Bundle 'Raimondi/delimitMate'
 " Align text to columns
@@ -103,6 +104,8 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'rust-lang/rust.vim'
 " TypeScript
 Bundle 'leafgarland/typescript-vim'
+" Arcanist support
+Bundle 'solarnz/arcanist.vim'
 
 " " === Colour Schemes! ===
 "Bundle 'dterei/VimCobaltColourScheme'
@@ -502,9 +505,10 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 command! DeleteTrailingWs :%s/\s\+$//e
 
 " Search all subdirectories for word under cursor
-command! Wgrep :execute 'noautocmd vimgrep /'.expand('<cword>').'/gj '
-                  \ .' **/*.h **/*.c **/*.hh **/*.cc **/*.s **/*.go '
-                  \ .' **/*.hs **/*.js **/*.rb **/*.py **/*.r **/*.java | cl'
+command! Wgrep :execute 'noautocmd vimgrep /'.expand('<cword>').'/gj'
+                  \ .' **/*.h **/*.c **/*.hh **/*.cc **/*.s **/*.go'
+                  \ .' **/*.hs **/*.js **/*.rb **/*.py **/*.r **/*.java'
+                  \ .' **/*.scala **/*.ts **/.yml **/*.xml **/*.proto | cl'
 
 " Easy .vimrc editing
 command! Rlp :source $MYVIMRC
@@ -652,11 +656,21 @@ au Filetype go nmap <leader>i <Plug>(go-info)
 au Filetype go nmap <leader>B <Plug>(go-build)
 au Filetype go nmap <leader>R <Plug>(go-rename)
 
-" Enable :Lint command
-set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+" Enable GoAlternate with tranditional mappings
+augroup mygo
+  autocmd!
+  autocmd Filetype go
+    \  command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+  autocmd Filetype go
+    \ command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+  autocmd Filetype go
+    \ command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+  autocmd Filetype go
+    \ command! -bang AT call go#alternate#Switch(<bang>0, 'tabedit')
+augroup END
 
 "-------------
-"# incsearch # 
+"# incsearch #
 "-------------
 
 map /  <Plug>(incsearch-forward)
@@ -665,7 +679,7 @@ map g/ <Plug>(incsearch-stay)
 
 
 "-------
-"# ALE # 
+"# ALE #
 "-------
 
 " Only lint on save or when switching back to normal mode
@@ -678,6 +692,15 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:airline_section_error = '%{ALEGetStatusLine()}'
 let g:ale_change_sign_column_color = 1
+
+
+"-------------
+"# Ultisnips #
+"-------------
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 
 "###############################################################################
 "# File End                                                                    #
