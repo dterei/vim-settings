@@ -29,15 +29,17 @@ let $SS=$MYVIM."/sessions"
 "###############################################################################
 
 " Plugin Manager for Vim
-" http://github.com/gmarik/vundle
+" http://github.com/VundleVim/Vundle.vim
 
 " setup Vundle
 filetype off
-set rtp+=$MYVIM/bundle/vundle/
+set rtp+=$MYVIM/bundle/Vundle.vim/
 call vundle#begin()
-Bundle 'gmarik/vundle'
 
 " === Plugins! ===
+
+" Let Vundle manage itself (required).
+Bundle 'VundleVim/Vundle.vim'
 
 " With bufexplorer, you can quickly and easily switch between buffers.
 Bundle 'jlanzarotta/bufexplorer'
