@@ -39,93 +39,93 @@ call vundle#begin()
 " === Plugins! ===
 
 " Let Vundle manage itself (required).
-Bundle 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " With bufexplorer, you can quickly and easily switch between buffers.
-Bundle 'jlanzarotta/bufexplorer'
+Plugin 'jlanzarotta/bufexplorer'
 " NERD Tree filesystem explorer
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 " Airline (0.1s load time)
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " File finding command.
-Bundle 'wincent/command-t'
+Plugin 'wincent/command-t'
 " Incremental search that highlights ALL matches as typing
-Bundle 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/incsearch.vim'
 " Provides selectable highlighting
-Bundle 'Mark'
+Plugin 'Mark'
 " Provides a bookmarking facility for Vim. Mark lines of interest.
-Bundle 'dterei/VimBookmarking'
+Plugin 'dterei/VimBookmarking'
 " Tag listing / Class explorer
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 " Easy moving / jumping
-Bundle 'easymotion/vim-easymotion'
+Plugin 'easymotion/vim-easymotion'
 
 " ale - Check for syntax / lint errors
 Plugin 'w0rp/ale'
 " Visualise the undo tree of vim.
-Bundle 'sjl/gundo.vim'
+Plugin 'sjl/gundo.vim'
 " Git plugin.
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 " Display changes from git in side signs.
-Bundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 
 " Snippets
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 " Auto closing of quotes, parenthesis, brackets... ect
-Bundle 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 " Align text to columns
-Bundle 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'
 " Quickly surround some text (i.e bracket, html tags...)
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 " Toggle commenting
-Bundle 'tomtom/tcomment_vim'
+Plugin 'tomtom/tcomment_vim'
 
 " Support for local.vimrc
-Bundle 'LucHermitte/lh-vim-lib'
-Bundle 'LucHermitte/local_vimrc'
+Plugin 'LucHermitte/lh-vim-lib'
+Plugin 'LucHermitte/local_vimrc'
 " More repeat (.) support (for plugins)
-Bundle 'tpope/vim-repeat'
+Plugin 'tpope/vim-repeat'
 " Improved :man & :help (and other docs) viewer
-Bundle 'powerman/vim-plugin-viewdoc'
+Plugin 'powerman/vim-plugin-viewdoc'
 " Maintains a history of previous yanks and deletes.
-Bundle 'YankRing.vim'
+Plugin 'YankRing.vim'
 
 " Golang support
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'fatih/vim-go'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'fatih/vim-go'
 " Haskell folding
-Bundle 'Twinside/vim-haskellFold'
+Plugin 'Twinside/vim-haskellFold'
 " Markdown support (alternative)
 Plugin 'plasticboy/vim-markdown'
 " Indent highlighting
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'nathanaelkane/vim-indent-guides'
 " Rust support
-Bundle 'rust-lang/rust.vim'
+Plugin 'rust-lang/rust.vim'
 " TypeScript
-Bundle 'leafgarland/typescript-vim'
+Plugin 'leafgarland/typescript-vim'
 " Arcanist support
-Bundle 'solarnz/arcanist.vim'
+Plugin 'solarnz/arcanist.vim'
 
 " " === Colour Schemes! ===
-"Bundle 'dterei/VimCobaltColourScheme'
-"Bundle 'dterei/Twilight'
-"Bundle 'cschlueter/vim-mustang'
-"Bundle 'wgibbs/vim-irblack'
-"Bundle 'darkslategray.vim'
-"Bundle 'darkspectrum'
-"Bundle 'fruity.vim'
-"Bundle 'tir_black'
-"Bundle 'kib_darktango.vim'
-"Bundle 'peaksea'
-"Bundle 'pyte'
-Bundle 'altercation/vim-colors-solarized'
-"Bundle 'vilight.vim'
-"Bundle 'Wombat'
-"Bundle 'Zenburn'
-"Bundle 'bclear'
+"Plugin 'dterei/VimCobaltColourScheme'
+"Plugin 'dterei/Twilight'
+"Plugin 'cschlueter/vim-mustang'
+"Plugin 'wgibbs/vim-irblack'
+"Plugin 'darkslategray.vim'
+"Plugin 'darkspectrum'
+"Plugin 'fruity.vim'
+"Plugin 'tir_black'
+"Plugin 'kib_darktango.vim'
+"Plugin 'peaksea'
+"Plugin 'pyte'
+Plugin 'altercation/vim-colors-solarized'
+"Plugin 'vilight.vim'
+"Plugin 'Wombat'
+"Plugin 'Zenburn'
+"Plugin 'bclear'
 
 call vundle#end()
 
