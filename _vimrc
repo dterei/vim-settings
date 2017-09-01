@@ -654,9 +654,13 @@ au Filetype go nmap <leader>gd <Plug>(go-doc-vertical)
 au Filetype go nmap <leader>gb <Plug>(go-doc-browser)
 
 au Filetype go nmap <leader>I :exe "GoImports"<CR>
-au Filetype go nmap <leader>i <Plug>(go-info)
 au Filetype go nmap <leader>B <Plug>(go-build)
-au Filetype go nmap <leader>R <Plug>(go-rename)
+au Filetype go nmap <leader>R <Plug>(go-run)
+au Filetype go nmap <leader>T <Plug>(go-test)
+au Filetype go nmap <leader>gi <Plug>(go-info)
+au Filetype go nmap <leader>gr <Plug>(go-rename)
+au Filetype go nmap <leader>gf <Plug>(go-format)
+au Filetype go nmap <leader>gl <Plug>(go-metalinter)
 
 " Enable GoAlternate with tranditional mappings
 augroup mygo
@@ -685,7 +689,9 @@ map g/ <Plug>(incsearch-stay)
 "-------
 
 " Only lint on save or when switching back to normal mode
-let g:ale_lint_on_text_changed = 'normal'
+let g:ale_enabled = 0
+let g:ale_lint_on_text_changed = 'disabled'
+let g:ale_lint_on_enter = 1
 let g:ale_fix_on_save = 1
 let g:airline#extensions#ale#enable = 1
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
@@ -694,6 +700,16 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:airline_section_error = '%{ALEGetStatusLine()}'
 let g:ale_change_sign_column_color = 1
+
+" Linter configuration
+let g:ale_linters = {
+\  'javascript': []
+\}
+
+" Fixer configuration
+let g:ale_fixers = {
+\  'javascript': []
+\}
 
 
 "-------------
