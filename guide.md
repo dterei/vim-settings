@@ -287,37 +287,37 @@ Note: Most movement keys [w,f,t,T...] work.
 
 Haskell plugin.
 
-:make                load into GHCi, show errors (quickfix :copen)
-_ct                  create |tags| file 
-_si                  show info for id under cursor
-_t                   show type for id under cursor
-_T                   insert type declaration for id under cursor
-balloon              show type for id under mouse pointer
-_?                   browse Haddock entry for id under cursor
-_?1                  search Hoogle for id under cursor
-_?2                  search Hayoo! for id under cursor
-:IDoc {identifier}   browse Haddock entry for unqualified {identifier}
-:MDoc {module}       browse Haddock entry for {module}
-:FlagReference {s}   browse Users Guide Flag Reference for section {s}
-_.                   qualify unqualified id under cursor
-_i                   add 'import <module>(<identifier>)' for id under cursor
-_im                  add 'import <module>' for id under cursor
-_iq                  add 'import qualified <module>(<identifier>)' for id under cursor
-_iqm|                 add 'import qualified <module>' for id under cursor
-_ie                  make imports explit for import statement under cursor
-_opt                 add OPTIONS_GHC pragma
-_lang                add LANGUAGE pragma
-i_CTRL-X_CTRL-O      insert-mode completion based on imported ids (haskellmode-XO)
-i_CTRL-X_CTRL-U      insert-mode completion based on documented ids (haskellmode-XU)
-i_CTRL-N             insert-mode completion based on imported sources
-:GHCi|{command/expr} run GHCi command/expr in current module
+`:make`                load into GHCi, show errors (quickfix :copen)
+`_ct`                  create |tags| file 
+`_si`                  show info for id under cursor
+`_t`                   show type for id under cursor
+`_T`                   insert type declaration for id under cursor
+`balloon`              show type for id under mouse pointer
+`_?`                   browse Haddock entry for id under cursor
+`_?1`                  search Hoogle for id under cursor
+`_?2`                  search Hayoo! for id under cursor
+`:IDoc {identifier}`   browse Haddock entry for unqualified {identifier}
+`:MDoc {module}`       browse Haddock entry for {module}
+`:FlagReference {s}`   browse Users Guide Flag Reference for section {s}
+`_.`                   qualify unqualified id under cursor
+`_i`                   add 'import <module>(<identifier>)' for id under cursor
+`_im`                  add 'import <module>' for id under cursor
+`_iq`                  add 'import qualified <module>(<identifier>)' for id under cursor
+`_iqm|`                 add 'import qualified <module>' for id under cursor
+`_ie`                  make imports explit for import statement under cursor
+`_opt`                 add OPTIONS_GHC pragma
+`_lang`                add LANGUAGE pragma
+`i_CTRL-X_CTRL-O`      insert-mode completion based on imported ids (haskellmode-XO)
+`i_CTRL-X_CTRL-U`      insert-mode completion based on documented ids (haskellmode-XU)
+`i_CTRL-N`             insert-mode completion based on imported sources
+`:GHCi|{command/expr}` run GHCi command/expr in current module
 
-:GHCStaticOptions    edit static GHC options for this buffer
-:DocSettings         show current Haddock-files-related plugin settings
-:DocIndex            populate Haddock index 
-:ExportDocIndex      cache current Haddock index to a file
-:HpasteIndex         Read index of most recent entries from hpaste.org
-:HpastePostNew       Submit current buffer as a new hpaste 
+`:GHCStaticOptions`    edit static GHC options for this buffer
+`:DocSettings`         show current Haddock-files-related plugin settings
+`:DocIndex`            populate Haddock index 
+`:ExportDocIndex`      cache current Haddock index to a file
+`:HpasteIndex`         Read index of most recent entries from hpaste.org
+`:HpastePostNew`       Submit current buffer as a new hpaste 
 
 22. XmlEdit
 -----------
@@ -330,18 +330,4 @@ XML editing plugin.
         Visual - Place a custom XML tag to suround the selected text.
 <LocalLeader>d
         Normal - Deletes the surrounding tags from the cursor.
-
-23. ToDo
---------
-
-Bundle 'Mark'
-Bundle 'tpope/unimpaired.vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'ujihisa/neco-ghc'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar'
-Bundle 'netrw.vim'
-Bundle 'matchit.zip'
-Bundle 'nathanaelkane/vim-indent-guides'
 

@@ -1,13 +1,11 @@
 " ==============================================================================
 " David Terei's .vimrc file
 "
-" Vim Version: 7.4.0
+" Vim Version: 8.0.0
 "
 " ==============================================================================
 
-
-"###############################################################################
-"# Essential Settings                                                          #
+"# Essential Settings {{{
 "###############################################################################
 
 set nocompatible
@@ -17,15 +15,15 @@ set nocompatible
 let $MYVIM=$HOME."/.vim"
 
 if has("win32")
-  "source $VIMRUNTIME/mswin.vim
   let $MYVIM=$VIM
 endif
 
+" Set location to save sessions
 let $SS=$MYVIM."/sessions"
 
+" }}}
 
-"###############################################################################
-"# Vundle Plugin Manager                                                       #
+"# Vundle Plugin Manager {{{
 "###############################################################################
 
 " Plugin Manager for Vim
@@ -43,11 +41,13 @@ Plugin 'VundleVim/Vundle.vim'
 
 " With bufexplorer, you can quickly and easily switch between buffers.
 Plugin 'jlanzarotta/bufexplorer'
+Plugin 'fholgado/minibufexpl.vim'
 " NERD Tree filesystem explorer
 Plugin 'scrooloose/nerdtree'
 " Airline (0.1s load time)
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'edkolev/tmuxline.vim'
 
 " File finding command.
 Plugin 'wincent/command-t'
@@ -122,6 +122,7 @@ Plugin 'solarnz/arcanist.vim'
 "Plugin 'peaksea'
 "Plugin 'pyte'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'sjl/badwolf'
 "Plugin 'vilight.vim'
 "Plugin 'Wombat'
 "Plugin 'Zenburn'
@@ -129,9 +130,9 @@ Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 
+" }}}
 
-"###############################################################################
-"# Vim 8 Plugins                                                              #
+"# Vim 8 Plugins {{{
 "###############################################################################
 
 " Comes with Vim, just not enabled by default - extended '%' matching
@@ -139,8 +140,9 @@ if v:version >= 800
   packadd! matchit
 endif
 
-"###############################################################################
-"# General Settings                                                            #
+" }}}
+
+"# General Settings {{{
 "###############################################################################
 
 " Enable file type detection.
@@ -160,13 +162,12 @@ augroup myjump
    \ endif
 augroup END
 
-" setup mapleader
-let mapleader=","
-let maplocalleader="\\"
-
 " nice features but vim is very stable and I save a lot
 set nobackup
 set noswapfile
+
+" redraw only when we need to."
+set lazyredraw
 
 set encoding=utf-8
 "set termencoding=latin1
@@ -229,6 +230,8 @@ if v:version >= 704
   set formatoptions+=j
 endif
 
+set switchbuf=useopen
+
 " Display as much of possible of lines that fill the whole screen instead of
 " the default '@' display mode
 set display+=lastline
@@ -246,13 +249,15 @@ elseif v:version >= 703
   set cryptmethod=blowfish
 endif
 
-"###############################################################################
-"# Highlight & Fold Settings                                                   #
+" }}}
+
+"# Highlight & Fold Settings {{{
 "###############################################################################
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
+  let python_highlight_all=1
   syntax on
   set hlsearch
 endif
@@ -280,10 +285,6 @@ colorscheme solarized
 let g:solarized_termtrans=1
 set background=dark
 
-" if has("mac")
-  " colorscheme default
-" endif
-
 syntax sync fromstart
 let hs_minlines = 500
 
@@ -297,7 +298,7 @@ set showmatch " show matching brace when inserting one
 "set colorcolumn=100
 
 set foldenable
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevelstart=99 " open all folds by default
 let g:xml_syntax_folding=1 " enable xml folding
 
@@ -328,8 +329,9 @@ endfunction
 nmap <silent> <Leader>h :call ToggleLongLines()<CR>
 command! HighlightLongLines :call ToggleLongLines()
 
-"###############################################################################
-"# Indent Settings                                                             #
+" }}}
+
+"# Indent Settings {{{
 "###############################################################################
 
 set tabstop=2 " tab space
@@ -341,10 +343,14 @@ set indentexpr=syntax
 set autoindent
 set smartindent " go with smartindent if there is no plugin indent file
 
+" }}}
 
+"# KeyMap Settings {{{
 "###############################################################################
-"# KeyMap Settings                                                             #
-"###############################################################################
+
+" setup mapleader
+let mapleader=","
+let maplocalleader="\\"
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -360,12 +366,16 @@ nmap <silent> <Leader>5 :edit<CR>
 "---------------
 
 " clear search highlight
-nmap <silent> Q :noh<CR>
+nmap <silent> Q :nohlsearch<CR>
 
-" make F2 save and ,s
+" make F2 save
 nmap <silent> <F2> :w<CR>
 imap <silent> <F2> <C-o>:w<CR>
-nmap <silent> <Leader>s :w<CR>
+
+" super-save!
+nnoremap <Leader>S :mksession! $SS/Session.vim<CR>
+command! SaveSession :mksession! $SS/Session.vim
+command! LastSession :source $SS/Session.vim
 
 " toggle git-gutter
 nmap <silent> <F9> :GitGutterToggle<CR>
@@ -379,7 +389,7 @@ imap <silent> <F6> <C-o>:setlocal spell! spelllang=en_au<CR>
 set pastetoggle=<F7>
 
 " Toggle between all buffers and all tabs
-nnoremap <silent> <expr> <F8> ( tabpagenr('$') == 1 ? ':tab ball<Bar>tabn' : ':tabo' ) . '<CR>'
+"nnoremap <silent> <expr> <F8> ( tabpagenr('$') == 1 ? ':tab ball<Bar>tabn' : ':tabo' ) . '<CR>'
 
 "----------------------------
 "# Other Text Movement Keys #
@@ -409,18 +419,14 @@ endif
 imap <silent> <C-CR> <Esc>o
 imap <silent> <C-S-CR> <Esc>O
 
-" general windows delete commands
-imap <silent> <C-BS> <Esc>vbc
-imap <silent> <C-Del> <Esc>lvec
-
-" map - to end of line, _ to start
-noremap - ^
-noremap _ $
+" map _ to end of line, - to start
+noremap _ ^
+noremap - $
 
 " remap C-A to C-H as we want C-A for home
 noremap <silent> <C-h> <C-a>
 
-" Enable some emacs style keys
+" enable some emacs style keys
 imap <silent> <C-e> <End>
 imap <silent> <C-a> <Home>
 nmap <silent> <C-e> $
@@ -429,6 +435,10 @@ imap <silent> <C-f> <Right>
 imap <silent> <C-b> <Left>
 imap <silent> <C-h> <Backspace>
 imap <silent> <C-d> <Delete>
+
+" Stay in visual mode when indenting.
+vnoremap < <gv
+vnoremap > >gv
 
 "-----------------------
 "# Nicer Remapped Keys #
@@ -460,18 +470,18 @@ map <Leader>e :e %:p:h<CR>
 map <Leader>E :lcd %:p:h<CR>
 
 " Give tab cycling nicer keys (normally these just do same as j & k)
-noremap <C-n> :tabnext<CR>
-noremap <C-p> :tabNext<CR>
+noremap <C-n> :bn<CR>
+noremap <C-p> :bp<CR>
 
 " new tab
-nmap <Leader>t :tabe %:p:h<CR>
-nmap <Leader>T :tabe .<CR>
+nmap <Leader>t :edit %:p:h<CR>
+nmap <Leader>T :edit .<CR>
 "nmap <Leader>n :tabnew<CR>
 
-" tab close (TODO: detect if on last tab and don't call previous)
-map <Leader>w :tabclose\|tabprevious<CR>
-" close window
-map <Leader>q :q<CR>
+" tab clsoe
+map <Leader>q :bdelete<CR>
+" window close
+map <Leader>w :q<CR>
 " quit vim
 map <Leader>Q :qall!<CR>
 
@@ -488,9 +498,9 @@ noremap <silent> <Leader>< :execute 'silent! tabmove -1'<CR>
 " Move current tab to the right
 noremap <silent> <Leader>> :execute 'silent! tabmove +1'<CR>
 
+" }}}
 
-"###############################################################################
-"# Diff Settings                                                               #
+"# Diff Settings {{{
 "###############################################################################
 
 " Convenient command to see the difference between the current buffer and the
@@ -498,9 +508,9 @@ noremap <silent> <Leader>> :execute 'silent! tabmove +1'<CR>
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
     \ | wincmd p | diffthis
 
+" }}}
 
-"###############################################################################
-"# New Functions                                                               #
+"# New Functions {{{
 "###############################################################################
 
 " Delete trailing whitespace and tabs at the end of each line
@@ -513,20 +523,20 @@ command! Wgrep :execute 'noautocmd vimgrep /'.expand('<cword>').'/gj'
                   \ .' **/*.scala **/*.ts **/.yml **/*.xml **/*.proto | cl'
 
 " Easy .vimrc editing
-command! Rlp :source $MYVIMRC
-command! Ep :e $MYVIMRC
+command! Sv :source $MYVIMRC
+command! Ev :e $MYVIMRC
 
 " Go to latest version of file
 command! Latest :later 10000d
 
+" }}}
 
-"###############################################################################
-"# Plugins                                                                     #
+"# Plugins {{{
 "###############################################################################
 
-"------------
-"# YankRing #
-"------------
+"# YankRing {{{
+"--------------
+
 let g:yankring_clipboard_monitor = 0
 let g:yankring_replace_n_pkey = '<A-p>'
 let g:yankring_replace_n_nkey = '<A-n>'
@@ -534,54 +544,78 @@ let g:yankring_max_display = 50
 let g:yankring_history_dir = '$MYVIM'
 nnoremap <silent> <Leader>y :YRShow<CR>
 
-"---------------
-"# ManPageView #
-"---------------
+" }}}
+
+"# NERDTree {{{
+"--------------
+
+let NERDTreeIgnore=['\.pyc$', '\~$']
+
+" }}}
+
+"# ManPageView {{{
+"-----------------
+
 " This plugin is included in vim runtime but not all loaded by default
 runtime ftplugin/man.vim
 
-"-----------------
-"# Lust Explorer #
-"-----------------
+" }}}
+
+"# Lust Explorer {{{
+"-------------------
+
 let g:LustyJugglerSuppressRubyWarning = 1
 
-"-------------
-"# Command-T #
-"-------------
+" }}}
+
+"# Command-T {{{
+"---------------
+
 nnoremap <silent> <Leader>f :CommandT<CR>
 
-"----------------
-"# Indent Guide #
-"----------------
+" }}}
+
+"# Indent Guide {{{
+"------------------
+
 let g:indent_guides_space_guides = 1
 let g:indent_guides_default_mapping = 0
 nmap <silent> <Leader>G <Plug>IndentGuidesToggle
 
-"---------------
-"# Delimitmate #
-"---------------
+" }}}
+
+"# Delimitmate {{{
+"-----------------
+
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 
-"---------
-"# Gundo #
-"---------
+" }}}
+
+"# Gundo {{{
+"-----------
+
 nnoremap <silent> U :GundoToggle<CR>
 
-"---------------
-"# Local vimrc #
-"---------------
+" }}}
+
+"# Local vimrc {{{
+"-----------------
+
 let g:local_vimrc = ["_vimrc_local.vim", ".vimrc_local.vim", ".vimrc.vim", ".local.vimrc"]
 
-"------------
-"# Fugutive #
-"------------
+" }}}
+
+"# Fugutive {{{
+"--------------
 
 command! Gflog :Glog | :Gedit | :copen | wincmd k
 
-"----------------
-"# Haskell Mode #
-"----------------
+" }}}
+
+"# Haskell Mode {{{
+"------------------
+
 " Enable increased Haskell highlighting
 let hs_highlight_boolean = 1
 let hs_highlight_types = 1
@@ -591,9 +625,15 @@ let hs_highlight_debug = 1
 let hs_highlight_classes = 1
 let hs_highlight_functions = 1
 
-"-----------
-"# AirLine #
-"-----------
+" }}}
+
+"# AirLine {{{
+"--------------
+"
+"" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " let g:airline_powerline_fonts = 1
 let g:airline_symbols_ascii = 1
@@ -638,9 +678,10 @@ let g:airline#extensions#hunks#enabled = 0
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 
-"----------
-"# Vim-go #
-"----------
+" }}}
+
+"# Vim-go {{{
+"-------------
 
 " Disable gofmt and asmfmt on save.
 let g:go_fmt_autosave = 0
@@ -675,21 +716,22 @@ augroup mygo
     \ command! -bang AT call go#alternate#Switch(<bang>0, 'tabedit')
 augroup END
 
-"-------------
-"# incsearch #
-"-------------
+" }}}
+
+"# incsearch {{{
+"---------------
 
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+" }}}
 
-"-------
-"# ALE #
-"-------
+"# ALE {{{
+"---------
 
 " Only lint on save or when switching back to normal mode
-let g:ale_enabled = 0
+let g:ale_enabled = 1
 let g:ale_lint_on_text_changed = 'disabled'
 let g:ale_lint_on_enter = 1
 let g:ale_fix_on_save = 1
@@ -701,26 +743,39 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:airline_section_error = '%{ALEGetStatusLine()}'
 let g:ale_change_sign_column_color = 1
 
+" key bindings
+nmap <silent> <C-<> <Plug>(ale_previous_wrap)
+nmap <silent> <C->> <Plug>(ale_next_wrap)
+
 " Linter configuration
 let g:ale_linters = {
-\  'javascript': []
+\  'go': [ 'gometalinter', 'go build' ],
 \}
+
+let g:ale_go_gometalinter_options = '--fast --disable=gotype'
 
 " Fixer configuration
 let g:ale_fixers = {
-\  'javascript': []
+\  'python': [ 'yapf' ],
 \}
 
+" }}}
 
-"-------------
-"# Ultisnips #
-"-------------
+"# Ultisnips {{{
+"---------------
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+" }}}
 
-"###############################################################################
-"# File End                                                                    #
-"###############################################################################
+"# MiniBufExplorer {{{
+"---------------------
 
+let g:miniBufExplorerAutoStart = 0
+
+" }}}
+
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0
