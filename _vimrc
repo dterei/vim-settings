@@ -108,8 +108,13 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'leafgarland/typescript-vim'
 " Arcanist support
 Plugin 'solarnz/arcanist.vim'
+" Ansible support
+Plugin 'pearofducks/ansible-vim'
 
 " " === Colour Schemes! ===
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'sjl/badwolf'
+"Plugin 'junegunn/seoul256.vim'
 "Plugin 'dterei/VimCobaltColourScheme'
 "Plugin 'dterei/Twilight'
 "Plugin 'cschlueter/vim-mustang'
@@ -121,8 +126,6 @@ Plugin 'solarnz/arcanist.vim'
 "Plugin 'kib_darktango.vim'
 "Plugin 'peaksea'
 "Plugin 'pyte'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'sjl/badwolf'
 "Plugin 'vilight.vim'
 "Plugin 'Wombat'
 "Plugin 'Zenburn'
@@ -629,11 +632,6 @@ let hs_highlight_functions = 1
 
 "# AirLine {{{
 "--------------
-"
-"" Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
-" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
 
 " let g:airline_powerline_fonts = 1
 let g:airline_symbols_ascii = 1
@@ -663,17 +661,22 @@ let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
 
+"" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+" Disable tagbar integration as forces early load slowing startup
+let g:airline#extensions#tagbar#enabled = 0
 " allow spaces only after all tabs
 let g:airline#extensions#whitespace#mixed_indent_algo = 2
+" don't show hunks chancged
+let g:airline#extensions#hunks#enabled = 0
 
 " display paste status
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
 let g:airline_detect_crypt=1
 let g:airline_detect_spell=1
-
-" don't show hunks chancged
-let g:airline#extensions#hunks#enabled = 0
 
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
@@ -735,8 +738,9 @@ let g:ale_enabled = 1
 let g:ale_lint_on_text_changed = 'disabled'
 let g:ale_lint_on_enter = 1
 let g:ale_fix_on_save = 1
+let g:ale_lint_on_filetype_changed = 1
 let g:airline#extensions#ale#enable = 1
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_statusline_format = ['⨉  %d', '⚠ %d', '⬥ ok']
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
@@ -744,12 +748,12 @@ let g:airline_section_error = '%{ALEGetStatusLine()}'
 let g:ale_change_sign_column_color = 1
 
 " key bindings
-nmap <silent> <C-<> <Plug>(ale_previous_wrap)
-nmap <silent> <C->> <Plug>(ale_next_wrap)
+nmap <silent> <C-s> <Plug>(ale_previous_wrap)
+nmap <silent> <C-x> <Plug>(ale_next_wrap)
 
 " Linter configuration
 let g:ale_linters = {
-\  'go': [ 'gometalinter', 'go build' ],
+\  'go': [ 'gometalinter' ],
 \}
 
 let g:ale_go_gometalinter_options = '--fast --disable=gotype'
@@ -757,6 +761,7 @@ let g:ale_go_gometalinter_options = '--fast --disable=gotype'
 " Fixer configuration
 let g:ale_fixers = {
 \  'python': [ 'yapf' ],
+\  'go': [ 'gofmt' ],
 \}
 
 " }}}
@@ -773,6 +778,34 @@ let g:UltiSnipsEditSplit="vertical"
 "---------------------
 
 let g:miniBufExplorerAutoStart = 0
+
+" }}}
+
+"# Ansible {{{
+"-------------
+
+let g:ansible_extra_syntaxes = 'yaml.vim'
+
+" }}}
+
+"# TmuxLine {{{
+"-------------
+
+let g:tmuxline_powerline_separators = 1
+
+let g:tmuxline_preset = {
+    \'a'       : '#S',
+    \'win'     : '#I #W',
+    \'cwin'    : '#I #W',
+    \'z'       : '#H',
+    \'options' : {'status-justify' : 'left'}}
+
+" }}}
+
+"# TagBar {{{
+"------------
+
+nnoremap <silent> <F9> :TagbarToggle<CR>
 
 " }}}
 
