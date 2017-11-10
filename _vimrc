@@ -47,7 +47,7 @@ Plugin 'scrooloose/nerdtree'
 " Airline (0.1s load time)
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'edkolev/tmuxline.vim'
+"Plugin 'edkolev/tmuxline.vim'
 
 " File finding command.
 Plugin 'wincent/command-t'
@@ -468,6 +468,9 @@ noremap <C-j> 2<C-E>
 "# File/Window/Buffer Managment Keys #
 "-------------------------------------
 
+" nicer buffer switch
+nmap <C-@> :b#<CR>
+
 " quick file browse mapping
 map <Leader>e :e %:p:h<CR>
 map <Leader>E :lcd %:p:h<CR>
@@ -482,7 +485,8 @@ nmap <Leader>T :edit .<CR>
 "nmap <Leader>n :tabnew<CR>
 
 " tab clsoe
-map <Leader>q :bdelete<CR>
+map <Leader>q :bp\|bd #<CR>
+"map <Leader>q :bdelete<CR>
 " window close
 map <Leader>w :q<CR>
 " quit vim
@@ -553,6 +557,7 @@ nnoremap <silent> <Leader>y :YRShow<CR>
 "--------------
 
 let NERDTreeIgnore=['\.pyc$', '\~$']
+nnoremap <silent> <F10> :NERDTreeToggle<CR>
 
 " }}}
 
@@ -575,6 +580,7 @@ let g:LustyJugglerSuppressRubyWarning = 1
 "---------------
 
 nnoremap <silent> <Leader>f :CommandT<CR>
+nnoremap <silent> <Leader>bb :CommandTBuffer<CR>
 
 " }}}
 
