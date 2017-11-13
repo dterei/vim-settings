@@ -49,8 +49,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'edkolev/tmuxline.vim'
 
-" File finding command.
-Plugin 'wincent/command-t'
+" Fuzzy file finding
+Plugin 'junegunn/fzf.vim'
 " Incremental search that highlights ALL matches as typing
 Plugin 'haya14busa/incsearch.vim'
 " Provides selectable highlighting
@@ -351,6 +351,9 @@ set smartindent " go with smartindent if there is no plugin indent file
 "# KeyMap Settings {{{
 "###############################################################################
 
+" better handling of <Esc> key
+set timeoutlen=1000 ttimeoutlen=10
+
 " setup mapleader
 let mapleader=","
 let maplocalleader="\\"
@@ -576,11 +579,25 @@ let g:LustyJugglerSuppressRubyWarning = 1
 
 " }}}
 
-"# Command-T {{{
+"# FZF {{{
 "---------------
 
-nnoremap <silent> <Leader>f :CommandT<CR>
-nnoremap <silent> <Leader>bb :CommandTBuffer<CR>
+nnoremap <silent> <Leader>f :Files<CR>
+nnoremap <silent> <Leader>bb :Buffers<CR>
+
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" Advanced customization using autoload functions
+inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 " }}}
 
