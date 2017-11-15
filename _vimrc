@@ -65,7 +65,7 @@ Plugin 'easymotion/vim-easymotion'
 " ale - Check for syntax / lint errors
 Plugin 'w0rp/ale'
 " Visualise the undo tree of vim.
-Plugin 'sjl/gundo.vim'
+Plugin 'mbbill/undotree'
 " Git plugin.
 Plugin 'tpope/vim-fugitive'
 " Display changes from git in side signs.
@@ -238,6 +238,11 @@ set switchbuf=useopen
 " Display as much of possible of lines that fill the whole screen instead of
 " the default '@' display mode
 set display+=lastline
+
+" Use better grep if available
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
 
 " clipboard -- copy to system by default
 " if has('unnamedplus')
@@ -556,11 +561,27 @@ nnoremap <silent> <Leader>y :YRShow<CR>
 
 " }}}
 
+"# netrw {{{
+"-----------
+
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+
+" }}}
+
 "# NERDTree {{{
 "--------------
 
+let NERDTreeHijackNetrw = 1
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let NERDTreeQuitOnOpen = 1
 let NERDTreeIgnore=['\.pyc$', '\~$']
+
 nnoremap <silent> <F10> :NERDTreeToggle<CR>
+
+autocmd FileType nerdtree setl bufhidden=delete
 
 " }}}
 
@@ -618,10 +639,10 @@ let delimitMate_expand_space = 1
 
 " }}}
 
-"# Gundo {{{
+"# Undotree {{{
 "-----------
 
-nnoremap <silent> U :GundoToggle<CR>
+nnoremap <silent> U :UndotreeToggle<CR>
 
 " }}}
 
@@ -760,7 +781,7 @@ map g/ <Plug>(incsearch-stay)
 let g:ale_enabled = 1
 let g:ale_lint_on_text_changed = 'disabled'
 let g:ale_lint_on_enter = 1
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_lint_on_filetype_changed = 1
 let g:airline#extensions#ale#enable = 1
 let g:ale_statusline_format = ['⨉  %d', '⚠ %d', '⬥ ok']
