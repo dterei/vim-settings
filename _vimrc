@@ -532,10 +532,7 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 command! DeleteTrailingWs :%s/\s\+$//e
 
 " Search all subdirectories for word under cursor
-command! Wgrep :execute 'noautocmd vimgrep /'.expand('<cword>').'/gj'
-                  \ .' **/*.h **/*.c **/*.hh **/*.cc **/*.s **/*.go'
-                  \ .' **/*.hs **/*.js **/*.rb **/*.py **/*.r **/*.java'
-                  \ .' **/*.scala **/*.ts **/.yml **/*.xml **/*.proto | cl'
+command! Wgrep :execute 'grep! '.expand('<cword>').' | cl'
 
 " Easy .vimrc editing
 command! Sv :source $MYVIMRC
@@ -619,6 +616,9 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
+
+" Find word search
+noremap <silent> <Leader>F :execute 'Ag '.expand('<cword>')<CR>
 
 " }}}
 
