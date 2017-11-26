@@ -100,8 +100,6 @@ Plugin 'fatih/vim-go'
 Plugin 'Twinside/vim-haskellFold'
 " Markdown support (alternative)
 Plugin 'plasticboy/vim-markdown'
-" Indent highlighting
-Plugin 'nathanaelkane/vim-indent-guides'
 " Rust support
 Plugin 'rust-lang/rust.vim'
 " TypeScript
@@ -434,8 +432,9 @@ imap <silent> <C-S-CR> <Esc>O
 noremap _ ^
 noremap - $
 
-" remap C-A to C-H as we want C-A for home
-noremap <silent> <C-h> <C-a>
+" remap incr/decr since using them for other purposes
+noremap <silent> <C-y> <C-a>
+noremap <silent> <C-h> <C-x>
 
 " enable some emacs style keys
 imap <silent> <C-e> <End>
@@ -532,7 +531,7 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 command! DeleteTrailingWs :%s/\s\+$//e
 
 " Search all subdirectories for word under cursor
-command! Wgrep :execute 'grep! '.expand('<cword>').' | cl'
+command! Wgrep :execute 'silent grep! '.expand('<cword>').' | copen'
 
 " Easy .vimrc editing
 command! Sv :source $MYVIMRC
@@ -618,16 +617,8 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 " Find word search
-noremap <silent> <Leader>F :execute 'Ag '.expand('<cword>')<CR>
-
-" }}}
-
-"# Indent Guide {{{
-"------------------
-
-let g:indent_guides_space_guides = 1
-let g:indent_guides_default_mapping = 0
-nmap <silent> <Leader>G <Plug>IndentGuidesToggle
+noremap <silent> <Leader>G :execute 'Ag '.expand('<cword>')<CR>
+noremap <silent> <Leader>F :Ag<CR>
 
 " }}}
 
