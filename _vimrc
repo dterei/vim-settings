@@ -41,13 +41,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 " With bufexplorer, you can quickly and easily switch between buffers.
 Plugin 'jlanzarotta/bufexplorer'
-Plugin 'fholgado/minibufexpl.vim'
 " NERD Tree filesystem explorer
 Plugin 'scrooloose/nerdtree'
 " Airline (0.1s load time)
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'edkolev/tmuxline.vim'
 
 " Fuzzy file finding
 Plugin 'junegunn/fzf.vim'
