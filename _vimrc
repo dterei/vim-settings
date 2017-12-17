@@ -787,14 +787,15 @@ nmap <silent> <C-x> <Plug>(ale_next_wrap)
 " Linter configuration
 let g:ale_linters = {
 \  'go': [ 'gometalinter' ],
+\  'python': [ 'flake8', 'mypy' ],
 \}
 
 let g:ale_go_gometalinter_options = '--fast --disable=gotype'
 
 " Fixer configuration
 let g:ale_fixers = {
-\  'python': [ 'yapf', 'autopep8', 'isort' ],
 \  'go': [ 'gofmt' ],
+\  'python': [ 'yapf', 'autopep8', 'isort' ],
 \}
 
 " }}}
