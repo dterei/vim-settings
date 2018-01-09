@@ -32,6 +32,7 @@ let $SS=$MYVIM."/sessions"
 " setup Vundle
 filetype off
 set rtp+=$MYVIM/bundle/Vundle.vim/
+set rtp+=~/.fzf
 call vundle#begin()
 
 " === Plugins! ===
