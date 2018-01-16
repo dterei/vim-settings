@@ -572,7 +572,14 @@ let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen = 1
-let NERDTreeIgnore=['\.pyc$', '\~$']
+let NERDTreeIgnore=[
+\    '\~$[[file]]',
+\    '\.o$[[file]]',
+\    '\.hi$[[file]]',
+\    '\.pyc$[[file]]',
+\    '__init__.py$[[file]]',
+\    '__pycache__$[[dir]]'
+\  ]
 
 nnoremap <silent> <F10> :NERDTreeToggle<CR>
 
@@ -788,10 +795,11 @@ nmap <silent> <C-x> <Plug>(ale_next_wrap)
 " Linter configuration
 let g:ale_linters = {
 \  'go': [ 'gometalinter' ],
-\  'python': [ 'flake8', 'mypy' ],
+\  'python': [ 'flake8', 'mypy', 'pylint' ],
 \}
 
 let g:ale_go_gometalinter_options = '--fast --disable=gotype'
+let g:ale_python_mypy_options = '--ignore-missing-imports'
 
 " Fixer configuration
 let g:ale_fixers = {
