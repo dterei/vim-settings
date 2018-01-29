@@ -107,6 +107,8 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'solarnz/arcanist.vim'
 " Ansible support
 Plugin 'pearofducks/ansible-vim'
+" GraphQL support
+Plugin 'jparise/vim-graphql'
 
 " " === Colour Schemes! ===
 Plugin 'altercation/vim-colors-solarized'
