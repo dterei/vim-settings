@@ -810,7 +810,7 @@ let g:ale_linters = {
 \  'python': [ 'flake8', 'mypy', 'pylint' ],
 \}
 
-let g:ale_go_gometalinter_options = '--fast --disable=gotype'
+let g:ale_go_gometalinter_options = '--fast --disable=gotype -E lll'
 let g:ale_python_mypy_options = '--ignore-missing-imports'
 
 " Fixer configuration
