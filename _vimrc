@@ -93,7 +93,6 @@ Plugin 'powerman/vim-plugin-viewdoc'
 Plugin 'YankRing.vim'
 
 " Golang support
-Plugin 'jnwhiteh/vim-golang'
 Plugin 'fatih/vim-go'
 " Haskell folding
 Plugin 'Twinside/vim-haskellFold'
