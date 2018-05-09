@@ -497,7 +497,7 @@ nmap <Leader>T :edit .<CR>
 map <Leader>q :bp\|bd #<CR>
 "map <Leader>q :bdelete<CR>
 " window close
-map <Leader>w :q<CR>
+map <Leader>w :close<CR>
 " quit vim
 map <Leader>Q :qall!<CR>
 
