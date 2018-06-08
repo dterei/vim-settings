@@ -791,12 +791,11 @@ let g:ale_lint_on_text_changed = 'disabled'
 let g:ale_lint_on_enter = 1
 let g:ale_fix_on_save = 0
 let g:ale_lint_on_filetype_changed = 1
-let g:airline#extensions#ale#enable = 1
+let g:airline#extensions#ale#enabled = 1
 let g:ale_statusline_format = ['⨉  %d', '⚠ %d', '⬥ ok']
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:airline_section_error = '%{ALEGetStatusLine()}'
 let g:ale_change_sign_column_color = 1
 
 " key bindings
