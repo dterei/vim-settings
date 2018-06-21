@@ -805,7 +805,7 @@ nmap <silent> <C-x> <Plug>(ale_next_wrap)
 " Linter configuration
 let g:ale_linters = {
 \  'go': [ 'gometalinter' ],
-\  'python': [ 'flake8', 'mypy', 'pylint' ],
+\  'python': [ 'flake8', 'mypy' ],
 \}
 
 let g:ale_go_gometalinter_options = '--fast --disable=gotype -E lll --cyclo-over=15'
