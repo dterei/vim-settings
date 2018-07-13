@@ -634,8 +634,8 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 " Find word search
-noremap <silent> <Leader>G :execute 'Ag '.expand('<cword>')<CR>
-noremap <silent> <Leader>F :Ag<CR>
+noremap <silent> <Leader>G :execute 'Rg '.expand('<cword>')<CR>
+noremap <silent> <Leader>F :Rg<CR>
 
 " }}}
 
