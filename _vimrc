@@ -173,10 +173,11 @@ set lazyredraw
 set encoding=utf-8
 "set termencoding=latin1
 
-set mouse=""  " disable mouse in terminal
+set mouse="" " disable mouse in terminal
 
 set showcmd  " display incomplete commands
 set wildmenu " way cooler command line mode completion
+set completeopt=menuone
 
 set history=100 " keep 100 lines of command line history
 set viminfo='500,f1,<500,s50,:0,@30,/30,! " what to store for each file
