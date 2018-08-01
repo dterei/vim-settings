@@ -91,6 +91,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'powerman/vim-plugin-viewdoc'
 " Maintains a history of previous yanks and deletes.
 Plugin 'YankRing.vim'
+" Add some nice mappings for common commands like :lnext
+Plugin 'tpope/vim-unimpaired'
 
 " Golang support
 Plugin 'fatih/vim-go'
@@ -257,6 +259,12 @@ if v:version >= 704 && has('patch399')
 elseif v:version >= 703
   set cryptmethod=blowfish
 endif
+
+" Avoid showing quickfix list as a buffer
+augroup qf
+  autocmd!
+  autocmd FileType qf set nobuflisted
+augroup END
 
 " }}}
 
@@ -788,8 +796,11 @@ map g/ <Plug>(incsearch-stay)
 
 " Only lint on save or when switching back to normal mode
 let g:ale_enabled = 1
-let g:ale_lint_on_text_changed = 'disabled'
+let g:ale_open_list = 1
+let g:ale_list_window_size = 5
+let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 1
+let g:ale_lint_on_text_changed = 'disabled'
 let g:ale_fix_on_save = 0
 let g:ale_lint_on_filetype_changed = 1
 let g:airline#extensions#ale#enabled = 1
