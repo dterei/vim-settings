@@ -5,3 +5,21 @@ priority -50
 snippet spark "Polaris TODO"
 // TODO: SPARK-${1:XXXX} - ${2:Description}
 endsnippet
+
+# error log and return
+snippet errnl "Error log and return" !b
+if err != nil {
+	log.Errorf(ctx, "${1:Error}: %v", err)
+	return ${2:nil}, ${3:err}
+}
+${0}
+endsnippet
+
+# error log and multiple return
+snippet errnl, "Error log and return with two return values" !b
+if err != nil {
+	log.Errorf(ctx, "${1:Error}: %v", err)
+	return ${2:nil}, ${3:err}
+}
+${0}
+endsnippet
