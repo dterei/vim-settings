@@ -2,7 +2,7 @@
 
 priority -50
 
-snippet spark "Polaris TODO"
+snippet spark "Polaris TODO" !b
 // TODO: SPARK-${1:XXXX} - ${2:Description}
 endsnippet
 
@@ -22,4 +22,8 @@ if err != nil {
 	return ${2:nil}, ${3:err}
 }
 ${0}
+endsnippet
+
+snippet ctx "Context argument" !b
+ctx context.Context,
 endsnippet
