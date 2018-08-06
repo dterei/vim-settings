@@ -489,10 +489,6 @@ noremap <C-j> 2<C-E>
 " nicer buffer switch
 nmap <C-@> :b#<CR>
 
-" quick file browse mapping
-map <Leader>e :e %:p:h<CR>
-map <Leader>E :lcd %:p:h<CR>
-
 " Give tab cycling nicer keys (normally these just do same as j & k)
 noremap <C-n> :bn<CR>
 noremap <C-p> :bp<CR>
@@ -504,7 +500,6 @@ nmap <Leader>T :edit .<CR>
 
 " tab clsoe
 map <Leader>q :bp\|bd #<CR>
-"map <Leader>q :bdelete<CR>
 " window close
 map <Leader>w :close<CR>
 " quit vim
@@ -625,7 +620,7 @@ command! -bang -nargs=* Rg
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 
-nnoremap <silent> <Leader>f :Files<CR>
+nnoremap <silent> <Leader>e :Files<CR>
 nnoremap <silent> <Leader>bb :Buffers<CR>
 
 " Mapping selecting mappings
@@ -642,9 +637,10 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
-" Find word search
+" Text search
+noremap <silent> <Leader>f :Rg 
+noremap <silent> <Leader>F :Rg! 
 noremap <silent> <Leader>G :execute 'Rg '.expand('<cword>')<CR>
-noremap <silent> <Leader>F :Rg<CR>
 
 " }}}
 
