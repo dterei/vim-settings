@@ -494,8 +494,8 @@ noremap <C-n> :bn<CR>
 noremap <C-p> :bp<CR>
 
 " new tab
-nmap <Leader>t :edit %:p:h<CR>
-nmap <Leader>T :edit .<CR>
+nmap <Leader>e :edit %:p:h<CR>
+nmap <Leader>E :edit .<CR>
 "nmap <Leader>n :tabnew<CR>
 
 " tab clsoe
@@ -620,7 +620,7 @@ command! -bang -nargs=* Rg
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 
-nnoremap <silent> <Leader>e :Files<CR>
+nnoremap <silent> <Leader>t :Files<CR>
 nnoremap <silent> <Leader>bb :Buffers<CR>
 
 " Mapping selecting mappings
@@ -640,7 +640,7 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 " Text search
 noremap <silent> <Leader>f :Rg 
 noremap <silent> <Leader>F :Rg! 
-noremap <silent> <Leader>G :execute 'Rg '.expand('<cword>')<CR>
+noremap <silent> <Leader>g :execute 'Rg '.expand('<cword>')<CR>
 
 " }}}
 
@@ -747,6 +747,21 @@ let g:airline_solarized_bg='dark'
 let g:go_fmt_autosave = 0
 let g:go_asmfmt_autosave = 0
 
+" Configure GoMetaLinter
+let g:go_metalinter_enabled = [
+\ 'golint',
+\ 'goimports',
+\ 'varcheck',
+\ 'gosimple',
+\ 'deadcode',
+\ 'misspell',
+\ 'ineffassign',
+\ 'vetshadow',
+\ 'lll',
+\ 'nakedret',
+\ 'unused',
+\]
+
 au Filetype go nmap <leader>dv <Plug>(go-def-vertical)
 au Filetype go nmap <leader>ds <Plug>(go-def-split)
 
@@ -816,7 +831,9 @@ let g:ale_linters = {
 \  'python': [ 'flake8', 'mypy' ],
 \}
 
-let g:ale_go_gometalinter_options = '--fast --disable=gotype -E lll --cyclo-over=15'
+let g:ale_go_gometalinter_options = '--fast --disable=gotype'.
+  \ '-E lll -E vetshadow -E gosimple -E nakedret -E deadcode'.
+  \ '-Emisspell -E ineffassign -E unused --cyclo-over=15'
 let g:ale_python_flake8_options = '--mypy-config=""'
 let g:ale_python_mypy_options = '--ignore-missing-imports'
 
