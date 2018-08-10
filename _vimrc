@@ -640,7 +640,7 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 " Text search
 noremap <silent> <Leader>f :Rg 
 noremap <silent> <Leader>F :Rg! 
-noremap <silent> <Leader>g :execute 'Rg '.expand('<cword>')<CR>
+noremap <silent> <Leader>G :execute 'Rg '.expand('<cword>')<CR>
 
 " }}}
 
