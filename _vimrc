@@ -833,7 +833,8 @@ let g:ale_linters = {
 
 let g:ale_go_gometalinter_options = '--fast --disable=gotype'.
   \ '-E lll -E vetshadow -E gosimple -E nakedret -E deadcode'.
-  \ '-Emisspell -E ineffassign -E unused --cyclo-over=15'
+  \ '-E misspell -E ineffassign -E unused -E goimports'.
+  \'--cyclo-over=15'
 let g:ale_python_flake8_options = '--mypy-config=""'
 let g:ale_python_mypy_options = '--ignore-missing-imports'
 
