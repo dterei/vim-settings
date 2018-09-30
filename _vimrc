@@ -81,6 +81,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
 " Toggle commenting
 Plugin 'tomtom/tcomment_vim'
+" Argwrap - reformat function to single vs multi-line
+Plugin 'FooSoft/vim-argwrap'
 
 " Support for local.vimrc
 Plugin 'LucHermitte/lh-vim-lib'
@@ -886,6 +888,13 @@ let g:tmuxline_preset = {
 "------------
 
 nnoremap <silent> <F9> :TagbarToggle<CR>
+
+"# ArgWrap {{{
+"------------
+
+let g:argwrap_tail_comma = 1
+
+nnoremap <silent> <leader>a :ArgWrap<CR>
 
 " }}}
 
