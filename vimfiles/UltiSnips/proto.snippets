@@ -1,0 +1,22 @@
+# My snippets for Protobufs
+
+snippet msg "message" w
+message ${1:Type} {
+	${2}
+}
+${3}
+endsnippet
+
+snippet req "request message" w
+message ${1:Type}Req {
+	${2}
+}
+${3}
+endsnippet
+
+snippet rsp "response message" w
+message ${1:Type}Rsp {
+	${2}
+}
+${3}
+endsnippet
