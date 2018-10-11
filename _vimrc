@@ -751,17 +751,14 @@ let g:go_asmfmt_autosave = 0
 
 " Configure GoMetaLinter
 let g:go_metalinter_enabled = [
-\ 'golint',
-\ 'goimports',
-\ 'varcheck',
-\ 'gosimple',
 \ 'deadcode',
-\ 'misspell',
+\ 'goimports',
+\ 'gosimple',
 \ 'ineffassign',
-\ 'vetshadow',
 \ 'lll',
+\ 'misspell',
 \ 'nakedret',
-\ 'unused',
+\ 'vetshadow',
 \]
 
 au Filetype go nmap <leader>dv <Plug>(go-def-vertical)
@@ -834,8 +831,8 @@ let g:ale_linters = {
 \}
 
 let g:ale_go_gometalinter_options = '--fast --disable=gotype'.
-  \ '-E lll -E vetshadow -E gosimple -E nakedret -E deadcode'.
-  \ '-E misspell -E ineffassign -E unused -E goimports'.
+  \ '-E deadcode -E goimports -E gocyclo -E gosimple -E ineffasign'.
+  \ '-E lll -E mispell -E nakedret -E vetshadow'.
   \'--cyclo-over=15'
 let g:ale_python_flake8_options = '--mypy-config=""'
 let g:ale_python_mypy_options = '--ignore-missing-imports'
