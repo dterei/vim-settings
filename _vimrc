@@ -749,6 +749,12 @@ let g:airline_solarized_bg='dark'
 let g:go_fmt_autosave = 0
 let g:go_asmfmt_autosave = 0
 
+" Configuee goimports
+let g:go_fmt_options = {
+\ 'gofmt': '-s',
+\ 'goimports': '-local rubrik',
+\}
+
 " Configure GoMetaLinter
 let g:go_metalinter_enabled = [
 \ 'deadcode',
