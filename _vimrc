@@ -759,7 +759,6 @@ let g:go_fmt_options = {
 let g:go_metalinter_enabled = [
 \ 'deadcode',
 \ 'goimports',
-\ 'gosimple',
 \ 'ineffassign',
 \ 'lll',
 \ 'misspell',
@@ -832,20 +831,20 @@ nmap <silent> <C-x> <Plug>(ale_next_wrap)
 
 " Linter configuration
 let g:ale_linters = {
-\  'go': [ 'gometalinter' ],
+\  'go': [ 'gobuild', 'gometalinter' ],
 \  'python': [ 'flake8', 'mypy' ],
 \}
 
-let g:ale_go_gometalinter_options = '--fast --disable=gotype'.
-  \ '-E deadcode -E goimports -E gocyclo -E gosimple -E ineffasign'.
-  \ '-E lll -E mispell -E nakedret -E vetshadow'.
-  \'--cyclo-over=15'
+let g:ale_go_gometalinter_options = '--disable=gotype '.
+  \ '-E deadcode -E goimports -E gocyclo -E gosimple -E ineffassign '.
+  \ '-E lll -E misspell -E nakedret -E vetshadow '.
+  \ '--cyclo-over=15'
 let g:ale_python_flake8_options = '--mypy-config=""'
 let g:ale_python_mypy_options = '--ignore-missing-imports'
 
 " Fixer configuration
 let g:ale_fixers = {
-\  'go': [ 'gofmt' ],
+\  'go': [ 'goimports' ],
 \  'python': [ 'yapf', 'autopep8', 'isort' ],
 \}
 
