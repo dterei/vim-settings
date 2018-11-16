@@ -759,6 +759,7 @@ let g:go_fmt_options = {
 let g:go_metalinter_enabled = [
 \ 'deadcode',
 \ 'goimports',
+\ 'gosimple',
 \ 'ineffassign',
 \ 'lll',
 \ 'misspell',
@@ -836,7 +837,7 @@ let g:ale_linters = {
 \}
 
 let g:ale_go_gometalinter_options = '--disable=gotype '.
-  \ '-E deadcode -E goimports -E gocyclo -E gosimple -E ineffassign '.
+  \ '-E deadcode -E goimports -E gocyclo -E ineffassign '.
   \ '-E lll -E misspell -E nakedret -E vetshadow '.
   \ '--cyclo-over=15'
 let g:ale_python_flake8_options = '--mypy-config=""'
