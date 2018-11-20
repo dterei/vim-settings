@@ -759,7 +759,6 @@ let g:go_fmt_options = {
 let g:go_metalinter_enabled = [
 \ 'deadcode',
 \ 'goimports',
-\ 'gosimple',
 \ 'ineffassign',
 \ 'lll',
 \ 'misspell',
