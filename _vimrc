@@ -835,7 +835,7 @@ let g:ale_linters = {
 \  'python': [ 'flake8', 'mypy' ],
 \}
 
-let g:ale_go_gometalinter_options = '--disable=gotype '.
+let g:ale_go_gometalinter_options = '--disable=gotype --disable=gosimple '.
   \ '-E deadcode -E goimports -E gocyclo -E ineffassign '.
   \ '-E lll -E misspell -E nakedret -E vetshadow '.
   \ '--cyclo-over=15'
