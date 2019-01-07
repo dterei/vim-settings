@@ -70,6 +70,12 @@ Plugin 'tpope/vim-fugitive'
 " Display changes from git in side signs.
 Plugin 'airblade/vim-gitgutter'
 
+" Completion
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
+Plugin 'zchee/deoplete-go'
 " Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -78,15 +84,12 @@ Plugin 'Raimondi/delimitMate'
 " Align text to columns
 Plugin 'godlygeek/tabular'
 " Quickly surround some text (i.e bracket, html tags...)
-Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-surround'
 " Toggle commenting
 Plugin 'tomtom/tcomment_vim'
 " Argwrap - reformat function to single vs multi-line
 Plugin 'FooSoft/vim-argwrap'
 
-" Support for local.vimrc
-Plugin 'LucHermitte/lh-vim-lib'
-Plugin 'LucHermitte/local_vimrc'
 " More repeat (.) support (for plugins)
 Plugin 'tpope/vim-repeat'
 " Improved :man & :help (and other docs) viewer
@@ -115,7 +118,8 @@ Plugin 'jparise/vim-graphql'
 
 " " === Colour Schemes! ===
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'sjl/badwolf'
+Plugin 'dracula/vim'
+"Plugin 'sjl/badwolf'
 "Plugin 'junegunn/seoul256.vim'
 "Plugin 'dterei/VimCobaltColourScheme'
 "Plugin 'dterei/Twilight'
@@ -181,7 +185,9 @@ set mouse="" " disable mouse in terminal
 
 set showcmd  " display incomplete commands
 set wildmenu " way cooler command line mode completion
-set completeopt=menuone
+
+" completion settings
+set completeopt=menuone,noinsert,noselect
 
 set history=100 " keep 100 lines of command line history
 set viminfo='500,f1,<500,s50,:0,@30,/30,! " what to store for each file
@@ -579,8 +585,7 @@ let g:netrw_banner = 0
 let NERDTreeHijackNetrw = 1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-let NERDTreeQuitOnOpen = 1
+let NERDTreeQuitOnOpen = 0
 let NERDTreeIgnore=[
 \    '\~$[[file]]',
 \    '\.o$[[file]]',
@@ -658,13 +663,6 @@ let delimitMate_expand_space = 1
 "-----------
 
 nnoremap <silent> U :UndotreeToggle<CR>
-
-" }}}
-
-"# Local vimrc {{{
-"-----------------
-
-let g:local_vimrc = ["_vimrc_local.vim", ".vimrc_local.vim", ".vimrc.vim", ".local.vimrc"]
 
 " }}}
 
@@ -781,6 +779,7 @@ au Filetype go nmap <leader>gi <Plug>(go-info)
 au Filetype go nmap <leader>gr <Plug>(go-rename)
 au Filetype go nmap <leader>gf <Plug>(go-format)
 au Filetype go nmap <leader>gl <Plug>(go-metalinter)
+au Filetype go nmap <leader>gt :exe "GoDecls"<CR>
 
 " Enable GoAlternate with tranditional mappings
 augroup mygo
@@ -847,6 +846,20 @@ let g:ale_fixers = {
 \  'go': [ 'goimports' ],
 \  'python': [ 'yapf', 'autopep8', 'isort' ],
 \}
+
+" }}}
+
+"# deoplete {{{
+"-----------------
+
+let g:python3_host_skip_check = 1
+let g:deoplete#enable_at_startup = 0
+
+call deoplete#custom#option({
+\ 'auto_complete': v:false,
+\ 'auto_complete_delay': 500,
+\ 'smart_case': v:true,
+\ })
 
 " }}}
 
