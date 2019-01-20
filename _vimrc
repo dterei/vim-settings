@@ -187,7 +187,7 @@ set showcmd  " display incomplete commands
 set wildmenu " way cooler command line mode completion
 
 " completion settings
-set completeopt=menuone,noinsert,noselect
+set completeopt=menuone
 
 set history=100 " keep 100 lines of command line history
 set viminfo='500,f1,<500,s50,:0,@30,/30,! " what to store for each file
@@ -448,12 +448,15 @@ imap <silent> <C-CR> <Esc>o
 imap <silent> <C-S-CR> <Esc>O
 
 " map _ to end of line, - to start
-noremap _ ^
-noremap - $
+nnoremap _ ^
+nnoremap - $
 
 " remap incr/decr since using them for other purposes
-noremap <silent> <C-y> <C-a>
-noremap <silent> <C-h> <C-x>
+nnoremap <silent> <C-y> <C-a>
+nnoremap <silent> <C-h> <C-x>
+
+" remap complete cancel since remap to emacs
+inoremap <silent> <C-l> <C-e>
 
 " enable some emacs style keys
 imap <silent> <C-e> <End>
@@ -856,7 +859,7 @@ let g:python3_host_skip_check = 1
 let g:deoplete#enable_at_startup = 0
 
 call deoplete#custom#option({
-\ 'auto_complete': v:false,
+\ 'auto_complete': v:true,
 \ 'auto_complete_delay': 500,
 \ 'smart_case': v:true,
 \ })
