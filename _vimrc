@@ -67,6 +67,7 @@ Plugin 'w0rp/ale'
 Plugin 'mbbill/undotree'
 " Git plugin.
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 " Display changes from git in side signs.
 Plugin 'airblade/vim-gitgutter'
 
