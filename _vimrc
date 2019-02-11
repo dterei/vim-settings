@@ -649,8 +649,8 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 " Text search
-noremap <silent> <Leader>f :Rg 
-noremap <silent> <Leader>F :Rg! 
+noremap <silent> <Leader>f :Rg
+noremap <silent> <Leader>F :Rg!
 noremap <silent> <Leader>G :execute 'Rg '.expand('<cword>')<CR>
 
 " }}}
@@ -701,6 +701,12 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 
+" change layout
+let g:airline#extensions#default#layout = [
+  \ [ 'a', 'b', 'x', 'c' ],
+  \ [ 'warning', 'z' ]
+  \ ]
+
 " unicode symbols
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
@@ -730,8 +736,11 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tagbar#enabled = 0
 " allow spaces only after all tabs
 let g:airline#extensions#whitespace#mixed_indent_algo = 2
-" don't show hunks chancged
+" don't show hunks changed
 let g:airline#extensions#hunks#enabled = 0
+
+" enable ALE integration
+let g:airline#extensions#ale#enabled = 1
 
 " display paste status
 let g:airline_detect_modified=1
