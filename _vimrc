@@ -116,6 +116,8 @@ Plugin 'solarnz/arcanist.vim'
 Plugin 'pearofducks/ansible-vim'
 " GraphQL support
 Plugin 'jparise/vim-graphql'
+" Powershell support
+Plugin 'PProvost/vim-ps1'
 
 " " === Colour Schemes! ===
 Plugin 'altercation/vim-colors-solarized'
@@ -691,15 +693,8 @@ let hs_highlight_functions = 1
 
 " }}}
 
-"# AirLine {{{
+"# Airline {{{
 "--------------
-
-" let g:airline_powerline_fonts = 1
-let g:airline_symbols_ascii = 1
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
 
 " change layout
 let g:airline#extensions#default#layout = [
@@ -707,28 +702,35 @@ let g:airline#extensions#default#layout = [
   \ [ 'warning', 'z' ]
   \ ]
 
-" unicode symbols
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
-let g:airline_left_alt_sep = '>'
-let g:airline_right_alt_sep = '<'
+let g:airline_powerline_fonts = 1
+" let g:airline_symbols_ascii = 1
 
-" " powerline symbols
-" let g:airline_left_sep = ''
-" let g:airline_left_alt_sep = ''
-" let g:airline_right_sep = ''
-" let g:airline_right_alt_sep = ''
+" if !exists('g:airline_symbols')
+"   let g:airline_symbols = {}
+" endif
 
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇ '
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = '∄'
-let g:airline_symbols.whitespace = 'Ξ'
+" " unicode symbols
+" let g:airline_left_sep = '▶'
+" let g:airline_right_sep = '◀'
+" let g:airline_left_alt_sep = '>'
+" let g:airline_right_alt_sep = '<'
+"
+" " " powerline symbols
+" " let g:airline_left_sep = ''
+" " let g:airline_left_alt_sep = ''
+" " let g:airline_right_sep = ''
+" " let g:airline_right_alt_sep = ''
+"
+" let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.branch = '⎇ '
+" let g:airline_symbols.readonly = ''
+" let g:airline_symbols.crypt = '🔒'
+" let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.spell = 'Ꞩ'
+" let g:airline_symbols.notexists = '∄'
+" let g:airline_symbols.whitespace = 'Ξ'
 
-"" Enable the list of buffers
+" Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -788,6 +790,7 @@ au Filetype go nmap <leader>I :exe "GoImports"<CR>
 au Filetype go nmap <leader>B <Plug>(go-build)
 au Filetype go nmap <leader>R <Plug>(go-run)
 au Filetype go nmap <leader>T <Plug>(go-test)
+au Filetype go nmap <leader>gT <Plug>(go-test-func)
 au Filetype go nmap <leader>gi <Plug>(go-info)
 au Filetype go nmap <leader>gr <Plug>(go-rename)
 au Filetype go nmap <leader>gf <Plug>(go-format)
