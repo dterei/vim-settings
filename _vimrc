@@ -174,6 +174,11 @@ augroup myjump
    \ endif
 augroup END
 
+" ensure use zsh with terminal
+if executable('zsh')
+  set shell=zsh
+endif
+
 " nice features but vim is very stable and I save a lot
 set nobackup
 set noswapfile
@@ -651,8 +656,8 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 " Text search
-noremap <silent> <Leader>f :Rg 
-noremap <silent> <Leader>F :Rg! 
+noremap <silent> <Leader>f :Rg<space>
+noremap <silent> <Leader>F :Rg!<space>
 noremap <silent> <Leader>G :execute 'Rg '.expand('<cword>')<CR>
 
 " }}}
