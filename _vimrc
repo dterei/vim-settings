@@ -1,7 +1,7 @@
 " ==============================================================================
 " David Terei's .vimrc file
 "
-" Vim Version: 8.0.0
+" Vim Version: 8.1
 "
 " ==============================================================================
 
@@ -311,11 +311,15 @@ endif
 "colorscheme shine
 
 " Work with light or dark terminal background (call set background to change)
-"colorscheme default
 colorscheme solarized
 
 " below order and command is needed to fix gnome-terminal issue
-let g:solarized_termtrans=1
+let termprog = $TERM_PROGRAM
+if termprog == 'Apple_Terminal'
+  set t_Co=256
+  let g:solarized_termcolors=256
+  let g:solarized_termtrans=1
+endif
 set background=dark
 
 syntax sync fromstart
