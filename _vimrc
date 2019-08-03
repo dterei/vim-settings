@@ -856,12 +856,12 @@ nmap <silent> <C-x> <Plug>(ale_next_wrap)
 
 " Linter configuration
 let g:ale_linters = {
-\  'go': [ 'gobuild', 'gometalinter' ],
+\  'go': [ 'gopls', 'gometalinter' ],
 \  'python': [ 'flake8', 'mypy' ],
 \}
 
 let g:ale_go_gometalinter_options = '--disable=gotype --disable=gosimple '.
-  \ '-E deadcode -E goimports -E gocyclo -E ineffassign '.
+  \ '--disable=gosec -E deadcode -E goimports -E gocyclo -E ineffassign '.
   \ '-E lll -E misspell -E nakedret -E vetshadow '.
   \ '--cyclo-over=15'
 let g:ale_python_flake8_options = '--mypy-config=""'
