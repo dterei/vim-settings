@@ -74,10 +74,10 @@ Plugin 'airblade/vim-gitgutter'
 
 " Completion
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
-Plugin 'zchee/deoplete-go'
+"Plugin 'Shougo/deoplete.nvim'
+"Plugin 'roxma/nvim-yarp'
+"Plugin 'roxma/vim-hug-neovim-rpc'
+"Plugin 'zchee/deoplete-go'
 " Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -86,7 +86,7 @@ Plugin 'Raimondi/delimitMate'
 " Align text to columns
 Plugin 'godlygeek/tabular'
 " Quickly surround some text (i.e bracket, html tags...)
-"Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 " Toggle commenting
 Plugin 'tomtom/tcomment_vim'
 " Argwrap - reformat function to single vs multi-line
@@ -875,17 +875,17 @@ let g:ale_fixers = {
 
 " }}}
 
-"# deoplete {{{
-"-----------------
-
-let g:python3_host_skip_check = 1
-let g:deoplete#enable_at_startup = 0
-
-call deoplete#custom#option({
-\ 'auto_complete': v:true,
-\ 'auto_complete_delay': 500,
-\ 'smart_case': v:true,
-\ })
+" "# deoplete {{{
+" "-----------------
+"
+" let g:python3_host_skip_check = 1
+" let g:deoplete#enable_at_startup = 0
+"
+" call deoplete#custom#option({
+" \ 'auto_complete': v:true,
+" \ 'auto_complete_delay': 500,
+" \ 'smart_case': v:true,
+" \ })
 
 " }}}
 
