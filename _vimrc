@@ -769,10 +769,22 @@ let g:airline_solarized_bg='dark'
 "-------------
 
 " Disable gofmt and asmfmt on save.
-let g:go_fmt_autosave = 0
 let g:go_asmfmt_autosave = 0
+let g:go_fmt_autosave = 0
+let g:go_fmt_command = 'gopls'
+let g:go_imports_autosave = 0
+let g:go_imports_mode = 'gopls'
 
-" Configuee goimports
+let g:go_auto_type_info = 1
+let g:go_doc_popup_window = 1
+
+let g:go_implements_mode = 'gopls'
+let g:go_metalinter_command = 'golangci-lint'
+
+let g:go_test_timeout= '20s'
+
+" Configure goimports
+let g:go_gopls_local = 'rubrik'
 let g:go_fmt_options = {
 \ 'gofmt': '-s',
 \ 'goimports': '-local rubrik',
