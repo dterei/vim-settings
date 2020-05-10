@@ -773,7 +773,7 @@ let g:go_asmfmt_autosave = 0
 let g:go_fmt_autosave = 0
 let g:go_fmt_command = 'gopls'
 let g:go_imports_autosave = 0
-let g:go_imports_mode = 'gopls'
+let g:go_imports_mode = 'goimports'
 
 let g:go_auto_type_info = 1
 let g:go_doc_popup_window = 1
