@@ -645,6 +645,7 @@ command! -bang -nargs=* Rg
 
 nnoremap <silent> <Leader>t :Files<CR>
 nnoremap <silent> <Leader>bb :Buffers<CR>
+nnoremap <silent> <Leader>c :BTag<CR>
 
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
