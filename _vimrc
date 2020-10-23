@@ -848,7 +848,7 @@ map g/ <Plug>(incsearch-stay)
 "---------
 
 " Only lint on save or when switching back to normal mode
-let g:ale_enabled = 1
+let g:ale_enabled = 0
 let g:ale_open_list = 1
 let g:ale_list_window_size = 5
 let g:ale_lint_on_save = 1
