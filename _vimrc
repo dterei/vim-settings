@@ -1,7 +1,7 @@
 " ==============================================================================
 " David Terei's .vimrc file
 "
-" Vim Version: 8.1
+" Vim Version: 8.2
 "
 " ==============================================================================
 
@@ -48,6 +48,9 @@ Plugin 'scrooloose/nerdtree'
 " Airline (0.1s load time)
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+" AutoSave
+Plugin '907th/vim-auto-save'
 
 " Fuzzy file finding
 Plugin 'junegunn/fzf.vim'
@@ -183,6 +186,9 @@ endif
 " nice features but vim is very stable and I save a lot
 set nobackup
 set noswapfile
+
+" enable autosave before some commands
+set autowrite
 
 " redraw only when we need to."
 set lazyredraw
@@ -769,20 +775,41 @@ let g:airline_solarized_bg='dark'
 "# Vim-go {{{
 "-------------
 
-" Disable gofmt and asmfmt on save.
+" Enable features
+let g:go_code_completion_enabled = 1
+let g:go_gopls_enabled = 1
 let g:go_asmfmt_autosave = 0
 let g:go_fmt_autosave = 0
-let g:go_fmt_command = 'gopls'
 let g:go_imports_autosave = 0
-let g:go_imports_mode = 'goimports'
+let g:go_auto_sameids = 0
+let g:go_auto_type_info = 0
+let g:go_metalinter_autosave = 0
+let g:go_diagnostics_enabled = 1
 
-let g:go_auto_type_info = 1
+" Doc
+let g:go_doc_keywordprg_enabled = 1
 let g:go_doc_popup_window = 1
 
-let g:go_implements_mode = 'gopls'
-let g:go_metalinter_command = 'golangci-lint'
-
+" Testing
+let g:go_test_show_name = 1
 let g:go_test_timeout= '20s'
+
+" Engines
+let g:go_info_mode = 'gopls'
+let g:go_fmt_command = 'gopls'
+let g:go_imports_mode = 'goimports'
+let g:go_metalinter_command = 'golangci-lint'
+let g:go_implements_mode = 'gopls'
+let g:go_def_mode = 'gopls'
+let g:go_fillstruct_mode = 'fillstruct'
+let g:go_referrers_mode = 'gopls'
+
+" Syntax highlighting
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 0
+let g:go_highlight_function_calls = 0
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 0
 
 " Configure goimports
 let g:go_gopls_local = 'rubrik'
@@ -801,6 +828,9 @@ let g:go_metalinter_enabled = [
 \ 'nakedret',
 \ 'vetshadow',
 \]
+
+" Share gopls
+let g:go_gopls_options = ['-remote=auto']
 
 au Filetype go nmap <leader>dv <Plug>(go-def-vertical)
 au Filetype go nmap <leader>ds <Plug>(go-def-split)
