@@ -1,7 +1,7 @@
 #!/bin/sh
 
-#DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd  )
-DIR="$HOME/Vim"
+# determine git repo directory
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd  )
 
 # setup config files
 ln -sf "${DIR}/_vimrc" ~/.vimrc
@@ -16,5 +16,4 @@ git submodule init
 git submodule update
 
 # load plugins
-vim -c VundleInstall -c q -c q
-
+vim -c PluginInstall -c q -c q
