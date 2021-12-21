@@ -34,6 +34,7 @@ filetype off
 set rtp+=$MYVIM/bundle/Vundle.vim/
 set rtp+=~/.fzf
 set rtp+=/usr/local/opt/fzf
+set rtp+=/opt/homebrew/opt/fzf
 call vundle#begin()
 
 " === Plugins! ===
