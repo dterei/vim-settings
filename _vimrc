@@ -433,6 +433,11 @@ imap <silent> <F9> <C-o>:GitGutterToggle<CR>
 nmap <silent> <F6> :setlocal spell! spelllang=en_au<CR>
 imap <silent> <F6> <C-o>:setlocal spell! spelllang=en_au<CR>
 
+" default is 'undercurl' that can be a wriggly underline but alacritty doesn't
+" seem to support it
+hi clear SpellBad
+hi SpellBad cterm=underline
+
 " Switch to paste mode
 set pastetoggle=<F7>
 
