@@ -848,7 +848,7 @@ au Filetype go nmap <leader>gb <Plug>(go-doc-browser)
 au Filetype go nmap <leader>I :exe "GoImports"<CR>
 au Filetype go nmap <leader>B <Plug>(go-build)
 au Filetype go nmap <leader>R <Plug>(go-run)
-au Filetype go nmap <leader>T <Plug>(go-test)
+au Filetype go nmap <leader>T :exe "GoTest -short"<CR>
 au Filetype go nmap <leader>gT <Plug>(go-test-func)
 au Filetype go nmap <leader>gi <Plug>(go-info)
 au Filetype go nmap <leader>gr <Plug>(go-rename)
