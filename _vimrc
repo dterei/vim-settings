@@ -417,13 +417,12 @@ nnoremap <Leader>S :mksession! $SS/Session.vim<CR>
 command! SaveSession :mksession! $SS/Session.vim
 command! LastSession :source $SS/Session.vim
 
-" toggle git-gutter
-nmap <silent> <F9> :GitGutterToggle<CR>
-imap <silent> <F9> <C-o>:GitGutterToggle<CR>
-
 " enable/disable spell check
 nmap <silent> <F6> :setlocal spell! spelllang=en_au<CR>
 imap <silent> <F6> <C-o>:setlocal spell! spelllang=en_au<CR>
+
+" Tagbar
+nnoremap <silent> <F9> :TagbarToggle<CR>
 
 " default is 'undercurl' that can be a wriggly underline but alacritty doesn't
 " seem to support it
@@ -965,11 +964,6 @@ let g:tmuxline_preset = {
     \'options' : {'status-justify' : 'left'}}
 
 " }}}
-
-"# TagBar {{{
-"------------
-
-nnoremap <silent> <F9> :TagbarToggle<CR>
 
 "# ArgWrap {{{
 "------------
