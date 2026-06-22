@@ -180,7 +180,7 @@ set wildignore+=*.o,*.obj,*.bak,*.exe,*~,*.hi,*.pyc,*.class,*.bak,*.swp
 
 " Don't lcd to the current buffers directory, this is a nice feature but
 " causes a lot of problems, so instead I use some keyboard shortcuts to
-" open tabs at the current files dir... ect.
+" open tabs at the current files dir...
 set noacd
 
 set ch=1 " Make command line one lines high
@@ -244,21 +244,6 @@ if &t_Co > 2 || has("gui_running")
   let python_highlight_all=1
   set hlsearch
 endif
-
-" Use terminal background, need dark background
-"colorscheme ir_black
-"colorscheme pablo
-"colorscheme oceandeep
-"colorscheme elflord
-
-" Change terminal background, use dark background
-"colorscheme mustang
-"colorscheme torte
-
-" Change terminal background, use light background
-"colorscheme morning
-"colorscheme peaksea
-"colorscheme shine
 
 " Work with light or dark terminal background (call set background to change)
 colorscheme solarized
@@ -473,7 +458,7 @@ nmap <Leader>e :edit %:p:h<CR>
 nmap <Leader>E :edit .<CR>
 "nmap <Leader>n :tabnew<CR>
 
-" tab clsoe
+" tab close
 map <Leader>q :bp\|bd #<CR>
 " window close
 map <Leader>w :close<CR>
@@ -484,10 +469,6 @@ map <Leader>Q :qall!<CR>
 "# tab re-arrangement #
 "----------------------
 
-" Move current tab to first position
-"nnoremap <C-S-M> :tabmove 0<CR>
-" Move current tab to last position
-"nnoremap <C-/> :tabmove<CR>
 " Move current tab to the left
 noremap <silent> <Leader>< :execute 'silent! tabmove -1'<CR>
 " Move current tab to the right
@@ -627,7 +608,7 @@ nnoremap <silent> U :UndotreeToggle<CR>
 
 " }}}
 
-"# Fugutive {{{
+"# Fugitive {{{
 "--------------
 
 command! Gflog :Glog | :Gedit | :copen | wincmd k
@@ -752,17 +733,6 @@ let g:go_fmt_options = {
 \ 'gofmt': '-s',
 \ 'goimports': '-local rubrik',
 \}
-
-" Configure GoMetaLinter
-let g:go_metalinter_enabled = [
-\ 'deadcode',
-\ 'goimports',
-\ 'ineffassign',
-\ 'lll',
-\ 'misspell',
-\ 'nakedret',
-\ 'vetshadow',
-\]
 
 " Share gopls
 let g:go_gopls_options = ['-remote=auto']
