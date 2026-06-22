@@ -36,7 +36,7 @@ call plug#begin()
 Plug 'jlanzarotta/bufexplorer'
 " NERD Tree filesystem explorer
 Plug 'scrooloose/nerdtree'
-" Airline (0.1s load time)
+" Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -329,7 +329,6 @@ set shiftwidth=2 " indent space
 set expandtab " use spaces, not tabs
 set smarttab " tab amount done according to previous lines
 set autoindent
-set smartindent " go with smartindent if there is no plugin indent file
 
 " }}}
 
