@@ -11,9 +11,9 @@ if [ -x ~/.vim ]; then
 fi
 ln -sf "${DIR}/vimfiles" ~/.vim
 
-# load vundle
-git submodule init
-git submodule update
+# setup vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # load plugins
-vim -c PluginInstall -c q -c q
+vim -c PlugInstall -c q -c q

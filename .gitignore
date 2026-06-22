@@ -1,8 +1,9 @@
-vimfiles/haskellmode.config
 vimfiles/.netrwhist
-vimfiles/yankring_history_v2.txt
-vimfiles/bundle/*
-vimfiles/undo/*
+vimfiles/autoload/plug.vim
+vimfiles/haskellmode.config
+vimfiles/plugged/*
 vimfiles/sessions/
 vimfiles/spell/en.utf-8.add
 vimfiles/spell/en.utf-8.add.spl
+vimfiles/undo/*
+vimfiles/yankring_history_v2.txt

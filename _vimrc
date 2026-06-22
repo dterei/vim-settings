@@ -21,131 +21,125 @@ endif
 " Set location to save sessions
 let $SS=$MYVIM."/sessions"
 
-" }}}
-
-"# Vundle Plugin Manager {{{
-"###############################################################################
-
-" Plugin Manager for Vim
-" http://github.com/VundleVim/Vundle.vim
-
-" setup Vundle
-filetype off
-set rtp+=$MYVIM/bundle/Vundle.vim/
+" Setup fzf
 set rtp+=~/.fzf
 set rtp+=/usr/local/opt/fzf
 set rtp+=/opt/homebrew/opt/fzf
-call vundle#begin()
 
-" === Plugins! ===
+" }}}
+
+"# vim-plug Plugin Manager {{{
+"###############################################################################
+" https://github.com/junegunn/vim-plug
+
+call plug#begin()
 
 " Let Vundle manage itself (required).
-Plugin 'VundleVim/Vundle.vim'
+Plug 'VundleVim/Vundle.vim'
 
 " With bufexplorer, you can quickly and easily switch between buffers.
-Plugin 'jlanzarotta/bufexplorer'
+Plug 'jlanzarotta/bufexplorer'
 " NERD Tree filesystem explorer
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " Airline (0.1s load time)
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " AutoSave
-Plugin '907th/vim-auto-save'
+Plug '907th/vim-auto-save'
 
 " Fuzzy file finding
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 " Incremental search that highlights ALL matches as typing
-Plugin 'haya14busa/incsearch.vim'
-" Provides selectable highlighting
-Plugin 'Mark'
+Plug 'haya14busa/incsearch.vim'
 " Provides a bookmarking facility for Vim. Mark lines of interest.
-Plugin 'dterei/VimBookmarking'
+Plug 'dterei/VimBookmarking'
 " Tag listing / Class explorer
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 " Easy moving / jumping
-Plugin 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 
 " ale - Check for syntax / lint errors
-Plugin 'w0rp/ale'
+Plug 'w0rp/ale'
 " Visualise the undo tree of vim.
-Plugin 'mbbill/undotree'
+Plug 'mbbill/undotree'
 " Git plugin.
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rhubarb'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 " Display changes from git in side signs.
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " Completion
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'Shougo/deoplete.nvim'
-"Plugin 'roxma/nvim-yarp'
-"Plugin 'roxma/vim-hug-neovim-rpc'
-"Plugin 'zchee/deoplete-go'
+"Plug 'Valloric/YouCompleteMe'
+"Plug 'Shougo/deoplete.nvim'
+"Plug 'roxma/nvim-yarp'
+"Plug 'roxma/vim-hug-neovim-rpc'
+"Plug 'zchee/deoplete-go'
+
 " Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 " Auto closing of quotes, parenthesis, brackets... ect
-Plugin 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 " Align text to columns
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 " Quickly surround some text (i.e bracket, html tags...)
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Toggle commenting
-Plugin 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim'
 " Argwrap - reformat function to single vs multi-line
-Plugin 'FooSoft/vim-argwrap'
+Plug 'FooSoft/vim-argwrap'
 
 " More repeat (.) support (for plugins)
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 " Improved :man & :help (and other docs) viewer
-Plugin 'powerman/vim-plugin-viewdoc'
+Plug 'powerman/vim-plugin-viewdoc'
 " Maintains a history of previous yanks and deletes.
-Plugin 'YankRing.vim'
+Plug 'vim-scripts/YankRing.vim'
 " Add some nice mappings for common commands like :lnext
-Plugin 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired'
 
 " Golang support
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go'
 " Haskell folding
-Plugin 'Twinside/vim-haskellFold'
+Plug 'Twinside/vim-haskellFold'
 " Markdown support (alternative)
-Plugin 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 " Rust support
-Plugin 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim'
 " TypeScript
-Plugin 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
 " Arcanist support
-Plugin 'solarnz/arcanist.vim'
+Plug 'solarnz/arcanist.vim'
 " Ansible support
-Plugin 'pearofducks/ansible-vim'
+Plug 'pearofducks/ansible-vim'
 " GraphQL support
-Plugin 'jparise/vim-graphql'
+Plug 'jparise/vim-graphql'
 " Powershell support
-Plugin 'PProvost/vim-ps1'
+Plug 'PProvost/vim-ps1'
 
 " " === Colour Schemes! ===
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'dracula/vim'
-"Plugin 'sjl/badwolf'
-"Plugin 'junegunn/seoul256.vim'
-"Plugin 'dterei/VimCobaltColourScheme'
-"Plugin 'dterei/Twilight'
-"Plugin 'cschlueter/vim-mustang'
-"Plugin 'wgibbs/vim-irblack'
-"Plugin 'darkslategray.vim'
-"Plugin 'darkspectrum'
-"Plugin 'fruity.vim'
-"Plugin 'tir_black'
-"Plugin 'kib_darktango.vim'
-"Plugin 'peaksea'
-"Plugin 'pyte'
-"Plugin 'vilight.vim'
-"Plugin 'Wombat'
-"Plugin 'Zenburn'
-"Plugin 'bclear'
+Plug 'altercation/vim-colors-solarized'
+Plug 'dracula/vim'
+"Plug 'sjl/badwolf'
+"Plug 'junegunn/seoul256.vim'
+"Plug 'dterei/VimCobaltColourScheme'
+"Plug 'dterei/Twilight'
+"Plug 'cschlueter/vim-mustang'
+"Plug 'wgibbs/vim-irblack'
+"Plug 'darkslategray.vim'
+"Plug 'darkspectrum'
+"Plug 'fruity.vim'
+"Plug 'tir_black'
+"Plug 'kib_darktango.vim'
+"Plug 'peaksea'
+"Plug 'pyte'
+"Plug 'vilight.vim'
+"Plug 'Wombat'
+"Plug 'Zenburn'
+"Plug 'bclear'
 
-call vundle#end()
+call plug#end()
 
 " }}}
 
@@ -167,6 +161,7 @@ endif
 " 'cindent' is on in C files, etc.
 " Also load indent files, to automatically do language-dependent indenting.
 filetype plugin indent on
+syntax on
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -197,7 +192,7 @@ set lazyredraw
 set encoding=utf-8
 "set termencoding=latin1
 
-set mouse="" " disable mouse in terminal
+set mouse= " disable mouse in terminal
 
 set showcmd  " display incomplete commands
 set wildmenu " way cooler command line mode completion
@@ -738,18 +733,18 @@ endif
 " let g:airline_left_alt_sep = '>'
 " let g:airline_right_alt_sep = '<'
 "
-" " " powerline symbols
-" " let g:airline_left_sep = ''
-" " let g:airline_left_alt_sep = ''
-" " let g:airline_right_sep = ''
-" " let g:airline_right_alt_sep = ''
-"
+" " powerline symbols
+" let g:airline_left_sep = ''
+" let g:airline_left_alt_sep = ''
+" let g:airline_right_sep = ''
+" let g:airline_right_alt_sep = ''
+
 let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.branch = '⎇ '
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.crypt = '🔒'
 let g:airline_symbols.paste = 'ρ'
-" let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
 
