@@ -157,8 +157,10 @@ set encoding=utf-8
 
 set mouse= " disable mouse in terminal
 
-set showcmd  " display incomplete commands
-set wildmenu " way cooler command line mode completion
+set showcmd          " display incomplete commands
+set wildmenu         " way cooler command line mode completion
+set wildoptions+=pum " show completion matches in a popup menu
+set wildmode=longest:full,full " complete longest common string, cycle matches
 
 " completion settings
 set completeopt=menuone
