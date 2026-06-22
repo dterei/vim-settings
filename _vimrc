@@ -52,8 +52,6 @@ Plug 'majutsushi/tagbar'
 " Easy moving / jumping
 Plug 'easymotion/vim-easymotion'
 
-" ale - Check for syntax / lint errors
-Plug 'w0rp/ale'
 " Visualise the undo tree of vim.
 Plug 'mbbill/undotree'
 " Git plugin.
@@ -698,9 +696,6 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 2
 " don't show hunks changed
 let g:airline#extensions#hunks#enabled = 0
 
-" enable ALE integration
-let g:airline#extensions#ale#enabled = 1
-
 " display paste status
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
@@ -802,59 +797,6 @@ augroup mygo
   autocmd Filetype go
     \ command! -bang AT call go#alternate#Switch(<bang>0, 'tabedit')
 augroup END
-
-" }}}
-
-"# incsearch {{{
-"---------------
-
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
-" }}}
-
-"# ALE {{{
-"---------
-
-" Only lint on save or when switching back to normal mode
-let g:ale_enabled = 0
-let g:ale_open_list = 1
-let g:ale_list_window_size = 5
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_text_changed = 'disabled'
-let g:ale_fix_on_save = 0
-let g:ale_lint_on_filetype_changed = 1
-let g:airline#extensions#ale#enabled = 1
-let g:ale_statusline_format = ['⨉  %d', '⚠ %d', '⬥ ok']
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_change_sign_column_color = 1
-
-" key bindings
-nmap <silent> <C-s> <Plug>(ale_previous_wrap)
-nmap <silent> <C-x> <Plug>(ale_next_wrap)
-
-" Linter configuration
-let g:ale_linters = {
-\  'go': [ 'gopls', 'gometalinter' ],
-\  'python': [ 'flake8', 'mypy' ],
-\}
-
-let g:ale_go_gometalinter_options = '--disable=gotype --disable=gosimple '.
-  \ '--disable=gosec -E deadcode -E goimports -E gocyclo -E ineffassign '.
-  \ '-E lll -E misspell -E nakedret -E vetshadow '.
-  \ '--cyclo-over=15'
-let g:ale_python_flake8_options = '--mypy-config=""'
-let g:ale_python_mypy_options = '--ignore-missing-imports'
-
-" Fixer configuration
-let g:ale_fixers = {
-\  'go': [ 'goimports' ],
-\  'python': [ 'yapf', 'autopep8', 'isort' ],
-\}
 
 " }}}
 
