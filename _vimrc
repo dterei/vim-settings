@@ -34,9 +34,6 @@ set rtp+=/opt/homebrew/opt/fzf
 
 call plug#begin()
 
-" Let Vundle manage itself (required).
-Plug 'VundleVim/Vundle.vim'
-
 " With bufexplorer, you can quickly and easily switch between buffers.
 Plug 'jlanzarotta/bufexplorer'
 " NERD Tree filesystem explorer
