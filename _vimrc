@@ -8,8 +8,6 @@
 "# Essential Settings {{{
 "###############################################################################
 
-set nocompatible
-
 " OS neutral variable for referring to user files
 " assume unix, change if not
 let $MYVIM=$HOME."/.vim"
@@ -47,8 +45,6 @@ Plug '907th/vim-auto-save'
 
 " Fuzzy file finding
 Plug 'junegunn/fzf.vim'
-" Incremental search that highlights ALL matches as typing
-Plug 'haya14busa/incsearch.vim'
 " Provides a bookmarking facility for Vim. Mark lines of interest.
 Plug 'dterei/VimBookmarking'
 " Tag listing / Class explorer
@@ -65,13 +61,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 " Display changes from git in side signs.
 Plug 'airblade/vim-gitgutter'
-
-" Completion
-"Plug 'Valloric/YouCompleteMe'
-"Plug 'Shougo/deoplete.nvim'
-"Plug 'roxma/nvim-yarp'
-"Plug 'roxma/vim-hug-neovim-rpc'
-"Plug 'zchee/deoplete-go'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -117,24 +106,6 @@ Plug 'PProvost/vim-ps1'
 
 " " === Colour Schemes! ===
 Plug 'altercation/vim-colors-solarized'
-Plug 'dracula/vim'
-"Plug 'sjl/badwolf'
-"Plug 'junegunn/seoul256.vim'
-"Plug 'dterei/VimCobaltColourScheme'
-"Plug 'dterei/Twilight'
-"Plug 'cschlueter/vim-mustang'
-"Plug 'wgibbs/vim-irblack'
-"Plug 'darkslategray.vim'
-"Plug 'darkspectrum'
-"Plug 'fruity.vim'
-"Plug 'tir_black'
-"Plug 'kib_darktango.vim'
-"Plug 'peaksea'
-"Plug 'pyte'
-"Plug 'vilight.vim'
-"Plug 'Wombat'
-"Plug 'Zenburn'
-"Plug 'bclear'
 
 call plug#end()
 
@@ -144,9 +115,7 @@ call plug#end()
 "###############################################################################
 
 " Comes with Vim, just not enabled by default - extended '%' matching
-if v:version >= 800
-  packadd! matchit
-endif
+packadd! matchit
 
 " }}}
 
@@ -158,7 +127,6 @@ endif
 " 'cindent' is on in C files, etc.
 " Also load indent files, to automatically do language-dependent indenting.
 filetype plugin indent on
-syntax on
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -201,10 +169,8 @@ set history=100 " keep 100 lines of command line history
 set viminfo='500,f1,<500,s50,:0,@30,/30,! " what to store for each file
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 " permanent undo
-if version >= 703
-  set undofile
-  set undodir=$MYVIM/undo
-endif
+set undofile
+set undodir=$MYVIM/undo
 
 set incsearch  " do incremental searching
 set ignorecase " make this default, turn on case in search with /<search>\C/
@@ -246,9 +212,7 @@ set modeline
 set modelines=5
 
 " Delete comment character when joining commented lines
-if v:version >= 704
-  set formatoptions+=j
-endif
+set formatoptions+=j
 
 set switchbuf=useopen
 
@@ -263,18 +227,7 @@ elseif executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 endif
 
-" clipboard -- copy to system by default
-" if has('unnamedplus')
-"   set clipboard=unnamedplus
-" elseif has('unamed')
-"   set clipboard=unnamed
-" endif
-
-if v:version >= 704 && has('patch399')
-  set cryptmethod=blowfish2
-elseif v:version >= 703
-  set cryptmethod=blowfish
-endif
+set cryptmethod=blowfish2
 
 " Avoid showing quickfix list as a buffer
 augroup qf
@@ -291,7 +244,6 @@ augroup END
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
   let python_highlight_all=1
-  syntax on
   set hlsearch
 endif
 
@@ -376,7 +328,6 @@ set softtabstop=2 " fake tab spaces
 set shiftwidth=2 " indent space
 set expandtab " use spaces, not tabs
 set smarttab " tab amount done according to previous lines
-set indentexpr=syntax
 set autoindent
 set smartindent " go with smartindent if there is no plugin indent file
 
@@ -625,13 +576,6 @@ autocmd FileType nerdtree setl bufhidden=delete
 
 " This plugin is included in vim runtime but not all loaded by default
 runtime ftplugin/man.vim
-
-" }}}
-
-"# Lust Explorer {{{
-"-------------------
-
-let g:LustyJugglerSuppressRubyWarning = 1
 
 " }}}
 
@@ -915,32 +859,11 @@ let g:ale_fixers = {
 
 " }}}
 
-" "# deoplete {{{
-" "-----------------
-"
-" let g:python3_host_skip_check = 1
-" let g:deoplete#enable_at_startup = 0
-"
-" call deoplete#custom#option({
-" \ 'auto_complete': v:true,
-" \ 'auto_complete_delay': 500,
-" \ 'smart_case': v:true,
-" \ })
-
-" }}}
-
 "# Ultisnips {{{
 "---------------
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-
-" }}}
-
-"# MiniBufExplorer {{{
-"---------------------
-
-let g:miniBufExplorerAutoStart = 0
 
 " }}}
 
