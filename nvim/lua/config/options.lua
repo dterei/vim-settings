@@ -77,10 +77,13 @@ opt.cursorline = true
 opt.showmatch = true
 opt.guicursor = "a:blinkon0"
 opt.shada = "'500,<500,s50,:0,@30,/30,!" -- viminfo -> shada
-opt.mouse = ""  -- disable mouse in terminal
+-- opt.mouse = ""  -- disable mouse in terminal
 
 -- Folding (Treesitter-based folding is configured in plugins/treesitter.lua;
 -- these are the global defaults so non-TS buffers behave as before)
 opt.foldenable = true
 opt.foldmethod = "indent"
 opt.foldlevelstart = 99
+
+-- Diff with syntax highlight
+opt.diffopt:append("linematch:60")

@@ -25,7 +25,7 @@ return {
 
       -- gopls tuning
       g.go_def_mapping_enabled = 0
-      g.go_gopls_options = ['-remote.debug=:0']
+      g.go_gopls_options = { '-remote.debug=:0', '--remote=auto' }
 
       -- doc
       g.go_doc_keywordprg_enabled = 1
@@ -58,9 +58,6 @@ return {
 
       -- goimports local prefix
       g.go_gopls_local = "rubrik"
-
-      -- share gopls
-      g.go_gopls_options = { "-remote=auto" }
     end,
     config = function()
       local function setup_go_buffer(buf)

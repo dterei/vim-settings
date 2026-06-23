@@ -26,3 +26,13 @@ autocmd("TextYankPost", {
     vim.hl.on_yank({ timeout = 200 })
   end,
 })
+
+-- Fix solarized8 diff highlighting
+local function fix_diff_hl()
+  vim.api.nvim_set_hl(0, "DiffAdd",    { bg = "#073642" })
+  vim.api.nvim_set_hl(0, "DiffChange", { bg = "#073642" })
+  vim.api.nvim_set_hl(0, "DiffText",   { bg = "#0a4a52", bold = true })
+  vim.api.nvim_set_hl(0, "DiffDelete", { bg = "#073642" })
+end
+autocmd("ColorScheme", { pattern = "*", callback = fix_diff_hl })
+fix_diff_hl()

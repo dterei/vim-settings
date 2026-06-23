@@ -3,9 +3,6 @@
 -- ==============================================================================
 
 return {
-  -- Markdown (alternative syntax/conceal)
-  { "plasticboy/vim-markdown", ft = "markdown" },
-
   -- Rust
   { "rust-lang/rust.vim", ft = "rust" },
 
