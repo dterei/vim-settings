@@ -11,15 +11,21 @@ return {
       local g = vim.g
 
       -- features
-      g.go_code_completion_enabled = 1
-      g.go_gopls_enabled = 1
+      g.go_gopls_enabled = 0
+      g.go_code_completion_enabled = 0
       g.go_asmfmt_autosave = 0
-      g.go_fmt_autosave = 1
-      g.go_imports_autosave = 1
+      g.go_fmt_autosave = 0
+      g.go_imports_autosave = 0
       g.go_auto_sameids = 0
       g.go_auto_type_info = 0
       g.go_metalinter_autosave = 0
+      g.go_gocode_autobuild = 0
       g.go_diagnostics_enabled = 1
+      g.go_dispatch_enabled = 1
+
+      -- gopls tuning
+      g.go_def_mapping_enabled = 0
+      g.go_gopls_options = ['-remote.debug=:0']
 
       -- doc
       g.go_doc_keywordprg_enabled = 1
@@ -41,6 +47,10 @@ return {
 
       -- syntax highlighting
       g.go_highlight_functions = 1
+      g.go_highlight_methods = 1
+      g.go_highlight_structs = 1
+      g.go_highlight_interfaces = 1
+      g.go_highlight_operators = 1
       g.go_highlight_function_parameters = 0
       g.go_highlight_function_calls = 0
       g.go_highlight_types = 1

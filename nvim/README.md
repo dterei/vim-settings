@@ -23,13 +23,13 @@ Requirements: a recent Neovim (0.10+), `git`, `rg` (ripgrep), and
 
 ## Layout
 
-```
-init.lua                 globals + lazy bootstrap, loads everything
-lua/config/options.lua   your `set` options
-lua/config/keymaps.lua   your mappings
-lua/config/autocmds.lua  your augroups
-lua/config/commands.lua  user commands + ToggleLongLines
-lua/plugins/             one file per concern, auto-imported by lazy
+```sh
+init.lua                 # globals + lazy bootstrap, loads everything
+lua/config/options.lua   # your `set` options
+lua/config/keymaps.lua   # your mappings
+lua/config/autocmds.lua  # your augroups
+lua/config/commands.lua  # user commands + ToggleLongLines
+lua/plugins/             # one file per concern, auto-imported by lazy
 ```
 
 ## Things to verify after first launch
@@ -44,6 +44,7 @@ lua/plugins/             one file per concern, auto-imported by lazy
 - Move to LSP via native `nvim-lspconfig` + `mason` + a completion engine
   (`blink.cmp` or `nvim-cmp`). When you want it, that's a new
   `plugins/lsp.lua` and trimming vim-go down to `:GoTest`/`:GoAlternate`.
+  Maybe check if ALE is still a good option?
 - YankRing to yanky.vim
 - NERDTree to nvim-tree.lua or oil.lua
 - delimitMate to nvim-autopairs
