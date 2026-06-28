@@ -5,14 +5,35 @@
 return {
   -- Solarized colorscheme
   {
-    "https://codeberg.org/lifepillar/vim-solarized8",
+    "craftzdog/solarized-osaka.nvim",
     lazy = false,
-    branch = "neovim",
-    priority = 1000,  -- load before everything else so other plugins see colours
-    config = function()
-      vim.opt.termguicolors = true
-      vim.opt.background = "dark"
-      vim.cmd("colorscheme solarized8")
+    priority = 1000,
+    opts = {
+      on_highlights = function(highlights, colors)
+        -- Color of the window split line
+        highlights.WinSeparator = {
+          fg = "#606060",
+        }
+      end,
+    },
+    config = function(_, opts)
+      require("solarized-osaka").setup(opts)
+      vim.cmd([[colorscheme solarized-osaka]])
+
+      -- Custom distinct colors for Markdown headings
+      local heading_colors = {
+        { fg = '#b58900', bold = true }, -- H1: Yellow
+        { fg = '#cb4b16', bold = true }, -- H2: Orange
+        { fg = '#dc322f', bold = true }, -- H3: Red
+        { fg = '#d33682', bold = true }, -- H4: Magenta
+        { fg = '#6c71c4', bold = true }, -- H5: Violet
+        { fg = '#268bd2', bold = true }, -- H6: Blue
+      }
+
+      -- Apply the colors to Treesitter Markdown capture groups
+      for i, hl_props in ipairs(heading_colors) do
+        vim.api.nvim_set_hl(0, '@markup.heading.' .. i .. '.markdown', hl_props)
+      end
     end,
   },
 
