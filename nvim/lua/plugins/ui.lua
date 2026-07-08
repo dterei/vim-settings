@@ -9,11 +9,11 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      on_highlights = function(highlights, colors)
+      on_highlights = function(hl, c)
         -- Color of the window split line
-        highlights.WinSeparator = {
-          fg = "#606060",
-        }
+        hl.WinSeparator = { fg = "#606060" }
+        -- Color of the visual hightlight
+        hl.Visual = { bg = require("solarized-osaka.util").blend(c.base01, c.base02, 0.5) }
       end,
     },
     config = function(_, opts)
