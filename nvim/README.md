@@ -41,15 +41,9 @@ lua/plugins/             # one file per concern, auto-imported by lazy
 
 ## Next steps (not done, your call)
 
-- Move to LSP via native `nvim-lspconfig` + `mason` + a completion engine
-  (`blink.cmp` or `nvim-cmp`). When you want it, that's a new
-  `plugins/lsp.lua` and trimming vim-go down to `:GoTest`/`:GoAlternate`.
-  Maybe check if ALE is still a good option?
-- YankRing to yanky.vim
 - NERDTree to nvim-tree.lua or oil.lua
 - delimitMate to nvim-autopairs
 - fzf.vim to fzf-lua or telescope.nvim
 - easymotion to flash.nvim or leap.nvim
 - vim-airline to lualine.nvim
-- ultisnips to LuaSnip
 - tcomment drop for vim.opt builtin `gc` in neovim

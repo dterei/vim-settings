@@ -54,25 +54,40 @@ return {
 
   -- Yank history
   {
-    "vim-scripts/YankRing.vim",
+    "gbprod/yanky.nvim",
     event = "VeryLazy",
-    init = function()
-      vim.g.yankring_clipboard_monitor = 0
-      vim.g.yankring_replace_n_pkey = "<A-p>"
-      vim.g.yankring_replace_n_nkey = "<A-n>"
-      vim.g.yankring_max_display = 50
-      vim.g.yankring_history_dir = vim.env.MYVIM
-    end,
+    opts = {
+      ring = {
+        history_length = 100,
+        storage = "shada",
+      },
+      system_clipboard = {
+        sync_with_ring = false,
+      },
+      highlight = {
+        on_put = true,
+        on_yank = true,
+        timer = 200,
+      },
+      preserve_cursor_position = { enabled = true },
+    },
     keys = {
-      { "<Leader>y", "<cmd>YRShow<CR>", silent = true, desc = "YankRing" },
+      -- put y/p through yanky so they feed the ring
+      { "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank" },
+      { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put after" },
+      { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put before" },
+      { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "GPut after" },
+      { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" }, desc = "GPut before" },
+      -- cycle through history after a paste (the killer feature)
+      { "<A-n>", "<Plug>(YankyNextEntry)", desc = "Cycle to next yank" },
+      { "<A-y>", "<Plug>(YankyPreviousEntry)", desc = "Cycle to previous yank" },
+      -- open the history picker (your old <Leader>y)
+      { "<Leader>y", "<cmd>YankyRingHistory<CR>", mode = { "n", "x" }, desc = "Yank history" },
     },
   },
 
   -- Nice mappings for :lnext etc.
   { "tpope/vim-unimpaired", event = "VeryLazy" },
-
-  -- AutoSave
-  -- { "907th/vim-auto-save", init = function() vim.g.auto_save = 1 end },
 
   -- Undo tree
   {
