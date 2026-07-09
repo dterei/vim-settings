@@ -5,9 +5,9 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    ft = "go",
+    event = { "BufReadPre *.go", "BufNewFile *.go" },
     config = function()
-      require("lspconfig").gopls.setup({
+      vim.lsp.config("gopls", {
         settings = {
           gopls = {
             directoryFilters = {
@@ -38,17 +38,23 @@ return {
         },
       })
 
+      -- Start/attach gopls for matching buffers
+      vim.lsp.enable("gopls")
+
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(args)
           local buf = args.buf
+          local map = function(lhs, fn)
+            vim.keymap.set("n", lhs, fn, { buffer = buf, silent = true })
+          end
+
           -- buffer-local nav/doc keymaps when gopls attaches
-          -- local map = function(lhs, fn) vim.keymap.set("n", lhs, fn, { buffer = buf, silent = true }) end
-          -- map("gd", vim.lsp.buf.definition)   -- jump to definition
+          map("gd", vim.lsp.buf.definition)   -- jump to definition
+          map("gr", vim.lsp.buf.references)    -- find references
+          map("gi", vim.lsp.buf.implementation)
+          map("<leader>gr", vim.lsp.buf.rename)
           -- map("K",  vim.lsp.buf.hover)         -- godoc popup
-          -- map("gr", vim.lsp.buf.references)    -- find references
-          -- map("gi", vim.lsp.buf.implementation)
-          -- map("<leader>gr", vim.lsp.buf.rename)
-          
+
           -- Format on demand
           map("<leader>gf", function()
             vim.lsp.buf.format({ async = false })

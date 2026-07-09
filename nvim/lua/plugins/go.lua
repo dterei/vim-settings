@@ -28,7 +28,7 @@ return {
   --     g.go_gopls_options = { '-remote.debug=:0', '--remote=auto' }
   --
   --     -- doc
-  --     g.go_doc_keywordprg_enabled = 1
+  --     g.go_doc_keywordprg_enabled = 0
   --     g.go_doc_popup_window = 1
   --
   --     -- testing

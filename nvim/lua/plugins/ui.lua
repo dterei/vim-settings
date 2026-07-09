@@ -84,7 +84,7 @@ return {
     lazy = false,
     init = function()
       local g = vim.g
-      g.NERDTreeHijackNetrw = 1
+      g.NERDTreeHijackNetrw = 0
       g.NERDTreeAutoDeleteBuffer = 1
       g.NERDTreeMinimalUI = 1
       g.NERDTreeQuitOnOpen = 0
@@ -96,7 +96,6 @@ return {
         "__init__.py$[[file]]",
         "__pycache__$[[dir]]",
       }
-      -- netrw settings (NERDTree hijacks it, but keep your prefs)
       g.netrw_liststyle = 3
       g.netrw_banner = 0
     end,
@@ -111,6 +110,33 @@ return {
     end,
     keys = {
       { "<F10>", "<cmd>NERDTreeToggle<CR>", silent = true, desc = "NERDTree" },
+    },
+  },
+
+  -- Oil File Browser
+  {
+    "stevearc/oil.nvim",
+    lazy = false,
+    dependencies = { "nvim-web-devicons" },
+    opts = {
+      default_file_explorer = true,
+      skip_confirm_for_simple_edits = true,
+      view_options = {
+        show_hidden = false,
+        is_hidden_file = function(name, _)
+          local patterns = {
+            "%.o$", "%.hi$", "%.pyc$", "%.class$", "%.swp$",
+            "^__pycache__$",
+          }
+          for _, pat in ipairs(patterns) do
+            if name:match(pat) then return true end
+          end
+          return vim.startswith(name, ".")
+        end,
+      },
+      keymaps = {
+        ["<C-p>"] = false, -- disable, conflicts with my buffer movement
+      },
     },
   },
 }

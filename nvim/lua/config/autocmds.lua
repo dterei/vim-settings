@@ -27,7 +27,7 @@ autocmd("TextYankPost", {
   end,
 })
 
--- Fix solarized8 diff highlighting
+-- Fix solarized diff highlighting
 local function fix_diff_hl()
   vim.api.nvim_set_hl(0, "DiffAdd",    { bg = "#073642" })
   vim.api.nvim_set_hl(0, "DiffChange", { bg = "#073642" })

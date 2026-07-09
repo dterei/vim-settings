@@ -41,9 +41,8 @@ lua/plugins/             # one file per concern, auto-imported by lazy
 
 ## Next steps (not done, your call)
 
-- NERDTree to nvim-tree.lua or oil.lua
 - delimitMate to nvim-autopairs
-- fzf.vim to fzf-lua or telescope.nvim
 - easymotion to flash.nvim or leap.nvim
 - vim-airline to lualine.nvim
 - tcomment drop for vim.opt builtin `gc` in neovim
+- drop undotree for builtin functionality

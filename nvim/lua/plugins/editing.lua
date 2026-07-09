@@ -49,10 +49,6 @@ return {
     },
   },
 
-  -- Improved :man & :help / docs viewer
-  { "powerman/vim-plugin-viewdoc", event = "VeryLazy" },
-
-  -- Yank history
   {
     "gbprod/yanky.nvim",
     event = "VeryLazy",
@@ -79,8 +75,8 @@ return {
       { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "GPut after" },
       { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" }, desc = "GPut before" },
       -- cycle through history after a paste (the killer feature)
-      { "<A-n>", "<Plug>(YankyNextEntry)", desc = "Cycle to next yank" },
-      { "<A-y>", "<Plug>(YankyPreviousEntry)", desc = "Cycle to previous yank" },
+      { "]p", "<Plug>(YankyNextEntry)", desc = "Cycle to next yank" },
+      { "[p", "<Plug>(YankyPreviousEntry)", desc = "Cycle to previous yank" },
       -- open the history picker (your old <Leader>y)
       { "<Leader>y", "<cmd>YankyRingHistory<CR>", mode = { "n", "x" }, desc = "Yank history" },
     },
