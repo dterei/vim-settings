@@ -87,3 +87,6 @@ opt.foldlevelstart = 99
 
 -- Diff with syntax highlight
 opt.diffopt:append("linematch:60")
+
+-- Enable nerdfonts
+g.have_nerd_font = true

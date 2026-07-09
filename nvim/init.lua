@@ -10,6 +10,9 @@
 --   lua/plugins/*.lua         -- file per plugin/group, auto-imported by lazy
 -- ==============================================================================
 
+-- Enable faster startup by caching compiled Lua modules
+vim.loader.enable()
+
 -- ----------------------------------------------------------------------------
 -- Globals that must be set BEFORE plugins load
 -- ----------------------------------------------------------------------------

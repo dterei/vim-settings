@@ -39,7 +39,7 @@ lua/plugins/             # one file per concern, auto-imported by lazy
 - `$MYVIM` still points at `~/.vim`, so your existing undo history and saved
   sessions carry over. Repoint in `init.lua` if you want Neovim isolated.
 
-## Next steps (not done, your call)
+## Next steps
 
 - vim-airline to lualine.nvim
 - delimitMate to nvim-autopairs
@@ -47,3 +47,11 @@ lua/plugins/             # one file per concern, auto-imported by lazy
 - tcomment drop for vim.opt builtin `gc` in neovim
 - drop undotree for builtin functionality
 - check to remove editing.lua plugins
+- https://github.com/akinsho/bufferline.nvim
+- https://github.com/lewis6991/hover.nvim
+  - https://github.com/powerman/vim-plugin-viewdoc
+- learn from others:
+  - https://github.com/nvim-lua/kickstart.nvim/tree/master
+  - https://www.lazyvim.org/
+  - https://rootknecht.net/blog/debloating-neovim-config/
+
