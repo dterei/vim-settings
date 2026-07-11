@@ -1,5 +1,5 @@
 -- ==============================================================================
--- UI: colorscheme, statusline, file explorer
+-- UI: colorscheme, statusline, yankring, undo-tree
 -- ==============================================================================
 
 return {
@@ -37,123 +37,74 @@ return {
     end,
   },
 
-  -- Alternative solarized, little simpler
-  -- {
-  --   'maxmx03/solarized.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   ---@type solarized.config
-  --   opts = {
-  --     variant = "autumn",
-  --   },
-  --   config = function(_, opts)
-  --     vim.o.termguicolors = true
-  --     vim.o.background = 'dark'
-  --     require('solarized').setup(opts)
-  --     vim.cmd.colorscheme 'solarized'
-  --   end,
-  -- },
-
-  -- Airline statusline
+  -- Lualine statusline
   {
-    "vim-airline/vim-airline",
-    dependencies = { "vim-airline/vim-airline-themes" },
-    lazy = false,
-    init = function()
-      local g = vim.g
-
-      g["airline#extensions#default#layout"] = {
-        { "a", "b", "x", "c" },
-        { "warning", "z" },
-      }
-      g.airline_powerline_fonts = 1
-
-      g["airline#extensions#tabline#enabled"] = 1
-      g["airline#extensions#tabline#fnamemod"] = ":t"
-      g["airline#extensions#tagbar#enabled"] = 0
-      g["airline#extensions#whitespace#mixed_indent_algo"] = 2
-      g["airline#extensions#hunks#enabled"] = 0
-
-      g.airline_detect_modified = 1
-      g.airline_detect_paste = 1
-      g.airline_detect_crypt = 1
-      g.airline_detect_spell = 1
-
-      g.airline_theme = "solarized"
-      g.airline_solarized_bg = "dark"
-
-      g.airline_symbols = {
-        linenr = "¶",
-        branch = "⎇ ",
-        readonly = "",
-        crypt = "🔒",
-        paste = "ρ",
-        spell = "Ꞩ",
-        notexists = "∄",
-        whitespace = "Ξ",
-      }
-    end,
-  },
-
-  -- NERDTree file explorer
-  {
-    "scrooloose/nerdtree",
-    lazy = false,
-    init = function()
-      local g = vim.g
-      g.NERDTreeHijackNetrw = 0
-      g.NERDTreeAutoDeleteBuffer = 1
-      g.NERDTreeMinimalUI = 1
-      g.NERDTreeQuitOnOpen = 0
-      g.NERDTreeIgnore = {
-        "\\~$[[file]]",
-        "\\.o$[[file]]",
-        "\\.hi$[[file]]",
-        "\\.pyc$[[file]]",
-        "__init__.py$[[file]]",
-        "__pycache__$[[dir]]",
-      }
-      g.netrw_liststyle = 3
-      g.netrw_banner = 0
-    end,
-    config = function()
-      vim.api.nvim_create_autocmd("FileType", {
-        group = vim.api.nvim_create_augroup("nerdtree_hidden", { clear = true }),
-        pattern = "nerdtree",
-        callback = function()
-          vim.bo.bufhidden = "delete"
-        end,
-      })
-    end,
-    keys = {
-      { "<F10>", "<cmd>NERDTreeToggle<CR>", silent = true, desc = "NERDTree" },
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = "VeryLazy",
+    opts = {
+      options = {
+        globalstatus = true,
+      },
+      sections = {
+        lualine_a = {
+          "mode",
+          { function() return vim.o.paste and "ρ" or "" end },
+          { function() return vim.wo.spell and "S" or "" end },
+        },
+        lualine_b = { "branch", "diff", "diagnostics" },
+        lualine_c = { { "filename", path = 0 } },
+        lualine_x = {},
+        lualine_y = { "progress" },
+        lualine_z = { "location" },
+      },
+      tabline = {
+        lualine_a = {"buffers"},
+        lualine_z = {"tabs"},
+      },
+      extensions = { "quickfix", "fugitive", "oil" },
     },
   },
 
-  -- Oil File Browser
+  -- Yankring UI
   {
-    "stevearc/oil.nvim",
-    lazy = false,
-    dependencies = { "nvim-web-devicons" },
+    "gbprod/yanky.nvim",
+    event = "VeryLazy",
     opts = {
-      default_file_explorer = true,
-      skip_confirm_for_simple_edits = true,
-      view_options = {
-        show_hidden = false,
-        is_hidden_file = function(name, _)
-          local patterns = {
-            "%.o$", "%.hi$", "%.pyc$", "%.class$", "%.swp$",
-            "^__pycache__$",
-          }
-          for _, pat in ipairs(patterns) do
-            if name:match(pat) then return true end
-          end
-          return vim.startswith(name, ".")
-        end,
+      ring = {
+        history_length = 100,
+        storage = "shada",
       },
-      keymaps = {
-        ["<C-p>"] = false, -- disable, conflicts with my buffer movement
+      system_clipboard = {
+        sync_with_ring = false,
       },
+      highlight = {
+        on_put = true,
+        on_yank = true,
+        timer = 200,
+      },
+      preserve_cursor_position = { enabled = true },
+    },
+    keys = {
+      -- put y/p through yanky so they feed the ring
+      { "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank" },
+      { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put after" },
+      { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put before" },
+      { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "GPut after" },
+      { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" }, desc = "GPut before" },
+      -- cycle through history after a paste
+      { "]p", "<Plug>(YankyNextEntry)", desc = "Cycle to next yank" },
+      { "[p", "<Plug>(YankyPreviousEntry)", desc = "Cycle to previous yank" },
+      -- open the history picker
+      { "<Leader>y", "<cmd>YankyRingHistory<CR>", mode = { "n", "x" }, desc = "Yank history" },
+    },
+  },
+
+  -- Undo tree UI
+  {
+    "mbbill/undotree",
+    keys = {
+      { "U", "<cmd>UndotreeToggle<CR>", silent = true, desc = "Undotree" },
     },
   },
 }

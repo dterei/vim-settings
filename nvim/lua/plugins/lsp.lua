@@ -49,11 +49,12 @@ return {
           end
 
           -- buffer-local nav/doc keymaps when gopls attaches
-          map("gd", vim.lsp.buf.definition)   -- jump to definition
-          map("gr", vim.lsp.buf.references)    -- find references
+          map("gd", vim.lsp.buf.definition)
+          map("gr", vim.lsp.buf.references)
           map("gi", vim.lsp.buf.implementation)
           map("<leader>gr", vim.lsp.buf.rename)
-          -- map("K",  vim.lsp.buf.hover)         -- godoc popup
+          map("I", vim.diagnostic.open_float)
+          -- map("K",  vim.lsp.buf.hover)
 
           -- Format on demand
           map("<leader>gf", function()

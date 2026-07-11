@@ -41,13 +41,9 @@ lua/plugins/             # one file per concern, auto-imported by lazy
 
 ## Next steps
 
-- vim-airline to lualine.nvim
 - delimitMate to nvim-autopairs
-- easymotion to flash.nvim or leap.nvim
 - tcomment drop for vim.opt builtin `gc` in neovim
 - drop undotree for builtin functionality
-- check to remove editing.lua plugins
-- https://github.com/akinsho/bufferline.nvim
 - https://github.com/lewis6991/hover.nvim
   - https://github.com/powerman/vim-plugin-viewdoc
 - learn from others:
