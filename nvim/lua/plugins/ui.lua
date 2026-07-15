@@ -103,7 +103,7 @@ return {
   -- Snacks picker
   {
     "folke/snacks.nvim",
-    priority = 1000,
+    priority = 900, -- below the colorscheme (1000) so it applies first; still loads early
     lazy = false,
     opts = {
       picker = {
