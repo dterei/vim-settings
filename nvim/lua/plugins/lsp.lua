@@ -7,6 +7,10 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre *.go", "BufNewFile *.go" },
     config = function()
+      -- Inline diagnostic messages at end of line. Neovim 0.11+ defaults this
+      -- to false (signs + underline only); flip to true to try inline text.
+      vim.diagnostic.config({ virtual_text = false })
+
       vim.lsp.config("gopls", {
         settings = {
           gopls = {

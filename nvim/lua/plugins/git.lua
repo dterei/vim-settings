@@ -61,20 +61,16 @@ return {
     opts = {
       picker = "snacks",
       enable_builtin = true,
+      ui = {
+        use_signcolumn = true,
+        use_statuscolumn = true,
+        use_foldtext = false,
+      },
     },
     dependencies = {
       "nvim-lua/plenary.nvim",
       "folke/snacks.nvim",
       "nvim-tree/nvim-web-devicons",
     },
-    config = function()
-      require("octo").setup({
-        ui = {
-          use_signcolumn = true,
-          use_statuscolumn = true,
-          use_foldtext = false,
-        },
-      })
-    end,
   },
 }
