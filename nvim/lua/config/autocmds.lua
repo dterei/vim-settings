@@ -49,3 +49,11 @@ autocmd("ColorScheme", { pattern = "solarized-osaka*", callback = fix_diff_hl })
 if vim.g.colors_name and vim.g.colors_name:match("^solarized%-osaka") then
   fix_diff_hl()
 end
+
+-- SpellBad: plain underline instead of undercurl (some terminals, e.g. alacritty,
+-- don't render undercurl). Re-applied on every ColorScheme so it survives switches.
+local function fix_spellbad()
+  vim.api.nvim_set_hl(0, "SpellBad", { underline = true })
+end
+autocmd("ColorScheme", { pattern = "*", callback = fix_spellbad })
+fix_spellbad()

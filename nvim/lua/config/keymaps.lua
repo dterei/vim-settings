@@ -22,10 +22,6 @@ map("n", "<Leader>S", "<cmd>mksession! $SS/Session.vim<CR>")
 map("n", "<F6>", "<cmd>setlocal spell! spelllang=en_au<CR>", s)
 map("i", "<F6>", "<C-o><cmd>setlocal spell! spelllang=en_au<CR>", s)
 
--- SpellBad: plain underline (alacritty doesn't do undercurl)
-vim.cmd("hi clear SpellBad")
-vim.cmd("hi SpellBad cterm=underline")
-
 -- _ to start of line, - to end
 map("n", "_", "^")
 map("n", "-", "$")
