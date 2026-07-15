@@ -133,6 +133,7 @@ return {
       },
       input = { enabled = true },
       notifier = { enabled = true }, -- toast UI for vim.notify (history via the picker below)
+      statuscolumn = { enabled = true }, -- separate git vs diagnostic signs; clickable folds
       bigfile = { enabled = true },   -- disables heavy features on huge files (nice for monorepo)
       quickfile = { enabled = true }, -- faster file opening
     },
