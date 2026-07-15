@@ -89,7 +89,7 @@ for the full set.
 | --- | --- |
 | `<C-n>` / `<C-p>` | next / previous buffer |
 | `<C-@>` | alternate buffer (`b#`) |
-| `,q` | close buffer (keep window) |
+| `,q` | delete buffer (keep window layout, via snacks) |
 | `,w` | close window |
 | `,Q` | quit all (force) |
 | `,e` / `,E` | open oil at current file's dir / cwd |
@@ -105,6 +105,7 @@ for the full set.
 | `,bb` | buffers |
 | `,c` | document symbols (LSP) |
 | `,fr` / `,fh` / `,fk` / `,fd` | recent / help / keymaps / diagnostics |
+| `,fn` | notification history |
 | `U` | undo history (picker) |
 
 ### Undo / yank / outline

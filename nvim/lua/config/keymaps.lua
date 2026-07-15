@@ -69,8 +69,7 @@ map("n", "<C-p>", "<cmd>bp<CR>")
 map("n", "<Leader>e", "<cmd>edit %:p:h<CR>")
 map("n", "<Leader>E", "<cmd>edit .<CR>")
 
--- close/quit
-map("n", "<Leader>q", "<cmd>bp|bd #<CR>")
+-- close/quit (<Leader>q = Snacks.bufdelete, defined with the snacks spec)
 map("n", "<Leader>w", "<cmd>close<CR>")
 map("n", "<Leader>Q", "<cmd>qall!<CR>")
 

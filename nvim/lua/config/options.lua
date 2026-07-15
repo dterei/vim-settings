@@ -15,6 +15,7 @@ opt.swapfile = false
 opt.autowrite = true  -- autosave before some commands
 opt.encoding = "utf-8"
 opt.switchbuf = "useopen"
+opt.confirm = true    -- prompt to save instead of erroring on :q with changes
 
 -- Permanent undo
 opt.undofile = true
@@ -51,6 +52,10 @@ opt.autochdir = false  -- `set noacd`
 opt.cmdheight = 1
 opt.laststatus = 3
 
+-- Splits open to the right / below
+opt.splitright = true
+opt.splitbelow = true
+
 -- Scrolling
 opt.scrolloff = 3
 
@@ -72,6 +77,9 @@ opt.number = false
 opt.cursorline = true
 opt.showmatch = true
 opt.guicursor = "a:blinkon0"
+opt.signcolumn = "yes"       -- always shown, so text doesn't jump when signs appear
+opt.updatetime = 250         -- snappier CursorHold (gitsigns blame, diagnostics)
+opt.spelloptions = "camel"   -- treat camelCase segments as separate spell words
 opt.shada = "'500,<500,s50,:0,@30,/30,!" -- viminfo -> shada
 -- opt.mouse = ""  -- disable mouse in terminal
 

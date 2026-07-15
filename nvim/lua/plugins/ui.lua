@@ -132,20 +132,23 @@ return {
         },
       },
       input = { enabled = true },
+      notifier = { enabled = true }, -- toast UI for vim.notify (history via the picker below)
       bigfile = { enabled = true },   -- disables heavy features on huge files (nice for monorepo)
       quickfile = { enabled = true }, -- faster file opening
     },
     keys = {
-      { "<Leader>t",  function() Snacks.picker.files() end,       desc = "Find files" },
-      { "<Leader>bb", function() Snacks.picker.buffers() end,     desc = "Buffers" },
-      { "<Leader>/",  function() Snacks.picker.grep() end,        desc = "Grep" },
-      { "<Leader>G",  function() Snacks.picker.grep_word() end,   desc = "Grep word under cursor", mode = { "n", "x" } },
-      { "<Leader>c",  function() Snacks.picker.lsp_symbols() end, desc = "Document symbols" },
-      { "<Leader>fr", function() Snacks.picker.recent() end,      desc = "Recent files" },
-      { "<Leader>fh", function() Snacks.picker.help() end,        desc = "Help pages" },
-      { "<Leader>fk", function() Snacks.picker.keymaps() end,     desc = "Keymaps" },
-      { "<Leader>fd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
-      { "U",          function() Snacks.picker.undo() end,        desc = "Undo history" },
+      { "<Leader>t",  function() Snacks.picker.files() end,         desc = "Find files" },
+      { "<Leader>bb", function() Snacks.picker.buffers() end,       desc = "Buffers" },
+      { "<Leader>/",  function() Snacks.picker.grep() end,          desc = "Grep" },
+      { "<Leader>G",  function() Snacks.picker.grep_word() end,     desc = "Grep word under cursor", mode = { "n", "x" } },
+      { "<Leader>c",  function() Snacks.picker.lsp_symbols() end,   desc = "Document symbols" },
+      { "<Leader>fr", function() Snacks.picker.recent() end,        desc = "Recent files" },
+      { "<Leader>fh", function() Snacks.picker.help() end,          desc = "Help pages" },
+      { "<Leader>fk", function() Snacks.picker.keymaps() end,       desc = "Keymaps" },
+      { "<Leader>fd", function() Snacks.picker.diagnostics() end,   desc = "Diagnostics" },
+      { "<Leader>fn", function() Snacks.picker.notifications() end, desc = "Notification history" },
+      { "U",          function() Snacks.picker.undo() end,          desc = "Undo history" },
+      { "<Leader>q",  function() Snacks.bufdelete() end,            desc = "Delete buffer (keep layout)" },
     },
   },
 
