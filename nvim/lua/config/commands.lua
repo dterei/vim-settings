@@ -29,7 +29,8 @@ local function toggle_long_lines()
 end
 
 vim.api.nvim_create_user_command("HighlightLongLines", toggle_long_lines, {})
-vim.keymap.set("n", "<Leader>h", toggle_long_lines, { silent = true })
+-- <Leader>H (capital) so it doesn't stall behind the gitsigns <Leader>h* hunk maps
+vim.keymap.set("n", "<Leader>H", toggle_long_lines, { silent = true, desc = "Toggle long-line highlight" })
 
 vim.api.nvim_create_user_command("DeleteTrailingWs", [[%s/\s\+$//e]], {})
 

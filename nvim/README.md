@@ -81,7 +81,7 @@ for the full set.
 | `<F2>` | save |
 | `<F6>` | toggle spell (en_au) |
 | `,a` | ArgWrap (toggle args single ↔ multi-line) |
-| `,h` | toggle trailing-whitespace / over-length highlight |
+| `,H` | toggle trailing-whitespace / over-length highlight |
 
 ### Buffers, windows, files
 
@@ -159,7 +159,7 @@ Fugitive (`:G`, `:GBrowse`, …) and Octo (`:Octo`) are available on demand.
 
 | Command | Action |
 | --- | --- |
-| `:HighlightLongLines` | toggle trailing-whitespace / over-length highlight (`,h`) |
+| `:HighlightLongLines` | toggle trailing-whitespace / over-length highlight (`,H`) |
 | `:DeleteTrailingWs` | strip trailing whitespace |
 | `:SaveSession` / `:LastSession` | save / restore the session |
 | `:DiffOrig` | diff the buffer against the file on disk |

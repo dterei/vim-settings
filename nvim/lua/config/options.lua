@@ -32,7 +32,6 @@ opt.incsearch = true
 opt.ignorecase = true
 opt.smartcase = true
 opt.hlsearch = true
-g.python_highlight_all = 1
 
 -- Better grep if available
 if vim.fn.executable("rg") == 1 then

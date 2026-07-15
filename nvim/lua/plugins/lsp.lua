@@ -48,16 +48,16 @@ return {
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(args)
           local buf = args.buf
-          local map = function(lhs, fn)
-            vim.keymap.set("n", lhs, fn, { buffer = buf, silent = true })
+          local map = function(lhs, fn, desc)
+            vim.keymap.set("n", lhs, fn, { buffer = buf, silent = true, desc = desc })
           end
 
           -- buffer-local nav/doc keymaps when gopls attaches
-          map("gd", vim.lsp.buf.definition)
-          map("grr", vim.lsp.buf.references)
-          map("gi", vim.lsp.buf.implementation)
-          map("<leader>gr", vim.lsp.buf.rename)
-          map("I", vim.diagnostic.open_float)
+          map("gd", vim.lsp.buf.definition, "Go to definition")
+          map("grr", vim.lsp.buf.references, "References")
+          map("gi", vim.lsp.buf.implementation, "Implementation")
+          map("<leader>gr", vim.lsp.buf.rename, "Rename")
+          map("I", vim.diagnostic.open_float, "Line diagnostics")
 
           -- Format on demand
           map("<leader>gf", function()
