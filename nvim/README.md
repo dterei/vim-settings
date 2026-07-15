@@ -56,7 +56,7 @@ lua/plugins/               # one file per concern, auto-imported by lazy
 | Docs | `hover.nvim` (unified `K`) |
 | Git | `vim-fugitive` (+`vim-rhubarb`), `gitsigns.nvim`, `octo.nvim` |
 | LSP | `nvim-lspconfig` (gopls) |
-| Treesitter | `nvim-treesitter` (`main` branch) |
+| Treesitter | `nvim-treesitter` (`main` branch), `nvim-treesitter-textobjects` |
 | Languages | `rust.vim`, `ansible-vim`, `render-markdown.nvim` |
 
 Commenting uses Neovim's native `gc` / `gcc` (no plugin).
@@ -155,6 +155,17 @@ Fugitive (`:G`, `:GBrowse`, …) and Octo (`:Octo`) are available on demand.
 | `,gf` | format buffer |
 | `,I` | organize imports |
 | `,gF` | organize imports + format |
+
+### Treesitter text objects
+
+| Key | Action |
+| --- | --- |
+| `af` / `if` | a / inner function (e.g. `daf`, `cif`, `vaf`) |
+| `ac` / `ic` | a / inner class |
+| `aa` / `ia` | a / inner parameter |
+| `]m` / `[m` | next / previous function start |
+| `]M` / `[M` | next / previous function end |
+| `,sa` / `,sA` | swap parameter with next / previous |
 
 ## Commands
 

@@ -163,6 +163,7 @@ return {
         { "<leader>f", group = "find" },
         { "<leader>g", group = "go / git" },
         { "<leader>h", group = "hunks" },
+        { "<leader>s", group = "swap" },
       },
     },
     keys = {
