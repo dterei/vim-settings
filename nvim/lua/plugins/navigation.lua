@@ -11,41 +11,6 @@ return {
     keys = { { "<leader>o", "<cmd>AerialToggle!<cr>", desc = "Outline" } },
   },
 
-  -- NERDTree file explorer
-  {
-    "scrooloose/nerdtree",
-    lazy = false,
-    init = function()
-      local g = vim.g
-      g.NERDTreeHijackNetrw = 0
-      g.NERDTreeAutoDeleteBuffer = 1
-      g.NERDTreeMinimalUI = 1
-      g.NERDTreeQuitOnOpen = 0
-      g.NERDTreeIgnore = {
-        "\\~$[[file]]",
-        "\\.o$[[file]]",
-        "\\.hi$[[file]]",
-        "\\.pyc$[[file]]",
-        "__init__.py$[[file]]",
-        "__pycache__$[[dir]]",
-      }
-      g.netrw_liststyle = 3
-      g.netrw_banner = 0
-    end,
-    config = function()
-      vim.api.nvim_create_autocmd("FileType", {
-        group = vim.api.nvim_create_augroup("nerdtree_hidden", { clear = true }),
-        pattern = "nerdtree",
-        callback = function()
-          vim.bo.bufhidden = "delete"
-        end,
-      })
-    end,
-    keys = {
-      { "<F10>", "<cmd>NERDTreeToggle<CR>", silent = true, desc = "NERDTree" },
-    },
-  },
-
   -- Oil file browser
   {
     "stevearc/oil.nvim",

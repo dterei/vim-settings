@@ -5,10 +5,9 @@
 local opt = vim.opt
 local g = vim.g
 
--- Shell: zsh
-if vim.fn.executable("zsh") == 1 then
-  opt.shell = "zsh"
-end
+-- Shell: inherit $SHELL (Neovim's default). No explicit override so that
+-- external commands (:!, system(), plugins) run under the expected shell
+-- without forcing zsh in environments where it isn't wanted.
 
 -- Files: vim is stable & I save a lot
 opt.backup = false
@@ -25,7 +24,7 @@ opt.undodir = vim.env.MYVIM .. "/undo"
 opt.sessionoptions = "blank,buffers,curdir,folds,help,resize,tabpages,winsize"
 
 -- Completion
-opt.completeopt = "menuone"
+opt.completeopt = "menuone,noselect"
 opt.history = 100
 
 -- Search
@@ -56,8 +55,6 @@ opt.laststatus = 3
 -- Scrolling
 opt.scrolloff = 3
 
--- Join lines
-opt.formatoptions:append("j")  -- remove comment leader when joining
 
 -- Indentation
 opt.tabstop = 2

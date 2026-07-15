@@ -19,6 +19,16 @@ autocmd("BufReadPost", {
   end,
 })
 
+-- Join lines: remove the comment leader when joining with J.
+-- Applied on FileType (with opt_local) so it wins over the built-in ftplugins,
+-- which reset formatoptions per-buffer after options.lua runs.
+autocmd("FileType", {
+  group = augroup("my_formatoptions", { clear = true }),
+  callback = function()
+    vim.opt_local.formatoptions:append("j")
+  end,
+})
+
 -- Flash when text is yanked
 autocmd("TextYankPost", {
   group = augroup("highlight_yank", { clear = true }),
@@ -27,12 +37,15 @@ autocmd("TextYankPost", {
   end,
 })
 
--- Fix solarized diff highlighting
+-- Fix solarized diff highlighting (scoped to the solarized-osaka scheme so it
+-- doesn't clobber diff colors if a different colorscheme is loaded)
 local function fix_diff_hl()
   vim.api.nvim_set_hl(0, "DiffAdd",    { bg = "#073642" })
   vim.api.nvim_set_hl(0, "DiffChange", { bg = "#073642" })
   vim.api.nvim_set_hl(0, "DiffText",   { bg = "#0a4a52", bold = true })
   vim.api.nvim_set_hl(0, "DiffDelete", { bg = "#073642" })
 end
-autocmd("ColorScheme", { pattern = "*", callback = fix_diff_hl })
-fix_diff_hl()
+autocmd("ColorScheme", { pattern = "solarized-osaka*", callback = fix_diff_hl })
+if vim.g.colors_name and vim.g.colors_name:match("^solarized%-osaka") then
+  fix_diff_hl()
+end

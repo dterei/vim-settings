@@ -15,11 +15,13 @@ cp -r nvim ~/.config/nvim
 nvim
 ```
 
-On first run lazy installs all plugins; `:GoUpdateBinaries` and `:TSUpdate`
-run automatically via the `build` steps. Restart once after it finishes.
+On first run lazy installs all plugins and treesitter parsers install
+automatically (`:TSUpdate` via the `build` step). Restart once after it
+finishes.
 
-Requirements: a recent Neovim (0.10+), `git`, `rg` (ripgrep), and
-`universal-ctags` (for Tagbar + `:BTag`). A Nerd Font for airline symbols.
+Requirements: Neovim 0.11+ (uses `vim.lsp.config`/`vim.lsp.enable` and the
+treesitter `main` branch), `git`, `rg` (ripgrep), and a Nerd Font for
+statusline / file-explorer icons. `gopls` on `$PATH` for Go LSP.
 
 ## Layout
 
@@ -34,13 +36,16 @@ lua/plugins/             # one file per concern, auto-imported by lazy
 
 ## Things to verify after first launch
 
-- `:checkhealth` — confirms providers, ctags, rg, parsers.
-- Open a Go file, run `<leader>gl` — confirms golangci-lint wiring.
-- `$MYVIM` still points at `~/.vim`, so your existing undo history and saved
-  sessions carry over. Repoint in `init.lua` if you want Neovim isolated.
+- `:checkhealth` — confirms providers, rg, and treesitter parsers.
+- Open a Go file and confirm `gopls` attaches (`:LspInfo` / `:checkhealth
+  lsp`); `gd`, `grr`, `<leader>gf` (format) should work.
+- Undo history and sessions live under Neovim's own data dir
+  (`stdpath("data")`, i.e. `~/.local/share/nvim`), so they're isolated from
+  the old Vim `~/.vim`. Repoint `$MYVIM` in `init.lua` to share them.
 
 ## Next steps
 
+- add a completion engine (blink.cmp) — gopls completion is currently manual `<C-x><C-o>`
 - delimitMate to nvim-autopairs
 - tcomment drop for vim.opt builtin `gc` in neovim
 - drop undotree for builtin functionality

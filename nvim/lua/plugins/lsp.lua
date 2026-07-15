@@ -50,7 +50,7 @@ return {
 
           -- buffer-local nav/doc keymaps when gopls attaches
           map("gd", vim.lsp.buf.definition)
-          map("gr", vim.lsp.buf.references)
+          map("grr", vim.lsp.buf.references)
           map("gi", vim.lsp.buf.implementation)
           map("<leader>gr", vim.lsp.buf.rename)
           map("I", vim.diagnostic.open_float)
