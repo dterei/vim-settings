@@ -100,14 +100,6 @@ return {
     },
   },
 
-  -- Undo tree UI (side-by-side with the snacks undo picker on `U`, for comparison)
-  {
-    "mbbill/undotree",
-    keys = {
-      { "<leader>u", "<cmd>UndotreeToggle<CR>", silent = true, desc = "Undotree" },
-    },
-  },
-
   -- Snacks picker
   {
     "folke/snacks.nvim",
@@ -128,6 +120,15 @@ return {
           },
           grep = {
             exclude = { ".git", "node_modules", "vendor", "bazel-*", "**/testdata" },
+          },
+        },
+        -- Close on the first <Esc> instead of dropping into the picker's
+        -- normal mode (non-modal).
+        win = {
+          input = {
+            keys = {
+              ["<Esc>"] = { "close", mode = { "n", "i" } },
+            },
           },
         },
       },
