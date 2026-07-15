@@ -147,4 +147,26 @@ return {
       { "<Leader>fd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
     },
   },
+
+  -- which-key: popup of possible next keys when you pause mid-sequence
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- Label the leader-key groups so the popup reads cleanly
+      spec = {
+        { "<leader>b", group = "buffers" },
+        { "<leader>f", group = "find" },
+        { "<leader>g", group = "go / git" },
+        { "<leader>h", group = "hunks" },
+      },
+    },
+    keys = {
+      {
+        "<leader>?",
+        function() require("which-key").show({ global = false }) end,
+        desc = "Buffer-local keymaps",
+      },
+    },
+  },
 }
