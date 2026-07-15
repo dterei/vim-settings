@@ -50,7 +50,7 @@ lua/plugins/               # one file per concern, auto-imported by lazy
 | --- | --- |
 | Colorscheme / UI | `solarized-osaka.nvim`, `lualine.nvim`, `which-key.nvim` |
 | Pickers / files | `snacks.nvim` (picker), `oil.nvim` (file browser) |
-| Editing | `delimitMate`, `vim-surround` (+`vim-repeat`), `tabular`, `vim-argwrap` |
+| Editing | `nvim-autopairs`, `vim-surround` (+`vim-repeat`), `tabular`, `vim-argwrap` |
 | Yank / undo | `yanky.nvim`, `undotree` |
 | Navigation | `aerial.nvim` (symbol outline), `vim-unimpaired`, `VimBookmarking` |
 | Docs | `hover.nvim` (unified `K`) |
@@ -174,7 +174,6 @@ Fugitive (`:G`, `:GBrowse`, …) and Octo (`:Octo`) are available on demand.
 
 ## Next steps
 
-- delimitMate → nvim-autopairs
 - add a completion engine (blink.cmp) — gopls completion is currently manual
   `<C-x><C-o>`
 - decide between Undotree (`,u`) and the snacks undo picker (`U`)
