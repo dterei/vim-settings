@@ -100,11 +100,11 @@ return {
     },
   },
 
-  -- Undo tree UI
+  -- Undo tree UI (side-by-side with the snacks undo picker on `U`, for comparison)
   {
     "mbbill/undotree",
     keys = {
-      { "U", "<cmd>UndotreeToggle<CR>", silent = true, desc = "Undotree" },
+      { "<leader>u", "<cmd>UndotreeToggle<CR>", silent = true, desc = "Undotree" },
     },
   },
 
@@ -145,6 +145,7 @@ return {
       { "<Leader>fh", function() Snacks.picker.help() end,        desc = "Help pages" },
       { "<Leader>fk", function() Snacks.picker.keymaps() end,     desc = "Keymaps" },
       { "<Leader>fd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+      { "U",          function() Snacks.picker.undo() end,        desc = "Undo history" },
     },
   },
 
@@ -168,5 +169,27 @@ return {
         desc = "Buffer-local keymaps",
       },
     },
+  },
+
+  -- Hover, improved K behavior
+  {
+    "lewis6991/hover.nvim",
+    keys = {
+      { "K",  function() require("hover").open() end,   desc = "Hover" },
+      { "gK", function() require("hover").select() end, desc = "Hover (pick source)" },
+    },
+    config = function()
+      require("hover").config({
+        -- Omit the default `dap` provider (no debugger configured)
+        providers = {
+          "hover.providers.diagnostic",
+          "hover.providers.lsp",
+          "hover.providers.man",
+          "hover.providers.dictionary",
+        },
+        preview_opts = { border = "rounded" },
+        title = true,
+      })
+    end,
   },
 }

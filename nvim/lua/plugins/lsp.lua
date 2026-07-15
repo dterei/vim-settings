@@ -54,7 +54,6 @@ return {
           map("gi", vim.lsp.buf.implementation)
           map("<leader>gr", vim.lsp.buf.rename)
           map("I", vim.diagnostic.open_float)
-          -- map("K",  vim.lsp.buf.hover)
 
           -- Format on demand
           map("<leader>gf", function()

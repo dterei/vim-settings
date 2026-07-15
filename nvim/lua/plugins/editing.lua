@@ -19,8 +19,6 @@ return {
   -- Surround text with brackets / tags
   { "tpope/vim-surround", event = "VeryLazy", dependencies = { "tpope/vim-repeat" } },
 
-  -- Commenting: native `gc`/`gcc` (built into Neovim 0.10+)
-
   -- Reformat function args single <-> multi line
   {
     "FooSoft/vim-argwrap",

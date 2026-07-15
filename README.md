@@ -1,7 +1,6 @@
 # Vim Settings
 
-My personal vim settings, heavily customised and refined over the
-years.
+My personal vim settings, heavily customised and refined over the years.
 
 See [Guide](guide.md) for some vim usage information.
 
