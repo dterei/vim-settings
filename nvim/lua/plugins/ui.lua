@@ -49,7 +49,6 @@ return {
       sections = {
         lualine_a = {
           "mode",
-          { function() return vim.o.paste and "ρ" or "" end },
           { function() return vim.wo.spell and "S" or "" end },
         },
         lualine_b = { "branch", "diff", "diagnostics" },
