@@ -176,12 +176,9 @@ Fugitive (`:G`, `:GBrowse`, …) and Octo (`:Octo`) are available on demand.
 
 - add a completion engine (blink.cmp) — gopls completion is currently manual
   `<C-x><C-o>`
-- decide between Undotree (`,u`) and the snacks undo picker (`U`)
 
 ### References
 
 - <https://github.com/nvim-lua/kickstart.nvim>
 - <https://www.lazyvim.org/>
 - <https://rootknecht.net/blog/debloating-neovim-config/>
-</content>
-</invoke>
