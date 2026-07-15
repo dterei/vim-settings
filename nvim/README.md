@@ -47,7 +47,6 @@ lua/plugins/             # one file per concern, auto-imported by lazy
 
 - add a completion engine (blink.cmp) — gopls completion is currently manual `<C-x><C-o>`
 - delimitMate to nvim-autopairs
-- tcomment drop for vim.opt builtin `gc` in neovim
 - drop undotree for builtin functionality
 - https://github.com/lewis6991/hover.nvim
   - https://github.com/powerman/vim-plugin-viewdoc
