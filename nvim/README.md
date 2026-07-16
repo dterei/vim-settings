@@ -21,6 +21,12 @@ On first run lazy installs all plugins and Treesitter parsers install
 automatically (`:TSUpdate` via the `build` step). Restart once after it
 finishes.
 
+### Things to verify after first launch
+
+- `:checkhealth` — confirms providers, `rg`, and Treesitter parsers.
+- Open a Go file and confirm `gopls` attaches (`:LspInfo` / `:checkhealth lsp`);
+  `gd`, `grr`, `,gf` should work.
+
 ## Requirements
 
 - Neovim 0.11+ (uses `vim.lsp.config`/`vim.lsp.enable` and the Treesitter
@@ -177,12 +183,6 @@ Fugitive (`:G`, `:GBrowse`, …) and Octo (`:Octo`) are available on demand.
 | `:DiffOrig` | diff the buffer against the file on disk |
 | `:Wgrep` | grep for the word under the cursor into the quickfix list |
 | `:Latest` | jump to the newest undo state |
-
-## Things to verify after first launch
-
-- `:checkhealth` — confirms providers, `rg`, and Treesitter parsers.
-- Open a Go file and confirm `gopls` attaches (`:LspInfo` / `:checkhealth lsp`);
-  `gd`, `grr`, `,gf` should work.
 
 ## Next steps
 
