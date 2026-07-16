@@ -131,11 +131,12 @@ return {
           },
         },
       },
-      input = { enabled = true },
-      notifier = { enabled = true }, -- toast UI for vim.notify (history via the picker below)
-      statuscolumn = { enabled = true }, -- separate git vs diagnostic signs; clickable folds
-      bigfile = { enabled = true },   -- disables heavy features on huge files (nice for monorepo)
-      quickfile = { enabled = true }, -- faster file opening
+      input        = { enabled = true },
+      notifier     = { enabled = true },  -- toast UI for vim.notify (history via the picker below)
+      statuscolumn = { enabled = true },  -- separate git vs diagnostic signs; clickable folds
+      bigfile      = { enabled = true },  -- disables heavy features on huge files (nice for monorepo)
+      quickfile    = { enabled = true },  -- faster file opening
+      scratch      = { enabled = true },  -- scratch buffer
     },
     keys = {
       { "<Leader>t",  function() Snacks.picker.files() end,         desc = "Find files" },
@@ -150,6 +151,7 @@ return {
       { "<Leader>fn", function() Snacks.picker.notifications() end, desc = "Notification history" },
       { "U",          function() Snacks.picker.undo() end,          desc = "Undo history" },
       { "<Leader>q",  function() Snacks.bufdelete() end,            desc = "Delete buffer (keep layout)" },
+      { "<Leader>.",  function() Snacks.scratch() end,             desc = "Scratch buffer" },
     },
   },
 

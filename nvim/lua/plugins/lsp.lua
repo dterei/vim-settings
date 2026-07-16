@@ -3,6 +3,9 @@
 -- ==============================================================================
 
 return {
+  -- LSP progress indicator (shows "gopls: indexing…" so you know when it's ready)
+  { "j-hui/fidget.nvim", opts = {} },
+
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre *.go", "BufNewFile *.go" },
@@ -58,6 +61,20 @@ return {
           map("gi", vim.lsp.buf.implementation, "Implementation")
           map("<leader>gr", vim.lsp.buf.rename, "Rename")
           map("I", vim.diagnostic.open_float, "Line diagnostics")
+
+          -- Code action / type definition / signature help
+          map("<leader>ca", vim.lsp.buf.code_action, "Code action")
+          map("gy", vim.lsp.buf.type_definition, "Go to type definition")
+          vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help,
+            { buffer = buf, silent = true, desc = "Signature help" })
+
+          -- -- Toggle inlay hints
+          -- if vim.lsp.inlay_hint then
+          --   map("<leader>th", function()
+          --     vim.lsp.inlay_hint.enable(
+          --       not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
+          --   end, "Toggle inlay hints")
+          -- end
 
           -- Format on demand
           map("<leader>gf", function()

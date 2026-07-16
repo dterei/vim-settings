@@ -69,9 +69,8 @@ opt.smarttab = true
 opt.autoindent = true
 
 -- Esc handling
-opt.timeoutlen = 1000
+opt.timeoutlen = 1000 -- which-key popup
 opt.ttimeoutlen = 10
-
 -- Display
 opt.number = false
 opt.cursorline = true
@@ -81,7 +80,10 @@ opt.signcolumn = "yes"       -- always shown, so text doesn't jump when signs ap
 opt.updatetime = 250         -- snappier CursorHold (gitsigns blame, diagnostics)
 opt.spelloptions = "camel"   -- treat camelCase segments as separate spell words
 opt.shada = "'500,<500,s50,:0,@30,/30,!" -- viminfo -> shada
--- opt.mouse = ""  -- disable mouse in terminal
+opt.list = true
+opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+opt.pumheight = 10
+opt.inccommand = "split"  -- live preview of :s substitutions in a split
 
 -- Folding (Treesitter-based folding is configured in plugins/treesitter.lua;
 -- these are the global defaults so non-TS buffers behave as before)

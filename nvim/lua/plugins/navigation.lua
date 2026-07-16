@@ -38,6 +38,18 @@ return {
     },
   },
 
+  -- -- Flash jump: s + 2 chars to jump anywhere on screen (works in operator-pending too)
+  -- {
+  --   "folke/flash.nvim",
+  --   event = "VeryLazy",
+  --   keys = {
+  --     { "s", function() require("flash").jump() end,               mode = { "n", "o", "x" }, desc = "Flash" },
+  --     { "S", function() require("flash").treesitter() end,         mode = { "n", "o", "x" }, desc = "Flash Treesitter" },
+  --     { "r", function() require("flash").remote() end,             mode = "o",               desc = "Flash remote" },
+  --     { "R", function() require("flash").treesitter_search() end,  mode = { "o", "x" },      desc = "Flash TS search" },
+  --   },
+  -- },
+
   -- Bookmarking lines of interest
   {
     "dterei/VimBookmarking",

@@ -51,6 +51,18 @@ return {
   -- Surround text with brackets / tags
   { "tpope/vim-surround", event = "VeryLazy", dependencies = { "tpope/vim-repeat" } },
 
+  -- Highlight and navigate TODO / FIXME / HACK / NOTE comments
+  {
+    "folke/todo-comments.nvim",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      { "]t", function() require("todo-comments").jump_next() end, desc = "Next todo" },
+      { "[t", function() require("todo-comments").jump_prev() end, desc = "Prev todo" },
+      { "<leader>ft", function() Snacks.picker.todo_comments() end, desc = "Find todos" },
+    },
+  },
+
   -- Reformat function args single <-> multi line
   {
     "FooSoft/vim-argwrap",
