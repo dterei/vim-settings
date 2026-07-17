@@ -80,7 +80,7 @@ opt.signcolumn = "yes"       -- always shown, so text doesn't jump when signs ap
 opt.updatetime = 250         -- snappier CursorHold (gitsigns blame, diagnostics)
 opt.spelloptions = "camel"   -- treat camelCase segments as separate spell words
 opt.shada = "'500,<500,s50,:0,@30,/30,!" -- viminfo -> shada
-opt.list = true
+opt.list = false
 opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 opt.pumheight = 10
 opt.inccommand = "split"  -- live preview of :s substitutions in a split
