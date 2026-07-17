@@ -7,8 +7,7 @@ return {
   {
     "tpope/vim-fugitive",
     dependencies = { "tpope/vim-rhubarb" },
-    cmd = { "G", "Git", "Gread", "Gwrite", "Gedit", "Gdiffsplit",
-            "Gblame", "Gclog", "GBrowse" },
+    cmd = { "G", "Git", "Gedit", "Gdiffsplit", "Gclog", "GBrowse" },
   },
 
   -- Sign-column git changes.
