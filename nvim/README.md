@@ -186,8 +186,10 @@ Fugitive (`:G`, `:GBrowse`, …) and Octo (`:Octo`) are available on demand.
 
 ## Next steps
 
+- audit key mappings for conflict and sanity
 - add a completion engine (blink.cmp) — gopls completion is currently manual
   `<C-x><C-o>`
+- audit plugins used by lazyvim and popular distros
 
 ### References
 

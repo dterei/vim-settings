@@ -1,5 +1,5 @@
 -- ==============================================================================
--- Completion (blink.cmp)
+-- Completion (disabled for now, generally not a fan of uber completion)
 -- ==============================================================================
 
 return {
