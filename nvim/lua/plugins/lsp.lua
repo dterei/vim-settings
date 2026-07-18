@@ -18,15 +18,17 @@ return {
         settings = {
           gopls = {
             directoryFilters = {
-              "-vendor",
               "-bazel-out",
               "-bazel-bin",
               "-bazel-testlogs",
+              "-**/vendor",
               "-**/node_modules",
               "-**/testdata",
+              "-**/.git",
             },
             analyses = {
-              unusedparams = true,
+              unusedparams = false,
+              shadow = false,
               nilness = true,
               unusedwrite = true,
               useany = true,
@@ -41,6 +43,7 @@ return {
             staticcheck = false,
             semanticTokens = false,
             usePlaceholders = true,
+            expandWorkspaceToModule = false,
           },
         },
       })
