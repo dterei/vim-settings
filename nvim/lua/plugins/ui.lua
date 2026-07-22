@@ -143,7 +143,7 @@ return {
       { "<Leader>bb", function() Snacks.picker.buffers() end,       desc = "Buffers" },
       { "<Leader>/",  function() Snacks.picker.grep() end,          desc = "Grep" },
       { "<Leader>G",  function() Snacks.picker.grep_word() end,     desc = "Grep word under cursor", mode = { "n", "x" } },
-      { "<Leader>c",  function() Snacks.picker.lsp_symbols() end,   desc = "Document symbols" },
+      { "<Leader>cs", function() Snacks.picker.lsp_symbols() end,   desc = "Document symbols" },
       { "<Leader>fr", function() Snacks.picker.recent() end,        desc = "Recent files" },
       { "<Leader>fh", function() Snacks.picker.help() end,          desc = "Help pages" },
       { "<Leader>fk", function() Snacks.picker.keymaps() end,       desc = "Keymaps" },
@@ -160,9 +160,11 @@ return {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = {
+      delay = 500,
       -- Label the leader-key groups so the popup reads cleanly
       spec = {
         { "<leader>b", group = "buffers" },
+        { "<leader>c", group = "code" },
         { "<leader>f", group = "find" },
         { "<leader>g", group = "go / git" },
         { "<leader>h", group = "hunks" },

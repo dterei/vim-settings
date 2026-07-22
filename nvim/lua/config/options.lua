@@ -69,7 +69,7 @@ opt.smarttab = true
 opt.autoindent = true
 
 -- Esc handling
-opt.timeoutlen = 1000 -- which-key popup
+opt.timeoutlen = 400
 opt.ttimeoutlen = 10
 -- Display
 opt.number = false

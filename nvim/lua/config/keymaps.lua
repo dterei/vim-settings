@@ -77,7 +77,7 @@ map("n", "<Leader>Q", "<cmd>qall!<CR>")
 map("c", "w!!", "w !sudo tee % >/dev/null")
 
 -- diagnostic navigation
-map("n", "]d", vim.diagnostic.goto_next, s)
-map("n", "[d", vim.diagnostic.goto_prev, s)
-map("n", "]e", function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR }) end, s)
-map("n", "[e", function() vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR }) end, s)
+map("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, s)
+map("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, s)
+map("n", "]e", function() vim.diagnostic.jump({ count = 1, float = true, severity = vim.diagnostic.severity.ERROR }) end, s)
+map("n", "[e", function() vim.diagnostic.jump({ count = -1, float = true, severity = vim.diagnostic.severity.ERROR }) end, s)

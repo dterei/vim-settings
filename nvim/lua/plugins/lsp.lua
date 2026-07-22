@@ -62,9 +62,9 @@ return {
           -- buffer-local nav/doc keymaps when gopls attaches
           map("gd", vim.lsp.buf.definition, "Go to definition")
           map("grr", vim.lsp.buf.references, "References")
-          map("gi", vim.lsp.buf.implementation, "Implementation")
+          map("gri", vim.lsp.buf.implementation, "Implementation")
           map("<leader>gr", vim.lsp.buf.rename, "Rename")
-          map("I", vim.diagnostic.open_float, "Line diagnostics")
+          map("<leader>d", vim.diagnostic.open_float, "Line diagnostics")
 
           -- Code action / type definition / signature help
           map("<leader>ca", vim.lsp.buf.code_action, "Code action")
