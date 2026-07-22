@@ -21,6 +21,7 @@ return {
               "-bazel-out",
               "-bazel-bin",
               "-bazel-testlogs",
+              "-bazel-*",
               "-**/vendor",
               "-**/node_modules",
               "-**/testdata",
@@ -29,9 +30,9 @@ return {
             analyses = {
               unusedparams = false,
               shadow = false,
-              nilness = true,
-              unusedwrite = true,
-              useany = true,
+              nilness = false,
+              unusedwrite = false,
+              useany = false,
             },
             hints = {
               parameterNames = true,
