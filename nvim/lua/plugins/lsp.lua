@@ -21,7 +21,7 @@ return {
               "-bazel-out",
               "-bazel-bin",
               "-bazel-testlogs",
-              "-bazel-*",
+              "-**/bazel-",
               "-**/vendor",
               "-**/node_modules",
               "-**/testdata",
