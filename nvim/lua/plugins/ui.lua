@@ -11,9 +11,7 @@ return {
     opts = {
       on_highlights = function(hl, c)
         -- Color of the window split line
-        hl.WinSeparator = { fg = "#606060" }
-        -- Color of the visual hightlight
-        hl.Visual = { bg = require("solarized-osaka.util").blend(c.base01, c.base02, 0.5) }
+        hl.WinSeparator = { fg = "#505050" }
       end,
     },
     config = function(_, opts)
