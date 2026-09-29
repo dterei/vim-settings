@@ -17,7 +17,7 @@ return {
         "bash", "markdown", "markdown_inline",
         "yaml", "json", "toml", "graphql",
         "dockerfile", "git_config", "gitcommit", "diff",
-        "powershell", "haskell",
+        "powershell", "haskell", "html", "regex",
       }
       local already = require("nvim-treesitter.config").get_installed()
       local to_install = vim.iter(ensure_installed)

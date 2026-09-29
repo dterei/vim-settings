@@ -6,8 +6,8 @@ return {
   -- Solarized colorscheme
   {
     "craftzdog/solarized-osaka.nvim",
+    priority = 1001,
     lazy = false,
-    priority = 1000,
     opts = {
       on_highlights = function(hl, c)
         -- Color of the window split line
@@ -100,7 +100,7 @@ return {
   -- Snacks picker
   {
     "folke/snacks.nvim",
-    priority = 900, -- below the colorscheme (1000) so it applies first; still loads early
+    priority = 1000, -- below the colorscheme (1000) so it applies first; still loads early
     lazy = false,
     opts = {
       picker = {
